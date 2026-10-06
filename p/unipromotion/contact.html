@@ -245,6 +245,9 @@ footer a.u{display:inline-block;margin-top:18px;font-size:15px;font-weight:600}
 }
 @media (prefers-reduced-motion:reduce){.reel-foot .rp{display:none}}
 
+.hero{height:clamp(460px,70vh,760px);min-height:0;max-height:none}
+@media (max-width:900px){.hero{height:58vh;min-height:360px}}
+
 /* ── 하위 페이지 공통 ── */
 .ph-head{padding:clamp(64px,8vw,120px) var(--gut) clamp(36px,4vw,56px)}
 .ph-head .tab{margin:0 0 22px;font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--burgundy)}
