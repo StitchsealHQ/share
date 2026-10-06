@@ -371,6 +371,50 @@ footer a.u{display:inline-block;margin-top:18px;font-size:15px;font-weight:600}
   .form .f{grid-template-columns:1fr;gap:0}
   .subnav{gap:4px 18px;font-size:13px}
 }
+
+/* ═══ 타이포 체계 (10/6 검수) — 7단계만 쓴다 ═══ */
+:root{
+  --fs-display:clamp(40px,5vw,68px); --fs-title:clamp(28px,3vw,44px); --fs-item:20px;
+  --fs-lead:clamp(18px,1.4vw,20px); --fs-body:17px; --fs-small:15px; --fs-meta:13px;
+}
+button{letter-spacing:inherit}
+h1,h2,h3,.big{text-wrap:balance}
+p,li,dd,figcaption{text-wrap:pretty}
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+@media (max-width:900px){.br-pc{display:none}}
+
+/* Display */
+.ph-head h1{font-size:var(--fs-display);line-height:1.14;letter-spacing:-.035em}
+/* Title */
+.feat h2,.process .big,.mhead h2,.docs h2,.sec .ttl,.feature .ttl,.latest .more,.reel .say{letter-spacing:-.03em}
+.feat h2,.process .big,.mhead h2,.docs h2,.sec .ttl,.feature .ttl,.latest .more{font-size:var(--fs-title);font-weight:500;line-height:1.22}
+.sec .ttl{margin:0;max-width:22em}
+.feature .ttl{margin:10px 0 0}
+.process .big{max-width:20em}
+.latest .more{display:block;text-align:left;color:var(--charcoal);margin:0 0 32px}
+/* Item */
+.process h3,.steps h3,.lead-card b,.media .mlist b,.ncards b{font-size:var(--fs-item);letter-spacing:-.02em;line-height:1.35}
+.lead-card b{font-size:var(--fs-item)}
+/* Lead */
+.ph-head .lead,.reel .say,.docs .about p{font-size:var(--fs-lead);line-height:1.65;letter-spacing:-.015em}
+.ph-head .lead{max-width:34em}
+.reel .say{max-width:32em}
+.docs .about p{max-width:30em}
+/* Body */
+.sec .txt,.feat .intro,.hero .cap p,.feature p,.rows li,.cinfo div{font-size:var(--fs-body)}
+.sec .txt,.feat .intro{max-width:36em;line-height:1.75}
+.hero .cap{max-width:min(34em,70%)}
+/* Small */
+.grid b,.grid span,.cards b,.pgrid figcaption,.pgrid figcaption b,.subnav,.feat .go,.mhead .go,.note,.sec .note,.media .d,
+.docs figcaption,.docs .dl p,.docs .dl a,.chips button,.reel-foot a,.reel-foot button,.form .agree,.rows li small,.steps p,.process p,
+.fl,.fabout,.frow h2,.lab{font-size:var(--fs-small)}
+.grid span,.media .d{line-height:1.5}
+.fabout{max-width:36em}
+/* Meta */
+.media .meta,.media .tg,.meta,.meta .tg,.cards span,.lab small,.tab,.posters figcaption,.track li span,.fbot,figcaption.meta,.empty-ph,.form .demo,.cinfo b,.hero .dots .pp{font-size:var(--fs-meta)}
+/* 섹션 이름표: 줄 간격 넉넉히 */
+.sec>.lab{line-height:1.4;letter-spacing:-.01em}
+.sec>.lab small{line-height:1.4}
 </style>
 </head>
 <body>
@@ -390,7 +434,7 @@ footer a.u{display:inline-block;margin-top:18px;font-size:15px;font-weight:600}
 <main>
 <div class="ph-head">
   <p class="tab">COMPANY</p>
-  <h1>원단 한 필에서 최종 납품까지, 제품의 전 과정을 맡습니다</h1>
+  <h1>원단 한 필에서 최종 납품까지,<br class="br-pc"> 제품의 전 과정을 맡습니다</h1>
   <p class="lead">주식회사 유니프로모션은 서울에 본사를 둔 글로벌 무역·SCM 회사입니다. 단순한 무역 중개를 넘어, 소재 소싱부터 생산, 검수, 물류, 최종 납품까지 제품의 전 과정을 한곳에서 관리합니다.</p>
 </div>
 <nav class="subnav" aria-label="페이지 안 이동"><a href="#overview">회사 개요</a><a href="#strength">일하는 원칙</a><a href="#history">연혁</a><a href="#offices">거점</a><a href="#docs">인증·서류</a></nav>
@@ -398,7 +442,7 @@ footer a.u{display:inline-block;margin-top:18px;font-size:15px;font-weight:600}
 <section class="sec" id="overview">
   <h2 class="lab">회사 개요</h2>
   <div class="body">
-    <h2>아시아와 중동의 생산 네트워크로 브랜드와 전시의 제품을 만듭니다</h2>
+    <h3 class="ttl">아시아와 중동의 생산 네트워크로 브랜드와 전시의 제품을 만듭니다</h3>
     <ul class="rows">
       <li><b>회사명</b><span>주식회사 유니프로모션 (UNIPROMOTION CO., LTD.)</span></li>
       <li><b>대표</b><span>안예원</span></li>
@@ -417,7 +461,7 @@ footer a.u{display:inline-block;margin-top:18px;font-size:15px;font-weight:600}
     <ul class="rows">
       <li><b>생산 네트워크</b><span>아시아와 중동 6개국의 협력 공장 중 가격, 생산량, 기준에 맞는 곳을 골라 배정합니다.</span></li>
       <li><b>공급망 관리</b><span>원단 소싱부터 최종 납품까지 모든 단계의 진행 상황을 실시간으로 확인합니다.</span></li>
-      <li><b>품질 관리</b><span>생산 현장에 상주하는 독립 검수팀이 생산 중, 중간, 최종 3단계로 검수합니다.</span></li>
+      <li><b>품질 관리</b><span>생산 현장에 상주하는 독립 검수팀이 생산 초기·중간·최종 3단계로 검수합니다.</span></li>
       <li><b>신뢰</b><span>비밀유지계약(NDA)을 기본으로 하고, 프로젝트마다 전담 담당자가 처음부터 끝까지 맡습니다.</span></li>
     </ul>
   </div>
@@ -427,13 +471,13 @@ footer a.u{display:inline-block;margin-top:18px;font-size:15px;font-weight:600}
   <h2 class="lab">연혁</h2>
   <div class="body">
     <ul class="rows">
-      <li><b class="todo">20○○</b><span>E&amp;L MENA 공식 한국 에이전시 계약, 코리안 파빌리온 런칭<small>2027년 1월 18~20일 두바이 E&amp;L MENA 2027 한국관 운영 예정</small></span></li>
+      <li><b class="todo">20○○</b><span>E&amp;L MENA 공식 한국 에이전시 계약, 코리안 파빌리온 론칭<small>2027년 1월 18~20일 두바이 E&amp;L MENA 2027 한국관 운영 예정</small></span></li>
       <li><b>2024</b><span>IAAPA 회원사 가입 (ID 461401)</span></li>
-      <li><b>2023. 03</b><span>두바이 DEAL 쇼 참가</span></li>
-      <li><b>2022</b><span>미국 올랜도 IAAPA 쇼 참가</span></li>
-      <li><b>2021</b><span>자체 브랜드 STETS 런칭, 아마존 USA 입점</span></li>
+      <li><b>2023.03</b><span>두바이 DEAL 쇼 참가</span></li>
+      <li><b>2022</b><span>미국 올랜도 IAAPA Expo 참가</span></li>
+      <li><b>2021</b><span>자체 브랜드 STETS 론칭, 아마존 USA 입점</span></li>
       <li><b>2021</b><span>한류연계 우수상품 쇼케이스 &amp; 상담회 참가 (중국)<small>주최·주관 한국디자인진흥원, 한국무역협회 / 후원 문화체육관광부</small></span></li>
-      <li><b>2021. 05</b><span>중국 중부지역 무역투자박람회 참가</span></li>
+      <li><b>2021.05</b><span>중국 중부지역 무역투자박람회 참가</span></li>
     </ul>
     <p class="note">회사 설립 연도와 그 밖의 주요 실적은 아이리스님 확인 후 추가합니다.</p>
   </div>
