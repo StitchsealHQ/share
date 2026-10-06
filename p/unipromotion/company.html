@@ -356,6 +356,9 @@ footer a.u{display:inline-block;margin-top:18px;font-size:15px;font-weight:600}
 .cinfo a{border-bottom:1px solid var(--charcoal);transition:color .2s,border-color .2s}
 .cinfo a:hover{color:var(--burgundy);border-color:var(--burgundy)}
 .map{aspect-ratio:16/9;margin-top:4px}
+.film{margin:0}
+.film video{display:block;width:100%;aspect-ratio:16/9;background:#000}
+.film figcaption{margin-top:10px;font-size:13px;color:var(--stone)}
 
 @media (max-width:900px){
   .sec{grid-template-columns:1fr}
@@ -663,7 +666,7 @@ body .feat .subs a:hover{color:var(--burgundy);border-color:var(--burgundy)}
   <h1>원단 한 필에서 최종 납품까지,<br class="br-pc"> 제품의 전 과정을 맡습니다</h1>
   <p class="lead">주식회사 유니프로모션은 서울에 본사를 둔 글로벌 무역·SCM 회사입니다. 단순한 무역 중개를 넘어, 소재 소싱부터 생산, 검수, 물류, 최종 납품까지 제품의 전 과정을 한곳에서 관리합니다.</p>
 </div>
-<nav class="subnav" aria-label="페이지 안 이동"><a href="#overview">회사 개요</a><a href="#strength">일하는 원칙</a><a href="#history">연혁</a><a href="#offices">거점</a><a href="#docs">인증·서류</a></nav>
+<nav class="subnav" aria-label="페이지 안 이동"><a href="#overview">회사 개요</a><a href="#film">회사 소개 영상</a><a href="#strength">일하는 원칙</a><a href="#history">연혁</a><a href="#offices">거점</a><a href="#docs">인증·서류</a></nav>
 
 <section class="sec" id="overview">
   <h2 class="lab">회사 개요</h2>
@@ -678,6 +681,18 @@ body .feat .subs a:hover{color:var(--burgundy);border-color:var(--burgundy)}
       <li><b>사업</b><span>전시 굿즈 기획·생산·납품<br>의류 프로모션 기획·생산<br>의류 B2B 무역 &amp; SCM<br>해외 전시 코리안 파빌리온<br>해외 브랜드 유통·컨설팅</span></li>
       <li><b>사업자등록번호</b><span>196-88-02743</span></li>
     </ul>
+  </div>
+</section>
+
+<section class="sec" id="film">
+  <h2 class="lab">회사 소개 영상<small>약 5분</small></h2>
+  <div class="body">
+    <figure class="film">
+      <video controls preload="none" playsinline poster="assets/company_intro.jpg" aria-label="유니프로모션 회사 소개 영상">
+        <source src="assets/company_intro.mp4" type="video/mp4">
+      </video>
+      <figcaption>대표 인터뷰와 사업 소개. 실제 사이트에서는 유튜브에 올린 영상을 연결합니다.</figcaption>
+    </figure>
   </div>
 </section>
 
