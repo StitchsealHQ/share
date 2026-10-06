@@ -7,6 +7,7 @@
 <title>APPAREL & TRADING | 유니프로모션 하위 페이지 시안</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css">
 <style>
 /* 구조·동작은 pentagram.com 메인을 참고해 새로 작성. 색은 아이리스님 브리프(크림·버건디·차콜). */
 :root{
@@ -673,6 +674,10 @@ body .trio,body .chips,body .cgrid{margin-top:48px}
 /* ═══ 글자 색·굵기 (10/6 사용자 요청): Pentagram처럼 '크지만 얇은' 제목, 검정에 가깝고 촘촘한 글자 ═══
    브리프의 차콜 #2C2C2C → 거의 검정 #111(Pentagram #1A1A1A 수준). 보조 회색도 한 단계 진하게 */
 :root{--charcoal:#111111;--stone:#55504B}
+/* 10/6 사용자 지정: 제목 서체 = 나눔스퀘어 (굵기 300 Light), 본문·메뉴·캡션은 IBM Plex Sans KR 유지 */
+:root{--font-display:"NanumSquare",var(--font-text)}
+/* 10/6 사용자 요청: '최근 프로젝트' 머리말 가운데 → 왼쪽 */
+body .latest .more{text-align:left}
 body{color:var(--charcoal);letter-spacing:-.01em;line-height:1.45}
 body .ph-head h1,body .feat h2,body .reel h2,body .mhead h2,body .docs h2,body .sec .ttl,body .feature .ttl,body .process .big{font-weight:300;letter-spacing:-.035em}
 body .ph-head h1,body .feat h2,body .reel h2,body .mhead h2,body .docs h2{line-height:1.08}
