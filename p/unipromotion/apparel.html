@@ -734,9 +734,12 @@ body .feat.dark .cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr)
 @media (hover:hover){body .feat.dark .cards a:hover b{color:var(--cream);text-decoration:underline;text-underline-offset:3px}}
 body .feat.dark .go{background:var(--cream);color:#1C1917}
 body .feat.dark .go:hover{background:var(--cream-deep);color:#1C1917}
+/* 일하는 방식: 슬로건 대신 다른 블록 제목과 같은 섹션 이름 */
+body .process .ptl{margin:0;font-family:var(--font-display);font-size:52px;font-weight:300;letter-spacing:-.035em;line-height:1.08;color:var(--cream)}
 @media (max-width:900px){
   body .feat.dark .cards{grid-template-columns:repeat(2,minmax(0,1fr));padding:16px;margin-top:32px}
   .hero .sl.el img{width:72%}
+  body .process .ptl{font-size:36px}
   body .grid{grid-template-columns:repeat(2,1fr);gap:32px var(--gap)}
   body .grid a{grid-column:span 1}
   body .grid a.lg{grid-column:span 2}

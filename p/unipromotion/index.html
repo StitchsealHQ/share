@@ -601,9 +601,12 @@ body .feat.dark .cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr)
 @media (hover:hover){body .feat.dark .cards a:hover b{color:var(--cream);text-decoration:underline;text-underline-offset:3px}}
 body .feat.dark .go{background:var(--cream);color:#1C1917}
 body .feat.dark .go:hover{background:var(--cream-deep);color:#1C1917}
+/* 일하는 방식: 슬로건 대신 다른 블록 제목과 같은 섹션 이름 */
+body .process .ptl{margin:0;font-family:var(--font-display);font-size:52px;font-weight:300;letter-spacing:-.035em;line-height:1.08;color:var(--cream)}
 @media (max-width:900px){
   body .feat.dark .cards{grid-template-columns:repeat(2,minmax(0,1fr));padding:16px;margin-top:32px}
   .hero .sl.el img{width:72%}
+  body .process .ptl{font-size:36px}
   body .grid{grid-template-columns:repeat(2,1fr);gap:32px var(--gap)}
   body .grid a{grid-column:span 1}
   body .grid a.lg{grid-column:span 2}
@@ -705,12 +708,12 @@ body .feat.dark .go:hover{background:var(--cream-deep);color:#1C1917}
 </section>
 
 <section class="process">
-  <p class="big">한 담당자가 요구 분석부터<br class="br-pc"> 해외 납품까지 맡습니다.</p>
+  <h2 class="ptl">일하는 방식</h2>
   <ol>
-    <li><h3>요구 분석<small>Needs Analysis</small></h3><p>품목, 수량, 예산, 납기를 정리합니다.</p></li>
-    <li><h3>소싱·제안<small>Sourcing &amp; Solution</small></h3><p>소재와 공장을 찾아 샘플과 견적으로 제안합니다.</p></li>
-    <li><h3>생산·검수<small>Execution &amp; QC</small></h3><p>현지 공장의 생산을 관리하고 출고 전에 검수합니다.</p></li>
-    <li><h3>해외 납품<small>Global Delivery</small></h3><p>통관과 물류를 거쳐 약속한 납기에 납품합니다.</p></li>
+    <li><h3>요구 분석<small>Needs Analysis</small></h3><p>품목·수량·예산·납기 확인, 작업지시서(테크팩) 검토, 비밀유지계약(NDA)</p></li>
+    <li><h3>소싱·제안<small>Sourcing &amp; Solution</small></h3><p>6개국 협력 공장 중 배정, 소재 샘플과 견적</p></li>
+    <li><h3>생산·검수<small>Execution &amp; QC</small></h3><p>현장 상주 검수팀의 초기·중간·최종 검수, REACH 등 바이어 기준 확인</p></li>
+    <li><h3>해외 납품<small>Global Delivery</small></h3><p>통관과 물류, 전시 개막·매장 입고 일정에 맞춘 납품</p></li>
   </ol>
 </section>
 
