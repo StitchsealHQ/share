@@ -219,7 +219,7 @@ footer{background:var(--burgundy);color:var(--on-dark);padding:80px var(--gut) 1
 .mlist li{border-top:1px solid #3a3a3a}
 .mlist a{display:block;padding:20px 0 28px}
 
-footer{background:#141414;color:var(--on-dark);padding:clamp(48px,5vw,72px) var(--gut) 100px}
+footer{background:#141414;color:var(--on-dark);padding:clamp(48px,5vw,72px) var(--gut) 40px}
 .frow{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:24px 0 28px;border-top:1px solid #333}
 .frow:first-child{border-top:0;padding-top:0}
 .frow h2{margin:0;font-size:15px;font-weight:600}
@@ -276,30 +276,6 @@ footer a.u{display:inline-block;margin-top:18px;font-size:15px;font-weight:600}
     <button class="pp" type="button" aria-pressed="false">일시정지</button>
   </div>
 </section>
-
-<div class="pill" role="group" aria-label="프로젝트 걸러 보기">
-  <span>유니프로모션의</span>
-  <select id="f-biz" aria-label="사업">
-    <option value="all">모든 일</option>
-    <optgroup label="APPAREL &amp; TRADING">
-      <option value="a">의류 프로모션</option>
-      <option value="s">의류 무역·SCM</option>
-      <option value="d">해외 브랜드 유통</option>
-    </optgroup>
-    <optgroup label="EXHIBITION &amp; ENTERTAINMENT">
-      <option value="g">전시 굿즈</option>
-      <option value="k">코리안 파빌리온</option>
-    </optgroup>
-  </select>
-  <span>·</span>
-  <select id="f-cli" aria-label="분야">
-    <option value="all">모든 분야</option>
-    <option value="x">전시·미술관</option>
-    <option value="t">테마파크</option>
-    <option value="b">브랜드</option>
-    <option value="f">해외 박람회</option>
-  </select>
-</div>
 
 <section class="feat light" id="apparel">
   <p class="tab">APPAREL &amp; TRADING</p>
@@ -359,7 +335,7 @@ footer a.u{display:inline-block;margin-top:18px;font-size:15px;font-weight:600}
 
 <section class="latest" id="work" style="scroll-margin-top:60px">
   <a class="more" href="#work">최근 프로젝트 보기 ↓</a>
-  <p class="count"><b id="n">13</b>개 프로젝트</p>
+  
   <div class="grid">
     <a class="lg" data-b="s" data-c="b" href="#"><div class="ph"><img src="img/01.webp" alt=""></div><b>인도 협력 공장</b><span>의류 대량 생산 라인 관리</span></a>
     <a data-b="g" data-c="t" href="#"><div class="ph"><img src="img/10.webp" alt=""></div><b>레고랜드 코리아</b><span>테마파크 굿즈 텀블러·보틀</span></a>
@@ -495,19 +471,6 @@ footer a.u{display:inline-block;margin-top:18px;font-size:15px;font-weight:600}
     rp.onclick = () => { stop = !stop; rp.textContent = stop ? '재생' : '일시정지'; rp.setAttribute('aria-pressed', stop); };
   }
 
-  // 필터 문장: 사업·분야로 프로젝트 격자를 걸러 보기
-  const fb = document.getElementById('f-biz'), fc = document.getElementById('f-cli');
-  const items = [...document.querySelectorAll('.grid a')], n = document.getElementById('n'), empty = document.querySelector('.grid .empty');
-  const apply = () => {
-    let c = 0;
-    items.forEach(a => {
-      const ok = (fb.value === 'all' || a.dataset.b === fb.value) && (fc.value === 'all' || a.dataset.c === fc.value);
-      a.classList.toggle('hide', !ok); if (ok) c++;
-    });
-    n.textContent = c; empty.style.display = c ? 'none' : 'block';
-  };
-  const jump = () => { apply(); document.getElementById('work').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' }); };
-  fb.onchange = jump; fc.onchange = jump;
 
   // 상단 탭: 모바일 MENU 펼침, 지금 보고 있는 섹션의 탭을 버건디로
   const menu = document.querySelector('.top .menu'), nav = document.getElementById('gnb');
