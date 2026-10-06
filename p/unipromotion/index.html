@@ -294,6 +294,9 @@ p,li,dd,figcaption{text-wrap:pretty}
 /* 섹션 이름표: 줄 간격 넉넉히 */
 .sec>.lab{line-height:1.4;letter-spacing:-.01em}
 .sec>.lab small{line-height:1.4}
+/* 남은 16px 정리: 내려받기 줄 = Small, 입력칸·버튼 = Body (모바일 확대 방지 위해 16px 이상 유지) */
+.dl-list a{font-size:var(--fs-small)}
+.form input,.form select,.form textarea,.form .send,.form option{font-size:var(--fs-body)}
 </style>
 </head>
 <body>
