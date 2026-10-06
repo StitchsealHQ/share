@@ -678,6 +678,19 @@ body .trio,body .chips,body .cgrid{margin-top:48px}
 :root{--font-display:"NanumSquare",var(--font-text)}
 /* 10/6 사용자 요청: '최근 프로젝트' 머리말 가운데 → 왼쪽 */
 body .latest .more{text-align:left}
+/* ═══ 캡션 간격 (10/6, pentagram.com 카드 실측): 사진 → 제목 8px, 제목·설명은 같은 16px / 줄 높이 20px, 그 사이 여백 0 ═══ */
+body .grid b,body .feat .cards b{margin-top:8px;line-height:20px}
+body .grid span,body .feat .cards span{margin-top:0;line-height:20px}
+body .pgrid figcaption,body .docs figcaption,body .posters figcaption{margin-top:8px;line-height:20px}
+body .pgrid figcaption b{line-height:20px}
+body .split figcaption,body .film figcaption,body .wide figcaption{margin-top:8px!important;padding-top:0;line-height:20px}
+body .wide figcaption{padding:0 var(--gut)}
+body .ncards .th+.meta,body .lead-card .th+.meta{margin-top:8px}
+body .lead-card .th{margin-bottom:0}
+body .ncards b,body .lead-card b,body .mlist b{margin-top:4px;line-height:20px}
+body .ncards span.meta,body .lead-card .d,body .mlist .d,body .media .d{margin-top:0;line-height:20px}
+body .hero .cap p{line-height:20px}
+
 body{color:var(--charcoal);letter-spacing:-.01em;line-height:1.45}
 body .ph-head h1,body .feat h2,body .reel h2,body .mhead h2,body .docs h2,body .sec .ttl,body .feature .ttl,body .process .big{font-weight:300;letter-spacing:-.035em}
 body .ph-head h1,body .feat h2,body .reel h2,body .mhead h2,body .docs h2{line-height:1.08}
