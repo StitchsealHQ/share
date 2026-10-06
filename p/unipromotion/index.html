@@ -611,6 +611,9 @@ body .process .ptl{margin:0;font-family:var(--font-display);font-size:52px;font-
   body .grid a{grid-column:span 1}
   body .grid a.lg{grid-column:span 2}
 }
+/* 제목 문장을 뺀 섹션: 첫 내용을 왼쪽 이름표와 같은 높이에서 시작 */
+body .sec .body>.rows:first-child,body .sec .body>.squares:first-child{margin-top:0}
+@media (max-width:600px){body .process ol{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
