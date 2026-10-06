@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>한글 서체 비교 | 유니프로모션 시안</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/variable/woff2/SUIT-Variable.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css">
+<link rel="stylesheet" href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500&family=Noto+Sans+KR:wght@300;400;500&display=swap">
+<style>
+:root{--cream:#F7F5F0;--cream-deep:#EFEBE3;--burgundy:#5C1D24;--charcoal:#2C2C2C;--stone:#6B6560;--rule:#D9D3C8;--gut:clamp(16px,3vw,40px);--w:400}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--charcoal);font-family:"Pretendard Variable",Pretendard,sans-serif;word-break:keep-all}
+header{padding:48px var(--gut) 28px;border-bottom:1px solid var(--charcoal)}
+header h1{margin:0;font-size:clamp(28px,3vw,40px);font-weight:500;letter-spacing:-.03em}
+header p{margin:12px 0 0;max-width:40em;color:var(--stone);line-height:1.65;text-wrap:pretty}
+.ctrl{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:22px;font-size:14px}
+.ctrl button{font:inherit;font-weight:600;background:none;border:1px solid var(--rule);padding:8px 14px;cursor:pointer;color:inherit}
+.ctrl button[aria-pressed="true"]{background:var(--charcoal);border-color:var(--charcoal);color:var(--cream)}
+section{display:grid;grid-template-columns:240px 1fr;gap:18px 40px;padding:40px var(--gut);border-bottom:1px solid var(--rule)}
+.meta b{display:block;font-size:17px;font-weight:600}
+.meta span{display:block;margin-top:6px;font-size:13px;color:var(--stone);line-height:1.55}
+.meta .rec{display:inline-block;margin-top:10px;background:var(--burgundy);color:var(--cream);font-size:12px;font-weight:600;padding:2px 8px}
+.s{font-weight:var(--w)}
+.s .tab{margin:0 0 14px;font-size:13px;letter-spacing:.04em}
+.s h2{margin:0;font-size:clamp(32px,4.4vw,60px);line-height:1.14;letter-spacing:-.035em;font-weight:var(--w);text-wrap:balance}
+.s p{margin:18px 0 0;max-width:36em;font-size:17px;line-height:1.75;letter-spacing:-.01em}
+.s .en{margin-top:16px;font-size:22px;letter-spacing:-.01em}
+.s .nav{display:flex;flex-wrap:wrap;gap:6px 26px;margin-top:20px;font-size:13px;letter-spacing:.04em;font-weight:var(--w)}
+@media (max-width:800px){section{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <h1>Pentagram 느낌의 한글 서체 비교</h1>
+  <p>Pentagram 사이트는 Optimo의 'Plain' 한 서체를 350~400 굵기로만 씁니다. 굵은 글자 없이 조용하고 단정한 그로테스크입니다. 같은 문장을 후보 서체 6개로 보여 줍니다. 모두 무료로 웹에 쓸 수 있는 서체입니다.</p>
+  <div class="ctrl" role="group" aria-label="굵기">굵기
+    <button type="button" data-w="350" aria-pressed="false">350</button>
+    <button type="button" data-w="400" aria-pressed="true">400 (Pentagram 기본)</button>
+    <button type="button" data-w="500" aria-pressed="false">500 (지금 시안 제목)</button>
+  </div>
+</header>
+
+<main id="list"></main>
+
+<script>
+const FONTS = [
+  ["Pretendard Variable", "Pretendard (지금 시안)", "영문은 Inter 기반. 가장 중립적이고 단정함. 굵기 45~920 자유.", false],
+  ["Wanted Sans Variable", "원티드 산스", "Pretendard보다 한글 획이 곧고 영문 글자폭이 좁아, Plain처럼 조금 더 '설계된' 인상. 굵기 400~1000 (350을 고르면 가장 얇은 400으로 보임).", true],
+  ["SUIT Variable", "SUIT", "기하학적이고 반듯함. 영문 둥근 글자(O, C)가 Plain과 가장 비슷. 굵기 100~900.", true],
+  ["IBM Plex Sans KR", "IBM Plex Sans KR", "영문 끝맺음에 특징이 있어 개성이 강함. 기업적인 인상. 굵기 100~700 (이 비교에선 300~500만 불러옴).", false],
+  ["Spoqa Han Sans Neo", "스포카 한 산스 Neo", "한글이 작고 단단함. 화면 본문용. 굵기 5단계(100·300·400·500·700)라 350은 쓸 수 없음.", false],
+  ["Noto Sans KR", "본고딕 (Noto Sans KR)", "가장 표준적. 무난하지만 특징이 적어 브랜드 인상이 약함.", false],
+];
+const list = document.getElementById('list');
+list.innerHTML = FONTS.map(([fam, name, note, rec]) => `
+<section>
+  <div class="meta"><b>${name}</b><span>${note}</span>${rec ? '<span class="rec">추천</span>' : ''}</div>
+  <div class="s" style="font-family:'${fam}',sans-serif">
+    <p class="tab">EXHIBITION &amp; ENTERTAINMENT</p>
+    <h2>전시의 이야기를 굿즈로 만들고, 한국 기업을 해외 전시장에 세웁니다</h2>
+    <p>전시와 테마파크의 세계관을 상품으로 옮겨 기획, 샘플링, 해외 생산, 검수, 현장 납품까지 맡습니다. 중동 E&amp;L MENA의 공식 한국 에이전시로 코리안 파빌리온을 운영합니다.</p>
+    <p class="en">Accidentally Wes Anderson · IAAPA Expo 2024 · 168cm</p>
+    <div class="nav"><span>COMPANY</span><span>APPAREL &amp; TRADING</span><span>EXHIBITION &amp; ENTERTAINMENT</span><span>MEDIA &amp; PRESS</span><span>CONTACT</span></div>
+  </div>
+</section>`).join('');
+document.querySelectorAll('.ctrl button').forEach(b => b.onclick = () => {
+  document.querySelectorAll('.ctrl button').forEach(x => x.setAttribute('aria-pressed', x === b));
+  document.documentElement.style.setProperty('--w', b.dataset.w);
+});
+</script>
+</body>
+</html>
