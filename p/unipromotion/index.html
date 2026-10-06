@@ -245,7 +245,6 @@ footer a.u{display:inline-block;margin-top:18px;font-size:15px;font-weight:600}
   .fl{grid-template-columns:90px 1fr}
   .track img{height:240px}
 }
-@media (prefers-reduced-motion:reduce){.reel-foot .rp{display:none}}
 
 .hero{height:clamp(460px,70vh,760px);min-height:0;max-height:none}
 @media (max-width:900px){.hero{height:58vh;min-height:360px}}
@@ -387,7 +386,7 @@ p,li,dd,figcaption{text-wrap:pretty}
       <li><span>Poster Dump</span><img src="img/fcf0b3c116.webp" alt="Poster Dump 전시 포스터"></li>
     </ul>
   </div>
-  <div class="reel-foot"><button class="rp" type="button" aria-pressed="false">일시정지</button><a href="exhibition.html#archive">더보기</a></div>
+  <div class="reel-foot"><a href="exhibition.html#archive">더보기</a></div>
 </section>
 
 <section class="latest" id="work" style="scroll-margin-top:60px">
@@ -506,14 +505,14 @@ p,li,dd,figcaption{text-wrap:pretty}
 
 
   // 함께한 전시: 아주 느리게 흐름(초당 24px). 마우스 올림·키보드 초점·직접 넘김 중에는 멈춤, 움직임 줄이기면 흐르지 않음
-  const track = document.querySelector('.track'), list = track.querySelector('ul'), rp = document.querySelector('.reel-foot .rp');
+  const track = document.querySelector('.track'), list = track.querySelector('ul');
   if (!reduce) {
     [...list.children].forEach(li => { const c = li.cloneNode(true); c.setAttribute('aria-hidden', 'true'); c.querySelector('img').alt = ''; list.appendChild(c); });
-    let stop = false, over = false, touch = 0, last = 0, pos = 0;
+    let over = false, touch = 0, last = 0, pos = 0;
     const half = () => list.children[list.children.length / 2].offsetLeft - list.children[0].offsetLeft;
     const step = t => {
       const dt = last ? Math.min(t - last, 64) : 0; last = t;
-      if (!stop && !over && !document.hidden && Date.now() > touch) {
+      if (!over && !document.hidden && Date.now() > touch) {
         pos += dt * 0.024;
         if (pos >= half()) pos -= half();
         track.scrollLeft = pos;
@@ -526,7 +525,6 @@ p,li,dd,figcaption{text-wrap:pretty}
     track.addEventListener('focusin', () => over = true);
     track.addEventListener('focusout', () => over = false);
     ['wheel', 'touchstart', 'pointerdown'].forEach(ev => track.addEventListener(ev, () => touch = Date.now() + 3000, { passive: true }));
-    rp.onclick = () => { stop = !stop; rp.textContent = stop ? '재생' : '일시정지'; rp.setAttribute('aria-pressed', stop); };
   }
 
   // 마우스로 잡고 끌어서 좌우로 넘기기 (터치는 브라우저 기본 스크롤 그대로). 끄는 동안과 놓은 뒤 3초는 흐름 멈춤
