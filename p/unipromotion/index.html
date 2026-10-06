@@ -5,7 +5,9 @@
 <meta name="robots" content="noindex">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>유니프로모션 메인 시안 4안 (탭 구성)</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://hangeul.pstatic.net/hangeul_static/css/maru-buri.css">
 <style>
 /* 구조·동작은 pentagram.com 메인을 참고해 새로 작성. 색은 아이리스님 브리프(크림·버건디·차콜). */
 :root{
@@ -517,6 +519,28 @@ body .feat .subs a:hover{color:var(--burgundy);border-color:var(--burgundy)}
 .viewer button{font:inherit;background:var(--burgundy);color:var(--cream);border:0;padding:8px 14px;cursor:pointer}
 .viewer button:hover{background:var(--burgundy-deep)}
 .zoom-hint{margin:12px 0 0;font-size:13px;color:var(--stone)}
+
+/* ═══ 서체 다시 잡기 (10/6) ═══
+   원티드 산스 하나 = 한국 스타트업·AI 생성 페이지의 기본값(Pretendard 계열)과 같은 인상 → T1·T6.
+   업의 세계(전시장 벽 캡션, 의류 라벨)에서: 제목 = 마루 부리(전시 도록·벽 캡션 같은 단정한 명조), 본문·메뉴 = IBM Plex Sans KR(라벨·사양서 같은 산업적 고딕) */
+:root{--font-display:"MaruBuri","Noto Serif KR",serif;--font-text:"IBM Plex Sans KR",-apple-system,"Noto Sans KR",sans-serif}
+body{font-family:var(--font-text);letter-spacing:0}
+button,input,select,textarea{font-family:inherit}
+body .ph-head h1,body .feat h2,body .reel h2,body .mhead h2,body .docs h2,body .sec .ttl,body .feature .ttl,body .process .big{font-family:var(--font-display);font-weight:400;letter-spacing:-.01em}
+body .feat h2,body .reel h2,body .mhead h2,body .docs h2,body .ph-head h1{line-height:1.18}
+body .sec .ttl,body .feature .ttl{line-height:1.3}
+body .process .big{line-height:1.4}
+body .ph-head .lead,body .feat .intro,body .reel .say,body .sec .txt,body .docs .about p{letter-spacing:0}
+
+/* ═══ 하위 페이지 머리 (Pentagram 'Work' 페이지): 짧은 페이지 이름 → 넓은 여백 → 한 줄 설명과 페이지 안 메뉴 ═══ */
+body .ph-head{padding:64px var(--gut) 0}
+body .ph-head h1{max-width:none}
+body .ph-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px 32px;margin-top:120px}
+body .ph-say{margin:0;max-width:44em;font-size:16px;line-height:1.5;color:var(--stone)}
+body .ph-row .subnav{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px 24px;margin:0;padding:0;border:0;background:none;font-size:16px}
+body .wide{margin-top:48px}
+body .trio,body .chips,body .cgrid{margin-top:48px}
+@media (max-width:900px){body .ph-row{flex-direction:column;margin-top:56px}body .ph-row .subnav{justify-content:flex-start}}
 </style>
 </head>
 <body>
@@ -534,19 +558,21 @@ body .feat .subs a:hover{color:var(--burgundy);border-color:var(--burgundy)}
 </header>
 <h1 class="sr">유니프로모션 — 의류·굿즈 기획과 해외 생산, 해외 전시 코리안 파빌리온</h1>
 
-<section class="hero" aria-roledescription="carousel" aria-label="대표 프로젝트">
-  <figure class="sl on"><img src="img/f1230edb37.webp" alt="파랗게 칠한 오렌지 반쪽과 속살"></figure>
-  <figure class="sl"><img src="img/2f649b635b.webp" alt="문도멘도 전시 포스터, 우산, 스티커" style="object-position:left center"></figure>
-  <figure class="sl"><img src="img/83be051d37.webp" alt="인도 협력 공장 봉제 라인"></figure>
-  <figure class="sl"><img src="img/a815bfa56d.webp" alt="인도 협력 공장 검품 작업" style="object-position:center 45%"></figure>
+<section class="hero" aria-roledescription="carousel" aria-label="유니프로모션이 하는 일">
+  <figure class="sl on"><img src="img/621cef6b53.webp" alt="갈색 벽에 그림이 걸린 미술관 전시실"></figure>
+  <figure class="sl"><img src="img/d296dc48a1.webp" alt="크림, 갈색, 버건디 옷이 걸린 옷걸이"></figure>
+  <figure class="sl"><img src="img/833e41cbc0.webp" alt="갈색과 노란색 자수실 타래"></figure>
+  <figure class="sl"><img src="img/b3d87ef0a6.webp" alt="크림색에서 살구색으로 쌓인 원단" style="object-position:center 35%"></figure>
+  <figure class="sl"><img src="img/43193ecae1.webp" alt="흰 천을 바늘로 꿰매는 손"></figure>
   <div class="cap" aria-live="polite">
-    <p class="on"><b>UNIPROMOTION</b>브랜드의 가치를 높이는 상품을 기획하고 만듭니다.</p>
-    <p><b>문도멘도</b>일러스트 작가 전시의 우산과 스티커 등 굿즈를 기획하고 생산했습니다.</p>
-    <p><b>인도 협력 공장</b>브랜드 의류를 대량 생산하는 협력 공장의 봉제 라인. 생산 일정과 품질을 현지에서 관리합니다.</p>
-    <p><b>출고 전 검품</b>완성된 제품은 출고 전에 한 장씩 검수합니다.</p>
+    <p class="on"><b>전시 굿즈 기획·생산·납품</b>전시의 이야기를 관람객이 가져가는 상품으로 만듭니다.</p>
+    <p><b>의류 프로모션 기획·생산</b>브랜드와 기업의 프로모션 의류를 기획하고 만듭니다.</p>
+    <p><b>샘플링과 디테일</b>자수와 프린트, 소재와 색까지 샘플로 확인한 뒤 생산합니다.</p>
+    <p><b>의류 B2B 무역 &amp; SCM</b>소재 소싱부터 생산, 통관, 납품까지 공급망을 관리합니다.</p>
+    <p><b>품질 관리</b>생산 현장에서 초기·중간·최종 세 번 검수합니다.</p>
   </div>
   <div class="dots" role="group" aria-label="슬라이드 선택">
-    <button aria-label="1번" aria-current="true"></button><button aria-label="2번"></button><button aria-label="3번"></button><button aria-label="4번"></button>
+    <button aria-label="1번" aria-current="true"></button><button aria-label="2번"></button><button aria-label="3번"></button><button aria-label="4번"></button><button aria-label="5번"></button>
   </div>
 </section>
 
@@ -555,10 +581,10 @@ body .feat .subs a:hover{color:var(--burgundy);border-color:var(--burgundy)}
   <p class="intro">브랜드와 기업의 프로모션 의류를 기획하고, 인도를 비롯한 해외 협력 공장에서 생산합니다. 원단 소싱부터 검수, 통관까지 직접 관리하고, 해외 브랜드의 국내외 유통도 맡습니다.</p>
   <ul class="subs"><li><a href="apparel.html#promo">의류 프로모션 기획·생산</a></li><li><a href="apparel.html#scm">의류 B2B 무역 &amp; SCM</a></li><li><a href="apparel.html#dist">해외 브랜드 유통·컨설팅</a></li></ul>
   <div class="cards">
-    <a href="apparel.html#promo"><img src="img/83be051d37.webp" alt=""><b>인도 협력 공장</b><span>의류 대량 생산 라인</span></a>
-    <a href="apparel.html#promo"><img src="img/d42f7dc781.webp" alt=""><b>Accidentally Wes Anderson</b><span>전시 굿즈 바람막이 3색</span></a>
-    <a href="apparel.html#promo"><img src="img/efff865a60.webp" alt=""><b>레고랜드 코리아</b><span>어린이 가운 4색</span></a>
-    <a href="apparel.html#promo"><img src="img/e546289e8d.webp" alt=""><b>프로모션 모자</b><span class="todo">고객사 확인</span></a>
+    <a href="apparel.html#promo"><img src="img/e3e8ffabf6.webp" alt=""><b>인도 협력 공장</b><span>의류 대량 생산 라인</span></a>
+    <a href="apparel.html#promo"><img src="img/6187d15d39.webp" alt=""><b>Accidentally Wes Anderson</b><span>전시 굿즈 바람막이 3색</span></a>
+    <a href="apparel.html#promo"><img src="img/eb7053c3d5.webp" alt=""><b>레고랜드 코리아</b><span>어린이 가운 4색</span></a>
+    <a href="apparel.html#promo"><img src="img/45283d5c8f.webp" alt=""><b>프로모션 모자</b><span class="todo">고객사 확인</span></a>
   </div>
   <a class="go" href="apparel.html">Apparel &amp; Trading 전체 보기</a>
 </section>
@@ -567,19 +593,19 @@ body .feat .subs a:hover{color:var(--burgundy);border-color:var(--burgundy)}
   <h2 class="more">최근 프로젝트</h2>
   
   <div class="grid">
-    <a class="lg" data-b="s" data-c="b" href="#"><div class="ph"><img src="img/83be051d37.webp" alt=""></div><b>인도 협력 공장</b><span>의류 대량 생산 라인</span></a>
-    <a data-b="g" data-c="t" href="#"><div class="ph"><img src="img/1814c938d6.webp" alt=""></div><b>레고랜드 코리아</b><span>테마파크 굿즈 텀블러·보틀</span></a>
-    <a data-b="a" data-c="t" href="#"><div class="ph"><img src="img/efff865a60.webp" alt=""></div><b>레고랜드 코리아</b><span>어린이 가운 4색</span></a>
-    <a data-b="g" data-c="x" href="#"><div class="ph"><img src="img/2b41ee6a8c.webp" alt=""></div><b>Accidentally Wes Anderson</b><span>스노볼</span></a>
-    <a data-b="a" data-c="x" href="#"><div class="ph"><img src="img/08d6f691c7.webp" alt=""></div><b>Accidentally Wes Anderson</b><span>맨투맨</span></a>
-    <a data-b="k" data-c="f" href="#"><div class="ph"><img src="img/8933355047.webp" alt="" style="object-position:center top"></div><b>E&amp;L MENA 2027</b><span>두바이 한국관 공식 에이전시</span></a>
-    <a class="lg" data-b="s" data-c="b" href="#"><div class="ph"><img src="img/a815bfa56d.webp" alt="" style="object-position:center 45%"></div><b>출고 전 검품</b><span>인도 협력 공장 검수</span></a>
-    <a data-b="g" data-c="x" href="#"><div class="ph"><img src="img/cd082e85a3.webp" alt=""></div><b>요시고 사진전</b><span>마스킹 테이프</span></a>
-    <a data-b="g" data-c="x" href="#"><div class="ph"><img src="img/0107ed5c59.webp" alt=""></div><b>레드룸</b><span>와인잔과 패키지</span></a>
-    <a data-b="g" data-c="x" href="#"><div class="ph"><img src="img/49b6b021fb.webp" alt=""></div><b>유미의 세포들 특별전</b><span>캐릭터 굿즈</span></a>
-    <a data-b="g" data-c="b" href="#"><div class="ph"><img src="img/10fb15c772.webp" alt=""></div><b>STETS</b><span>자체 브랜드 식기</span></a>
-    <a data-b="g" data-c="x" href="#"><div class="ph"><img src="img/301ff6c071.webp" alt=""></div><b>문도멘도</b><span>전시 굿즈 스티커</span></a>
-    <a data-b="k" data-c="f" href="#"><div class="ph"><img src="img/58f79a238c.webp" alt="" style="object-position:center 25%"></div><b>IAAPA Expo</b><span>해외 박람회 유니프로모션 부스</span></a>
+    <a class="lg" data-b="s" data-c="b" href="#"><div class="ph"><img src="img/e3e8ffabf6.webp" alt=""></div><b>인도 협력 공장</b><span>의류 대량 생산 라인</span></a>
+    <a data-b="g" data-c="t" href="#"><div class="ph"><img src="img/49acdcf06a.webp" alt=""></div><b>레고랜드 코리아</b><span>테마파크 굿즈 텀블러·보틀</span></a>
+    <a data-b="a" data-c="t" href="#"><div class="ph"><img src="img/eb7053c3d5.webp" alt=""></div><b>레고랜드 코리아</b><span>어린이 가운 4색</span></a>
+    <a data-b="g" data-c="x" href="#"><div class="ph"><img src="img/4739705314.webp" alt=""></div><b>Accidentally Wes Anderson</b><span>스노볼</span></a>
+    <a data-b="a" data-c="x" href="#"><div class="ph"><img src="img/124b3008cf.webp" alt=""></div><b>Accidentally Wes Anderson</b><span>맨투맨</span></a>
+    <a data-b="k" data-c="f" href="#"><div class="ph"><img src="img/dd4e60b2a1.webp" alt="" style="object-position:center top"></div><b>E&amp;L MENA 2027</b><span>두바이 한국관 공식 에이전시</span></a>
+    <a class="lg" data-b="s" data-c="b" href="#"><div class="ph"><img src="img/a067f55148.webp" alt="" style="object-position:center 45%"></div><b>출고 전 검품</b><span>인도 협력 공장 검수</span></a>
+    <a data-b="g" data-c="x" href="#"><div class="ph"><img src="img/6830ce77e1.webp" alt=""></div><b>요시고 사진전</b><span>마스킹 테이프</span></a>
+    <a data-b="g" data-c="x" href="#"><div class="ph"><img src="img/b8ff792178.webp" alt=""></div><b>레드룸</b><span>와인잔과 패키지</span></a>
+    <a data-b="g" data-c="x" href="#"><div class="ph"><img src="img/259e0762c4.webp" alt=""></div><b>유미의 세포들 특별전</b><span>캐릭터 굿즈</span></a>
+    <a data-b="g" data-c="b" href="#"><div class="ph"><img src="img/6d166f9403.webp" alt=""></div><b>STETS</b><span>자체 브랜드 식기</span></a>
+    <a data-b="g" data-c="x" href="#"><div class="ph"><img src="img/63fc2cfe27.webp" alt=""></div><b>문도멘도</b><span>전시 굿즈 스티커</span></a>
+    <a data-b="k" data-c="f" href="#"><div class="ph"><img src="img/066f514dfe.webp" alt="" style="object-position:center 25%"></div><b>IAAPA Expo</b><span>해외 박람회 유니프로모션 부스</span></a>
     <p class="empty">이 조건에 맞는 프로젝트는 준비 중입니다.</p>
   </div>
 </section>
@@ -591,22 +617,22 @@ body .feat .subs a:hover{color:var(--burgundy);border-color:var(--burgundy)}
   </div>
   <div class="track" tabindex="0" aria-label="전시 포스터 목록. 좌우로 넘겨 볼 수 있습니다">
     <ul>
-      <li><span>Accidentally Wes Anderson</span><img src="img/a8d99674d8.webp" alt="Accidentally Wes Anderson 전시 포스터"></li>
-      <li><span>베르너 브롱크호스트</span><img src="img/5bc6e7b6b0.webp" alt="베르너 브롱크호스트 전시 포스터"></li>
-      <li><span>요시고 사진전</span><img src="img/e5d19bd3bf.webp" alt="요시고 사진전 전시 포스터"></li>
-      <li><span>레드룸</span><img src="img/81b02d0570.webp" alt="레드룸 전시 포스터"></li>
-      <li><span>무민</span><img src="img/9fc5a8775d.webp" alt="무민 전시 포스터"></li>
-      <li><span>힙노시스</span><img src="img/2a445ad80b.webp" alt="힙노시스 전시 포스터"></li>
-      <li><span>유미의 세포들</span><img src="img/9f3a01e953.webp" alt="유미의 세포들 전시 포스터"></li>
-      <li><span>Accidentally Wes Anderson II</span><img src="img/d9b512f83b.webp" alt="Accidentally Wes Anderson II 전시 포스터"></li>
-      <li><span>문도멘도</span><img src="img/02cc5436e2.webp" alt="문도멘도 전시 포스터"></li>
-      <li><span>어노니머스 프로젝트</span><img src="img/047da9501d.webp" alt="어노니머스 프로젝트 전시 포스터"></li>
-      <li><span>나탈리 카르푸센코</span><img src="img/26962b9cb8.webp" alt="나탈리 카르푸센코 전시 포스터"></li>
-      <li><span>슈타이들 북 컬처</span><img src="img/bc9a3874a2.webp" alt="슈타이들 북 컬처 전시 포스터"></li>
-      <li><span>이경준 사진전</span><img src="img/8cddccc963.webp" alt="이경준 사진전 전시 포스터"></li>
-      <li><span>UTOPIA</span><img src="img/c88e0e7db6.webp" alt="UTOPIA 전시 포스터"></li>
-      <li><span>Art in Life, Life in Art</span><img src="img/b5f2094576.webp" alt="Art in Life, Life in Art 전시 포스터"></li>
-      <li><span>Poster Dump</span><img src="img/fcf0b3c116.webp" alt="Poster Dump 전시 포스터"></li>
+      <li><span>Accidentally Wes Anderson</span><img src="img/9879107af6.webp" alt="Accidentally Wes Anderson 전시 포스터"></li>
+      <li><span>베르너 브롱크호스트</span><img src="img/8597fff1d4.webp" alt="베르너 브롱크호스트 전시 포스터"></li>
+      <li><span>요시고 사진전</span><img src="img/65ad3e3d6b.webp" alt="요시고 사진전 전시 포스터"></li>
+      <li><span>레드룸</span><img src="img/b3f2951bb6.webp" alt="레드룸 전시 포스터"></li>
+      <li><span>무민</span><img src="img/3d1f3992b0.webp" alt="무민 전시 포스터"></li>
+      <li><span>힙노시스</span><img src="img/58eb2210e7.webp" alt="힙노시스 전시 포스터"></li>
+      <li><span>유미의 세포들</span><img src="img/2cfa4f9452.webp" alt="유미의 세포들 전시 포스터"></li>
+      <li><span>Accidentally Wes Anderson II</span><img src="img/760f997c6e.webp" alt="Accidentally Wes Anderson II 전시 포스터"></li>
+      <li><span>문도멘도</span><img src="img/22341ebd50.webp" alt="문도멘도 전시 포스터"></li>
+      <li><span>어노니머스 프로젝트</span><img src="img/1150109da5.webp" alt="어노니머스 프로젝트 전시 포스터"></li>
+      <li><span>나탈리 카르푸센코</span><img src="img/17269d30cf.webp" alt="나탈리 카르푸센코 전시 포스터"></li>
+      <li><span>슈타이들 북 컬처</span><img src="img/14681abbb5.webp" alt="슈타이들 북 컬처 전시 포스터"></li>
+      <li><span>이경준 사진전</span><img src="img/560a151c81.webp" alt="이경준 사진전 전시 포스터"></li>
+      <li><span>UTOPIA</span><img src="img/214f3e35fc.webp" alt="UTOPIA 전시 포스터"></li>
+      <li><span>Art in Life, Life in Art</span><img src="img/262ae34af9.webp" alt="Art in Life, Life in Art 전시 포스터"></li>
+      <li><span>Poster Dump</span><img src="img/10b2349851.webp" alt="Poster Dump 전시 포스터"></li>
     </ul>
   </div>
   <div class="reel-foot"><a href="exhibition.html#archive">더보기</a></div>
@@ -627,10 +653,10 @@ body .feat .subs a:hover{color:var(--burgundy);border-color:var(--burgundy)}
   <p class="intro">전시와 테마파크의 이야기를 굿즈로 옮겨 기획부터 현장 납품까지 맡습니다. 중동 E&amp;L MENA의 공식 한국 에이전시로 코리안 파빌리온을 운영합니다.</p>
   <ul class="subs"><li><a href="exhibition.html#goods">전시 굿즈 기획·생산·납품</a></li><li><a href="exhibition.html#pavilion">해외 전시 코리안 파빌리온</a></li></ul>
   <div class="cards">
-    <a href="exhibition.html#goods"><img src="img/2b41ee6a8c.webp" alt=""><b>Accidentally Wes Anderson</b><span>전시 굿즈 스노볼</span></a>
-    <a href="exhibition.html#goods"><img src="img/ee88a34895.webp" alt=""><b>레드룸</b><span>작품 퍼즐과 패키지</span></a>
-    <a href="exhibition.html#goods"><img src="img/1814c938d6.webp" alt=""><b>레고랜드 코리아</b><span>테마파크 굿즈 텀블러·보틀</span></a>
-    <a href="exhibition.html#goods"><img src="img/8933355047.webp" alt="" style="object-position:center top"><b>E&amp;L MENA 2027</b><span>두바이 코리안 파빌리온</span></a>
+    <a href="exhibition.html#goods"><img src="img/4739705314.webp" alt=""><b>Accidentally Wes Anderson</b><span>전시 굿즈 스노볼</span></a>
+    <a href="exhibition.html#goods"><img src="img/eae44f8048.webp" alt=""><b>레드룸</b><span>작품 퍼즐과 패키지</span></a>
+    <a href="exhibition.html#goods"><img src="img/49acdcf06a.webp" alt=""><b>레고랜드 코리아</b><span>테마파크 굿즈 텀블러·보틀</span></a>
+    <a href="exhibition.html#goods"><img src="img/dd4e60b2a1.webp" alt="" style="object-position:center top"><b>E&amp;L MENA 2027</b><span>두바이 코리안 파빌리온</span></a>
   </div>
   <a class="go" href="exhibition.html">Exhibition &amp; Entertainment 전체 보기</a>
 </section>
@@ -642,7 +668,7 @@ body .feat .subs a:hover{color:var(--burgundy);border-color:var(--burgundy)}
   </div>
   <div class="mgrid">
     <a class="lead-card" href="media.html">
-      <div class="th"><img src="img/bdf20400b2.webp" alt=""></div>
+      <div class="th"><img src="img/6e86ff2bcf.webp" alt=""></div>
       <p class="meta"><span class="tg">전시</span><span class="todo">2026.○○</span></p>
       <b>E&amp;L MENA 공식 한국 에이전시 계약, 코리안 파빌리온 론칭</b>
       <span class="d">중동 대규모 레저·엔터테인먼트 박람회의 한국관을 운영합니다.</span>
@@ -663,10 +689,10 @@ body .feat .subs a:hover{color:var(--burgundy);border-color:var(--burgundy)}
   </div>
   <h3 class="sub">인증·서류</h3>
   <div class="row">
-    <figure><img src="img/73d31ddf2e.webp" alt=""><figcaption>여성기업 확인서</figcaption></figure>
-    <figure><img src="img/37eeb37e60.webp" alt=""><figcaption>우수기술기업 인증</figcaption></figure>
-    <figure><img src="img/f5770093ec.webp" alt=""><figcaption>기업부설연구소 인정</figcaption></figure>
-    <figure><img src="img/450df8c6e7.webp" alt=""><figcaption>IAAPA 2024 회원</figcaption></figure>
+    <figure><img src="img/7003117320.webp" alt=""><figcaption>여성기업 확인서</figcaption></figure>
+    <figure><img src="img/2b3b39ad50.webp" alt=""><figcaption>우수기술기업 인증</figcaption></figure>
+    <figure><img src="img/a906ff3aae.webp" alt=""><figcaption>기업부설연구소 인정</figcaption></figure>
+    <figure><img src="img/08969ba1a9.webp" alt=""><figcaption>IAAPA 2024 회원</figcaption></figure>
     <div class="dl">
       <p class="zoom-hint">인증서를 누르면 크게 볼 수 있습니다.</p>
       <p>디자인등록 4건, 상표등록 2건(STETS) 보유</p>
