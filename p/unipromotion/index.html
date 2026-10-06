@@ -297,6 +297,11 @@ p,li,dd,figcaption{text-wrap:pretty}
 .sec>.lab small{line-height:1.4}
 /* 남은 16px 정리: 내려받기 줄 = Small, 입력칸·버튼 = Body (모바일 확대 방지 위해 16px 이상 유지) */
 .dl-list a{font-size:var(--fs-small)}
+/* 10/6: APPAREL 섹션 = 페이지 기본 크림 + 액자 없음 (파란 첫 화면 옆에서 회베이지가 탁해 보이던 문제, 흰색 세 겹 정리) */
+.feat.light{background:var(--cream);padding-top:clamp(72px,8vw,112px)}
+.feat.light .tab{border-top:1px solid var(--charcoal);padding-top:14px}
+.light .cards{background:none;padding:0;gap:18px}
+.light .cards a{background:none}
 /* 10/6: 제목 굵기 500 → 400 (Pentagram처럼 굵은 제목 없이) */
 .ph-head h1,.feat h2,.process .big,.mhead h2,.docs h2,.sec .ttl,.feature .ttl,.latest .more{font-weight:400}
 .process .tab{margin:0 0 18px;font-weight:600;letter-spacing:.04em;color:var(--on-dark-muted)}
