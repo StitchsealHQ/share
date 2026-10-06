@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="robots" content="noindex">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>유니프로모션 메인 시안 4안 (탭 구성)</title>
+<title>COMPANY | 유니프로모션 하위 페이지 시안</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
 /* 구조·동작은 pentagram.com 메인을 참고해 새로 작성. 색은 아이리스님 브리프(크림·버건디·차콜). */
@@ -244,15 +244,139 @@ footer a.u{display:inline-block;margin-top:18px;font-size:15px;font-weight:600}
   .track img{height:240px}
 }
 @media (prefers-reduced-motion:reduce){.reel-foot .rp{display:none}}
+
+/* ── 하위 페이지 공통 ── */
+.ph-head{padding:clamp(64px,8vw,120px) var(--gut) clamp(36px,4vw,56px)}
+.ph-head .tab{margin:0 0 22px;font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--burgundy)}
+.ph-head h1{margin:0;max-width:1180px;font-size:clamp(40px,5.2vw,84px);font-weight:500;line-height:1.08;letter-spacing:-.045em}
+.ph-head .lead{margin:28px 0 0;max-width:680px;font-size:clamp(17px,1.4vw,20px);line-height:1.7;color:var(--stone)}
+.subnav{position:sticky;top:60px;z-index:15;background:var(--cream);margin:0 var(--gut);display:flex;flex-wrap:wrap;gap:6px 28px;
+  border-top:1px solid var(--charcoal);border-bottom:1px solid var(--rule);padding:13px 0;font-size:14px;font-weight:600}
+.subnav a{transition:color .2s}
+.subnav a:hover{color:var(--burgundy)}
+.wide{margin:clamp(40px,5vw,72px) 0 0}
+.wide img{width:100%;aspect-ratio:21/9;object-fit:cover}
+.wide figcaption,.cap-s{padding:10px var(--gut) 0;font-size:13px;color:var(--stone)}
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding:0 var(--gut);margin-top:clamp(40px,5vw,72px)}
+.trio img{width:100%;aspect-ratio:4/5;object-fit:cover;background:#fff}
+
+.sec{display:grid;grid-template-columns:repeat(12,1fr);gap:0 18px;padding:clamp(80px,9vw,140px) var(--gut) 0;scroll-margin-top:110px}
+.sec>.lab{grid-column:1/4;margin:0;border-top:2px solid var(--charcoal);padding-top:14px;font-size:15px;font-weight:600}
+.sec>.lab small{display:block;margin-top:4px;font-size:13px;font-weight:500;color:var(--stone)}
+.sec>.body{grid-column:4/13;border-top:1px solid var(--rule);padding-top:14px}
+.sec h2{margin:0;max-width:860px;font-size:clamp(28px,2.8vw,44px);font-weight:500;line-height:1.18;letter-spacing:-.035em}
+.sec .txt{margin:22px 0 0;max-width:680px;font-size:17px;line-height:1.75}
+.sec .txt+.txt{margin-top:14px}
+.sec .note{margin:16px 0 0;font-size:14px;color:var(--stone)}
+
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px 18px;margin-top:44px}
+.pgrid.c3{grid-template-columns:repeat(3,1fr)}
+.pgrid figure{margin:0}
+.pgrid img{width:100%;aspect-ratio:1/1;object-fit:cover;background:#fff}
+.pgrid.wideimg img{aspect-ratio:4/3}
+.pgrid figcaption{margin-top:10px;font-size:14px;line-height:1.45;color:var(--stone)}
+.pgrid figcaption b{display:block;font-size:15px;font-weight:600;color:var(--charcoal)}
+.posters{display:grid;grid-template-columns:repeat(6,1fr);gap:28px 14px;margin-top:44px}
+.posters figure{margin:0}
+.posters img{width:100%;aspect-ratio:3/4;object-fit:cover;background:var(--cream-deep);transition:opacity .2s}
+@media (hover:hover){.posters figure:hover img{opacity:.85}}
+.posters figcaption{margin-top:8px;font-size:13px;line-height:1.4;font-weight:600}
+
+.rows{margin:36px 0 0;padding:0;list-style:none;border-top:1px solid var(--charcoal)}
+.rows li{display:grid;grid-template-columns:200px 1fr;gap:18px;padding:18px 0;border-bottom:1px solid var(--rule);font-size:16px}
+.rows li>b{font-weight:600}
+.rows li>span{color:var(--charcoal)}
+.rows li small{display:block;color:var(--stone);font-size:14px;margin-top:2px}
+
+.steps{list-style:none;margin:44px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:36px 18px;counter-reset:s}
+.steps li{border-top:1px solid var(--charcoal);padding-top:14px}
+.steps li::before{counter-increment:s;content:counter(s);display:block;font-size:14px;color:var(--stone);margin-bottom:6px}
+.steps h3{margin:0;font-size:20px;font-weight:600;letter-spacing:-.02em}
+.steps h3 small{display:block;font-size:13px;font-weight:400;color:var(--stone)}
+.steps p{margin:10px 0 0;font-size:15px;color:var(--stone)}
+
+.empty-ph{display:flex;align-items:center;justify-content:center;background:var(--cream-deep);color:var(--stone);font-size:13px;text-align:center;padding:12px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:44px}
+.split img{width:100%;aspect-ratio:4/3;object-fit:cover;background:#fff}
+
+.dl-list{margin-top:36px;border-top:1px solid var(--charcoal);max-width:640px}
+.dl-list a{display:flex;justify-content:space-between;border-bottom:1px solid var(--rule);padding:16px 0;font-weight:600;transition:color .2s}
+.dl-list a:hover{color:var(--burgundy)}
+.dl-list a span{font-weight:500;color:var(--stone)}
+
+/* 뉴스룸 */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 var(--gut)}
+.chips button{background:none;border:1px solid var(--rule);padding:8px 16px;font-size:14px;font-weight:600;cursor:pointer;transition:border-color .2s,color .2s,background .2s}
+.chips button:hover{border-color:var(--charcoal)}
+.chips button[aria-pressed="true"]{background:var(--charcoal);border-color:var(--charcoal);color:var(--cream)}
+.chips button:active{transform:scale(.98)}
+.feature{display:grid;grid-template-columns:7fr 5fr;gap:18px;margin:44px var(--gut) 0;align-items:end}
+.feature .fimg{aspect-ratio:16/10;background:#fff;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.feature .fimg img{width:70%;height:auto;object-fit:contain}
+.feature h2{margin:10px 0 0;font-size:clamp(26px,2.4vw,38px);font-weight:500;line-height:1.2;letter-spacing:-.03em}
+.feature p{margin:16px 0 0;font-size:16px;line-height:1.7;color:var(--stone)}
+.meta{font-size:13px;color:var(--stone)}
+.meta .tg{display:inline-block;background:var(--cream-deep);color:var(--charcoal);padding:1px 8px;margin-right:8px;font-weight:600}
+.ncards{display:grid;grid-template-columns:repeat(3,1fr);gap:40px 18px;margin:56px var(--gut) 0}
+.ncards a{display:block}
+.ncards .th{aspect-ratio:4/3;overflow:hidden}
+.ncards .th img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
+@media (hover:hover){.ncards a:hover .th img{transform:scale(1.02)}.ncards a:hover b{color:var(--burgundy)}}
+.ncards b{display:block;margin-top:8px;font-size:19px;font-weight:600;line-height:1.35;letter-spacing:-.02em;transition:color .2s}
+.ncards .meta{margin-top:12px}
+.ncards a.hide{display:none}
+.squares{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:36px}
+.squares .empty-ph{aspect-ratio:1/1}
+.video{aspect-ratio:16/9;margin-top:36px;max-width:960px}
+
+/* 문의 */
+.cgrid{display:grid;grid-template-columns:7fr 5fr;gap:clamp(32px,5vw,80px);padding:0 var(--gut);margin-top:clamp(40px,5vw,64px)}
+.form{border-top:2px solid var(--charcoal);padding-top:8px}
+.form .f{display:grid;grid-template-columns:160px 1fr;gap:18px;align-items:center;border-bottom:1px solid var(--rule);padding:12px 0}
+.form .f.top{align-items:start}
+.form label{font-size:15px;font-weight:600}
+.form label i{font-style:normal;color:var(--burgundy)}
+.form input,.form select,.form textarea{width:100%;border:0;background:transparent;font:inherit;font-size:16px;padding:10px 0;color:var(--charcoal);border-radius:0}
+.form input::placeholder,.form textarea::placeholder{color:#9b948c}
+.form input:focus,.form select:focus,.form textarea:focus{outline:none;box-shadow:inset 0 -2px 0 var(--burgundy)}
+.form textarea{min-height:160px;resize:vertical}
+.form .agree{display:flex;gap:10px;align-items:flex-start;margin:22px 0 0;font-size:14px;color:var(--stone)}
+.form .agree input{width:auto;margin-top:4px;accent-color:var(--burgundy)}
+.form .send{margin-top:28px;height:56px;padding:0 40px;border:0;background:var(--burgundy);color:var(--cream);font-size:16px;font-weight:600;cursor:pointer;transition:background .2s,transform .14s var(--ease)}
+.form .send:hover{background:var(--burgundy-deep)}
+.form .send:active{transform:scale(.98)}
+.form .demo{margin:12px 0 0;font-size:13px;color:var(--stone)}
+.cinfo{border-top:2px solid var(--charcoal);padding-top:18px}
+.cinfo div{padding:0 0 22px;margin-bottom:22px;border-bottom:1px solid var(--rule);font-size:16px;line-height:1.7}
+.cinfo b{display:block;font-size:13px;font-weight:600;color:var(--stone);margin-bottom:4px}
+.cinfo a{border-bottom:1px solid var(--charcoal);transition:color .2s,border-color .2s}
+.cinfo a:hover{color:var(--burgundy);border-color:var(--burgundy)}
+.map{aspect-ratio:16/9;margin-top:4px}
+
+@media (max-width:900px){
+  .sec{grid-template-columns:1fr}
+  .sec>.lab,.sec>.body{grid-column:1/-1}
+  .sec>.body{border-top:0;padding-top:20px}
+  .pgrid,.pgrid.c3{grid-template-columns:repeat(2,1fr)}
+  .posters{grid-template-columns:repeat(3,1fr)}
+  .rows li{grid-template-columns:1fr;gap:4px}
+  .steps{grid-template-columns:1fr 1fr}
+  .trio{grid-template-columns:1fr 1fr 1fr;gap:8px}
+  .feature,.cgrid,.split{grid-template-columns:1fr}
+  .ncards{grid-template-columns:1fr 1fr}
+  .squares{grid-template-columns:1fr 1fr}
+  .form .f{grid-template-columns:1fr;gap:0}
+  .subnav{gap:4px 18px;font-size:13px}
+}
 </style>
 </head>
 <body>
 
 <header class="top">
-  <a class="logo" href="#"><img src="assets/logo_h_burgundy.png" alt="UNIPROMOTION 유니프로모션"></a>
+  <a class="logo" href="index.html"><img src="assets/logo_h_burgundy.png" alt="UNIPROMOTION 유니프로모션"></a>
   <button class="menu" type="button" aria-expanded="false" aria-controls="gnb">MENU</button>
   <nav id="gnb" aria-label="주 메뉴">
-    <a href="company.html">COMPANY</a>
+    <a href="company.html" aria-current="page">COMPANY</a>
     <a href="apparel.html">APPAREL &amp; TRADING</a>
     <a href="exhibition.html">EXHIBITION &amp; ENTERTAINMENT</a>
     <a href="media.html">MEDIA &amp; PRESS</a>
@@ -260,174 +384,88 @@ footer a.u{display:inline-block;margin-top:18px;font-size:15px;font-weight:600}
   </nav>
 </header>
 
-<section class="hero" aria-roledescription="carousel" aria-label="대표 프로젝트">
-  <figure class="sl on"><img src="img/01.webp" alt="인도 협력 공장 봉제 라인"></figure>
-  <figure class="sl fit" style="background:var(--burgundy)"><img src="img/02.webp" alt="Accidentally Wes Anderson 전시 포스터"></figure>
-  <figure class="sl"><img src="img/03.webp" alt="인도 협력 공장 검품 작업" style="object-position:center 45%"></figure>
-  <figure class="sl fit" style="background:var(--charcoal)"><img src="img/04.webp" alt="E&amp;L MENA 2027 배너"></figure>
-  <div class="cap" aria-live="polite">
-    <p class="on"><b>인도 협력 공장</b>브랜드 의류를 대량 생산하는 협력 공장의 봉제 라인. 생산 일정과 품질을 현지에서 관리합니다.</p>
-    <p><b>Accidentally Wes Anderson</b>전시의 세계관을 담은 굿즈를 기획하고 생산했습니다.</p>
-    <p><b>출고 전 검품</b>완성된 제품은 출고 전에 한 장씩 검수합니다.</p>
-    <p><b>E&amp;L MENA 2027</b>중동 레저·엔터테인먼트 박람회의 공식 한국 에이전시로 코리안 파빌리온을 운영합니다.</p>
-  </div>
-  <div class="dots" role="group" aria-label="슬라이드 선택">
-    <button aria-label="1번" aria-current="true"></button><button aria-label="2번"></button><button aria-label="3번"></button><button aria-label="4번"></button>
-    <button class="pp" type="button" aria-pressed="false">일시정지</button>
-  </div>
-</section>
-
-<div class="pill" role="group" aria-label="프로젝트 걸러 보기">
-  <span>유니프로모션의</span>
-  <select id="f-biz" aria-label="사업">
-    <option value="all">모든 일</option>
-    <optgroup label="APPAREL &amp; TRADING">
-      <option value="a">의류 프로모션</option>
-      <option value="s">의류 무역·SCM</option>
-      <option value="d">해외 브랜드 유통</option>
-    </optgroup>
-    <optgroup label="EXHIBITION &amp; ENTERTAINMENT">
-      <option value="g">전시 굿즈</option>
-      <option value="k">코리안 파빌리온</option>
-    </optgroup>
-  </select>
-  <span>·</span>
-  <select id="f-cli" aria-label="분야">
-    <option value="all">모든 분야</option>
-    <option value="x">전시·미술관</option>
-    <option value="t">테마파크</option>
-    <option value="b">브랜드</option>
-    <option value="f">해외 박람회</option>
-  </select>
-</div>
-
-<section class="feat light" id="apparel">
-  <p class="tab">APPAREL &amp; TRADING</p>
-  <h2>의류를 만들고, 국경을 넘겨 납품합니다</h2>
-  <p class="intro">브랜드와 기업의 프로모션 의류를 기획하고, 인도를 비롯한 해외 협력 공장에서 생산합니다. 원단 소싱부터 검수, 통관까지 직접 관리하고, 해외 브랜드의 국내외 유통도 맡습니다.</p>
-  <ul class="subs"><li>의류 프로모션 기획·생산</li><li>의류 B2B 무역 &amp; SCM</li><li>해외 브랜드 유통·컨설팅</li></ul>
-  <div class="cards">
-    <a href="apparel.html#promo"><img src="img/01.webp" alt=""><b>인도 협력 공장</b><span>의류 대량 생산 라인</span></a>
-    <a href="apparel.html#promo"><img src="img/05.webp" alt=""><b>Accidentally Wes Anderson</b><span>전시 굿즈 바람막이 3색</span></a>
-    <a href="apparel.html#promo"><img src="img/06.webp" alt=""><b>레고랜드 코리아</b><span>어린이 가운 4색</span></a>
-    <a href="apparel.html#promo"><img src="img/07.webp" alt=""><b>프로모션 모자</b><span class="todo">고객사 확인</span></a>
-  </div>
-  <a class="go" href="apparel.html">APPAREL &amp; TRADING 전체 보기</a>
-</section>
-
-<section class="feat dark" id="exhibition">
-  <p class="tab">EXHIBITION &amp; ENTERTAINMENT</p>
-  <h2>전시의 이야기를 굿즈로, 한국 기업을 해외 전시장으로</h2>
-  <p class="intro">전시와 테마파크의 세계관을 굿즈로 옮겨 기획부터 현장 납품까지 맡습니다. 중동 E&amp;L MENA의 공식 한국 에이전시로 코리안 파빌리온을 운영합니다.</p>
-  <ul class="subs"><li>전시 굿즈 기획·생산·납품</li><li>테마파크 굿즈</li><li>해외 전시 코리안 파빌리온</li></ul>
-  <div class="cards">
-    <a href="exhibition.html#goods"><img src="img/08.webp" alt=""><b>Accidentally Wes Anderson</b><span>전시 굿즈 스노우볼</span></a>
-    <a href="exhibition.html#goods"><img src="img/09.webp" alt=""><b>레드룸</b><span>작품 퍼즐과 패키지</span></a>
-    <a href="exhibition.html#goods"><img src="img/10.webp" alt=""><b>레고랜드 코리아</b><span>테마파크 굿즈 텀블러·보틀</span></a>
-    <a href="exhibition.html#goods"><img src="img/04.webp" alt="" style="object-position:center top"><b>E&amp;L MENA 2027</b><span>두바이 코리안 파빌리온</span></a>
-  </div>
-  <a class="go" href="exhibition.html">EXHIBITION &amp; ENTERTAINMENT 전체 보기</a>
-</section>
-
-<section class="reel" id="archive" aria-label="함께한 전시">
-  <div class="reel-head">
-    <p class="tab">함께한 전시</p>
-    <p class="say">유니프로모션은 국내 주요 전시의 굿즈를 기획하고 생산해 왔습니다. 무민, 요시고 사진전, 베르너 브롱크호스트, Accidentally Wes Anderson까지 전시마다 그 세계관에 맞는 상품을 만들었습니다.</p>
-  </div>
-  <div class="track" tabindex="0" aria-label="전시 포스터 목록. 좌우로 넘겨 볼 수 있습니다">
-    <ul>
-      <li><span>Accidentally Wes Anderson</span><img src="img/02.webp" alt="Accidentally Wes Anderson 전시 포스터"></li>
-      <li><span>베르너 브롱크호스트</span><img src="img/11.webp" alt="베르너 브롱크호스트 전시 포스터"></li>
-      <li><span>요시고 사진전</span><img src="img/12.webp" alt="요시고 사진전 전시 포스터"></li>
-      <li><span>레드룸</span><img src="img/13.webp" alt="레드룸 전시 포스터"></li>
-      <li><span>무민</span><img src="img/14.webp" alt="무민 전시 포스터"></li>
-      <li><span>힙노시스</span><img src="img/15.webp" alt="힙노시스 전시 포스터"></li>
-      <li><span>유미의 세포들</span><img src="img/16.webp" alt="유미의 세포들 전시 포스터"></li>
-      <li><span>Accidentally Wes Anderson II</span><img src="img/17.webp" alt="Accidentally Wes Anderson II 전시 포스터"></li>
-      <li><span>문도멘도</span><img src="img/18.webp" alt="문도멘도 전시 포스터"></li>
-      <li><span>어노니머스 프로젝트</span><img src="img/19.webp" alt="어노니머스 프로젝트 전시 포스터"></li>
-      <li><span>나탈리 카르푸센코</span><img src="img/20.webp" alt="나탈리 카르푸센코 전시 포스터"></li>
-      <li><span>슈타이들 북 컬처</span><img src="img/21.webp" alt="슈타이들 북 컬처 전시 포스터"></li>
-      <li><span>이경준 사진전</span><img src="img/22.webp" alt="이경준 사진전 전시 포스터"></li>
-      <li><span>UTOPIA</span><img src="img/23.webp" alt="UTOPIA 전시 포스터"></li>
-      <li><span>Art in Life, Life in Art</span><img src="img/24.webp" alt="Art in Life, Life in Art 전시 포스터"></li>
-      <li><span>Poster Dump</span><img src="img/25.webp" alt="Poster Dump 전시 포스터"></li>
-    </ul>
-  </div>
-  <div class="reel-foot"><button class="rp" type="button" aria-pressed="false">일시정지</button><a href="exhibition.html#archive">더보기 +</a></div>
-</section>
-
-<section class="latest" id="work" style="scroll-margin-top:60px">
-  <a class="more" href="#work">최근 프로젝트 보기 ↓</a>
-  <p class="count"><b id="n">13</b>개 프로젝트</p>
-  <div class="grid">
-    <a class="lg" data-b="s" data-c="b" href="#"><div class="ph"><img src="img/01.webp" alt=""></div><b>인도 협력 공장</b><span>의류 대량 생산 라인 관리</span></a>
-    <a data-b="g" data-c="t" href="#"><div class="ph"><img src="img/10.webp" alt=""></div><b>레고랜드 코리아</b><span>테마파크 굿즈 텀블러·보틀</span></a>
-    <a data-b="a" data-c="t" href="#"><div class="ph"><img src="img/06.webp" alt=""></div><b>레고랜드 코리아</b><span>어린이 가운 4색</span></a>
-    <a data-b="g" data-c="x" href="#"><div class="ph"><img src="img/08.webp" alt=""></div><b>Accidentally Wes Anderson</b><span>전시 굿즈</span></a>
-    <a data-b="a" data-c="x" href="#"><div class="ph"><img src="img/26.webp" alt=""></div><b>Accidentally Wes Anderson</b><span>전시 굿즈 의류</span></a>
-    <a data-b="k" data-c="f" href="#"><div class="ph"><img src="img/04.webp" alt="" style="object-position:center top"></div><b>E&amp;L MENA 2027</b><span>두바이 한국관 공식 에이전시</span></a>
-    <a class="lg" data-b="k" data-c="f" href="#"><div class="ph"><img src="img/27.webp" alt="" style="object-position:center 25%"></div><b>IAAPA Expo</b><span>해외 박람회 유니프로모션 부스</span></a>
-    <a data-b="g" data-c="x" href="#"><div class="ph"><img src="img/28.webp" alt=""></div><b>요시고 사진전</b><span>마스킹 테이프</span></a>
-    <a data-b="g" data-c="x" href="#"><div class="ph"><img src="img/29.webp" alt=""></div><b>레드룸</b><span>와인잔과 패키지</span></a>
-    <a data-b="g" data-c="x" href="#"><div class="ph"><img src="img/30.webp" alt=""></div><b>유미의 세포들 특별전</b><span>캐릭터 굿즈</span></a>
-    <a data-b="g" data-c="b" href="#"><div class="ph"><img src="img/31.webp" alt=""></div><b>STETS seoul</b><span>자체 브랜드 식기</span></a>
-    <a data-b="g" data-c="x" href="#"><div class="ph"><img src="img/32.webp" alt=""></div><b>문도멘도</b><span>전시 굿즈 스티커</span></a>
-    <a data-b="s" data-c="b" href="#"><div class="ph"><img src="img/03.webp" alt="" style="object-position:center 45%"></div><b>출고 전 검품</b><span>인도 협력 공장 검수</span></a>
-    <p class="empty">이 조건에 맞는 프로젝트는 준비 중입니다.</p>
-  </div>
-</section>
-
-<section class="process">
-  <p class="big">요청부터 납품까지 한 담당자가 맡습니다. 해외 공장과 박람회 현장까지 직접 챙깁니다.</p>
-  <ol>
-    <li><h3>요구 분석<small>Needs Analysis</small></h3><p>목적, 수량, 예산, 일정을 먼저 정리합니다.</p></li>
-    <li><h3>소싱·제안<small>Sourcing &amp; Solution</small></h3><p>소재와 공장을 찾아 샘플과 견적으로 제안합니다.</p></li>
-    <li><h3>생산·검수<small>Execution &amp; QC</small></h3><p>현지 공장 생산을 관리하고, 출고 전에 검수합니다.</p></li>
-    <li><h3>해외 납품<small>Global Delivery</small></h3><p>통관과 물류를 거쳐 일정에 맞춰 납품합니다.</p></li>
-  </ol>
-</section>
-
-<section class="media" id="media">
-  <div class="mhead">
-    <div><p class="tab">MEDIA &amp; PRESS</p><h2>뉴스룸</h2></div>
-    <a class="go" href="media.html">전체 보기</a>
-  </div>
-  <div class="mgrid">
-    <a class="lead-card" href="media.html">
-      <div class="th"><img src="img/33.webp" alt=""></div>
-      <p class="meta"><span class="tg">전시</span><span class="todo">2026.○○</span></p>
-      <b>E&amp;L MENA 공식 한국 에이전시 계약, 코리안 파빌리온 런칭</b>
-      <span class="d">중동 대규모 레저·엔터테인먼트 박람회의 한국관을 운영합니다.</span>
-    </a>
-    <ul class="mlist">
-      <li><a href="media.html"><p class="meta"><span class="tg">미디어</span><span class="todo">2026.○○</span></p><b>대표 방송 출연</b><span class="d">유니프로모션이 소개된 방송 영상.</span></a></li>
-      <li><a href="media.html"><p class="meta"><span class="tg">전시</span><span class="todo">2026.○○</span></p><b>베트남 미디어앤아트 전시 전속 계약</b><span class="d">베트남 전시의 굿즈와 운영을 맡습니다.</span></a></li>
-      <li><a href="media.html"><p class="meta"><span class="tg">유통</span><span class="todo">2026.○○</span></p><b>168cm 일본·호주·네덜란드 독점 유통 계약</b><span class="d">해외 온·오프라인 스토어 오픈 예정.</span></a></li>
-      <li><a href="media.html"><p class="meta"><span class="tg">수출</span><span class="todo">2026.○○</span></p><b>Stockalot 대량 물류 수출 완료</b><span class="d">대규모 물류 소싱과 수출을 마쳤습니다.</span></a></li>
-    </ul>
-  </div>
-</section>
-
-<section class="docs" id="company">
+<main>
+<div class="ph-head">
   <p class="tab">COMPANY</p>
-  <div class="about">
-    <h2>주식회사 유니프로모션</h2>
-    <p>의류와 굿즈를 기획부터 해외 공장 생산, 검수, 통관, 납품까지 직접 챙기는 회사입니다. 서울 본사와 시드니·네덜란드 거점에서 일합니다.</p>
+  <h1>원단 한 필에서 최종 납품까지, 제품의 전 과정을 맡습니다</h1>
+  <p class="lead">주식회사 유니프로모션은 서울에 본사를 둔 글로벌 무역·SCM 회사입니다. 단순한 무역 중개를 넘어, 소재 소싱부터 생산, 검수, 물류, 최종 납품까지 제품의 전 과정을 한곳에서 관리합니다.</p>
+</div>
+<nav class="subnav" aria-label="페이지 안 이동"><a href="#overview">회사 개요</a><a href="#strength">일하는 원칙</a><a href="#history">연혁</a><a href="#offices">거점</a><a href="#docs">인증·서류</a></nav>
+
+<section class="sec" id="overview">
+  <h2 class="lab">회사 개요</h2>
+  <div class="body">
+    <h2>아시아와 중동의 생산 네트워크로 브랜드와 전시의 제품을 만듭니다</h2>
+    <ul class="rows">
+      <li><b>회사명</b><span>주식회사 유니프로모션 (UNIPROMOTION CO., LTD.)</span></li>
+      <li><b>대표</b><span>안예원</span></li>
+      <li><b>본사</b><span>서울특별시 마포구 독막로19길 42-12 (101)</span></li>
+      <li><b>해외 거점</b><span>네덜란드 (유럽), 시드니 (오세아니아)</span></li>
+      <li><b>생산 네트워크</b><span>중국, 베트남, 인도, 방글라데시, 인도네시아, 이집트</span></li>
+      <li><b>사업</b><span>전시 굿즈 기획·생산·납품 / 의류 프로모션 기획·생산 / 의류 B2B 무역 &amp; SCM / 해외 전시 코리안 파빌리온 / 해외 브랜드 유통·컨설팅</span></li>
+      <li><b>사업자등록번호</b><span>196-88-02743</span></li>
+    </ul>
   </div>
-  <h3 class="sub">인증과 서류</h3>
-  <div class="row">
-    <figure><img src="img/34.webp" alt=""><figcaption>여성기업 확인서</figcaption></figure>
-    <figure><img src="img/35.webp" alt=""><figcaption>우수기술기업 인증</figcaption></figure>
-    <figure><img src="img/36.webp" alt=""><figcaption>기업부설연구소 인정</figcaption></figure>
-    <figure><img src="img/37.webp" alt=""><figcaption>IAAPA 2024 회원</figcaption></figure>
-    <div class="dl">
-      <p>디자인등록 4건, 상표등록 2건(STETS) 보유</p>
+</section>
+
+<section class="sec" id="strength">
+  <h2 class="lab">일하는 원칙</h2>
+  <div class="body">
+    <ul class="rows">
+      <li><b>생산 네트워크</b><span>아시아와 중동 6개국의 협력 공장 중 가격, 생산량, 기준에 맞는 곳을 골라 배정합니다.</span></li>
+      <li><b>공급망 관리</b><span>원단 소싱부터 최종 납품까지 모든 단계의 진행 상황을 실시간으로 확인합니다.</span></li>
+      <li><b>품질 관리</b><span>생산 현장에 상주하는 독립 검수팀이 생산 중, 중간, 최종 3단계로 검수합니다.</span></li>
+      <li><b>신뢰</b><span>비밀유지계약(NDA)을 기본으로 하고, 프로젝트마다 전담 담당자가 처음부터 끝까지 맡습니다.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" id="history">
+  <h2 class="lab">연혁</h2>
+  <div class="body">
+    <ul class="rows">
+      <li><b class="todo">20○○</b><span>E&amp;L MENA 공식 한국 에이전시 계약, 코리안 파빌리온 런칭<small>2027년 1월 18~20일 두바이 E&amp;L MENA 2027 한국관 운영 예정</small></span></li>
+      <li><b>2024</b><span>IAAPA 회원사 가입 (ID 461401)</span></li>
+      <li><b>2023. 03</b><span>두바이 DEAL 쇼 참가</span></li>
+      <li><b>2022</b><span>미국 올랜도 IAAPA 쇼 참가</span></li>
+      <li><b>2021</b><span>자체 브랜드 STETS 런칭, 아마존 USA 입점</span></li>
+      <li><b>2021</b><span>한류연계 우수상품 쇼케이스 &amp; 상담회 참가 (중국)<small>주최·주관 한국디자인진흥원, 한국무역협회 / 후원 문화체육관광부</small></span></li>
+      <li><b>2021. 05</b><span>중국 중부지역 무역투자박람회 참가</span></li>
+    </ul>
+    <p class="note">회사 설립 연도와 그 밖의 주요 실적은 아이리스님 확인 후 추가합니다.</p>
+  </div>
+</section>
+
+<section class="sec" id="offices">
+  <h2 class="lab">거점</h2>
+  <div class="body">
+    <ul class="rows">
+      <li><b>서울 본사</b><span>공급망 관리와 전체 프로젝트 총괄<small>서울특별시 마포구 독막로19길 42-12 (101)</small></span></li>
+      <li><b>네덜란드</b><span>유럽 거점<small class="todo">주소 확인</small></span></li>
+      <li><b>시드니</b><span>오세아니아 거점<small class="todo">주소 확인</small></span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" id="docs">
+  <h2 class="lab">인증·서류</h2>
+  <div class="body">
+    <div class="pgrid">
+      <figure><img src="img/34.webp" alt="" loading="lazy" style="object-position:top;aspect-ratio:1/1.3"><figcaption><b>여성기업 확인서</b></figcaption></figure>
+      <figure><img src="img/35.webp" alt="" loading="lazy" style="object-position:top;aspect-ratio:1/1.3"><figcaption><b>우수기술기업 인증</b></figcaption></figure>
+      <figure><img src="img/36.webp" alt="" loading="lazy" style="object-position:top;aspect-ratio:1/1.3"><figcaption><b>기업부설연구소 인정</b></figcaption></figure>
+      <figure><img src="img/37.webp" alt="" loading="lazy" style="object-position:top;aspect-ratio:1/1.3"><figcaption><b>IAAPA 2024 회원</b></figcaption></figure>
+    </div>
+    <ul class="rows">
+      <li><b>지식재산권</b><span>디자인등록 4건, 상표등록 2건 (STETS)<small>등록증 이미지는 생년월일·주소를 가린 뒤 게시합니다.</small></span></li>
+    </ul>
+    <div class="dl-list">
       <a href="#">회사소개서 (국문) <span>PDF</span></a>
       <a href="#">Company Profile (English) <span>PDF</span></a>
     </div>
   </div>
 </section>
+</main>
 
 <footer id="contact">
   <div class="frow"><h2>프로젝트 문의</h2>
@@ -448,71 +486,8 @@ footer a.u{display:inline-block;margin-top:18px;font-size:15px;font-weight:600}
 
 <script>
 (() => {
-  // 첫 화면: 이미지와 캡션을 함께 넘김. 5초, 마우스 올리면 멈춤, 움직임 줄이기면 자동 전환 없음
-  const hero = document.querySelector('.hero');
-  const sl = [...hero.querySelectorAll('.sl')], cap = [...hero.querySelectorAll('.cap p')];
-  const dots = [...hero.querySelectorAll('.dots button:not(.pp)')], pp = hero.querySelector('.pp');
-  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let i = 0, t = null, paused = reduce, hover = false;
-  const go = n => {
-    i = (n + sl.length) % sl.length;
-    sl.forEach((e, k) => e.classList.toggle('on', k === i));
-    cap.forEach((e, k) => e.classList.toggle('on', k === i));
-    dots.forEach((e, k) => e.setAttribute('aria-current', k === i));
-  };
-  const tick = () => { clearTimeout(t); if (!paused && !hover && !document.hidden) t = setTimeout(() => { go(i + 1); tick(); }, 5000); };
-  dots.forEach((d, k) => d.onclick = () => { go(k); tick(); });
-  pp.onclick = () => { paused = !paused; pp.textContent = paused ? '재생' : '일시정지'; pp.setAttribute('aria-pressed', paused); tick(); };
-  if (reduce) pp.textContent = '재생';
-  hero.onmouseenter = () => { hover = true; tick(); };
-  hero.onmouseleave = () => { hover = false; tick(); };
-  document.addEventListener('keydown', e => { if (e.target.closest('select')) return; if (e.key === 'ArrowRight') { go(i + 1); tick(); } if (e.key === 'ArrowLeft') { go(i - 1); tick(); } });
-  document.addEventListener('visibilitychange', tick);
-  tick();
-
-
-  // 함께한 전시: 아주 느리게 흐름(초당 24px). 마우스 올림·키보드 초점·직접 넘김 중에는 멈춤, 움직임 줄이기면 흐르지 않음
-  const track = document.querySelector('.track'), list = track.querySelector('ul'), rp = document.querySelector('.reel-foot .rp');
-  if (!reduce) {
-    [...list.children].forEach(li => { const c = li.cloneNode(true); c.setAttribute('aria-hidden', 'true'); c.querySelector('img').alt = ''; list.appendChild(c); });
-    let stop = false, over = false, touch = 0, last = 0, pos = 0;
-    const half = () => list.children[list.children.length / 2].offsetLeft - list.children[0].offsetLeft;
-    const step = t => {
-      const dt = last ? Math.min(t - last, 64) : 0; last = t;
-      if (!stop && !over && !document.hidden && Date.now() > touch) {
-        pos += dt * 0.024;
-        if (pos >= half()) pos -= half();
-        track.scrollLeft = pos;
-      } else pos = track.scrollLeft;
-      requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-    track.addEventListener('mouseenter', () => over = true);
-    track.addEventListener('mouseleave', () => over = false);
-    track.addEventListener('focusin', () => over = true);
-    track.addEventListener('focusout', () => over = false);
-    ['wheel', 'touchstart', 'pointerdown'].forEach(ev => track.addEventListener(ev, () => touch = Date.now() + 3000, { passive: true }));
-    rp.onclick = () => { stop = !stop; rp.textContent = stop ? '재생' : '일시정지'; rp.setAttribute('aria-pressed', stop); };
-  }
-
-  // 필터 문장: 사업·분야로 프로젝트 격자를 걸러 보기
-  const fb = document.getElementById('f-biz'), fc = document.getElementById('f-cli');
-  const items = [...document.querySelectorAll('.grid a')], n = document.getElementById('n'), empty = document.querySelector('.grid .empty');
-  const apply = () => {
-    let c = 0;
-    items.forEach(a => {
-      const ok = (fb.value === 'all' || a.dataset.b === fb.value) && (fc.value === 'all' || a.dataset.c === fc.value);
-      a.classList.toggle('hide', !ok); if (ok) c++;
-    });
-    n.textContent = c; empty.style.display = c ? 'none' : 'block';
-  };
-  const jump = () => { apply(); document.getElementById('work').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' }); };
-  fb.onchange = jump; fc.onchange = jump;
-
-  // 상단 탭: 모바일 MENU 펼침, 지금 보고 있는 섹션의 탭을 버건디로
   const menu = document.querySelector('.top .menu'), nav = document.getElementById('gnb');
   menu.onclick = () => { const o = nav.classList.toggle('open'); menu.setAttribute('aria-expanded', o); menu.textContent = o ? 'CLOSE' : 'MENU'; };
-  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { nav.classList.remove('open'); menu.setAttribute('aria-expanded', false); menu.textContent = 'MENU'; }));
 
 })();
 </script>
