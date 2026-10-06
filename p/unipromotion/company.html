@@ -359,6 +359,12 @@ footer a.u{display:inline-block;margin-top:18px;font-size:15px;font-weight:600}
 .cinfo a:hover{color:var(--burgundy);border-color:var(--burgundy)}
 .map{aspect-ratio:16/9;margin-top:4px}
 .film{margin:0}
+.pav{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:44px;align-items:start}
+.pav figure{margin:0}
+.pav-v{grid-row:1/3}
+.pav-v video{display:block;width:100%;aspect-ratio:9/16;background:#000}
+.pav img{display:block;width:100%;object-fit:cover;background:#fff}
+@media (max-width:900px){.pav{grid-template-columns:1fr}.pav-v{grid-row:auto;max-width:360px}}
 .film video{display:block;width:100%;aspect-ratio:16/9;background:#000}
 .film figcaption{margin-top:10px;font-size:13px;color:var(--stone)}
 

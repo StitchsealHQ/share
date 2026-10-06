@@ -359,6 +359,12 @@ footer a.u{display:inline-block;margin-top:18px;font-size:15px;font-weight:600}
 .cinfo a:hover{color:var(--burgundy);border-color:var(--burgundy)}
 .map{aspect-ratio:16/9;margin-top:4px}
 .film{margin:0}
+.pav{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:44px;align-items:start}
+.pav figure{margin:0}
+.pav-v{grid-row:1/3}
+.pav-v video{display:block;width:100%;aspect-ratio:9/16;background:#000}
+.pav img{display:block;width:100%;object-fit:cover;background:#fff}
+@media (max-width:900px){.pav{grid-template-columns:1fr}.pav-v{grid-row:auto;max-width:360px}}
 .film video{display:block;width:100%;aspect-ratio:16/9;background:#000}
 .film figcaption{margin-top:10px;font-size:13px;color:var(--stone)}
 
@@ -722,7 +728,7 @@ body .feat .intro,body .ph-say,body .sec .txt,body .docs .about p,body .grid spa
   <div class="ph-row"><p class="ph-say">전시의 이야기를 굿즈로 만들고, 한국 기업을 해외 전시장에 세웁니다.</p><nav class="subnav" aria-label="페이지 안 이동"><a href="#goods">전시 굿즈</a><a href="#park">테마파크</a><a href="#pavilion">코리안 파빌리온</a><a href="#archive">함께한 전시</a></nav></div>
 </div>
 <div class="trio">
-  <img src="img/4739705314.webp" alt="AWA 전시 굿즈 스노볼" loading="lazy">
+  <img src="img/ee97f089af.webp" alt="AWA 전시 굿즈 마스킹 테이프" loading="lazy">
   <img src="img/eae44f8048.webp" alt="레드룸 퍼즐" loading="lazy">
   <img src="img/6830ce77e1.webp" alt="요시고 사진전 마스킹 테이프" loading="lazy">
 </div>
@@ -775,11 +781,10 @@ body .feat .intro,body .ph-say,body .sec .txt,body .docs .about p,body .grid spa
       <li><b>2023.03</b><span>두바이 DEAL 쇼 참가</span></li>
       <li><b>2022</b><span>미국 올랜도 IAAPA Expo 참가</span></li>
     </ul>
-    <div class="split">
-      <figure style="margin:0"><img src="img/dd4e60b2a1.webp" alt="E&L MENA 2027 배너" loading="lazy" style="object-position:center top"><figcaption class="meta" style="margin-top:8px">E&amp;L MENA 2027</figcaption></figure>
-      <figure style="margin:0"><div class="empty-ph" style="aspect-ratio:4/3">E&amp;L MENA 영상<br>(유튜브 업로드 후 연결)</div><figcaption class="meta" style="margin-top:8px">현장 영상, 약 1분</figcaption></figure>
-      <figure style="margin:0"><img src="img/066f514dfe.webp" alt="IAAPA 박람회 유니프로모션 부스" loading="lazy" style="object-position:center 25%"><figcaption class="meta" style="margin-top:8px">IAAPA Expo 유니프로모션 부스, 올랜도</figcaption></figure>
-      <figure style="margin:0"><img src="img/5e4484e89a.webp" alt="두바이 DEAL 쇼 참가" loading="lazy" style="object-position:center 85%"><figcaption class="meta" style="margin-top:8px">DEAL 쇼, 두바이</figcaption></figure>
+    <div class="pav">
+      <figure class="pav-v"><video controls playsinline preload="metadata" poster="assets/elmena_2027.jpg" aria-label="E&amp;L MENA 2027 소개 영상"><source src="assets/elmena_2027.mp4" type="video/mp4"></video><figcaption class="meta" style="margin-top:8px">E&amp;L MENA 2027 소개 영상, 1분. 실제 사이트에서는 유튜브 쇼츠로 연결합니다.</figcaption></figure>
+      <figure><img src="img/dd4e60b2a1.webp" alt="E&L MENA 2027 배너" loading="lazy" style="object-position:center top;aspect-ratio:1/1"><figcaption class="meta" style="margin-top:8px">E&amp;L MENA 2027, 두바이 월드 트레이드 센터</figcaption></figure>
+      <figure><img src="img/5e4484e89a.webp" alt="두바이 DEAL 쇼 참가" loading="lazy" style="object-position:center 85%;aspect-ratio:4/3"><figcaption class="meta" style="margin-top:8px">DEAL 쇼 참가, 두바이 (2023)</figcaption></figure>
     </div>
     <div class="dl-list"><a href="contact.html">코리안 파빌리온 참가 신청 <span>문의 양식</span></a></div>
   </div>
