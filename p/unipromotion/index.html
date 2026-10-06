@@ -329,7 +329,6 @@ p,li,dd,figcaption{text-wrap:pretty}
   </div>
   <div class="dots" role="group" aria-label="슬라이드 선택">
     <button aria-label="1번" aria-current="true"></button><button aria-label="2번"></button><button aria-label="3번"></button><button aria-label="4번"></button>
-    <button class="pp" type="button" aria-pressed="false">일시정지</button>
   </div>
 </section>
 
@@ -484,7 +483,7 @@ p,li,dd,figcaption{text-wrap:pretty}
   // 첫 화면: 이미지와 캡션을 함께 넘김. 5초, 마우스 올리면 멈춤, 움직임 줄이기면 자동 전환 없음
   const hero = document.querySelector('.hero');
   const sl = [...hero.querySelectorAll('.sl')], cap = [...hero.querySelectorAll('.cap p')];
-  const dots = [...hero.querySelectorAll('.dots button:not(.pp)')], pp = hero.querySelector('.pp');
+  const dots = [...hero.querySelectorAll('.dots button')];
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   let i = 0, t = null, paused = reduce, hover = false;
   const go = n => {
@@ -495,10 +494,10 @@ p,li,dd,figcaption{text-wrap:pretty}
   };
   const tick = () => { clearTimeout(t); if (!paused && !hover && !document.hidden) t = setTimeout(() => { go(i + 1); tick(); }, 5000); };
   dots.forEach((d, k) => d.onclick = () => { go(k); tick(); });
-  pp.onclick = () => { paused = !paused; pp.textContent = paused ? '재생' : '일시정지'; pp.setAttribute('aria-pressed', paused); tick(); };
-  if (reduce) pp.textContent = '재생';
   hero.onmouseenter = () => { hover = true; tick(); };
   hero.onmouseleave = () => { hover = false; tick(); };
+  hero.addEventListener('focusin', () => { hover = true; tick(); });
+  hero.addEventListener('focusout', () => { hover = false; tick(); });
   document.addEventListener('keydown', e => { if (e.target.closest('select')) return; if (e.key === 'ArrowRight') { go(i + 1); tick(); } if (e.key === 'ArrowLeft') { go(i - 1); tick(); } });
   document.addEventListener('visibilitychange', tick);
   tick();
