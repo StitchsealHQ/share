@@ -706,6 +706,49 @@ body .latest .more{color:var(--charcoal)}
 body .top nav a{color:var(--stone)}
 body .top nav a:hover,body .top nav a[aria-current]{color:var(--charcoal)}
 body .feat .intro,body .ph-say,body .sec .txt,body .docs .about p,body .grid span,body .feat .cards span,body .pgrid figcaption,body .media .d{letter-spacing:-.01em}
+
+/* build_fix (10/6 점검 보완) */
+.hero .sl.el{background:var(--cream-deep);display:flex;align-items:center;justify-content:center;padding-bottom:64px}
+.hero .sl.el img{width:min(46%,640px);height:auto;object-fit:contain}
+body .hero::after{transition:opacity .6s var(--ease)}
+.hero.is-light{color:var(--charcoal)}
+body .hero.is-light::after{opacity:0}
+body .hero.is-light .dots button{background:rgba(17,17,17,.22)}
+body .hero.is-light .dots button[aria-current="true"]{background:var(--charcoal)}
+.hero .cap a{color:inherit;text-decoration:none}
+.hero .cap a:hover b{text-decoration:underline;text-underline-offset:3px}
+.hero .cap p{visibility:hidden;transition:opacity .5s var(--ease),transform .5s var(--ease),visibility 0s .5s}
+.hero .cap p.on{visibility:visible;transition-delay:0s}
+/* 좌우 여백 = pentagram.com 실측: 콘텐츠 최대 1728px. 더 넓은 화면에서는 첫 화면·색 블록·하단이 같은 선 안으로 들어오고,
+   상단은 1776px(좌우 24px 안쪽)이라 로고가 첫 화면 사진 왼쪽 끝과 맞음. 1728px 이하에서는 지금처럼 화면 끝까지 */
+body>*:not(dialog):not(script):not(style){max-width:1728px;margin-left:auto;margin-right:auto}
+body>header.top,body>.top{max-width:1776px}
+/* 배색 = Pentagram 주제 블록(#222 면 + #000 판, 모서리 8px, 판 안쪽 32px)을 브리프 색으로:
+   APPAREL 따뜻한 먹색 면 + 더 짙은 판, EXHIBITION 버건디 #5C1D24 면 + 짙은 버건디 판 */
+body .feat.light,body .feat.dark{margin-top:96px;padding:32px var(--gut) 64px;color:var(--cream)}
+body .feat.light{background:#2B2624}
+body .feat.dark{background:var(--burgundy)}
+body .feat.light .tab{border-top-color:rgba(247,245,240,.3)}
+body .feat h2{color:var(--cream)}
+body .feat .intro{color:var(--mute-d)}
+body .feat .subs a{color:var(--cream);border-color:rgba(247,245,240,.3)}
+body .feat .subs a:hover{color:var(--cream);border-color:var(--cream)}
+body .feat .cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap);max-width:1252px;margin-top:48px;padding:32px;border-radius:8px}
+body .feat.light .cards{background:#1C1917}
+body .feat.dark .cards{background:var(--deep)}
+body .feat .cards b{color:var(--cream)}
+body .feat .cards span,body .feat.dark .cards span{color:var(--mute-d)}
+@media (hover:hover){body .feat .cards a:hover b{color:var(--cream);text-decoration:underline;text-underline-offset:3px}}
+body .feat .go{background:var(--cream);color:var(--charcoal)}
+body .feat .go:hover{background:var(--cream-deep);color:var(--charcoal)}
+body .feat.dark .go{color:var(--burgundy)}
+@media (max-width:900px){
+  body .feat .cards{grid-template-columns:repeat(2,minmax(0,1fr));padding:16px;margin-top:32px}
+  .hero .sl.el img{width:72%}
+  body .grid{grid-template-columns:repeat(2,1fr);gap:32px var(--gap)}
+  body .grid a{grid-column:span 1}
+  body .grid a.lg{grid-column:span 2}
+}
 </style>
 </head>
 <body>
@@ -725,24 +768,24 @@ body .feat .intro,body .ph-say,body .sec .txt,body .docs .about p,body .grid spa
 <main>
 <div class="ph-head">
   <h1>Apparel &amp; Trading</h1>
-  <div class="ph-row"><p class="ph-say">옷을 기획하고, 6개국 협력 공장에서 만들어 필요한 곳까지 보냅니다.</p><nav class="subnav" aria-label="페이지 안 이동"><a href="#promo">의류 프로모션</a><a href="#scm">무역·SCM</a><a href="#hubs">생산 거점</a><a href="#qc">품질 관리</a><a href="#dist">해외 브랜드 유통</a></nav></div>
+  <div class="ph-row"><p class="ph-say">의류를 기획하고 6개국 협력 공장에서 생산해 납품합니다.</p><nav class="subnav" aria-label="페이지 안 이동"><a href="#promo">의류 프로모션</a><a href="#scm">무역·SCM</a><a href="#hubs">생산 거점</a><a href="#qc">품질 관리</a><a href="#dist">해외 브랜드 유통</a></nav></div>
 </div>
 <figure class="wide"><img src="img/e3e8ffabf6.webp" alt="인도 협력 공장 봉제 라인" loading="lazy"><figcaption>인도 협력 공장 봉제 라인</figcaption></figure>
 
 <section class="sec" id="promo">
   <h2 class="lab">의류 프로모션<small>기획·생산</small></h2>
   <div class="body">
-    <h3 class="ttl">전시와 테마파크, 브랜드의 이야기를 입는 옷으로</h3>
-    <p class="txt">전시와 테마파크, 브랜드를 위한 옷과 잡화를 만듭니다. 자수와 프린트의 작은 디테일까지 시안과 샘플로 먼저 확인한 뒤에야 생산에 들어갑니다.</p>
+    <h3 class="ttl">전시·테마파크·브랜드의 프로모션 의류</h3>
+    <p class="txt">전시, 테마파크, 브랜드의 의류와 잡화를 기획·생산합니다. 자수와 프린트 같은 디테일은 시안과 샘플로 확인한 뒤 생산에 들어갑니다.</p>
     <div class="pgrid">
-      <figure><img src="img/eda7e7a3d8.webp" alt="" loading="lazy"><figcaption><b>자수 디테일</b><span class='todo'>프로젝트명 확인</span></figcaption></figure>
-      <figure><img src="img/261a82df77.webp" alt="" loading="lazy"><figcaption><b>자수 가운</b><span class='todo'>프로젝트명 확인</span></figcaption></figure>
+      <figure><img src="img/eda7e7a3d8.webp" alt="" loading="lazy"><figcaption><b>자수 디테일</b><span class='todo'>○○</span></figcaption></figure>
+      <figure><img src="img/261a82df77.webp" alt="" loading="lazy"><figcaption><b>자수 가운</b><span class='todo'>○○</span></figcaption></figure>
       <figure><img src="img/eb7053c3d5.webp" alt="" loading="lazy"><figcaption><b>레고랜드 코리아</b>어린이 가운</figcaption></figure>
       <figure><img src="img/124b3008cf.webp" alt="" loading="lazy"><figcaption><b>Accidentally Wes Anderson</b>맨투맨</figcaption></figure>
       <figure><img src="img/6187d15d39.webp" alt="" loading="lazy"><figcaption><b>Accidentally Wes Anderson</b>바람막이 3색</figcaption></figure>
       <figure><img src="img/053d9dfb62.webp" alt="" loading="lazy"><figcaption><b>Accidentally Wes Anderson</b>비니</figcaption></figure>
-      <figure><img src="img/45283d5c8f.webp" alt="" loading="lazy"><figcaption><b>프로모션 모자</b><span class='todo'>고객사 확인</span></figcaption></figure>
-      <figure><img src="img/af8c41d333.webp" alt="" loading="lazy"><figcaption><b>티셔츠</b><span class='todo'>프로젝트명 확인</span></figcaption></figure>
+      <figure><img src="img/45283d5c8f.webp" alt="" loading="lazy"><figcaption><b>프로모션 모자</b><span class='todo'>○○</span></figcaption></figure>
+      <figure><img src="img/af8c41d333.webp" alt="" loading="lazy"><figcaption><b>티셔츠</b><span class='todo'>○○</span></figcaption></figure>
     </div>
   </div>
 </section>
@@ -750,8 +793,8 @@ body .feat .intro,body .ph-say,body .sec .txt,body .docs .about p,body .grid spa
 <section class="sec" id="scm">
   <h2 class="lab">의류 B2B 무역 &amp; SCM</h2>
   <div class="body">
-    <h3 class="ttl">브리핑에서 납품까지, 끊기지 않게 관리합니다</h3>
-    <p class="txt">바이어의 요청과 작업지시서(테크팩)를 꼼꼼히 읽는 데서 시작합니다. 소재 소싱, 공장 배정, 생산 관리, 최종 검사, 통관과 납품까지 이어서 맡으니, 바이어는 브랜드를 키우는 일에만 집중하시면 됩니다.</p>
+    <h3 class="ttl">브리핑부터 납품까지 한 흐름으로 관리합니다</h3>
+    <p class="txt">바이어의 요청과 작업지시서(테크팩) 검토에서 시작해 소재 소싱, 공장 배정, 생산 관리, 최종 검사, 통관과 납품까지 이어서 맡습니다.</p>
     <ol class="steps">
       <li><h3>브리핑·기획<small>Briefing &amp; Planning</small></h3><p>요구사항 분석, 테크팩 검토, 일정 수립</p></li>
       <li><h3>소싱·샘플<small>Sourcing &amp; Sampling</small></h3><p>원단·부자재 소싱, 샘플 개발과 승인</p></li>
@@ -780,7 +823,7 @@ body .feat .intro,body .ph-say,body .sec .txt,body .docs .about p,body .grid spa
   <h2 class="lab">품질 관리</h2>
   <div class="body">
     <h3 class="ttl">생산 현장에서 세 번 검수합니다</h3>
-    <p class="txt">현장에 상주하는 독립 검수팀이 생산 초기, 중간, 최종 단계마다 직접 확인합니다. 국제 화학물질 규정(REACH)과 친환경 소재 기준, 바이어별 감사 요건도 빠짐없이 챙깁니다.</p>
+    <p class="txt">현장에 상주하는 독립 검수팀이 생산 초기·중간·최종 단계에서 검수합니다. 국제 화학물질 규정(REACH), 친환경 소재 기준, 바이어별 감사 요건을 따릅니다.</p>
     <div class="split">
       <figure style="margin:0"><img src="img/a067f55148.webp" alt="인도 협력 공장 검품 작업" loading="lazy" style="object-position:center 45%"><figcaption class="meta" style="margin-top:8px">출고 전 검품 작업, 인도</figcaption></figure>
       <figure style="margin:0"><img src="img/e3e8ffabf6.webp" alt="인도 협력 공장 봉제 라인" loading="lazy" style="object-position:70% center"><figcaption class="meta" style="margin-top:8px">봉제 라인, 인도</figcaption></figure>
@@ -791,29 +834,31 @@ body .feat .intro,body .ph-say,body .sec .txt,body .docs .about p,body .grid spa
 <section class="sec" id="dist">
   <h2 class="lab">해외 브랜드 유통<small>관리·컨설팅</small></h2>
   <div class="body">
-    <h3 class="ttl">한국 브랜드를 해외 매장으로,<br class="br-pc"> 대량 물량을 해외 시장으로</h3>
+    <h3 class="ttl">168cm 해외 독점 유통, Stockalot 대량 수출</h3>
     <div class="pgrid c3 wideimg">
-      <figure><div class="empty-ph" style="aspect-ratio:4/3">168cm 로고·상품 사진 요청 중</div><figcaption><b>168cm</b>일본·호주·네덜란드 독점 유통 계약, 해외 온·오프라인 스토어 오픈 예정</figcaption></figure>
-      <figure><div class="empty-ph" style="aspect-ratio:4/3">선적·물류 사진 요청 중</div><figcaption><b>Stockalot</b>대량 물류 소싱과 수출</figcaption></figure>
+      <figure><div class="empty-ph" style="aspect-ratio:4/3">사진 ○○</div><figcaption><b>168cm</b>일본·호주·네덜란드 독점 유통 계약, 해외 온·오프라인 스토어 오픈 예정</figcaption></figure>
+      <figure><div class="empty-ph" style="aspect-ratio:4/3">사진 ○○</div><figcaption><b>Stockalot</b>대량 물류 소싱과 수출</figcaption></figure>
     </div>
-    <p class="note">계약 시기와 공개 가능한 규모는 아이리스님 자료를 받은 뒤 채웁니다.</p>
   </div>
 </section>
 </main>
 
 <footer id="contact">
   <div class="frow"><h2>프로젝트 문의</h2>
-    <div><dl class="fl"><dt>전화</dt><dd><a href="tel:01096640718">010-9664-0718</a></dd><dt>이메일</dt><dd><a href="mailto:admin@unipromotion.co.kr">admin@unipromotion.co.kr</a></dd><dt>WhatsApp</dt><dd><span class="todo">링크 확인</span></dd></dl>
+    <div><dl class="fl"><dt>전화</dt><dd><a href="tel:01096640718">010-9664-0718</a></dd><dt>이메일</dt><dd><a href="mailto:admin@unipromotion.co.kr">admin@unipromotion.co.kr</a></dd><dt>WhatsApp</dt><dd><span class="todo">○○</span></dd></dl>
     <a class="u" href="contact.html">문의 양식 열기</a></div></div>
+  <div class="frow"><h2>코리안 파빌리온 참가</h2>
+    <div><p class="fabout">E&amp;L MENA 2027 한국관 참가 기업을 모집합니다. 2027년 1월 18~20일, 두바이 월드 트레이드 센터.</p>
+    <ul class="flinks"><li><a class="u" href="contact.html?type=pavilion">참가 문의</a></li><li><a class="u" href="exhibition.html#pavilion">파빌리온 안내</a></li></ul></div></div>
   <div class="frow"><h2>거점</h2>
-    <div><dl class="fl"><dt>서울 본사</dt><dd>서울특별시 마포구 독막로19길 42-12 (101)</dd><dt>네덜란드</dt><dd>유럽 거점 <span class="todo">주소 확인</span></dd><dt>시드니</dt><dd>오세아니아 거점</dd></dl></div></div>
+    <div><dl class="fl"><dt>서울 본사</dt><dd>서울특별시 마포구 독막로19길 42-12 (101)</dd><dt>네덜란드</dt><dd>유럽 거점 <span class="todo">○○</span></dd><dt>시드니</dt><dd>오세아니아 거점</dd></dl></div></div>
   <div class="frow"><h2>회사소개서</h2>
     <div><ul class="flinks"><li><a class="u" href="#">회사소개서 (국문) PDF</a></li><li><a class="u" href="#">Company Profile (English) PDF</a></li></ul></div></div>
   <div class="frow"><h2>회사 소개</h2>
     <div><p class="fabout">주식회사 유니프로모션은 서울에 본사를 둔 글로벌 무역·SCM 회사입니다. 아시아와 중동 6개국의 협력 공장에서 의류와 굿즈를 만들고, 소재 소싱부터 검수, 통관, 납품까지 한 담당자가 맡습니다.</p></div></div>
   <img class="wordmark" src="assets/logo_h_cream.png" alt="UNIPROMOTION">
   <div class="fbot">
-    <nav aria-label="하단 메뉴"><a href="company.html">Company</a><a href="apparel.html">Apparel &amp; Trading</a><a href="exhibition.html">Exhibition &amp; Entertainment</a><a href="media.html">Media &amp; Press</a><a href="contact.html">Contact</a><a href="#">Instagram <span class="todo">확인</span></a><a href="#">블로그 <span class="todo">확인</span></a></nav>
+    <nav aria-label="하단 메뉴"><a href="company.html">Company</a><a href="apparel.html">Apparel &amp; Trading</a><a href="exhibition.html">Exhibition &amp; Entertainment</a><a href="media.html">Media &amp; Press</a><a href="contact.html">Contact</a><a href="#">Instagram</a><a href="#">블로그</a></nav>
     <p>주식회사 유니프로모션 · 대표 안예원 · 사업자등록번호 196-88-02743 · © 2026 UNIPROMOTION</p>
   </div>
 </footer>

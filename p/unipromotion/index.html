@@ -573,6 +573,49 @@ body .latest .more{color:var(--charcoal)}
 body .top nav a{color:var(--stone)}
 body .top nav a:hover,body .top nav a[aria-current]{color:var(--charcoal)}
 body .feat .intro,body .ph-say,body .sec .txt,body .docs .about p,body .grid span,body .feat .cards span,body .pgrid figcaption,body .media .d{letter-spacing:-.01em}
+
+/* build_fix (10/6 점검 보완) */
+.hero .sl.el{background:var(--cream-deep);display:flex;align-items:center;justify-content:center;padding-bottom:64px}
+.hero .sl.el img{width:min(46%,640px);height:auto;object-fit:contain}
+body .hero::after{transition:opacity .6s var(--ease)}
+.hero.is-light{color:var(--charcoal)}
+body .hero.is-light::after{opacity:0}
+body .hero.is-light .dots button{background:rgba(17,17,17,.22)}
+body .hero.is-light .dots button[aria-current="true"]{background:var(--charcoal)}
+.hero .cap a{color:inherit;text-decoration:none}
+.hero .cap a:hover b{text-decoration:underline;text-underline-offset:3px}
+.hero .cap p{visibility:hidden;transition:opacity .5s var(--ease),transform .5s var(--ease),visibility 0s .5s}
+.hero .cap p.on{visibility:visible;transition-delay:0s}
+/* 좌우 여백 = pentagram.com 실측: 콘텐츠 최대 1728px. 더 넓은 화면에서는 첫 화면·색 블록·하단이 같은 선 안으로 들어오고,
+   상단은 1776px(좌우 24px 안쪽)이라 로고가 첫 화면 사진 왼쪽 끝과 맞음. 1728px 이하에서는 지금처럼 화면 끝까지 */
+body>*:not(dialog):not(script):not(style){max-width:1728px;margin-left:auto;margin-right:auto}
+body>header.top,body>.top{max-width:1776px}
+/* 배색 = Pentagram 주제 블록(#222 면 + #000 판, 모서리 8px, 판 안쪽 32px)을 브리프 색으로:
+   APPAREL 따뜻한 먹색 면 + 더 짙은 판, EXHIBITION 버건디 #5C1D24 면 + 짙은 버건디 판 */
+body .feat.light,body .feat.dark{margin-top:96px;padding:32px var(--gut) 64px;color:var(--cream)}
+body .feat.light{background:#2B2624}
+body .feat.dark{background:var(--burgundy)}
+body .feat.light .tab{border-top-color:rgba(247,245,240,.3)}
+body .feat h2{color:var(--cream)}
+body .feat .intro{color:var(--mute-d)}
+body .feat .subs a{color:var(--cream);border-color:rgba(247,245,240,.3)}
+body .feat .subs a:hover{color:var(--cream);border-color:var(--cream)}
+body .feat .cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap);max-width:1252px;margin-top:48px;padding:32px;border-radius:8px}
+body .feat.light .cards{background:#1C1917}
+body .feat.dark .cards{background:var(--deep)}
+body .feat .cards b{color:var(--cream)}
+body .feat .cards span,body .feat.dark .cards span{color:var(--mute-d)}
+@media (hover:hover){body .feat .cards a:hover b{color:var(--cream);text-decoration:underline;text-underline-offset:3px}}
+body .feat .go{background:var(--cream);color:var(--charcoal)}
+body .feat .go:hover{background:var(--cream-deep);color:var(--charcoal)}
+body .feat.dark .go{color:var(--burgundy)}
+@media (max-width:900px){
+  body .feat .cards{grid-template-columns:repeat(2,minmax(0,1fr));padding:16px;margin-top:32px}
+  .hero .sl.el img{width:72%}
+  body .grid{grid-template-columns:repeat(2,1fr);gap:32px var(--gap)}
+  body .grid a{grid-column:span 1}
+  body .grid a.lg{grid-column:span 2}
+}
 </style>
 </head>
 <body>
@@ -590,33 +633,35 @@ body .feat .intro,body .ph-say,body .sec .txt,body .docs .about p,body .grid spa
 </header>
 <h1 class="sr">유니프로모션 — 의류·굿즈 기획과 해외 생산, 해외 전시 코리안 파빌리온</h1>
 
-<section class="hero" aria-roledescription="carousel" aria-label="유니프로모션이 하는 일">
-  <figure class="sl on"><img src="img/621cef6b53.webp" alt="갈색 벽에 그림이 걸린 미술관 전시실"></figure>
+<section class="hero is-light" aria-roledescription="carousel" aria-label="유니프로모션이 하는 일">
+  <figure class="sl el on" data-tone="light"><img src="assets/el_logo.png" alt="Entertainment &amp; Leisure MENA (구 DEAL Dubai) 로고"></figure>
+  <figure class="sl"><img src="img/621cef6b53.webp" alt="갈색 벽에 그림이 걸린 미술관 전시실"></figure>
   <figure class="sl"><img src="img/d296dc48a1.webp" alt="크림, 갈색, 버건디 옷이 걸린 옷걸이"></figure>
   <figure class="sl"><img src="img/833e41cbc0.webp" alt="갈색과 노란색 자수실 타래"></figure>
   <figure class="sl"><img src="img/b3d87ef0a6.webp" alt="크림색에서 살구색으로 쌓인 원단" style="object-position:center 35%"></figure>
   <figure class="sl"><img src="img/43193ecae1.webp" alt="흰 천을 바늘로 꿰매는 손"></figure>
   <div class="cap" aria-live="polite">
-    <p class="on"><b>전시 굿즈 기획·생산·납품</b>관람객이 전시를 집까지 가져갈 수 있도록 상품을 만듭니다.</p>
-    <p><b>의류 프로모션 기획·생산</b>브랜드의 메시지를 입을 수 있는 옷으로 풀어냅니다.</p>
-    <p><b>샘플링과 디테일</b>자수 한 땀, 색 하나까지 샘플로 먼저 확인합니다.</p>
-    <p><b>의류 B2B 무역 &amp; SCM</b>원단을 찾는 일부터 통관과 납품까지, 공급망 전체를 살핍니다.</p>
-    <p><b>품질 관리</b>생산 초기, 중간, 출고 직전. 현장에서 세 번 확인합니다.</p>
+    <p class="on"><a href="exhibition.html#pavilion"><b>E&amp;L MENA 2027 코리안 파빌리온</b>참가 기업 모집 · 2027년 1월 18~20일, 두바이 월드 트레이드 센터</a></p>
+    <p><b>전시 굿즈 기획·생산·납품</b>무민, 요시고 사진전, Accidentally Wes Anderson 등 전시 굿즈</p>
+    <p><b>의류 프로모션 기획·생산</b>브랜드·기업·전시의 프로모션 의류, 기획부터 해외 생산까지</p>
+    <p><b>샘플링과 디테일</b>자수·프린트·소재를 샘플로 확인한 뒤 생산</p>
+    <p><b>의류 B2B 무역 &amp; SCM</b>원단 소싱, 생산 관리, 통관, 납품</p>
+    <p><b>품질 관리</b>생산 초기·중간·최종, 현장 3단계 검수</p>
   </div>
   <div class="dots" role="group" aria-label="슬라이드 선택">
-    <button aria-label="1번" aria-current="true"></button><button aria-label="2번"></button><button aria-label="3번"></button><button aria-label="4번"></button><button aria-label="5번"></button>
+    <button aria-label="1번" aria-current="true"></button><button aria-label="2번"></button><button aria-label="3번"></button><button aria-label="4번"></button><button aria-label="5번"></button><button aria-label="6번"></button>
   </div>
 </section>
 
 <section class="feat light" id="apparel">
-  <h2>옷 한 벌, 기획부터 납품까지 책임집니다</h2>
-  <p class="intro">브랜드와 기업이 입힐 프로모션 의류를 함께 기획하고, 인도를 비롯한 해외 협력 공장에서 만듭니다. 원단을 고르는 일부터 검수와 통관까지 직접 챙기고, 해외 브랜드의 국내외 유통까지 맡고 있습니다.</p>
+  <h2>프로모션 의류의 기획부터 해외 생산·납품까지</h2>
+  <p class="intro">브랜드·기업·전시의 프로모션 의류를 기획하고 인도, 베트남, 방글라데시 등 6개국 협력 공장에서 생산합니다. 원단 소싱, 검수, 통관, 납품을 직접 관리하고, 국내 브랜드 168cm의 일본·호주·네덜란드 유통도 맡습니다.</p>
   <ul class="subs"><li><a href="apparel.html#promo">의류 프로모션 기획·생산</a></li><li><a href="apparel.html#scm">의류 B2B 무역 &amp; SCM</a></li><li><a href="apparel.html#dist">해외 브랜드 유통·컨설팅</a></li></ul>
   <div class="cards">
     <a href="apparel.html#promo"><img src="img/e3e8ffabf6.webp" alt=""><b>인도 협력 공장</b><span>의류 대량 생산 라인</span></a>
     <a href="apparel.html#promo"><img src="img/6187d15d39.webp" alt=""><b>Accidentally Wes Anderson</b><span>전시 굿즈 바람막이 3색</span></a>
     <a href="apparel.html#promo"><img src="img/eb7053c3d5.webp" alt=""><b>레고랜드 코리아</b><span>어린이 가운 4색</span></a>
-    <a href="apparel.html#promo"><img src="img/45283d5c8f.webp" alt=""><b>프로모션 모자</b><span class="todo">고객사 확인</span></a>
+    <a href="apparel.html#promo"><img src="img/45283d5c8f.webp" alt=""><b>프로모션 모자</b><span class="todo">○○</span></a>
   </div>
   <a class="go" href="apparel.html">Apparel &amp; Trading 전체 보기</a>
 </section>
@@ -625,19 +670,16 @@ body .feat .intro,body .ph-say,body .sec .txt,body .docs .about p,body .grid spa
   <h2 class="more">최근 프로젝트</h2>
   
   <div class="grid">
-    <a class="lg" data-b="g" data-c="x" href="#"><div class="ph"><img src="img/4739705314.webp" alt=""></div><b>Accidentally Wes Anderson</b><span>스노볼</span></a>
-    <a data-b="g" data-c="t" href="#"><div class="ph"><img src="img/49acdcf06a.webp" alt=""></div><b>레고랜드 코리아</b><span>테마파크 굿즈 텀블러·보틀</span></a>
-    <a data-b="a" data-c="t" href="#"><div class="ph"><img src="img/eb7053c3d5.webp" alt=""></div><b>레고랜드 코리아</b><span>어린이 가운 4색</span></a>
-    <a data-b="s" data-c="b" href="#"><div class="ph"><img src="img/e3e8ffabf6.webp" alt=""></div><b>인도 협력 공장</b><span>의류 대량 생산 라인</span></a>
-    <a data-b="k" data-c="f" href="#"><div class="ph"><img src="img/dd4e60b2a1.webp" alt="" style="object-position:center top"></div><b>E&amp;L MENA 2027</b><span>두바이 한국관 공식 에이전시</span></a>
-    <a data-b="s" data-c="b" href="#"><div class="ph"><img src="img/a067f55148.webp" alt="" style="object-position:center 45%"></div><b>출고 전 검품</b><span>인도 협력 공장 검수</span></a>
-    <a class="lg" data-b="a" data-c="x" href="#"><div class="ph"><img src="img/124b3008cf.webp" alt=""></div><b>Accidentally Wes Anderson</b><span>맨투맨</span></a>
-    <a data-b="g" data-c="x" href="#"><div class="ph"><img src="img/6830ce77e1.webp" alt=""></div><b>요시고 사진전</b><span>마스킹 테이프</span></a>
-    <a data-b="g" data-c="x" href="#"><div class="ph"><img src="img/b8ff792178.webp" alt=""></div><b>레드룸</b><span>와인잔과 패키지</span></a>
-    <a data-b="g" data-c="x" href="#"><div class="ph"><img src="img/259e0762c4.webp" alt=""></div><b>유미의 세포들 특별전</b><span>캐릭터 굿즈</span></a>
-    <a data-b="g" data-c="b" href="#"><div class="ph"><img src="img/6d166f9403.webp" alt=""></div><b>STETS</b><span>자체 브랜드 식기</span></a>
-    <a data-b="g" data-c="x" href="#"><div class="ph"><img src="img/63fc2cfe27.webp" alt=""></div><b>문도멘도</b><span>전시 굿즈 스티커</span></a>
-    <a data-b="k" data-c="f" href="#"><div class="ph"><img src="img/066f514dfe.webp" alt="" style="object-position:center 25%"></div><b>IAAPA Expo</b><span>해외 박람회 유니프로모션 부스</span></a>
+    <a class="lg" data-b="g" data-c="x" href="exhibition.html#goods"><div class="ph"><img src="img/4739705314.webp" alt=""></div><b>Accidentally Wes Anderson</b><span>스노볼</span></a>
+    <a data-b="g" data-c="t" href="exhibition.html#park"><div class="ph"><img src="img/49acdcf06a.webp" alt=""></div><b>레고랜드 코리아</b><span>테마파크 굿즈 텀블러·보틀</span></a>
+    <a data-b="s" data-c="b" href="apparel.html#qc"><div class="ph"><img src="img/a067f55148.webp" alt="" style="object-position:center 45%"></div><b>출고 전 검품</b><span>인도 협력 공장 검수</span></a>
+    <a class="lg" data-b="a" data-c="x" href="apparel.html#promo"><div class="ph"><img src="img/124b3008cf.webp" alt=""></div><b>Accidentally Wes Anderson</b><span>맨투맨</span></a>
+    <a data-b="g" data-c="x" href="exhibition.html#goods"><div class="ph"><img src="img/6830ce77e1.webp" alt=""></div><b>요시고 사진전</b><span>마스킹 테이프</span></a>
+    <a data-b="g" data-c="x" href="exhibition.html#goods"><div class="ph"><img src="img/b8ff792178.webp" alt=""></div><b>레드룸</b><span>와인잔과 패키지</span></a>
+    <a data-b="g" data-c="x" href="exhibition.html#goods"><div class="ph"><img src="img/259e0762c4.webp" alt=""></div><b>유미의 세포들 특별전</b><span>캐릭터 굿즈</span></a>
+    <a data-b="g" data-c="b" href="company.html#history"><div class="ph"><img src="img/6d166f9403.webp" alt=""></div><b>STETS</b><span>자체 브랜드 식기</span></a>
+    <a data-b="g" data-c="x" href="exhibition.html#goods"><div class="ph"><img src="img/63fc2cfe27.webp" alt=""></div><b>문도멘도</b><span>전시 굿즈 스티커</span></a>
+    <a data-b="k" data-c="f" href="exhibition.html#pavilion"><div class="ph"><img src="img/066f514dfe.webp" alt="" style="object-position:center 25%"></div><b>IAAPA Expo</b><span>해외 박람회 유니프로모션 부스</span></a>
     <p class="empty">이 조건에 맞는 프로젝트는 준비 중입니다.</p>
   </div>
 </section>
@@ -645,7 +687,7 @@ body .feat .intro,body .ph-say,body .sec .txt,body .docs .about p,body .grid spa
 <section class="reel" id="archive" aria-label="함께한 전시">
   <div class="reel-head">
     <h2>함께한 전시</h2><span class="cnt">(16)</span>
-    <p class="say">무민, 요시고 사진전, 베르너 브롱크호스트, Accidentally Wes Anderson. 전시마다 분위기도, 관람객이 원하는 것도 달랐습니다. 그래서 상품도 전시마다 새로 기획했습니다.</p>
+    <p class="say">무민, 요시고 사진전, 베르너 브롱크호스트, Accidentally Wes Anderson 등 국내 전시 16건의 굿즈를 기획하고 생산했습니다.</p>
   </div>
   <div class="track" tabindex="0" aria-label="전시 포스터 목록. 좌우로 넘겨 볼 수 있습니다">
     <ul>
@@ -671,24 +713,24 @@ body .feat .intro,body .ph-say,body .sec .txt,body .docs .about p,body .grid spa
 </section>
 
 <section class="process">
-  <p class="big">처음 연락 주신 담당자가 납품까지 함께합니다.<br class="br-pc"> 해외 공장에도, 박람회 현장에도요.</p>
+  <p class="big">한 담당자가 요구 분석부터<br class="br-pc"> 해외 납품까지 맡습니다.</p>
   <ol>
-    <li><h3>요구 분석<small>Needs Analysis</small></h3><p>무엇을, 얼마나, 언제까지 만들지 먼저 함께 정리합니다.</p></li>
-    <li><h3>소싱·제안<small>Sourcing &amp; Solution</small></h3><p>맞는 소재와 공장을 찾아 샘플과 견적으로 보여 드립니다.</p></li>
-    <li><h3>생산·검수<small>Execution &amp; QC</small></h3><p>현지 공장의 생산을 챙기고, 출고 전에 꼼꼼히 검수합니다.</p></li>
-    <li><h3>해외 납품<small>Global Delivery</small></h3><p>통관과 물류까지 마치고, 약속한 날짜에 납품합니다.</p></li>
+    <li><h3>요구 분석<small>Needs Analysis</small></h3><p>품목, 수량, 예산, 납기를 정리합니다.</p></li>
+    <li><h3>소싱·제안<small>Sourcing &amp; Solution</small></h3><p>소재와 공장을 찾아 샘플과 견적으로 제안합니다.</p></li>
+    <li><h3>생산·검수<small>Execution &amp; QC</small></h3><p>현지 공장의 생산을 관리하고 출고 전에 검수합니다.</p></li>
+    <li><h3>해외 납품<small>Global Delivery</small></h3><p>통관과 물류를 거쳐 약속한 납기에 납품합니다.</p></li>
   </ol>
 </section>
 
 <section class="feat dark" id="exhibition">
-  <h2>전시의 이야기를 굿즈로,<br class="br-pc"> 한국 기업을 해외 전시장으로</h2>
-  <p class="intro">전시장을 나선 뒤에도 그 이야기를 간직할 수 있도록, 전시와 테마파크의 굿즈를 기획하고 현장까지 납품합니다. 중동 E&amp;L MENA의 공식 한국 에이전시로서 코리안 파빌리온도 운영하고 있습니다.</p>
+  <h2>전시 굿즈와 해외 전시 코리안 파빌리온</h2>
+  <p class="intro">전시와 테마파크의 굿즈를 기획·생산해 현장에 납품합니다. 중동 E&amp;L MENA의 공식 한국 에이전시로 코리안 파빌리온을 운영하며, 2027년 1월 18~20일 두바이 행사의 참가 기업을 모집하고 있습니다.</p>
   <ul class="subs"><li><a href="exhibition.html#goods">전시 굿즈 기획·생산·납품</a></li><li><a href="exhibition.html#pavilion">해외 전시 코리안 파빌리온</a></li></ul>
   <div class="cards">
-    <a href="exhibition.html#goods"><img src="img/4739705314.webp" alt=""><b>Accidentally Wes Anderson</b><span>전시 굿즈 스노볼</span></a>
+    <a href="exhibition.html#pavilion"><img src="img/dd4e60b2a1.webp" alt="" style="object-position:center top"><b>E&amp;L MENA 2027</b><span>코리안 파빌리온 참가 기업 모집</span></a>
     <a href="exhibition.html#goods"><img src="img/eae44f8048.webp" alt=""><b>레드룸</b><span>작품 퍼즐과 패키지</span></a>
-    <a href="exhibition.html#goods"><img src="img/49acdcf06a.webp" alt=""><b>레고랜드 코리아</b><span>테마파크 굿즈 텀블러·보틀</span></a>
-    <a href="exhibition.html#goods"><img src="img/dd4e60b2a1.webp" alt="" style="object-position:center top"><b>E&amp;L MENA 2027</b><span>두바이 코리안 파빌리온</span></a>
+    <a href="exhibition.html#goods"><img src="img/617edaba46.webp" alt=""><b>어노니머스 프로젝트</b><span>조각 케이크 롤</span></a>
+    <a href="exhibition.html#goods"><img src="img/3d827891a9.webp" alt=""><b>힙노시스</b><span>파우치</span></a>
   </div>
   <a class="go" href="exhibition.html">Exhibition &amp; Entertainment 전체 보기</a>
 </section>
@@ -699,17 +741,17 @@ body .feat .intro,body .ph-say,body .sec .txt,body .docs .about p,body .grid spa
     <a class="go" href="media.html">전체 보기</a>
   </div>
   <div class="mgrid">
-    <a class="lead-card" href="media.html">
+    <a class="lead-card" href="exhibition.html#pavilion">
       <div class="th"><img src="img/6e86ff2bcf.webp" alt=""></div>
       <p class="meta"><span class="tg">전시</span><span class="todo">2026.○○</span></p>
       <b>E&amp;L MENA 공식 한국 에이전시 계약, 코리안 파빌리온 론칭</b>
-      <span class="d">중동의 대규모 레저·엔터테인먼트 박람회에서 한국관을 운영하게 됐습니다.</span>
+      <span class="d">중동 레저·엔터테인먼트 박람회의 한국관을 운영합니다. 2027년 1월 행사 참가 기업 모집 중.</span>
     </a>
     <ul class="mlist">
-      <li><a href="media.html"><p class="meta"><span class="tg">미디어</span><span class="todo">2026.○○</span></p><b>대표 방송 출연</b><span class="d">방송에 소개된 유니프로모션의 이야기입니다.</span></a></li>
-      <li><a href="media.html"><p class="meta"><span class="tg">전시</span><span class="todo">2026.○○</span></p><b>베트남 미디어앤아트 전시 전속 계약</b><span class="d">베트남에서 열리는 전시의 굿즈와 운영을 맡게 됐습니다.</span></a></li>
-      <li><a href="media.html"><p class="meta"><span class="tg">유통</span><span class="todo">2026.○○</span></p><b>168cm 일본·호주·네덜란드 독점 유통 계약</b><span class="d">해외 온·오프라인 스토어를 열 준비를 하고 있습니다.</span></a></li>
-      <li><a href="media.html"><p class="meta"><span class="tg">수출</span><span class="todo">2026.○○</span></p><b>Stockalot 대량 물류 수출 완료</b><span class="d">대규모 물량의 소싱부터 수출까지 마무리했습니다.</span></a></li>
+      <li><a href="media.html"><p class="meta"><span class="tg">미디어</span><span class="todo">2026.○○</span></p><b>대표 방송 출연</b><span class="d">유니프로모션이 소개된 방송 영상.</span></a></li>
+      <li><a href="media.html"><p class="meta"><span class="tg">전시</span><span class="todo">2026.○○</span></p><b>베트남 미디어앤아트 전시 전속 계약</b><span class="d">베트남 미디어앤아트 전시의 굿즈와 운영을 맡습니다.</span></a></li>
+      <li><a href="media.html"><p class="meta"><span class="tg">유통</span><span class="todo">2026.○○</span></p><b>168cm 일본·호주·네덜란드 독점 유통 계약</b><span class="d">국내 모바일 액세서리 브랜드의 해외 독점 유통. 온·오프라인 스토어 오픈 예정.</span></a></li>
+      <li><a href="media.html"><p class="meta"><span class="tg">수출</span><span class="todo">2026.○○</span></p><b>Stockalot 대량 물류 수출 완료</b><span class="d">대규모 물량의 소싱과 수출.</span></a></li>
     </ul>
   </div>
 </section>
@@ -736,17 +778,18 @@ body .feat .intro,body .ph-say,body .sec .txt,body .docs .about p,body .grid spa
 
 <footer id="contact">
   <div class="frow"><h2>프로젝트 문의</h2>
-    <div><dl class="fl"><dt>전화</dt><dd><a href="tel:01096640718">010-9664-0718</a></dd><dt>이메일</dt><dd><a href="mailto:admin@unipromotion.co.kr">admin@unipromotion.co.kr</a></dd><dt>WhatsApp</dt><dd><span class="todo">링크 확인</span></dd></dl>
+    <div><dl class="fl"><dt>전화</dt><dd><a href="tel:01096640718">010-9664-0718</a></dd><dt>이메일</dt><dd><a href="mailto:admin@unipromotion.co.kr">admin@unipromotion.co.kr</a></dd><dt>WhatsApp</dt><dd><span class="todo">○○</span></dd></dl>
     <a class="u" href="contact.html">문의 양식 열기</a></div></div>
+  <div class="frow"><h2>코리안 파빌리온 참가</h2>
+    <div><p class="fabout">E&amp;L MENA 2027 한국관 참가 기업을 모집합니다. 2027년 1월 18~20일, 두바이 월드 트레이드 센터.</p>
+    <ul class="flinks"><li><a class="u" href="contact.html?type=pavilion">참가 문의</a></li><li><a class="u" href="exhibition.html#pavilion">파빌리온 안내</a></li></ul></div></div>
   <div class="frow"><h2>거점</h2>
-    <div><dl class="fl"><dt>서울 본사</dt><dd>서울특별시 마포구 독막로19길 42-12 (101)</dd><dt>네덜란드</dt><dd>유럽 거점 <span class="todo">주소 확인</span></dd><dt>시드니</dt><dd>오세아니아 거점</dd></dl></div></div>
-  <div class="frow"><h2>회사소개서</h2>
-    <div><ul class="flinks"><li><a class="u" href="#">회사소개서 (국문) PDF</a></li><li><a class="u" href="#">Company Profile (English) PDF</a></li></ul></div></div>
+    <div><dl class="fl"><dt>서울 본사</dt><dd>서울특별시 마포구 독막로19길 42-12 (101)</dd><dt>네덜란드</dt><dd>유럽 거점 <span class="todo">○○</span></dd><dt>시드니</dt><dd>오세아니아 거점</dd></dl></div></div>
   <div class="frow"><h2>회사 소개</h2>
     <div><p class="fabout">주식회사 유니프로모션은 서울에 본사를 둔 글로벌 무역·SCM 회사입니다. 아시아와 중동 6개국의 협력 공장에서 의류와 굿즈를 만들고, 소재 소싱부터 검수, 통관, 납품까지 한 담당자가 맡습니다.</p></div></div>
   <img class="wordmark" src="assets/logo_h_cream.png" alt="UNIPROMOTION">
   <div class="fbot">
-    <nav aria-label="하단 메뉴"><a href="company.html">Company</a><a href="apparel.html">Apparel &amp; Trading</a><a href="exhibition.html">Exhibition &amp; Entertainment</a><a href="media.html">Media &amp; Press</a><a href="contact.html">Contact</a><a href="#">Instagram <span class="todo">확인</span></a><a href="#">블로그 <span class="todo">확인</span></a></nav>
+    <nav aria-label="하단 메뉴"><a href="company.html">Company</a><a href="apparel.html">Apparel &amp; Trading</a><a href="exhibition.html">Exhibition &amp; Entertainment</a><a href="media.html">Media &amp; Press</a><a href="contact.html">Contact</a><a href="#">Instagram</a><a href="#">블로그</a></nav>
     <p>주식회사 유니프로모션 · 대표 안예원 · 사업자등록번호 196-88-02743 · © 2026 UNIPROMOTION</p>
   </div>
 </footer>
@@ -761,6 +804,7 @@ body .feat .intro,body .ph-say,body .sec .txt,body .docs .about p,body .grid spa
   let i = 0, t = null, paused = reduce, hover = false;
   const go = n => {
     i = (n + sl.length) % sl.length;
+    hero.classList.toggle('is-light', sl[i].dataset.tone === 'light');
     sl.forEach((e, k) => e.classList.toggle('on', k === i));
     cap.forEach((e, k) => e.classList.toggle('on', k === i));
     dots.forEach((e, k) => e.setAttribute('aria-current', k === i));

@@ -706,6 +706,49 @@ body .latest .more{color:var(--charcoal)}
 body .top nav a{color:var(--stone)}
 body .top nav a:hover,body .top nav a[aria-current]{color:var(--charcoal)}
 body .feat .intro,body .ph-say,body .sec .txt,body .docs .about p,body .grid span,body .feat .cards span,body .pgrid figcaption,body .media .d{letter-spacing:-.01em}
+
+/* build_fix (10/6 점검 보완) */
+.hero .sl.el{background:var(--cream-deep);display:flex;align-items:center;justify-content:center;padding-bottom:64px}
+.hero .sl.el img{width:min(46%,640px);height:auto;object-fit:contain}
+body .hero::after{transition:opacity .6s var(--ease)}
+.hero.is-light{color:var(--charcoal)}
+body .hero.is-light::after{opacity:0}
+body .hero.is-light .dots button{background:rgba(17,17,17,.22)}
+body .hero.is-light .dots button[aria-current="true"]{background:var(--charcoal)}
+.hero .cap a{color:inherit;text-decoration:none}
+.hero .cap a:hover b{text-decoration:underline;text-underline-offset:3px}
+.hero .cap p{visibility:hidden;transition:opacity .5s var(--ease),transform .5s var(--ease),visibility 0s .5s}
+.hero .cap p.on{visibility:visible;transition-delay:0s}
+/* 좌우 여백 = pentagram.com 실측: 콘텐츠 최대 1728px. 더 넓은 화면에서는 첫 화면·색 블록·하단이 같은 선 안으로 들어오고,
+   상단은 1776px(좌우 24px 안쪽)이라 로고가 첫 화면 사진 왼쪽 끝과 맞음. 1728px 이하에서는 지금처럼 화면 끝까지 */
+body>*:not(dialog):not(script):not(style){max-width:1728px;margin-left:auto;margin-right:auto}
+body>header.top,body>.top{max-width:1776px}
+/* 배색 = Pentagram 주제 블록(#222 면 + #000 판, 모서리 8px, 판 안쪽 32px)을 브리프 색으로:
+   APPAREL 따뜻한 먹색 면 + 더 짙은 판, EXHIBITION 버건디 #5C1D24 면 + 짙은 버건디 판 */
+body .feat.light,body .feat.dark{margin-top:96px;padding:32px var(--gut) 64px;color:var(--cream)}
+body .feat.light{background:#2B2624}
+body .feat.dark{background:var(--burgundy)}
+body .feat.light .tab{border-top-color:rgba(247,245,240,.3)}
+body .feat h2{color:var(--cream)}
+body .feat .intro{color:var(--mute-d)}
+body .feat .subs a{color:var(--cream);border-color:rgba(247,245,240,.3)}
+body .feat .subs a:hover{color:var(--cream);border-color:var(--cream)}
+body .feat .cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap);max-width:1252px;margin-top:48px;padding:32px;border-radius:8px}
+body .feat.light .cards{background:#1C1917}
+body .feat.dark .cards{background:var(--deep)}
+body .feat .cards b{color:var(--cream)}
+body .feat .cards span,body .feat.dark .cards span{color:var(--mute-d)}
+@media (hover:hover){body .feat .cards a:hover b{color:var(--cream);text-decoration:underline;text-underline-offset:3px}}
+body .feat .go{background:var(--cream);color:var(--charcoal)}
+body .feat .go:hover{background:var(--cream-deep);color:var(--charcoal)}
+body .feat.dark .go{color:var(--burgundy)}
+@media (max-width:900px){
+  body .feat .cards{grid-template-columns:repeat(2,minmax(0,1fr));padding:16px;margin-top:32px}
+  .hero .sl.el img{width:72%}
+  body .grid{grid-template-columns:repeat(2,1fr);gap:32px var(--gap)}
+  body .grid a{grid-column:span 1}
+  body .grid a.lg{grid-column:span 2}
+}
 </style>
 </head>
 <body>
@@ -725,7 +768,7 @@ body .feat .intro,body .ph-say,body .sec .txt,body .docs .about p,body .grid spa
 <main>
 <div class="ph-head">
   <h1>Media &amp; Press</h1>
-  <div class="ph-row"><p class="ph-say">새 계약과 방송, 수출 소식을 이곳에 차곡차곡 모아 둡니다.</p></div>
+  <div class="ph-row"><p class="ph-say">계약, 방송, 수출 소식과 보도 이력.</p></div>
 </div><div class="chips" role="group" aria-label="분류">
   <button type="button" aria-pressed="true" data-k="all">전체</button><button type="button" aria-pressed="false" data-k="전시">전시</button><button type="button" aria-pressed="false" data-k="미디어">미디어</button><button type="button" aria-pressed="false" data-k="유통">유통</button><button type="button" aria-pressed="false" data-k="수출">수출</button>
 </div>
@@ -734,23 +777,23 @@ body .feat .intro,body .ph-say,body .sec .txt,body .docs .about p,body .grid spa
   <div class="fimg"><img src="img/6e86ff2bcf.webp" alt="E&L MENA" loading="lazy"></div>
   <div><p class="meta"><span class="tg">전시</span><span class="todo">2026.○○</span></p>
     <h3 class="ttl">E&amp;L MENA 공식 한국 에이전시 계약, 코리안 파빌리온 론칭</h3>
-    <p>중동의 대규모 레저·엔터테인먼트 박람회 E&amp;L MENA에서 공식 한국 에이전시로 한국관을 운영하게 됐습니다. <span class="todo">계약 내용 2~3줄 요청 중</span></p></div>
+    <p>중동 레저·엔터테인먼트 박람회 E&amp;L MENA의 공식 한국 에이전시로 한국관을 운영합니다. <span class="todo">○○</span></p></div>
 </a>
 
 <div class="ncards" id="ncards">
-  <a href="#" data-k="미디어"><div class="th"><div class="empty-ph" style="height:100%">방송 캡처 요청 중</div></div><p class="meta"><span class="tg">미디어</span><span class="todo">2026.○○</span></p><b>대표 방송 출연</b><span class="meta">방송에 소개된 유니프로모션의 이야기입니다.</span></a>
-  <a href="#" data-k="전시"><div class="th"><div class="empty-ph" style="height:100%">전시 사진 요청 중</div></div><p class="meta"><span class="tg">전시</span><span class="todo">2026.○○</span></p><b>베트남 미디어앤아트 전시 전속 계약</b><span class="meta">베트남에서 열리는 전시의 굿즈와 운영을 맡게 됐습니다.</span></a>
-  <a href="#" data-k="유통"><div class="th"><div class="empty-ph" style="height:100%">브랜드 사진 요청 중</div></div><p class="meta"><span class="tg">유통</span><span class="todo">2026.○○</span></p><b>168cm 일본·호주·네덜란드 독점 유통 계약</b><span class="meta">모바일 액세서리 브랜드의 해외 온·오프라인 스토어를 열 준비를 하고 있습니다.</span></a>
-  <a href="#" data-k="수출"><div class="th"><div class="empty-ph" style="height:100%">물류 사진 요청 중</div></div><p class="meta"><span class="tg">수출</span><span class="todo">2026.○○</span></p><b>Stockalot 대량 물류 수출 완료</b><span class="meta">대규모 물량의 소싱부터 수출까지 마무리했습니다.</span></a>
-  <a href="#" data-k="전시"><div class="th"><img src="img/dd4e60b2a1.webp" alt="" loading="lazy" style="object-position:center top"></div><p class="meta"><span class="tg">전시</span><span class="todo">2026.○○</span></p><b>E&amp;L MENA 2027 코리안 파빌리온 참가 기업 모집</b><span class="meta">2027년 1월 18~20일, 두바이. 한국관에 함께할 기업을 찾고 있습니다.</span></a>
+  <a data-k="미디어"><div class="th"><div class="empty-ph" style="height:100%">사진 ○○</div></div><p class="meta"><span class="tg">미디어</span><span class="todo">2026.○○</span></p><b>대표 방송 출연</b><span class="meta">유니프로모션이 소개된 방송 영상.</span></a>
+  <a data-k="전시"><div class="th"><div class="empty-ph" style="height:100%">사진 ○○</div></div><p class="meta"><span class="tg">전시</span><span class="todo">2026.○○</span></p><b>베트남 미디어앤아트 전시 전속 계약</b><span class="meta">베트남 미디어앤아트 전시의 굿즈와 운영을 맡습니다.</span></a>
+  <a data-k="유통"><div class="th"><div class="empty-ph" style="height:100%">사진 ○○</div></div><p class="meta"><span class="tg">유통</span><span class="todo">2026.○○</span></p><b>168cm 일본·호주·네덜란드 독점 유통 계약</b><span class="meta">국내 모바일 액세서리 브랜드의 해외 독점 유통. 온·오프라인 스토어 오픈 예정.</span></a>
+  <a data-k="수출"><div class="th"><div class="empty-ph" style="height:100%">사진 ○○</div></div><p class="meta"><span class="tg">수출</span><span class="todo">2026.○○</span></p><b>Stockalot 대량 물류 수출 완료</b><span class="meta">대규모 물량의 소싱과 수출.</span></a>
+  <a href="exhibition.html#pavilion" data-k="전시"><div class="th"><img src="img/dd4e60b2a1.webp" alt="" loading="lazy" style="object-position:center top"></div><p class="meta"><span class="tg">전시</span><span class="todo">2026.○○</span></p><b>E&amp;L MENA 2027 코리안 파빌리온 참가 기업 모집</b><span class="meta">2027년 1월 18~20일, 두바이 월드 트레이드 센터. 한국관 참가 기업 모집.</span></a>
 </div>
-<p class="cap-s" id="nempty" style="display:none">이 분류의 소식은 곧 채워집니다.</p>
+<p class="cap-s" id="nempty" style="display:none">이 분류의 소식은 준비 중입니다.</p>
 
 <section class="sec" id="cardnews">
   <h2 class="lab">카드뉴스</h2>
   <div class="body">
     <h3 class="ttl">소식 한 건을 이미지 몇 장으로</h3>
-    <p class="txt">소식이 생기면 정사각형 카드 몇 장으로 정리해 올립니다. 인스타그램에도 그대로 옮길 수 있습니다.</p>
+    <p class="txt">소식 한 건을 1:1 카드 몇 장으로 정리해 올립니다. 인스타그램에도 같은 카드를 씁니다.</p>
     <div class="squares">
       <div class="empty-ph">카드뉴스 1<br>E&amp;L MENA</div><div class="empty-ph">카드뉴스 2</div><div class="empty-ph">카드뉴스 3</div><div class="empty-ph">카드뉴스 4</div>
     </div>
@@ -778,17 +821,20 @@ body .feat .intro,body .ph-say,body .sec .txt,body .docs .about p,body .grid spa
 
 <footer id="contact">
   <div class="frow"><h2>프로젝트 문의</h2>
-    <div><dl class="fl"><dt>전화</dt><dd><a href="tel:01096640718">010-9664-0718</a></dd><dt>이메일</dt><dd><a href="mailto:admin@unipromotion.co.kr">admin@unipromotion.co.kr</a></dd><dt>WhatsApp</dt><dd><span class="todo">링크 확인</span></dd></dl>
+    <div><dl class="fl"><dt>전화</dt><dd><a href="tel:01096640718">010-9664-0718</a></dd><dt>이메일</dt><dd><a href="mailto:admin@unipromotion.co.kr">admin@unipromotion.co.kr</a></dd><dt>WhatsApp</dt><dd><span class="todo">○○</span></dd></dl>
     <a class="u" href="contact.html">문의 양식 열기</a></div></div>
+  <div class="frow"><h2>코리안 파빌리온 참가</h2>
+    <div><p class="fabout">E&amp;L MENA 2027 한국관 참가 기업을 모집합니다. 2027년 1월 18~20일, 두바이 월드 트레이드 센터.</p>
+    <ul class="flinks"><li><a class="u" href="contact.html?type=pavilion">참가 문의</a></li><li><a class="u" href="exhibition.html#pavilion">파빌리온 안내</a></li></ul></div></div>
   <div class="frow"><h2>거점</h2>
-    <div><dl class="fl"><dt>서울 본사</dt><dd>서울특별시 마포구 독막로19길 42-12 (101)</dd><dt>네덜란드</dt><dd>유럽 거점 <span class="todo">주소 확인</span></dd><dt>시드니</dt><dd>오세아니아 거점</dd></dl></div></div>
+    <div><dl class="fl"><dt>서울 본사</dt><dd>서울특별시 마포구 독막로19길 42-12 (101)</dd><dt>네덜란드</dt><dd>유럽 거점 <span class="todo">○○</span></dd><dt>시드니</dt><dd>오세아니아 거점</dd></dl></div></div>
   <div class="frow"><h2>회사소개서</h2>
     <div><ul class="flinks"><li><a class="u" href="#">회사소개서 (국문) PDF</a></li><li><a class="u" href="#">Company Profile (English) PDF</a></li></ul></div></div>
   <div class="frow"><h2>회사 소개</h2>
     <div><p class="fabout">주식회사 유니프로모션은 서울에 본사를 둔 글로벌 무역·SCM 회사입니다. 아시아와 중동 6개국의 협력 공장에서 의류와 굿즈를 만들고, 소재 소싱부터 검수, 통관, 납품까지 한 담당자가 맡습니다.</p></div></div>
   <img class="wordmark" src="assets/logo_h_cream.png" alt="UNIPROMOTION">
   <div class="fbot">
-    <nav aria-label="하단 메뉴"><a href="company.html">Company</a><a href="apparel.html">Apparel &amp; Trading</a><a href="exhibition.html">Exhibition &amp; Entertainment</a><a href="media.html">Media &amp; Press</a><a href="contact.html">Contact</a><a href="#">Instagram <span class="todo">확인</span></a><a href="#">블로그 <span class="todo">확인</span></a></nav>
+    <nav aria-label="하단 메뉴"><a href="company.html">Company</a><a href="apparel.html">Apparel &amp; Trading</a><a href="exhibition.html">Exhibition &amp; Entertainment</a><a href="media.html">Media &amp; Press</a><a href="contact.html">Contact</a><a href="#">Instagram</a><a href="#">블로그</a></nav>
     <p>주식회사 유니프로모션 · 대표 안예원 · 사업자등록번호 196-88-02743 · © 2026 UNIPROMOTION</p>
   </div>
 </footer>
