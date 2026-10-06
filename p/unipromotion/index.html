@@ -490,6 +490,33 @@ body .process .big{margin:0 auto;max-width:848px}
 body .process ol{margin:64px auto 0;max-width:1100px}
 body .process li{text-align:center}
 @media (max-width:900px){body .feat .cards{margin-top:32px}}
+
+/* ═══ 브리프 점검 반영 (10/6) ═══ */
+/* 1) 버건디 #5C1D24 = 인터랙션·주요 버튼 (브리프 1항 필수) */
+body .feat .go,body .mhead .go,body .chips button[aria-pressed="true"],body .form .send,body .dl-list a:hover{transition:background .2s,color .2s}
+body .feat .go,body .mhead .go{display:inline-block;padding:8px 14px;background:var(--burgundy);color:var(--cream);border:0;text-decoration:none}
+body .feat .go:hover,body .mhead .go:hover{background:var(--burgundy-deep);color:var(--cream)}
+body .reel-foot a{background:var(--cream);color:var(--burgundy)}
+body .reel-foot a:hover{background:var(--cream-deep);color:var(--burgundy)}
+body .chips button[aria-pressed="true"]{background:var(--burgundy);color:var(--cream)}
+body .top nav a:hover,body .top nav a[aria-current]{color:var(--burgundy)}
+body .subnav a:hover,body .dl-list a:hover,body .docs .dl a:hover{color:var(--burgundy)}
+@media (hover:hover){body .grid a:hover b,body .media a:hover b,body .feat .cards a:hover b,body .ncards a:hover b{color:var(--burgundy)}}
+body a.u:hover,body .fl a:hover,body .fbot nav a:hover{color:#E8B9BE}
+/* 2) 5대 사업 이름 */
+body .feat .subs{display:flex;flex-wrap:wrap;gap:8px 24px;list-style:none;margin:24px 0 0;padding:0;font-size:16px;font-weight:400}
+body .feat .subs a{color:var(--charcoal);border-bottom:1px solid var(--rule);padding-bottom:2px;transition:color .2s,border-color .2s}
+body .feat .subs a:hover{color:var(--burgundy);border-color:var(--burgundy)}
+/* 3) 인증서 크게 보기 */
+.zoomable{cursor:zoom-in}
+.zoomable:focus-visible{outline:2px solid var(--burgundy);outline-offset:3px}
+.viewer{border:0;padding:0;max-width:min(92vw,900px);background:var(--cream);color:var(--charcoal)}
+.viewer::backdrop{background:rgba(43,38,36,.82)}
+.viewer img{display:block;max-width:100%;max-height:82vh;width:auto;margin:0 auto;background:#fff}
+.viewer .vbar{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:12px 16px;font-size:16px}
+.viewer button{font:inherit;background:var(--burgundy);color:var(--cream);border:0;padding:8px 14px;cursor:pointer}
+.viewer button:hover{background:var(--burgundy-deep)}
+.zoom-hint{margin:12px 0 0;font-size:13px;color:var(--stone)}
 </style>
 </head>
 <body>
@@ -526,6 +553,7 @@ body .process li{text-align:center}
 <section class="feat light" id="apparel">
   <h2>의류를 만들고, 국경을 넘겨 납품합니다</h2>
   <p class="intro">브랜드와 기업의 프로모션 의류를 기획하고, 인도를 비롯한 해외 협력 공장에서 생산합니다. 원단 소싱부터 검수, 통관까지 직접 관리하고, 해외 브랜드의 국내외 유통도 맡습니다.</p>
+  <ul class="subs"><li><a href="apparel.html#promo">의류 프로모션 기획·생산</a></li><li><a href="apparel.html#scm">의류 B2B 무역 &amp; SCM</a></li><li><a href="apparel.html#dist">해외 브랜드 유통·컨설팅</a></li></ul>
   <div class="cards">
     <a href="apparel.html#promo"><img src="img/83be051d37.webp" alt=""><b>인도 협력 공장</b><span>의류 대량 생산 라인</span></a>
     <a href="apparel.html#promo"><img src="img/d42f7dc781.webp" alt=""><b>Accidentally Wes Anderson</b><span>전시 굿즈 바람막이 3색</span></a>
@@ -597,6 +625,7 @@ body .process li{text-align:center}
 <section class="feat dark" id="exhibition">
   <h2>전시의 이야기를 굿즈로,<br class="br-pc"> 한국 기업을 해외 전시장으로</h2>
   <p class="intro">전시와 테마파크의 이야기를 굿즈로 옮겨 기획부터 현장 납품까지 맡습니다. 중동 E&amp;L MENA의 공식 한국 에이전시로 코리안 파빌리온을 운영합니다.</p>
+  <ul class="subs"><li><a href="exhibition.html#goods">전시 굿즈 기획·생산·납품</a></li><li><a href="exhibition.html#pavilion">해외 전시 코리안 파빌리온</a></li></ul>
   <div class="cards">
     <a href="exhibition.html#goods"><img src="img/2b41ee6a8c.webp" alt=""><b>Accidentally Wes Anderson</b><span>전시 굿즈 스노볼</span></a>
     <a href="exhibition.html#goods"><img src="img/ee88a34895.webp" alt=""><b>레드룸</b><span>작품 퍼즐과 패키지</span></a>
@@ -639,6 +668,7 @@ body .process li{text-align:center}
     <figure><img src="img/f5770093ec.webp" alt=""><figcaption>기업부설연구소 인정</figcaption></figure>
     <figure><img src="img/450df8c6e7.webp" alt=""><figcaption>IAAPA 2024 회원</figcaption></figure>
     <div class="dl">
+      <p class="zoom-hint">인증서를 누르면 크게 볼 수 있습니다.</p>
       <p>디자인등록 4건, 상표등록 2건(STETS) 보유</p>
       <a href="#">회사소개서 (국문) <span>PDF</span></a>
       <a href="#">Company Profile (English) <span>PDF</span></a>
@@ -746,6 +776,23 @@ body .process li{text-align:center}
   menu.onclick = () => { const o = nav.classList.toggle('open'); menu.setAttribute('aria-expanded', o); menu.textContent = o ? 'Close' : 'Menu'; };
   nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { nav.classList.remove('open'); menu.setAttribute('aria-expanded', false); menu.textContent = 'Menu'; }));
 
+})();
+</script>
+
+<dialog class="viewer" aria-label="인증서 크게 보기"><img alt=""><div class="vbar"><span class="vcap"></span><button type="button">닫기</button></div></dialog>
+<script>
+(() => {
+  // 인증서 이미지 누르면 크게 보기 (브리프 5항 '다운로드 또는 뷰어'). Esc·닫기·바깥 누르면 닫힘
+  const dlg = document.querySelector('.viewer'), big = dlg.querySelector('img'), cap = dlg.querySelector('.vcap');
+  document.querySelectorAll('.docs .row figure img').forEach(img => {
+    const name = img.closest('figure').querySelector('figcaption').textContent.trim();
+    img.classList.add('zoomable'); img.tabIndex = 0; img.setAttribute('role', 'button'); img.setAttribute('aria-label', name + ' 크게 보기');
+    const open = () => { big.src = img.src; big.alt = name; cap.textContent = name; dlg.showModal(); };
+    img.addEventListener('click', open);
+    img.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+  });
+  dlg.querySelector('button').onclick = () => dlg.close();
+  dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
 })();
 </script>
 </body>

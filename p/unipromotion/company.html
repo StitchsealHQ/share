@@ -614,6 +614,33 @@ body .process .big{margin:0 auto;max-width:848px}
 body .process ol{margin:64px auto 0;max-width:1100px}
 body .process li{text-align:center}
 @media (max-width:900px){body .feat .cards{margin-top:32px}}
+
+/* ═══ 브리프 점검 반영 (10/6) ═══ */
+/* 1) 버건디 #5C1D24 = 인터랙션·주요 버튼 (브리프 1항 필수) */
+body .feat .go,body .mhead .go,body .chips button[aria-pressed="true"],body .form .send,body .dl-list a:hover{transition:background .2s,color .2s}
+body .feat .go,body .mhead .go{display:inline-block;padding:8px 14px;background:var(--burgundy);color:var(--cream);border:0;text-decoration:none}
+body .feat .go:hover,body .mhead .go:hover{background:var(--burgundy-deep);color:var(--cream)}
+body .reel-foot a{background:var(--cream);color:var(--burgundy)}
+body .reel-foot a:hover{background:var(--cream-deep);color:var(--burgundy)}
+body .chips button[aria-pressed="true"]{background:var(--burgundy);color:var(--cream)}
+body .top nav a:hover,body .top nav a[aria-current]{color:var(--burgundy)}
+body .subnav a:hover,body .dl-list a:hover,body .docs .dl a:hover{color:var(--burgundy)}
+@media (hover:hover){body .grid a:hover b,body .media a:hover b,body .feat .cards a:hover b,body .ncards a:hover b{color:var(--burgundy)}}
+body a.u:hover,body .fl a:hover,body .fbot nav a:hover{color:#E8B9BE}
+/* 2) 5대 사업 이름 */
+body .feat .subs{display:flex;flex-wrap:wrap;gap:8px 24px;list-style:none;margin:24px 0 0;padding:0;font-size:16px;font-weight:400}
+body .feat .subs a{color:var(--charcoal);border-bottom:1px solid var(--rule);padding-bottom:2px;transition:color .2s,border-color .2s}
+body .feat .subs a:hover{color:var(--burgundy);border-color:var(--burgundy)}
+/* 3) 인증서 크게 보기 */
+.zoomable{cursor:zoom-in}
+.zoomable:focus-visible{outline:2px solid var(--burgundy);outline-offset:3px}
+.viewer{border:0;padding:0;max-width:min(92vw,900px);background:var(--cream);color:var(--charcoal)}
+.viewer::backdrop{background:rgba(43,38,36,.82)}
+.viewer img{display:block;max-width:100%;max-height:82vh;width:auto;margin:0 auto;background:#fff}
+.viewer .vbar{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:12px 16px;font-size:16px}
+.viewer button{font:inherit;background:var(--burgundy);color:var(--cream);border:0;padding:8px 14px;cursor:pointer}
+.viewer button:hover{background:var(--burgundy-deep)}
+.zoom-hint{margin:12px 0 0;font-size:13px;color:var(--stone)}
 </style>
 </head>
 <body>
@@ -702,6 +729,7 @@ body .process li{text-align:center}
       <figure><img src="img/f5770093ec.webp" alt="" loading="lazy" style="object-position:top;aspect-ratio:1/1.3"><figcaption><b>기업부설연구소 인정</b></figcaption></figure>
       <figure><img src="img/450df8c6e7.webp" alt="" loading="lazy" style="object-position:top;aspect-ratio:1/1.3"><figcaption><b>IAAPA 2024 회원</b></figcaption></figure>
     </div>
+    <p class="zoom-hint">인증서를 누르면 크게 볼 수 있습니다.</p>
     <ul class="rows">
       <li><b>지식재산권</b><span>디자인등록 4건, 상표등록 2건 (STETS)<small>등록증 이미지는 생년월일·주소를 가린 뒤 게시합니다.</small></span></li>
     </ul>
@@ -735,6 +763,23 @@ body .process li{text-align:center}
   const menu = document.querySelector('.top .menu'), nav = document.getElementById('gnb');
   menu.onclick = () => { const o = nav.classList.toggle('open'); menu.setAttribute('aria-expanded', o); menu.textContent = o ? 'Close' : 'Menu'; };
 
+})();
+</script>
+
+<dialog class="viewer" aria-label="인증서 크게 보기"><img alt=""><div class="vbar"><span class="vcap"></span><button type="button">닫기</button></div></dialog>
+<script>
+(() => {
+  // 인증서 이미지 누르면 크게 보기 (브리프 5항 '다운로드 또는 뷰어'). Esc·닫기·바깥 누르면 닫힘
+  const dlg = document.querySelector('.viewer'), big = dlg.querySelector('img'), cap = dlg.querySelector('.vcap');
+  document.querySelectorAll('#docs .pgrid figure img').forEach(img => {
+    const name = img.closest('figure').querySelector('figcaption').textContent.trim();
+    img.classList.add('zoomable'); img.tabIndex = 0; img.setAttribute('role', 'button'); img.setAttribute('aria-label', name + ' 크게 보기');
+    const open = () => { big.src = img.src; big.alt = name; cap.textContent = name; dlg.showModal(); };
+    img.addEventListener('click', open);
+    img.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+  });
+  dlg.querySelector('button').onclick = () => dlg.close();
+  dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
 })();
 </script>
 </body>

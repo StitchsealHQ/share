@@ -614,6 +614,33 @@ body .process .big{margin:0 auto;max-width:848px}
 body .process ol{margin:64px auto 0;max-width:1100px}
 body .process li{text-align:center}
 @media (max-width:900px){body .feat .cards{margin-top:32px}}
+
+/* ═══ 브리프 점검 반영 (10/6) ═══ */
+/* 1) 버건디 #5C1D24 = 인터랙션·주요 버튼 (브리프 1항 필수) */
+body .feat .go,body .mhead .go,body .chips button[aria-pressed="true"],body .form .send,body .dl-list a:hover{transition:background .2s,color .2s}
+body .feat .go,body .mhead .go{display:inline-block;padding:8px 14px;background:var(--burgundy);color:var(--cream);border:0;text-decoration:none}
+body .feat .go:hover,body .mhead .go:hover{background:var(--burgundy-deep);color:var(--cream)}
+body .reel-foot a{background:var(--cream);color:var(--burgundy)}
+body .reel-foot a:hover{background:var(--cream-deep);color:var(--burgundy)}
+body .chips button[aria-pressed="true"]{background:var(--burgundy);color:var(--cream)}
+body .top nav a:hover,body .top nav a[aria-current]{color:var(--burgundy)}
+body .subnav a:hover,body .dl-list a:hover,body .docs .dl a:hover{color:var(--burgundy)}
+@media (hover:hover){body .grid a:hover b,body .media a:hover b,body .feat .cards a:hover b,body .ncards a:hover b{color:var(--burgundy)}}
+body a.u:hover,body .fl a:hover,body .fbot nav a:hover{color:#E8B9BE}
+/* 2) 5대 사업 이름 */
+body .feat .subs{display:flex;flex-wrap:wrap;gap:8px 24px;list-style:none;margin:24px 0 0;padding:0;font-size:16px;font-weight:400}
+body .feat .subs a{color:var(--charcoal);border-bottom:1px solid var(--rule);padding-bottom:2px;transition:color .2s,border-color .2s}
+body .feat .subs a:hover{color:var(--burgundy);border-color:var(--burgundy)}
+/* 3) 인증서 크게 보기 */
+.zoomable{cursor:zoom-in}
+.zoomable:focus-visible{outline:2px solid var(--burgundy);outline-offset:3px}
+.viewer{border:0;padding:0;max-width:min(92vw,900px);background:var(--cream);color:var(--charcoal)}
+.viewer::backdrop{background:rgba(43,38,36,.82)}
+.viewer img{display:block;max-width:100%;max-height:82vh;width:auto;margin:0 auto;background:#fff}
+.viewer .vbar{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:12px 16px;font-size:16px}
+.viewer button{font:inherit;background:var(--burgundy);color:var(--cream);border:0;padding:8px 14px;cursor:pointer}
+.viewer button:hover{background:var(--burgundy-deep)}
+.zoom-hint{margin:12px 0 0;font-size:13px;color:var(--stone)}
 </style>
 </head>
 <body>
