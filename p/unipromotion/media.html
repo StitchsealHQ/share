@@ -592,6 +592,27 @@ body .cinfo b{font-weight:400}
   body .track img{height:300px}
   body .reel .cnt{position:static;display:block;margin-top:8px}
 }
+
+/* ═══ B안 (10/6): 어두운 면은 가운데 한 번만 — 밝기가 8번 뒤집히던 것을 3번으로 ═══
+   APPAREL·EXHIBITION = 밝은 크림 블록 / 함께한 전시 + 일하는 방식 = 짙은 버건디 한 덩어리 / 하단 = 따뜻한 먹색 */
+:root{--deep:#43141A;--ink-warm:#2B2624}
+body .feat,body .feat.light,body .feat.dark{margin-top:96px;padding:0 var(--gut);background:none;color:var(--charcoal)}
+body .feat h2{color:var(--charcoal)}
+body .feat .intro{color:var(--stone)}
+body .feat .cards b{color:var(--charcoal)}
+body .feat .cards span,body .feat.dark .cards span{color:var(--stone)}
+body .feat .go{background:var(--cream-deep);color:var(--charcoal)}
+body .feat .go:hover{background:#E4DED3;color:var(--charcoal)}
+body .feat .cards{margin-top:48px}
+body .reel,body .process{background:var(--deep)}
+body .process li{border-top-color:rgba(247,245,240,.22)}
+body footer{background:var(--ink-warm)}
+/* 일하는 방식: 가운데 정렬 */
+body .process{text-align:center}
+body .process .big{margin:0 auto;max-width:848px}
+body .process ol{margin:64px auto 0;max-width:1100px}
+body .process li{text-align:center}
+@media (max-width:900px){body .feat .cards{margin-top:32px}}
 </style>
 </head>
 <body>
