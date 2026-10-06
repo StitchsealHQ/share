@@ -723,27 +723,19 @@ body .hero.is-light .dots button[aria-current="true"]{background:var(--charcoal)
    상단은 1776px(좌우 24px 안쪽)이라 로고가 첫 화면 사진 왼쪽 끝과 맞음. 1728px 이하에서는 지금처럼 화면 끝까지 */
 body>*:not(dialog):not(script):not(style){max-width:1728px;margin-left:auto;margin-right:auto}
 body>header.top,body>.top{max-width:1776px}
-/* 배색 = Pentagram 주제 블록(#222 면 + #000 판, 모서리 8px, 판 안쪽 32px)을 브리프 색으로:
-   APPAREL 따뜻한 먹색 면 + 더 짙은 판, EXHIBITION 버건디 #5C1D24 면 + 짙은 버건디 판 */
-body .feat.light,body .feat.dark{margin-top:96px;padding:32px var(--gut) 64px;color:var(--cream)}
-body .feat.light{background:#2B2624}
-body .feat.dark{background:var(--burgundy)}
-body .feat.light .tab{border-top-color:rgba(247,245,240,.3)}
-body .feat h2{color:var(--cream)}
-body .feat .intro{color:var(--mute-d)}
-body .feat .subs a{color:var(--cream);border-color:rgba(247,245,240,.3)}
-body .feat .subs a:hover{color:var(--cream);border-color:var(--cream)}
-body .feat .cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap);max-width:1520px;margin-top:48px;padding:32px;border-radius:8px}
-body .feat.light .cards{background:#1C1917}
-body .feat.dark .cards{background:var(--deep)}
-body .feat .cards b{color:var(--cream)}
-body .feat .cards span,body .feat.dark .cards span{color:var(--mute-d)}
-@media (hover:hover){body .feat .cards a:hover b{color:var(--cream);text-decoration:underline;text-underline-offset:3px}}
-body .feat .go{background:var(--cream);color:var(--charcoal)}
-body .feat .go:hover{background:var(--cream-deep);color:var(--charcoal)}
-body .feat.dark .go{color:var(--burgundy)}
+/* 배색 (10/6 사용자 결정) = APPAREL은 밝은 크림 블록 그대로, 전시·파빌리온 블록만 Pentagram 주제 블록처럼 어둡게
+   (#222 면 + #000 판 → 따뜻한 먹색 #2B2624 면 + #1C1917 판, 판 모서리 8px·안쪽 32px). 글자·버튼 등 자잘한 요소는 브리프 크림 #F7F5F0 */
+body .feat.dark{margin-top:96px;padding:32px var(--gut) 64px;background:#2B2624;color:var(--cream)}
+body .feat.dark h2,body .feat.dark .cards b{color:var(--cream)}
+body .feat.dark .intro,body .feat.dark .cards span{color:rgba(247,245,240,.72)}
+body .feat.dark .subs a{color:var(--cream);border-color:rgba(247,245,240,.35)}
+body .feat.dark .subs a:hover{color:var(--cream);border-color:var(--cream)}
+body .feat.dark .cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap);max-width:1520px;margin-top:48px;padding:32px;border-radius:8px;background:#1C1917}
+@media (hover:hover){body .feat.dark .cards a:hover b{color:var(--cream);text-decoration:underline;text-underline-offset:3px}}
+body .feat.dark .go{background:var(--cream);color:#1C1917}
+body .feat.dark .go:hover{background:var(--cream-deep);color:#1C1917}
 @media (max-width:900px){
-  body .feat .cards{grid-template-columns:repeat(2,minmax(0,1fr));padding:16px;margin-top:32px}
+  body .feat.dark .cards{grid-template-columns:repeat(2,minmax(0,1fr));padding:16px;margin-top:32px}
   .hero .sl.el img{width:72%}
   body .grid{grid-template-columns:repeat(2,1fr);gap:32px var(--gap)}
   body .grid a{grid-column:span 1}
