@@ -12380,8 +12380,10 @@ $(function(){$("#mobile_carousel_menu").scrollToFixed({ marginTop: ""});$("#mobi
 
 /* ── 바탕: 크림 ── */
 html body, html body #doz_main, html body .section_wrap { background-color: var(--u-cream); }
-html body .section_wrap ._section_bg_color,
-html body .section_wrap .section_bg_color { background-color: var(--u-cream) !important; }
+/* 섹션 덮개가 '흰색'으로 지정된 곳만 크림으로. 사진 위 검정 덮개(rgba) 섹션은 그대로 */
+html body .section_wrap ._section_bg_color[style*="#ffffff"],
+html body .section_wrap ._section_bg_color[style*="#fff;"],
+html body .section_wrap ._section_bg_color[style*="#FFFFFF"] { background-color: var(--u-cream) !important; }
 html body .section_wrap:has(#uni-core-competency-section),
 html body .section_wrap:has(#uni-core-competency-section) ._section_bg_color,
 html body .section_wrap:has(#uni-core-competency-section) .section_bg_color { background-color: var(--u-paper) !important; }
