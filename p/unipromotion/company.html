@@ -911,6 +911,19 @@ html body .quote p.by{font-size:16px;line-height:1.5;letter-spacing:0!important}
 html body,html body *{font-family:var(--font-text)!important}
 /* 10/7 사용자 결정: 본문만 300 (에스코어 드림 400이 Plex보다 진해서). 이름·라벨·메뉴·버튼은 400 그대로 */
 html body{font-weight:300}
+/* 타이포 점검 (10/7): 줄간 = 긴 글 1.7 · 카드 이름/설명 1.25(Pentagram 실측 20px) · 나머지 짧은 글 1.45 한 가지로 (전에는 16px 6종·13px 5종) */
+html body :is(.process h3,.process p,.lab,.lab small,.quote p.by,figcaption.meta,.cap-s,.wide figcaption,.meta,.cinfo b,.cinfo dd,.cinfo p,.chips button,.vd,.steps h3,.steps p,.rows li){line-height:1.45}
+html body figcaption{line-height:1.45}
+/* 상품 격자 캡션·뉴스 목록 제목 = 카드 이름/설명과 같은 20px (Pentagram 카드 실측) */
+html body :is(.pgrid figcaption,.pgrid figcaption b,.mlist b,.mlist .d){line-height:20px}
+/* 제목: 마지막 줄이 한두 글자로 남지 않게 (375px Media 대표 기사 '론칭') */
+html body :is(h1,h2,h3,.ttl,.feature b){text-wrap:balance}
+/* 대표 인용: 마지막 줄이 한두 어절로 남지 않게 (768px에서 7자) */
+html body .quote p:not(.by){text-wrap:balance}
+/* 인증서 유효기간: 날짜와 '유효'가 갈라지지 않게 (1024px) */
+html body .vd{white-space:nowrap}
+/* Media 대표 기사: 글 시작선을 사이트 세로선(2/3)에 맞춤 (전엔 830px, 어느 선에도 안 맞음) */
+@media (min-width:901px){html body .feature{grid-template-columns:2fr 1fr}}
 </style>
 </head>
 <body>
@@ -930,7 +943,7 @@ html body{font-weight:300}
 <main>
 <div class="ph-head">
   <h1>Company</h1>
-  <div class="ph-row"><p class="ph-say">의류와 굿즈의 기획, 해외 생산, 검수, 통관, 납품을 맡는 무역·SCM 회사입니다.</p><nav class="subnav" aria-label="페이지 안 이동"><a href="#overview">회사 개요</a><a href="#film">회사 소개 영상</a><a href="#strength">일하는 원칙</a><a href="#history">연혁</a><a href="#offices">거점</a><a href="#docs">인증·서류</a></nav></div>
+  <div class="ph-row"><p class="ph-say">의류와 굿즈의 기획, 해외 생산, 검수, 통관, 납품을 맡는 무역⁠·⁠SCM 회사입니다.</p><nav class="subnav" aria-label="페이지 안 이동"><a href="#overview">회사 개요</a><a href="#film">회사 소개 영상</a><a href="#strength">일하는 원칙</a><a href="#history">연혁</a><a href="#offices">거점</a><a href="#docs">인증⁠·⁠서류</a></nav></div>
 </div>
 
 <section class="quote" aria-label="대표 인사">
@@ -947,7 +960,7 @@ html body{font-weight:300}
       <li><b>본사</b><span>서울특별시 마포구 독막로19길 42-12 (101)</span></li>
       <li><b>해외 거점</b><span>네덜란드 (유럽), 시드니 (오세아니아)</span></li>
       <li><b>생산 네트워크</b><span>중국, 베트남, 인도, 방글라데시, 인도네시아, 이집트</span></li>
-      <li><b>사업</b><span>전시 굿즈 기획·생산·납품<br>의류 프로모션 기획·생산<br>의류 B2B 무역 &amp; SCM<br>해외 전시 코리안 파빌리온<br>해외 브랜드 유통·컨설팅</span></li>
+      <li><b>사업</b><span>전시 굿즈 기획⁠·⁠생산⁠·⁠납품<br>의류 프로모션 기획⁠·⁠생산<br>의류 B2B 무역 &amp; SCM<br>해외 전시 코리안 파빌리온<br>해외 브랜드 유통⁠·⁠컨설팅</span></li>
       <li><b>사업자등록번호</b><span>196-88-02743</span></li>
     </ul>
   </div>
@@ -971,8 +984,8 @@ html body{font-weight:300}
     <ul class="rows">
       <li><b>생산 네트워크</b><span>아시아와 중동 6개국의 협력 공장 중 예산, 물량, 품질 기준에 맞는 곳을 골라 배정합니다.</span></li>
       <li><b>공급망 관리</b><span>원단 소싱, 생산, 검수, 납품의 단계별 진행 상황을 공유합니다.</span></li>
-      <li><b>품질 관리</b><span>현장에 상주하는 독립 검수팀이 생산 초기·중간·최종 3단계로 검수합니다.</span></li>
-      <li><b>비밀유지·전담</b><span>프로젝트마다 비밀유지계약(NDA)을 맺고, 전담 담당자 한 명이 처음부터 끝까지 맡습니다.</span></li>
+      <li><b>품질 관리</b><span>현장에 상주하는 독립 검수팀이 생산 초기⁠·⁠중간⁠·⁠최종 3단계로 검수합니다.</span></li>
+      <li><b>비밀유지⁠·⁠전담</b><span>프로젝트마다 비밀유지계약(NDA)을 맺고, 담당자 한 명이 처음부터 끝까지 맡습니다.</span></li>
     </ul>
   </div>
 </section>
@@ -986,7 +999,7 @@ html body{font-weight:300}
       <li><b>2023.03</b><span>두바이 DEAL 쇼 참가</span></li>
       <li><b>2022</b><span>미국 올랜도 IAAPA Expo 참가</span></li>
       <li><b>2021</b><span>자체 브랜드 STETS 론칭, 아마존 USA 입점</span></li>
-      <li><b>2021</b><span>한류연계 우수상품 쇼케이스 &amp; 상담회 참가 (중국)<small>주최·주관 한국디자인진흥원, 한국무역협회 / 후원 문화체육관광부</small></span></li>
+      <li><b>2021</b><span>한류연계 우수상품 쇼케이스 &amp; 상담회 참가 (중국)<small>주최⁠·⁠주관 한국디자인진흥원, 한국무역협회 / 후원 문화체육관광부</small></span></li>
       <li><b>2021.05</b><span>중국 중부지역 무역투자박람회 참가</span></li>
     </ul>
   </div>
@@ -1004,7 +1017,7 @@ html body{font-weight:300}
 </section>
 
 <section class="sec" id="docs">
-  <h2 class="lab">인증·서류</h2>
+  <h2 class="lab">인증⁠·⁠서류</h2>
   <div class="body">
     <div class="pgrid">
       <figure><img src="img/7003117320.webp" alt="" loading="lazy" style="object-position:top;aspect-ratio:1/1.3"><figcaption><b>여성기업 확인서</b><span class="vd">2026.04.09까지 유효</span></figcaption></figure>
@@ -1013,7 +1026,7 @@ html body{font-weight:300}
       <figure><img src="img/08969ba1a9.webp" alt="" loading="lazy" style="object-position:top;aspect-ratio:1/1.3"><figcaption><b>IAAPA 2024 회원</b></figcaption></figure>
     </div>
     <ul class="rows">
-      <li><b>지식재산권</b><span>디자인등록 4건, 상표등록 2건 (STETS)<small>등록증 이미지는 생년월일·주소를 가린 뒤 게시합니다.</small></span></li>
+      <li><b>지식재산권</b><span>디자인등록 4건, 상표등록 2건 (STETS)<small>등록증 이미지는 생년월일⁠·⁠주소를 가린 뒤 게시합니다.</small></span></li>
     </ul>
     <div class="dl-list">
       <a href="#">회사소개서 (국문) <span>PDF</span></a>
@@ -1031,7 +1044,7 @@ html body{font-weight:300}
     <div><p class="fabout">E&amp;L MENA 2027 한국관 참가 기업을 모집합니다. 2027년 1월 18~20일, 두바이 월드 트레이드 센터.</p>
     <ul class="flinks"><li><a class="u" href="contact.html?type=pavilion">참가 문의</a></li><li><a class="u" href="exhibition.html#pavilion">파빌리온 안내</a></li></ul></div></div>
   <div class="frow"><h2>회사 소개</h2>
-    <div><p class="fabout">주식회사 유니프로모션은 서울에 본사를 둔 글로벌 무역·SCM 회사입니다. 아시아와 중동 6개국의 협력 공장에서 의류와 굿즈를 만들고, 소재 소싱부터 검수, 통관, 납품까지 한 담당자가 맡습니다.</p></div></div>
+    <div><p class="fabout">주식회사 유니프로모션은 서울에 본사를 둔 글로벌 무역⁠·⁠SCM 회사입니다. 아시아와 중동 6개국의 협력 공장에서 의류와 굿즈를 만들고, 소재 소싱부터 검수, 통관, 납품까지 한 담당자가 맡습니다.</p></div></div>
   <img class="wordmark" src="assets/logo_w_cream.png" alt="UNIPROMOTION">
   <div class="fbot">
     <nav aria-label="하단 메뉴"><a href="company.html">Company</a><a href="apparel.html">Apparel &amp; Trading</a><a href="exhibition.html">Exhibition &amp; Entertainment</a><a href="media.html">Media &amp; Press</a><a href="contact.html">Contact</a><a href="#">Instagram</a><a href="#">블로그</a></nav>

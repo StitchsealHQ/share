@@ -911,6 +911,19 @@ html body .quote p.by{font-size:16px;line-height:1.5;letter-spacing:0!important}
 html body,html body *{font-family:var(--font-text)!important}
 /* 10/7 사용자 결정: 본문만 300 (에스코어 드림 400이 Plex보다 진해서). 이름·라벨·메뉴·버튼은 400 그대로 */
 html body{font-weight:300}
+/* 타이포 점검 (10/7): 줄간 = 긴 글 1.7 · 카드 이름/설명 1.25(Pentagram 실측 20px) · 나머지 짧은 글 1.45 한 가지로 (전에는 16px 6종·13px 5종) */
+html body :is(.process h3,.process p,.lab,.lab small,.quote p.by,figcaption.meta,.cap-s,.wide figcaption,.meta,.cinfo b,.cinfo dd,.cinfo p,.chips button,.vd,.steps h3,.steps p,.rows li){line-height:1.45}
+html body figcaption{line-height:1.45}
+/* 상품 격자 캡션·뉴스 목록 제목 = 카드 이름/설명과 같은 20px (Pentagram 카드 실측) */
+html body :is(.pgrid figcaption,.pgrid figcaption b,.mlist b,.mlist .d){line-height:20px}
+/* 제목: 마지막 줄이 한두 글자로 남지 않게 (375px Media 대표 기사 '론칭') */
+html body :is(h1,h2,h3,.ttl,.feature b){text-wrap:balance}
+/* 대표 인용: 마지막 줄이 한두 어절로 남지 않게 (768px에서 7자) */
+html body .quote p:not(.by){text-wrap:balance}
+/* 인증서 유효기간: 날짜와 '유효'가 갈라지지 않게 (1024px) */
+html body .vd{white-space:nowrap}
+/* Media 대표 기사: 글 시작선을 사이트 세로선(2/3)에 맞춤 (전엔 830px, 어느 선에도 안 맞음) */
+@media (min-width:901px){html body .feature{grid-template-columns:2fr 1fr}}
 </style>
 </head>
 <body>
@@ -939,13 +952,13 @@ html body{font-weight:300}
   <div class="fimg el-th"><img src="assets/el_logo.png" alt="Entertainment &amp; Leisure MENA 로고" loading="lazy"></div>
   <div><p class="meta"><span class="tg">전시</span><span class="todo">2026.○○</span></p>
     <h3 class="ttl">E&amp;L MENA 공식 한국 에이전시 계약, 코리안 파빌리온 론칭</h3>
-    <p>중동 레저·엔터테인먼트 박람회 E&amp;L MENA의 공식 한국 에이전시로 한국관을 운영합니다. <span class="todo">○○</span></p></div>
+    <p>중동 레저⁠·⁠엔터테인먼트 박람회 E&amp;L MENA의 공식 한국 에이전시로 한국관을 운영합니다. <span class="todo">○○</span></p></div>
 </a>
 
 <div class="ncards ntext" id="ncards">
   <a data-k="미디어"><p class="meta"><span class="tg">미디어</span><span class="todo">2026.○○</span></p><b>대표 방송 출연</b><span class="meta">유니프로모션이 소개된 방송 영상.</span></a>
   <a data-k="전시"><p class="meta"><span class="tg">전시</span><span class="todo">2026.○○</span></p><b>베트남 미디어앤아트 전시 전속 계약</b><span class="meta">베트남 미디어앤아트 전시의 굿즈와 운영을 맡습니다.</span></a>
-  <a data-k="유통"><p class="meta"><span class="tg">유통</span><span class="todo">2026.○○</span></p><b>168cm 일본·호주·네덜란드 독점 유통 계약</b><span class="meta">국내 모바일 액세서리 브랜드의 해외 독점 유통. 온·오프라인 스토어 오픈 예정.</span></a>
+  <a data-k="유통"><p class="meta"><span class="tg">유통</span><span class="todo">2026.○○</span></p><b>168cm 일본⁠·⁠호주⁠·⁠네덜란드 독점 유통 계약</b><span class="meta">국내 모바일 액세서리 브랜드의 해외 독점 유통. 온⁠·⁠오프라인 스토어 오픈 예정.</span></a>
   <a data-k="수출"><p class="meta"><span class="tg">수출</span><span class="todo">2026.○○</span></p><b>Stockalot 대량 물류 수출 완료</b><span class="meta">대규모 물량의 소싱과 수출.</span></a>
   <a href="exhibition.html#pavilion" data-k="전시"><p class="meta"><span class="tg">전시</span><span class="todo">2026.○○</span></p><b>E&amp;L MENA 2027 코리안 파빌리온 참가 기업 모집</b><span class="meta">2027년 1월 18~20일, 두바이 월드 트레이드 센터. 한국관 참가 기업 모집.</span></a>
 </div>
@@ -991,7 +1004,7 @@ html body{font-weight:300}
   <div class="frow"><h2>회사소개서</h2>
     <div><ul class="flinks"><li><a class="u" href="#">회사소개서 (국문) PDF</a></li><li><a class="u" href="#">Company Profile (English) PDF</a></li></ul></div></div>
   <div class="frow"><h2>회사 소개</h2>
-    <div><p class="fabout">주식회사 유니프로모션은 서울에 본사를 둔 글로벌 무역·SCM 회사입니다. 아시아와 중동 6개국의 협력 공장에서 의류와 굿즈를 만들고, 소재 소싱부터 검수, 통관, 납품까지 한 담당자가 맡습니다.</p></div></div>
+    <div><p class="fabout">주식회사 유니프로모션은 서울에 본사를 둔 글로벌 무역⁠·⁠SCM 회사입니다. 아시아와 중동 6개국의 협력 공장에서 의류와 굿즈를 만들고, 소재 소싱부터 검수, 통관, 납품까지 한 담당자가 맡습니다.</p></div></div>
   <img class="wordmark" src="assets/logo_w_cream.png" alt="UNIPROMOTION">
   <div class="fbot">
     <nav aria-label="하단 메뉴"><a href="company.html">Company</a><a href="apparel.html">Apparel &amp; Trading</a><a href="exhibition.html">Exhibition &amp; Entertainment</a><a href="media.html">Media &amp; Press</a><a href="contact.html">Contact</a><a href="#">Instagram</a><a href="#">블로그</a></nav>
