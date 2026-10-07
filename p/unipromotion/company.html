@@ -1004,6 +1004,20 @@ html body .hero .cap p:not(.on){visibility:hidden;transition:opacity .25s var(--
 @media (prefers-reduced-motion:reduce){html body .hero .cap p,html body .hero .cap p.on{transition:none}}
 /* A10 '○○' 자리: 점선 밑줄이 링크처럼 보여서 뺌 (흐린 글자만) */
 html body .todo{border-bottom:0;text-decoration:none;opacity:.55}
+
+/* B1~B5 (10/7) */
+/* B1 휴대폰 2단에서 마지막 칸(STETS)이 혼자 반 칸으로 남지 않게 */
+@media (max-width:900px){html body .grid > a:last-child:nth-child(odd){grid-column:span 2}}
+/* B2 뉴스룸이 하단 바로 위로 옴 → 하단과 붙지 않게 (전엔 회사 블록이 아래 여백을 가졌음) */
+html body .media + footer{margin-top:96px}
+/* B3 휴대폰 하단 짧게 */
+@media (max-width:900px){html body footer .frow.f-pc{display:none}}
+/* B4 휴대폰 '더보기' */
+html body .more-m{display:none}
+@media (max-width:900px){
+  html body .pgrid.clip > :nth-child(n+7){display:none}
+  html body .more-m{display:inline-flex;align-items:center;min-height:44px;margin-top:8px;padding:0;background:none;border:0;color:var(--charcoal);font-size:16px;text-decoration:underline;text-underline-offset:6px;cursor:pointer}
+}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "주식회사 유니프로모션", "alternateName": "UNIPROMOTION CO., LTD.", "url": "https://www.unipromotion.co.kr/", "email": "admin@unipromotion.co.kr", "telephone": "+82-10-9664-0718", "taxID": "196-88-02743", "address": {"@type": "PostalAddress", "streetAddress": "독막로19길 42-12 (101)", "addressLocality": "마포구", "addressRegion": "서울특별시", "addressCountry": "KR"}, "memberOf": {"@type": "Organization", "name": "IAAPA", "url": "https://www.iaapa.org/"}}</script>
 </head>
@@ -1126,7 +1140,7 @@ html body .todo{border-bottom:0;text-decoration:none;opacity:.55}
   <div class="frow"><h2>코리안 파빌리온 참가</h2>
     <div><p class="fabout">E&amp;L MENA 2027 한국관 참가 기업을 모집합니다. 2027년 1월 18~20일, 두바이 월드 트레이드 센터.</p>
     <ul class="flinks"><li><a class="btn" href="contact.html?type=pavilion">참가 문의</a></li><li><a class="u" href="exhibition.html#pavilion">파빌리온 안내</a></li></ul></div></div>
-  <div class="frow"><h2>회사 소개</h2>
+  <div class="frow f-pc"><h2>회사 소개</h2>
     <div><p class="fabout">주식회사 유니프로모션은 서울에 본사를 둔 글로벌 무역⁠·⁠SCM 회사입니다. 아시아와 중동 6개국의 협력 공장에서 의류와 굿즈를 만들고, 소재 소싱부터 검수, 통관, 납품까지 한 담당자가 맡습니다.</p></div></div>
   <img class="wordmark" src="assets/logo_w_cream.png" alt="UNIPROMOTION">
   <div class="fbot">
