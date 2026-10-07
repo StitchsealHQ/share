@@ -8266,6 +8266,123 @@ html body #uni-exhibition-strength-section .uni-exhibition-strength-img-box,
 html body #uni-theme-md-section .uni-theme-md-img-box { background: #EAE5DB !important; }
 html body #uni-theme-md-section .uni-theme-md-main-card { background: var(--u-wine) !important; box-shadow: 0 24px 64px rgba(92, 29, 36, 0.18) !important; }
 
+/* ───────── 일괄 교체: 남아 있던 파란색 전부 (전 페이지) ─────────
+   원칙 그대로: 색만 바꾼다. 남색/하늘색 → 버건디, 남색 글자 → 차콜, 연한 남색 테두리·바탕 → 크림 계열. */
+
+/* 하위 페이지 내용 섹션의 흰 바탕 → 크림 바탕이 비치게 (카드는 흰색 유지) */
+html body #uni-ceo-greeting-section, html body #uni-core-competency-section,
+html body #uni-vision-certificate-section, html body #uni-global-belt-bottom-section, html body #uni-scm-board-section,
+html body #uni-apparel-production-section, html body #uni-exhibition-strength-section, html body #uni-theme-md-section { background: transparent !important; }
+html body .section_wrap:has(#uni-core-competency-section) ._section_bg_color { background-color: var(--u-cream) !important; }
+html body #uni-core-competency-section .uni-core-competency-metric,
+html body #uni-core-competency-section .uni-core-competency-card { background: var(--u-paper) !important; }
+
+/* 아임웹 공통: 드롭다운 메뉴 강조, 하위 탭 활성, 검색 버튼, 퀵메뉴 전화 */
+html body .dropdown-menu > li > a:hover, html body .dropdown-menu > li > a:active, html body .dropdown-menu > li > a:focus,
+html body .dropdown-menu.preview_drop_down > li > a.hover { background-color: var(--u-wine) !important; }
+html body [id^="w2026"] ul > li.depth-01.active { background: var(--u-wine) !important; }
+html body [id^="w2026"] .search_type a, html body [id^="w2026"] .search_type.search_btn_type04 a { background: var(--u-wine) !important; border-color: var(--u-wine) !important; }
+html body [id^="w2026"] .search_type a:hover { background-color: var(--u-wine-2) !important; border-color: var(--u-wine-2) !important; }
+html body .tel-btn .q-icon-circle { background: var(--u-wine) !important; border-color: var(--u-wine) !important; }
+html body .tel-btn:hover .q-icon-circle, html body .quick-item:not(.kakao-btn):not(.tel-btn):not(.blog-btn):hover .q-icon-circle { color: var(--u-wine) !important; border-color: var(--u-wine) !important; }
+html body .tel-btn .q-label { background: var(--u-wine) !important; }
+html body .tel-btn .q-label::after { border-left-color: var(--u-wine) !important; }
+html body #mdc-final-cta-section .mdc-final-btn-white, html body #mdc-final-cta-section .mdc-final-btn-line:hover { color: var(--u-wine) !important; }
+@keyframes zoomInOut {
+  0% {
+    transform: scale(1.5);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* 메인: 남아 있던 소제목·장식 원 */
+html body #uni-main-core-section .uni-main-core-card::before { background: rgba(92, 29, 36, 0.07) !important; }
+
+/* CEO 인사말 (/31) */
+html body #uni-ceo-greeting-section .uni-ceo-greeting-kicker,
+html body #uni-ceo-greeting-section .uni-ceo-greeting-text strong,
+html body #uni-ceo-greeting-section .uni-ceo-greeting-sign strong { color: var(--u-wine) !important; }
+html body #uni-ceo-greeting-section .uni-ceo-greeting-line { background: var(--u-wine) !important; }
+html body #uni-ceo-greeting-section .uni-ceo-greeting-business-image { background: #EAE5DB !important; }
+
+/* 핵심 역량 (/32) */
+html body #uni-core-competency-section .uni-core-competency-hero,
+html body #uni-core-competency-section .uni-core-competency-label,
+html body #uni-core-competency-section .uni-core-competency-process span { background: var(--u-wine) !important; }
+html body #uni-core-competency-section .uni-core-competency-img { background: #EAE5DB !important; }
+html body #uni-core-competency-section .uni-core-competency-num { color: rgba(92, 29, 36, 0.10) !important; }
+html body #uni-core-competency-section .uni-core-competency-content h3 { color: var(--u-ink) !important; }
+html body #uni-core-competency-section .uni-core-competency-bottom-list strong { color: var(--u-wine) !important; }
+
+/* 기업 철학 및 비전 (/33) */
+html body #uni-vision-certificate-section .uni-vision-kicker,
+html body #uni-vision-certificate-section .uni-certificate-kicker { color: var(--u-wine) !important; }
+html body #uni-vision-certificate-section .uni-vision-title,
+html body #uni-vision-certificate-section .uni-vision-card h3,
+html body #uni-vision-certificate-section .uni-certificate-head h3,
+html body #uni-vision-certificate-section .uni-certificate-text h4 { color: var(--u-ink) !important; }
+html body #uni-vision-certificate-section .uni-vision-label { background: var(--u-wine) !important; }
+html body #uni-vision-certificate-section .uni-vision-num { color: rgba(92, 29, 36, 0.10) !important; }
+html body #uni-vision-certificate-section .uni-vision-card,
+html body #uni-vision-certificate-section .uni-certificate-card { border-color: var(--u-line) !important; box-shadow: 0 18px 48px rgba(92, 29, 36, 0.08) !important; }
+html body #uni-vision-certificate-section .uni-vision-card:hover { border-color: var(--u-wine) !important; background: var(--u-wine) !important; box-shadow: 0 28px 70px rgba(92, 29, 36, 0.18) !important; }
+html body #uni-vision-certificate-section .uni-vision-card:hover .uni-vision-label { color: var(--u-wine) !important; }
+html body #uni-vision-certificate-section .uni-certificate-card:hover { border-color: var(--u-wine) !important; box-shadow: 0 24px 62px rgba(92, 29, 36, 0.16) !important; }
+html body #uni-vision-certificate-section .uni-certificate-text { border-top-color: var(--u-line) !important; }
+
+/* 글로벌 네트워크 (/34) */
+html body #uni-global-belt-bottom-section .uni-global-belt-bottom-kicker,
+html body #uni-global-belt-bottom-section .uni-global-belt-bottom-card-hq .uni-global-belt-bottom-label { color: var(--u-wine) !important; }
+html body #uni-global-belt-bottom-section .uni-global-belt-bottom-title,
+html body #uni-global-belt-bottom-section .uni-global-belt-bottom-card h3 { color: var(--u-ink) !important; }
+html body #uni-global-belt-bottom-section .uni-global-belt-bottom-label { background: var(--u-wine) !important; }
+html body #uni-global-belt-bottom-section .uni-global-belt-bottom-num { color: rgba(92, 29, 36, 0.10) !important; }
+html body #uni-global-belt-bottom-section .uni-global-belt-bottom-map-frame { background: var(--u-wine) !important; border-color: var(--u-line) !important; box-shadow: 0 24px 64px rgba(92, 29, 36, 0.16) !important; }
+html body #uni-global-belt-bottom-section .uni-global-belt-bottom-pin { background: rgba(92, 29, 36, 0.92) !important; box-shadow: 0 10px 24px rgba(92, 29, 36, 0.28) !important; }
+html body #uni-global-belt-bottom-section .uni-global-belt-bottom-card { border-color: var(--u-line) !important; box-shadow: 0 16px 42px rgba(92, 29, 36, 0.08) !important; }
+html body #uni-global-belt-bottom-section .uni-global-belt-bottom-card:hover { border-color: var(--u-wine) !important; box-shadow: 0 24px 60px rgba(92, 29, 36, 0.16) !important; }
+html body #uni-global-belt-bottom-section .uni-global-belt-bottom-card-hq { background: var(--u-wine) !important; border-color: var(--u-wine) !important; box-shadow: 0 22px 58px rgba(92, 29, 36, 0.24) !important; }
+
+/* 핵심 SCM (/28) 남은 번호 · 의류 생산 (/30) 소제목 */
+html body #uni-scm-board-section .uni-scm-board-num { color: rgba(92, 29, 36, 0.10) !important; }
+
+/* 남은 옅은 남색 톤: 선·패널·글자 */
+html body #uni-core-competency-section .uni-core-competency-process i,
+html body #uni-scm-board-section .uni-scm-board-flow-line::before { background: var(--u-line) !important; }
+html body #uni-core-competency-section .uni-core-competency-bottom-list div { background: var(--u-paper) !important; border-color: var(--u-line) !important; }
+html body #uni-vision-certificate-section .uni-certificate-wrap { background: var(--u-paper) !important; border-color: var(--u-line) !important; }
+html body #uni-theme-md-section .uni-theme-md-process-card::after { border-top-color: var(--u-line) !important; border-right-color: var(--u-line) !important; }
+html body #uni-global-belt-bottom-section .uni-global-belt-bottom-pin::after { background: rgba(232, 180, 186, 0.45) !important; box-shadow: 0 0 18px rgba(232, 180, 186, 0.95), 0 0 44px rgba(232, 180, 186, 0.5) !important; }
+/* 본문 글자: 청회색(#4d5a66) → 차콜 72% */
+html body #uni-core-competency-section .uni-core-competency-content p:not(.uni-core-competency-label),
+html body #uni-core-competency-section .uni-core-competency-bottom-list span,
+html body #uni-exhibition-strength-section .uni-exhibition-strength-desc,
+html body #uni-exhibition-strength-section .uni-exhibition-strength-content p:not(.uni-exhibition-strength-label),
+html body #uni-theme-md-section .uni-theme-md-desc,
+html body #uni-theme-md-section .uni-theme-md-content p:not(.uni-theme-md-label),
+html body #uni-global-belt-bottom-section .uni-global-belt-bottom-desc,
+html body #uni-global-belt-bottom-section .uni-global-belt-bottom-sub,
+html body #uni-global-belt-bottom-section .uni-global-belt-bottom-card p:not(.uni-global-belt-bottom-label),
+html body #uni-apparel-production-section .uni-apparel-production-desc,
+html body #uni-apparel-production-section .uni-apparel-production-content p:not(.uni-apparel-production-label),
+html body #uni-scm-board-section .uni-scm-board-flow-head p,
+html body #uni-scm-board-section .uni-scm-board-card-text p:not(.uni-scm-board-label),
+html body #uni-vision-certificate-section .uni-vision-desc,
+html body #uni-vision-certificate-section .uni-vision-card p:not(.uni-vision-label),
+html body #uni-vision-certificate-section .uni-certificate-head > p,
+html body #uni-vision-certificate-section .uni-certificate-text p { color: var(--u-ink-2) !important; }
+/* 메인 '통합 솔루션' 섹션도 크림 바탕으로 통일 (상자는 흰색) */
+html body .section_wrap:has(#uni-core-competency-section),
+html body .section_wrap:has(#uni-core-competency-section) .section_bg_color,
+html body .section_wrap:has(#uni-core-competency-section) ._section_bg_color { background-color: var(--u-cream) !important; }
+/* 핵심 역량(/32) 버건디 머리 상자 안의 글자는 흰색 유지 */
+html body #uni-core-competency-section .uni-core-competency-hero .uni-core-competency-title { color: #ffffff !important; }
+html body #uni-core-competency-section .uni-core-competency-hero .uni-core-competency-kicker,
+html body #uni-core-competency-section .uni-core-competency-hero .uni-core-competency-desc { color: var(--u-on-wine) !important; }
+
 </style>
 </body>
 </html>
