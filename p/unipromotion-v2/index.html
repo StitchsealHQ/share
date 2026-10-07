@@ -12362,10 +12362,10 @@ $(function(){$("#mobile_carousel_menu").scrollToFixed({ marginTop: ""});$("#mobi
 
 
 <style id="uni-tone-override">
-/* 유니프로모션 3색 덮어쓰기 (수정목록 01 색, 05 디자인 정리)
+/* 유니프로모션 3색 덮어쓰기 (수정목록 01 색만. 05 디자인 정리는 아이리스님 확인 후)
    기준: 아이리스님 브리프 3색 — 바탕 크림 #F7F5F0, 글자 차콜 #2C2C2C, 강조 딥 버건디 #5C1D24
    적용 위치: 아임웹 하단(uni-footer) 코드 위젯 1곳. 전 페이지 공통. 이 블록만 지우면 원래대로.
-   범위: 기존 코드 위젯(uni-*, ziods-*, mdc-final-*)과 그 섹션 바탕, 상단 전화 버튼, 첫 화면 덮개. 틀·서체·글자 크기는 손대지 않음. */
+   범위: 기존 코드 위젯(uni-*, ziods-*, mdc-final-*)과 그 섹션 바탕, 상단 전화 버튼, 첫 화면 덮개. 틀·서체·글자 크기·모서리·그림자·장식은 손대지 않음. 색만. */
 
 :root {
   --u-cream: #F7F5F0;
@@ -12405,7 +12405,6 @@ html body #inline_header_mobile ._section_bg_color { background-color: var(--u-c
 /* ── 상단 전화 버튼 ── */
 html body .btn_60bc5a405e953, html body .btn_60bc5a405e953:hover, html body .btn_60bc5a405e953:focus {
   background-color: var(--u-wine) !important; border-color: var(--u-wine) !important; color: #fff !important;
-  border-radius: 4px !important; box-shadow: none !important;
 }
 
 /* ── 줄바꿈 ── */
@@ -12413,69 +12412,7 @@ html body [id^="uni-"], html body [id^="uni-"] *,
 html body #mdc-final-cta-section, html body #mdc-final-cta-section *,
 html body #ziods-visual-copy, html body #ziods-visual-copy * { word-break: keep-all !important; overflow-wrap: break-word !important; }
 
-/* ── 05 디자인 정리: 장식 번호·원·진행 막대·따옴표 숨김 ── */
-html body #uni-main-core-section .uni-main-core-card::before,
-html body #uni-main-core-section .uni-main-core-card-top span,
-html body #uni-main-core-section .uni-main-core-progress,
-html body #uni-core-competency-section .uni-core-competency-card-num,
-html body #mdc-final-cta-section::before,
-html body #mdc-final-cta-section::after,
-html body #mdc-final-cta-section .mdc-final-cta-inner::before,
-html body #uni-review-section .uni-review-card::before,
-html body #uni-review-section .uni-review-card::after { display: none !important; }
-
-/* ── 05 디자인 정리: 그림자·흐림·떠오르기 제거 ── */
-html body #ziods-visual-copy .ziods-visual-copy-btn,
-html body #ziods-visual-copy .ziods-visual-copy-title,
-html body #ziods-visual-copy .ziods-visual-copy-label,
-html body #uni-main-core-section .uni-main-core-card,
-html body #uni-main-core-section .uni-main-core-card.is-active,
-html body #uni-core-competency-section .uni-core-competency-metric,
-html body #uni-core-competency-section .uni-core-competency-card,
-html body #uni-core-competency-section .uni-core-competency-card:hover,
-html body #mdc-final-cta-section .mdc-final-btn,
-html body #mdc-final-cta-section .mdc-final-btn:hover,
-html body #mdc-final-cta-section .mdc-final-cta-label,
-html body #uni-review-section .uni-review-card,
-html body #uni-review-section .uni-review-card:hover,
-html body #uni-review-section .uni-review-arrow,
-html body #uni-footer .uni-footer-info-box,
-html body #uni-footer .uni-footer-download {
-  box-shadow: none !important; text-shadow: none !important;
-  backdrop-filter: none !important; -webkit-backdrop-filter: none !important;
-}
-html body #uni-main-core-section .uni-main-core-card.is-active,
-html body #uni-core-competency-section .uni-core-competency-card:hover,
-html body #uni-core-competency-section .uni-core-competency-card:hover img,
-html body #mdc-final-cta-section .mdc-final-btn:hover,
-html body #uni-review-section .uni-review-card:hover,
-html body #uni-review-section .uni-review-arrow:hover,
-html body #uni-footer .uni-footer-download:hover,
-html body #ziods-visual-copy .ziods-visual-copy-btn:hover { transform: none !important; }
-
-/* ── 05 디자인 정리: 모서리 4px (알약·큰 라운드 → 각진 모서리) ── */
-html body #ziods-visual-copy .ziods-visual-copy-btn,
-html body #ziods-visual-copy .ziods-visual-copy-label,
-html body #uni-main-core-section .uni-main-core-card,
-html body #uni-core-competency-section .uni-core-competency-metric,
-html body #uni-core-competency-section .uni-core-competency-card,
-html body #uni-core-competency-section .uni-core-competency-tags span,
-html body #mdc-final-cta-section .mdc-final-btn,
-html body #mdc-final-cta-section .mdc-final-cta-label,
-html body #uni-review-section .uni-review-card,
-html body #uni-review-section .uni-review-arrow,
-html body #uni-footer .uni-footer-info-box,
-html body #uni-footer .uni-footer-download { border-radius: 4px !important; }
-html body #uni-core-competency-section .uni-core-competency-card-image { border-radius: 0 !important; }
-
 /* ── 첫 화면: 사진 위 차콜 덮개, 버튼은 버건디 ── */
-html body ._visual_section .item.holder::after {
-  content: "" !important; position: absolute !important; inset: 0 !important; z-index: 10 !important; pointer-events: none !important;
-  background: linear-gradient(90deg, rgba(44,44,44,.84) 0%, rgba(44,44,44,.62) 45%, rgba(44,44,44,.30) 100%) !important;
-}
-html body #ziods-visual-copy .ziods-visual-copy-label { background: transparent !important; border: 0 !important; padding: 0 !important; color: rgba(255,255,255,.72) !important; }
-html body #ziods-visual-copy .ziods-visual-copy-title { color: #fff !important; }
-html body #ziods-visual-copy .ziods-visual-copy-desc { color: rgba(255,255,255,.86) !important; }
 html body #ziods-visual-copy .ziods-visual-copy-btn { background: var(--u-wine) !important; border: 1px solid var(--u-wine) !important; color: #fff !important; }
 html body #ziods-visual-copy .ziods-visual-copy-btn::before { background: var(--u-wine-2) !important; }
 html body #ziods-visual-copy .ziods-visual-copy-btn:hover { color: #fff !important; border-color: var(--u-wine-2) !important; }
@@ -12486,24 +12423,17 @@ html body #uni-main-core-section .uni-main-core-line p { color: var(--u-wine) !i
 html body #uni-main-core-section .uni-main-core-line span { background: var(--u-wine) !important; }
 html body #uni-main-core-section .uni-main-core-title { color: var(--u-ink) !important; }
 html body #uni-main-core-section .uni-main-core-desc { color: var(--u-ink-2) !important; }
-html body #uni-main-core-section .uni-main-core-card,
-html body #uni-main-core-section .uni-main-core-card.is-active { background: var(--u-paper) !important; border: 1px solid var(--u-line) !important; }
-html body #uni-main-core-section .uni-main-core-card h3,
-html body #uni-main-core-section .uni-main-core-card.is-active h3 { color: var(--u-ink) !important; }
-html body #uni-main-core-section .uni-main-core-card > p,
-html body #uni-main-core-section .uni-main-core-card.is-active > p { color: var(--u-ink-2) !important; }
-html body #uni-main-core-section .uni-main-core-card-top p,
-html body #uni-main-core-section .uni-main-core-card.is-active .uni-main-core-card-top p { color: var(--u-wine) !important; }
-html body #uni-main-core-section .uni-main-core-card { transition: background-color 200ms ease, border-color 200ms ease !important; }
-html body #uni-main-core-section .uni-main-core-card h3,
-html body #uni-main-core-section .uni-main-core-card > p,
-html body #uni-main-core-section .uni-main-core-card-top p { transition: color 200ms ease !important; }
-@media (hover: hover) and (pointer: fine) {
-  html body #uni-main-core-section .uni-main-core-card:hover { background: var(--u-wine) !important; border-color: var(--u-wine) !important; }
-  html body #uni-main-core-section .uni-main-core-card:hover h3,
-  html body #uni-main-core-section .uni-main-core-card:hover > p { color: #fff !important; }
-  html body #uni-main-core-section .uni-main-core-card:hover .uni-main-core-card-top p { color: var(--u-on-wine) !important; }
-}
+html body #uni-main-core-section .uni-main-core-card { background: var(--u-paper) !important; }
+html body #uni-main-core-section .uni-main-core-card h3 { color: var(--u-ink) !important; }
+html body #uni-main-core-section .uni-main-core-card > p { color: var(--u-ink-2) !important; }
+html body #uni-main-core-section .uni-main-core-card-top p { color: var(--u-wine) !important; }
+html body #uni-main-core-section .uni-main-core-card-top span { background: var(--u-wine) !important; color: #fff !important; }
+html body #uni-main-core-section .uni-main-core-card.is-active { background: var(--u-wine) !important; border-color: var(--u-wine) !important; box-shadow: 0 28px 78px rgba(92, 29, 36, 0.24) !important; }
+html body #uni-main-core-section .uni-main-core-card.is-active h3,
+html body #uni-main-core-section .uni-main-core-card.is-active > p { color: #fff !important; }
+html body #uni-main-core-section .uni-main-core-card.is-active .uni-main-core-card-top p { color: var(--u-on-wine) !important; }
+html body #uni-main-core-section .uni-main-core-card.is-active .uni-main-core-card-top span { background: #fff !important; color: var(--u-wine) !important; }
+html body #uni-main-core-section .uni-main-core-progress span { background: var(--u-wine) !important; }
 
 /* ── 통합 솔루션 (흰 바탕 + 크림 상자) ── */
 html body #uni-core-competency-section .uni-core-competency-kicker { color: var(--u-wine) !important; }
@@ -12513,7 +12443,8 @@ html body #uni-core-competency-section .uni-core-competency-metric { background:
 html body #uni-core-competency-section .uni-core-competency-metric strong { color: var(--u-wine) !important; }
 html body #uni-core-competency-section .uni-core-competency-metric span { color: var(--u-ink-2) !important; }
 html body #uni-core-competency-section .uni-core-competency-card { background: var(--u-cream) !important; border: 1px solid var(--u-line) !important; }
-html body #uni-core-competency-section .uni-core-competency-card:hover { border-color: var(--u-wine) !important; }
+html body #uni-core-competency-section .uni-core-competency-card:hover { border-color: var(--u-wine) !important; box-shadow: 0 28px 70px rgba(92, 29, 36, 0.16) !important; }
+html body #uni-core-competency-section .uni-core-competency-card-num { background: var(--u-wine) !important; color: #fff !important; }
 html body #uni-core-competency-section .uni-core-competency-card-image { background: #EAE5DB !important; }
 html body #uni-core-competency-section .uni-core-competency-card-label { color: var(--u-wine) !important; }
 html body #uni-core-competency-section .uni-core-competency-card h3 { color: var(--u-ink) !important; }
@@ -12528,7 +12459,6 @@ html body #uni-business-solution-head .uni-business-solution-desc { color: var(-
 /* ── 문의 띠: 도시 사진 위 버건디 ── */
 html body .section_wrap:has(#mdc-final-cta-section) ._section_bg_color,
 html body .section_wrap:has(#mdc-final-cta-section) .section_bg_color { background-color: rgba(92, 29, 36, 0.88) !important; }
-html body #mdc-final-cta-section .mdc-final-cta-label { background: transparent !important; border: 0 !important; padding: 0 !important; color: var(--u-on-wine) !important; }
 html body #mdc-final-cta-section p { color: var(--u-on-wine) !important; }
 html body #mdc-final-cta-section .mdc-final-btn-white,
 html body #mdc-final-cta-section .mdc-final-btn-white:hover { background: #fff !important; color: var(--u-wine) !important; border-color: #fff !important; }
@@ -12539,8 +12469,8 @@ html body #mdc-final-cta-section .mdc-final-btn-line:hover { background: #fff !i
 html body #uni-review-section .uni-review-kicker { color: var(--u-wine) !important; }
 html body #uni-review-section .uni-review-title { color: var(--u-ink) !important; }
 html body #uni-review-section .uni-review-desc { color: var(--u-ink-2) !important; }
-html body #uni-review-section .uni-review-card,
-html body #uni-review-section .uni-review-card:hover { background: var(--u-wine) !important; }
+html body #uni-review-section .uni-review-card { background: var(--u-wine) !important; }
+html body #uni-review-section .uni-review-card:hover { background: var(--u-wine-2) !important; box-shadow: 0 28px 60px rgba(92,29,36,0.28) !important; }
 html body #uni-review-section .uni-review-arrow { border-color: var(--u-wine) !important; color: var(--u-wine) !important; background: transparent !important; }
 html body #uni-review-section .uni-review-arrow:hover { background: var(--u-wine) !important; color: #fff !important; }
 html body #uni-review-section .uni-review-dot { background: var(--u-line) !important; }
@@ -12553,17 +12483,6 @@ html body #uni-footer { background: var(--u-ink) !important; }
 html body #uni-footer .uni-footer-info-box { background: rgba(255,255,255,.05) !important; border: 1px solid rgba(255,255,255,.12) !important; }
 html body #uni-footer .uni-footer-download { border: 1px solid rgba(255,255,255,.55) !important; color: #fff !important; background: transparent !important; }
 html body #uni-footer .uni-footer-download:hover { border-color: #fff !important; }
-
-/* ── 움직임: 누름 반응만, 줄이기 설정 존중 ── */
-html body #ziods-visual-copy .ziods-visual-copy-btn,
-html body #mdc-final-cta-section .mdc-final-btn,
-html body #uni-footer .uni-footer-download { transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1), background-color 200ms ease, color 200ms ease, border-color 200ms ease !important; }
-html body #ziods-visual-copy .ziods-visual-copy-btn:active,
-html body #mdc-final-cta-section .mdc-final-btn:active,
-html body #uni-footer .uni-footer-download:active { transform: scale(0.97) !important; }
-@media (prefers-reduced-motion: reduce) {
-  html body #ziods-visual-copy *:active, html body [id^="uni-"] *:active, html body #mdc-final-cta-section *:active { transform: none !important; }
-}
 
 </style>
 </body>
