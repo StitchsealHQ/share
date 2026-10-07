@@ -883,6 +883,8 @@ html body .chips button[aria-pressed="true"]{color:var(--charcoal)!important;bor
   html body .pav>figure:not(.pav-v){display:flex;flex-direction:column;min-height:0}
   html body .pav>figure:not(.pav-v)>img,html body .pav>figure:not(.pav-v)>.el-tile{flex:1 1 0;height:0;min-height:0;aspect-ratio:auto!important}
 }
+/* 휴대폰 파빌리온 영상: 화면 폭 가득(세로 640px 남짓) → 폭 60% (사용자 요청 10/7) */
+@media (max-width:900px){html body .pav-v{max-width:60%}}
 /* 함께한 전시: 버건디 면 → 크림 바탕 (포스터 자체가 색), 버건디는 '일하는 방식' 한 곳에만 */
 html body .reel{background:none;color:var(--charcoal)}
 html body .reel h2,html body .reel .cnt{color:var(--charcoal)}
