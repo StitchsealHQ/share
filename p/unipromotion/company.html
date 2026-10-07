@@ -921,7 +921,7 @@ html body :is(h1,h2,h3,.ttl,.feature b){text-wrap:balance}
 /* 대표 인용: 마지막 줄이 한두 어절로 남지 않게 (768px에서 7자) */
 html body .quote p:not(.by){text-wrap:balance}
 /* 인증서 유효기간: 날짜와 '유효'가 갈라지지 않게 (1024px) */
-html body .vd{white-space:nowrap}
+html body .vd,html body .nw{white-space:nowrap}
 /* Media 대표 기사: 글 시작선을 사이트 세로선(2/3)에 맞춤 (전엔 830px, 어느 선에도 안 맞음) */
 @media (min-width:901px){html body .feature{grid-template-columns:2fr 1fr}}
 </style>
@@ -957,11 +957,11 @@ html body .vd{white-space:nowrap}
     <ul class="rows">
       <li><b>회사명</b><span>주식회사 유니프로모션 (UNIPROMOTION CO., LTD.)</span></li>
       <li><b>대표</b><span>안예원</span></li>
-      <li><b>본사</b><span>서울특별시 마포구 독막로19길 42-12 (101)</span></li>
+      <li><b>본사</b><span>서울특별시 마포구 독막로19길 <span class="nw">42-12</span> (101)</span></li>
       <li><b>해외 거점</b><span>네덜란드 (유럽), 시드니 (오세아니아)</span></li>
       <li><b>생산 네트워크</b><span>중국, 베트남, 인도, 방글라데시, 인도네시아, 이집트</span></li>
       <li><b>사업</b><span>전시 굿즈 기획⁠·⁠생산⁠·⁠납품<br>의류 프로모션 기획⁠·⁠생산<br>의류 B2B 무역 &amp; SCM<br>해외 전시 코리안 파빌리온<br>해외 브랜드 유통⁠·⁠컨설팅</span></li>
-      <li><b>사업자등록번호</b><span>196-88-02743</span></li>
+      <li><b>사업자등록번호</b><span><span class="nw">196-88-02743</span></span></li>
     </ul>
   </div>
 </section>
@@ -1009,7 +1009,7 @@ html body .vd{white-space:nowrap}
   <h2 class="lab">거점</h2>
   <div class="body">
     <ul class="rows">
-      <li><b>서울 본사</b><span>공급망 관리와 프로젝트 총괄<small>서울특별시 마포구 독막로19길 42-12 (101)</small></span></li>
+      <li><b>서울 본사</b><span>공급망 관리와 프로젝트 총괄<small>서울특별시 마포구 독막로19길 <span class="nw">42-12</span> (101)</small></span></li>
       <li><b>네덜란드</b><span>유럽 거점<small class="todo">○○</small></span></li>
       <li><b>시드니</b><span>오세아니아 거점<small class="todo">○○</small></span></li>
     </ul>
@@ -1038,7 +1038,7 @@ html body .vd{white-space:nowrap}
 
 <footer id="contact">
   <div class="frow"><h2>프로젝트 문의</h2>
-    <div><dl class="fl"><dt>전화</dt><dd><a href="tel:01096640718">010-9664-0718</a></dd><dt>이메일</dt><dd><a href="mailto:admin@unipromotion.co.kr">admin@unipromotion.co.kr</a></dd><dt>WhatsApp</dt><dd><span class="todo">○○</span></dd></dl>
+    <div><dl class="fl"><dt>전화</dt><dd><a href="tel:01096640718"><span class="nw">010-9664-0718</span></a></dd><dt>이메일</dt><dd><a href="mailto:admin@unipromotion.co.kr">admin@unipromotion.co.kr</a></dd><dt>WhatsApp</dt><dd><span class="todo">○○</span></dd></dl>
     <a class="u" href="contact.html">문의 양식 열기</a></div></div>
   <div class="frow"><h2>코리안 파빌리온 참가</h2>
     <div><p class="fabout">E&amp;L MENA 2027 한국관 참가 기업을 모집합니다. 2027년 1월 18~20일, 두바이 월드 트레이드 센터.</p>
@@ -1048,7 +1048,7 @@ html body .vd{white-space:nowrap}
   <img class="wordmark" src="assets/logo_w_cream.png" alt="UNIPROMOTION">
   <div class="fbot">
     <nav aria-label="하단 메뉴"><a href="company.html">Company</a><a href="apparel.html">Apparel &amp; Trading</a><a href="exhibition.html">Exhibition &amp; Entertainment</a><a href="media.html">Media &amp; Press</a><a href="contact.html">Contact</a><a href="#">Instagram</a><a href="#">블로그</a></nav>
-    <p>주식회사 유니프로모션 · 대표 안예원 · 사업자등록번호 196-88-02743 · © 2026 UNIPROMOTION</p>
+    <p>주식회사 유니프로모션 · 대표 안예원 · 사업자등록번호 <span class="nw">196-88-02743</span> · © 2026 UNIPROMOTION</p>
   </div>
 </footer>
 
