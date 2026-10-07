@@ -813,6 +813,89 @@ body .reel-foot{display:block}
   html body .latest .more{font-size:36px;margin-bottom:32px}
   body .ncards.ntext{grid-template-columns:1fr}
 }
+
+/* build_polish (10/7 디자인 추가 점검) */
+:root{--plate:#EFEBE3}
+/* C1 상품 사진 = 크림 판 위의 물건. 바탕을 판색으로 보정한 사진이라 칸 안에 다 보이게 두고 둘레는 판색 */
+html body img.pl{background:var(--plate)!important;object-fit:contain;padding:6%}
+html body .grid .ph{background:var(--plate)}
+/* A3 E&L 로고 타일: 사진용 흰 바탕 규칙 끄기 */
+html body .el-tile{background:var(--plate)}
+html body .el-tile img{background:none;aspect-ratio:auto}
+/* B1 머리 사진: 정렬선 안, Exhibition 3칸(정사각)과 Apparel 1장을 같은 높이로 */
+body .trio-fig{margin:48px 0 0}
+body .trio{margin-top:0}
+body .trio img{aspect-ratio:1/1}
+body .wide{padding:0 var(--gut)}
+body .wide img{aspect-ratio:auto;height:calc((min(100vw,1728px) - 2*var(--gut) - 2*var(--gap))/3);object-position:center 55%}
+body .wide figcaption{padding:8px 0 0;margin:0}
+body .trio-fig .cap-s{margin:0;padding:8px var(--gut) 0}
+/* B2 하단: 이름은 왼쪽 1/3, 내용은 본문 섹션과 같은 1/3 세로선에서 시작 */
+html body footer .frow{grid-template-columns:1fr 2fr;gap:0 var(--gap)}
+/* B3 APPAREL 카드 줄도 EXHIBITION과 같은 판 (최대 1520px, 안쪽 32px, 모서리 8px). 밝은 블록의 판 = 판색 */
+body .feat.light .cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap);max-width:1520px;margin-top:48px;padding:32px;border-radius:8px;background:var(--plate)}
+/* B4 뉴스 분류: 상자 없이 글자 */
+html body .media .tg,html body .meta .tg{background:none;padding:0;margin-right:12px;color:var(--stone)}
+/* C3 메인 자료 목록: 본문과 같은 1/3 세로선 */
+body .docs .row.dlrow{grid-template-columns:1fr 2fr;gap:0 var(--gap);border-top:0;padding-top:0}
+body .docs .row.dlrow .sub{margin:0}
+body .docs .row.dlrow .dl{max-width:none}
+@media (max-width:900px){
+  /* A2 */
+  html body .mgrid{grid-template-columns:1fr}
+  html body .mlist{grid-template-columns:1fr}
+  /* B1 휴대폰: Apparel 사진은 3:2 */
+  body .wide img{height:auto;aspect-ratio:3/2}
+  body .feat.light .cards{grid-template-columns:repeat(2,minmax(0,1fr));padding:16px;margin-top:32px}
+  html body footer .frow{grid-template-columns:1fr;gap:8px}
+  body .docs .row.dlrow{grid-template-columns:1fr;gap:16px}
+  html body .el-tile{aspect-ratio:16/9}
+  html body .el-tile img{width:48%}
+}
+@media (max-width:600px){
+  /* A1 첫 화면: E&L 로고를 제목 아래 왼쪽으로, 캡션은 슬라이드 점 위로 */
+  .hero .sl.el img.el-mark{top:auto;right:auto;left:var(--gut);bottom:136px;width:120px}
+  html body .hero .cap{bottom:48px}
+}
+
+/* 2차 (10/7) 펜타그램 비교 후 */
+/* 첫 화면 판색 장: 상품은 원본 크기를 넘지 않게(width:auto) 가운데 */
+.hero .sl.plate{background:var(--plate);display:flex;align-items:center;justify-content:center;padding:48px var(--gut) 120px}
+html body .hero .sl.plate img{width:auto;height:auto;max-width:76%;max-height:100%;object-fit:contain}
+/* E&L 로고 칸 (카드·뉴스 대표) */
+html body .el-card{display:flex!important;align-items:center;justify-content:center;aspect-ratio:282/395;background:var(--plate)}
+html body .el-card img{width:72%!important;height:auto!important;aspect-ratio:auto!important;background:none!important;object-fit:contain;margin:auto}
+html body .el-th{background:var(--plate)!important;display:flex;align-items:center;justify-content:center}
+html body .el-th img{width:52%!important;height:auto!important;object-fit:contain!important}
+/* 카드 두 블록: 판색 상품이 세로로 긴 칸에서 비어 보여 1:1 */
+html body .feat .cards img,html body .el-card{aspect-ratio:1/1}
+/* Company 표: 섹션 선 바로 아래 겹치던 두 번째 선 삭제 */
+html body .sec .body>.rows:first-child{border-top:0}
+/* Media 분류: 베이지 알약 단추 → 글자 탭 (선택된 것만 차콜 + 밑줄) */
+html body .chips{gap:0 24px}
+html body .chips button{background:none!important;border:0!important;border-bottom:1px solid transparent!important;padding:0 0 2px!important;color:var(--stone)!important;font-size:16px;font-weight:400}
+html body .chips button:hover{color:var(--charcoal)!important}
+html body .chips button[aria-pressed="true"]{color:var(--charcoal)!important;border-bottom-color:var(--charcoal)!important}
+/* 함께한 전시: 버건디 면 → 크림 바탕 (포스터 자체가 색), 버건디는 '일하는 방식' 한 곳에만 */
+html body .reel{background:none;color:var(--charcoal)}
+html body .reel h2,html body .reel .cnt{color:var(--charcoal)}
+html body .reel .say,html body .track li span{color:var(--stone)}
+html body .reel-foot a{background:var(--burgundy);color:var(--cream)}
+html body .reel-foot a:hover{background:var(--burgundy-deep);color:var(--cream)}
+/* 글자 (참고_펜타그램류_타이포조사.md 실측): 크기 4단(52·32·16·13), 큰 제목 -0.02em, 중간 제목 -0.01em, 본문 0
+   한글 제목 줄간 1.2~1.3, 본문 400 / 줄간 1.7 (조사한 16곳 중 본문 300은 1곳뿐) */
+html body{font-weight:400}
+html body :is(.feat h2,.reel h2,.mhead h2,.docs h2,.ph-head h1,.process .ptl,.latest .more){letter-spacing:-.02em!important;line-height:1.2}
+html body :is(.sec .ttl,.feature .ttl){font-size:32px;letter-spacing:-.01em!important;line-height:1.3}
+html body :is(.intro,.txt,.say,.ph-say,.fabout,.docs .about p,.sec .note){line-height:1.7}
+.quote blockquote{max-width:893px}
+html body .quote p{font-size:32px;line-height:1.4;letter-spacing:-.01em!important}
+html body .quote p.by{font-size:16px;line-height:1.5;letter-spacing:0!important}
+.hero .sl.el .el-type p{letter-spacing:-.03em;line-height:1.12}
+@media (max-width:900px){
+  html body :is(.sec .ttl,.feature .ttl){font-size:24px}
+  html body .quote p{font-size:24px}
+}
 </style>
 </head>
 <body>
@@ -843,13 +926,13 @@ body .reel-foot{display:block}
     <p class="txt">전시, 테마파크, 브랜드의 의류와 잡화를 기획·생산합니다. 자수와 프린트 같은 디테일은 시안과 샘플로 확인한 뒤 생산에 들어갑니다.</p>
     <div class="pgrid">
       <figure><img src="img/eda7e7a3d8.webp" alt="" loading="lazy"><figcaption><b>자수 디테일</b><span class='todo'>○○</span></figcaption></figure>
-      <figure><img src="img/261a82df77.webp" alt="" loading="lazy"><figcaption><b>자수 가운</b><span class='todo'>○○</span></figcaption></figure>
-      <figure><img src="img/eb7053c3d5.webp" alt="" loading="lazy"><figcaption><b>레고랜드 코리아</b>어린이 가운</figcaption></figure>
-      <figure><img src="img/124b3008cf.webp" alt="" loading="lazy"><figcaption><b>Accidentally Wes Anderson</b>맨투맨</figcaption></figure>
-      <figure><img src="img/6187d15d39.webp" alt="" loading="lazy"><figcaption><b>Accidentally Wes Anderson</b>바람막이 3색</figcaption></figure>
-      <figure><img src="img/053d9dfb62.webp" alt="" loading="lazy"><figcaption><b>Accidentally Wes Anderson</b>비니</figcaption></figure>
-      <figure><img src="img/45283d5c8f.webp" alt="" loading="lazy"><figcaption><b>프로모션 모자</b><span class='todo'>○○</span></figcaption></figure>
-      <figure><img src="img/af8c41d333.webp" alt="" loading="lazy"><figcaption><b>티셔츠</b><span class='todo'>○○</span></figcaption></figure>
+      <figure><img class="pl" src="img/c4985a0c7f.webp" alt="" loading="lazy"><figcaption><b>자수 가운</b><span class='todo'>○○</span></figcaption></figure>
+      <figure><img class="pl" src="img/a756d38db8.webp" alt="" loading="lazy"><figcaption><b>레고랜드 코리아</b>어린이 가운</figcaption></figure>
+      <figure><img class="pl" src="img/0c2ef5c0ac.webp" alt="" loading="lazy"><figcaption><b>Accidentally Wes Anderson</b>맨투맨</figcaption></figure>
+      <figure><img class="pl" src="img/786d20ef30.webp" alt="" loading="lazy"><figcaption><b>Accidentally Wes Anderson</b>바람막이 3색</figcaption></figure>
+      <figure><img class="pl" src="img/0d36d629a1.webp" alt="" loading="lazy"><figcaption><b>Accidentally Wes Anderson</b>비니</figcaption></figure>
+      <figure><img class="pl" src="img/ba2a1a9d34.webp" alt="" loading="lazy"><figcaption><b>프로모션 모자</b><span class='todo'>○○</span></figcaption></figure>
+      <figure><img class="pl" src="img/51b01f1f53.webp" alt="" loading="lazy"><figcaption><b>티셔츠</b><span class='todo'>○○</span></figcaption></figure>
     </div>
   </div>
 </section>
@@ -919,7 +1002,7 @@ body .reel-foot{display:block}
     <div><ul class="flinks"><li><a class="u" href="#">회사소개서 (국문) PDF</a></li><li><a class="u" href="#">Company Profile (English) PDF</a></li></ul></div></div>
   <div class="frow"><h2>회사 소개</h2>
     <div><p class="fabout">주식회사 유니프로모션은 서울에 본사를 둔 글로벌 무역·SCM 회사입니다. 아시아와 중동 6개국의 협력 공장에서 의류와 굿즈를 만들고, 소재 소싱부터 검수, 통관, 납품까지 한 담당자가 맡습니다.</p></div></div>
-  <img class="wordmark" src="assets/logo_h_cream.png" alt="UNIPROMOTION">
+  <img class="wordmark" src="assets/logo_w_cream.png" alt="UNIPROMOTION">
   <div class="fbot">
     <nav aria-label="하단 메뉴"><a href="company.html">Company</a><a href="apparel.html">Apparel &amp; Trading</a><a href="exhibition.html">Exhibition &amp; Entertainment</a><a href="media.html">Media &amp; Press</a><a href="contact.html">Contact</a><a href="#">Instagram</a><a href="#">블로그</a></nav>
     <p>주식회사 유니프로모션 · 대표 안예원 · 사업자등록번호 196-88-02743 · © 2026 UNIPROMOTION</p>
