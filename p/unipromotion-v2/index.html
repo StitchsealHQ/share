@@ -12457,7 +12457,10 @@ html body #uni-business-solution-head .uni-business-solution-title { color: var(
 html body #uni-business-solution-head .uni-business-solution-desc { color: var(--u-ink-2) !important; }
 
 /* ── 문의 띠: 버튼 글자색만 ── */
-/* 문의 띠 사진 덮개는 원래 그대로(검정) — 사용자 지시 10/7 */
+/* 문의 띠 사진 덮개는 원래 그대로(검정 75%) — 사용자 지시 10/7. 위의 크림 공통 규칙에서 제외 */
+html body .section_wrap:has(#mdc-final-cta-section),
+html body .section_wrap:has(#mdc-final-cta-section) ._section_bg_color,
+html body .section_wrap:has(#mdc-final-cta-section) .section_bg_color { background-color: rgba(0, 0, 0, 0.75) !important; }
 html body #mdc-final-cta-section p { color: var(--u-on-wine) !important; }
 html body #mdc-final-cta-section .mdc-final-btn-white,
 html body #mdc-final-cta-section .mdc-final-btn-white:hover { background: #fff !important; color: var(--u-wine) !important; border-color: #fff !important; }
