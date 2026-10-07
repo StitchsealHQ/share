@@ -747,6 +747,8 @@ html body .chips button[aria-pressed="true"]{color:var(--charcoal)!important;bor
   html body .pav>figure:not(.pav-v){display:flex;flex-direction:column;min-height:0}
   html body .pav>figure:not(.pav-v)>img,html body .pav>figure:not(.pav-v)>.el-tile{flex:1 1 0;height:0;min-height:0;aspect-ratio:auto!important}
 }
+/* 휴대폰 파빌리온 영상: 화면 폭 가득(세로 640px 남짓) → 폭 60% (사용자 요청 10/7) */
+@media (max-width:900px){html body .pav-v{max-width:60%}}
 /* 함께한 전시: 버건디 면 → 크림 바탕 (포스터 자체가 색), 버건디는 '일하는 방식' 한 곳에만 */
 html body .reel{background:none;color:var(--charcoal)}
 html body .reel h2,html body .reel .cnt{color:var(--charcoal)}
@@ -785,9 +787,39 @@ html body :is(h1,h2,h3,.ttl,.feature b){text-wrap:balance}
 /* 대표 인용: 마지막 줄이 한두 어절로 남지 않게 (768px에서 7자) */
 html body .quote p:not(.by){text-wrap:balance}
 /* 인증서 유효기간: 날짜와 '유효'가 갈라지지 않게 (1024px) */
-html body .vd{white-space:nowrap}
+html body .vd,html body .nw{white-space:nowrap}
 /* Media 대표 기사: 글 시작선을 사이트 세로선(2/3)에 맞춤 (전엔 830px, 어느 선에도 안 맞음) */
 @media (min-width:901px){html body .feature{grid-template-columns:2fr 1fr}}
+
+/* UX 점검 1~3 (10/7) */
+/* 채운 버튼 = 문의 전용. 밝은 바탕 버건디, 어두운 바탕(하단) 크림 */
+html body a.btn{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;background:var(--burgundy);color:var(--cream);text-decoration:none;border:0;font-weight:400;transition:background .2s}
+html body a.btn:hover{background:var(--burgundy-deep);color:var(--cream)}
+html body footer a.btn{background:var(--cream);color:var(--charcoal);margin:16px 0 0}
+html body footer a.btn:hover{background:var(--cream-deep);color:var(--charcoal)}
+html body footer .flinks{margin-top:16px}
+html body footer .flinks li a.btn{margin:0 0 12px}
+/* 첫 화면 캡션 버튼 줄. 안 보이는 캡션의 링크는 누르거나 초점이 가지 않게 */
+html body .hero .cap a.btn{color:var(--cream)}
+html body .hero .hcta{display:flex;align-items:center;gap:24px;margin-top:16px}
+html body .hero .hcta a.u{display:inline-flex;align-items:center;min-height:44px;color:inherit;border:0;text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:1px}
+html body .hero .cap p:not(.on){visibility:hidden;transition:opacity .5s var(--ease),transform .5s var(--ease),visibility 0s .5s}
+/* 전체 보기·더보기: 버튼 → 밑줄 글자 링크 (누르는 높이 44px) */
+html body :is(.feat .go,.feat.dark .go,.mhead .go,.go.nall,.reel-foot a){display:inline-flex;align-items:center;min-height:44px;padding:0;background:none!important;color:inherit;border:0;text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:1px}
+html body :is(.feat .go,.mhead .go,.go.nall,.reel-foot a):hover{color:var(--burgundy)}
+html body .feat.dark .go:hover{color:var(--cream);opacity:.7}
+/* 점: 보이는 점 9px 그대로, 누르는 영역 24×44 (안쪽 여백은 칠하지 않음) */
+html body .hero .dots{gap:0}
+html body .hero .dots button:not(.pp){width:24px;height:44px;padding:17.5px 7.5px;margin:-17.5px 0;box-sizing:border-box;background-clip:content-box!important}
+html body .hero .dots .pp{width:auto;height:44px;margin:-17.5px 0 -17.5px 12px;padding:0 4px;background:none;border:0;border-radius:0;color:#fff;font-size:13px;opacity:1;cursor:pointer;text-decoration:underline;text-underline-offset:4px}
+html body .hero.is-light .dots .pp{color:var(--charcoal);background:none}
+/* 휴대폰: 캡션이 버튼 줄만큼 길어져 E&L 로고와 겹침 → 로고를 제목 바로 아래로 (제목과 로고 사이 빈 칸도 줄어듦) */
+@media (max-width:900px){
+  html body .hero .sl.el img.el-mark{top:calc(clamp(32px,6vh,64px) + 2 * 1.12 * clamp(40px,7vw,112px) + 24px);bottom:auto}
+  html body .hero .cap{bottom:56px}
+  /* 낮은 화면(가로 태블릿·작은 휴대폰)에서도 제목·로고·캡션이 붙지 않게 최소 높이 */
+  html body .hero{min-height:calc(clamp(32px,6vh,64px) + 2.24 * clamp(40px,7vw,112px) + 330px)}
+}
 
 /* 서체 비교용 4: 에스코어 드림 */
 @font-face{font-family:'S-Core Dream';font-weight:300;src:url(https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff) format('woff')}@font-face{font-family:'S-Core Dream';font-weight:400;src:url(https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-4Regular.woff) format('woff')}
@@ -819,14 +851,14 @@ html body :is(.feat h2,.reel h2,.mhead h2,.docs h2,.ph-head h1,.process .ptl,.la
   <figure class="sl"><img src="img/a067f55148.webp" alt="인도 협력 공장 출고 전 검품" style="object-position:center 45%"></figure>
   <figure class="sl plate" data-tone="light"><img src="img/b9b87dff5a.webp" alt="레고랜드 코리아 텀블러와 보틀"></figure>
   <div class="cap" aria-live="polite">
-    <p class="on"><a href="exhibition.html#pavilion"><b>참가 기업 모집</b>2027년 1월 18~20일, 두바이 월드 트레이드 센터</a></p>
+    <p class="on"><b>참가 기업 모집</b>2027년 1월 18~20일, 두바이 월드 트레이드 센터<span class="hcta"><a class="btn" href="contact.html?type=pavilion">참가 문의</a><a class="u" href="exhibition.html#pavilion">파빌리온 안내</a></span></p>
     <p><b>의류 프로모션 기획⁠·⁠생산</b>인도 협력 공장 봉제 라인</p>
     <p><b>전시 굿즈 기획⁠·⁠생산⁠·⁠납품</b>Accidentally Wes Anderson 양말 5색</p>
     <p><b>품질 관리</b>생산 초기⁠·⁠중간⁠·⁠최종, 현장 3단계 검수</p>
     <p><b>테마파크 굿즈</b>레고랜드 코리아 텀블러⁠·⁠보틀</p>
   </div>
   <div class="dots" role="group" aria-label="슬라이드 선택">
-    <button aria-label="1번" aria-current="true"></button><button aria-label="2번"></button><button aria-label="3번"></button><button aria-label="4번"></button><button aria-label="5번"></button>
+    <button aria-label="1번" aria-current="true"></button><button aria-label="2번"></button><button aria-label="3번"></button><button aria-label="4번"></button><button aria-label="5번"></button><button class="pp" type="button" aria-pressed="false">멈춤</button>
   </div>
 </section>
 
@@ -951,19 +983,19 @@ html body :is(.feat h2,.reel h2,.mhead h2,.docs h2,.ph-head h1,.process .ptl,.la
 
 <footer id="contact">
   <div class="frow"><h2>프로젝트 문의</h2>
-    <div><dl class="fl"><dt>전화</dt><dd><a href="tel:01096640718">010-9664-0718</a></dd><dt>이메일</dt><dd><a href="mailto:admin@unipromotion.co.kr">admin@unipromotion.co.kr</a></dd><dt>WhatsApp</dt><dd><span class="todo">○○</span></dd></dl>
-    <a class="u" href="contact.html">문의 양식 열기</a></div></div>
+    <div><dl class="fl"><dt>전화</dt><dd><a href="tel:01096640718"><span class="nw">010-9664-0718</span></a></dd><dt>이메일</dt><dd><a href="mailto:admin@unipromotion.co.kr">admin@unipromotion.co.kr</a></dd><dt>WhatsApp</dt><dd><span class="todo">○○</span></dd></dl>
+    <a class="btn" href="contact.html">문의 양식 작성</a></div></div>
   <div class="frow"><h2>코리안 파빌리온 참가</h2>
     <div><p class="fabout">E&amp;L MENA 2027 한국관 참가 기업을 모집합니다. 2027년 1월 18~20일, 두바이 월드 트레이드 센터.</p>
-    <ul class="flinks"><li><a class="u" href="contact.html?type=pavilion">참가 문의</a></li><li><a class="u" href="exhibition.html#pavilion">파빌리온 안내</a></li></ul></div></div>
+    <ul class="flinks"><li><a class="btn" href="contact.html?type=pavilion">참가 문의</a></li><li><a class="u" href="exhibition.html#pavilion">파빌리온 안내</a></li></ul></div></div>
   <div class="frow"><h2>거점</h2>
-    <div><dl class="fl"><dt>서울 본사</dt><dd>서울특별시 마포구 독막로19길 42-12 (101)</dd><dt>네덜란드</dt><dd>유럽 거점 <span class="todo">○○</span></dd><dt>시드니</dt><dd>오세아니아 거점</dd></dl></div></div>
+    <div><dl class="fl"><dt>서울 본사</dt><dd>서울특별시 마포구 독막로19길 <span class="nw">42-12</span> (101)</dd><dt>네덜란드</dt><dd>유럽 거점 <span class="todo">○○</span></dd><dt>시드니</dt><dd>오세아니아 거점</dd></dl></div></div>
   <div class="frow"><h2>회사 소개</h2>
     <div><p class="fabout">주식회사 유니프로모션은 서울에 본사를 둔 글로벌 무역⁠·⁠SCM 회사입니다. 아시아와 중동 6개국의 협력 공장에서 의류와 굿즈를 만들고, 소재 소싱부터 검수, 통관, 납품까지 한 담당자가 맡습니다.</p></div></div>
   <img class="wordmark" src="assets/logo_w_cream.png" alt="UNIPROMOTION">
   <div class="fbot">
     <nav aria-label="하단 메뉴"><a href="company.html">Company</a><a href="apparel.html">Apparel &amp; Trading</a><a href="exhibition.html">Exhibition &amp; Entertainment</a><a href="media.html">Media &amp; Press</a><a href="contact.html">Contact</a><a href="#">Instagram</a><a href="#">블로그</a></nav>
-    <p>주식회사 유니프로모션 · 대표 안예원 · 사업자등록번호 196-88-02743 · © 2026 UNIPROMOTION</p>
+    <p>주식회사 유니프로모션 · 대표 안예원 · 사업자등록번호 <span class="nw">196-88-02743</span> · © 2026 UNIPROMOTION</p>
   </div>
 </footer>
 
@@ -972,7 +1004,7 @@ html body :is(.feat h2,.reel h2,.mhead h2,.docs h2,.ph-head h1,.process .ptl,.la
   // 첫 화면: 이미지와 캡션을 함께 넘김. 5초, 마우스 올리면 멈춤, 움직임 줄이기면 자동 전환 없음
   const hero = document.querySelector('.hero');
   const sl = [...hero.querySelectorAll('.sl')], cap = [...hero.querySelectorAll('.cap p')];
-  const dots = [...hero.querySelectorAll('.dots button')];
+  const dots = [...hero.querySelectorAll('.dots button:not(.pp)')], pp = hero.querySelector('.dots .pp');
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   let i = 0, t = null, paused = reduce, hover = false;
   const go = n => {
@@ -984,6 +1016,8 @@ html body :is(.feat h2,.reel h2,.mhead h2,.docs h2,.ph-head h1,.process .ptl,.la
   };
   const tick = () => { clearTimeout(t); if (!paused && !hover && !document.hidden) t = setTimeout(() => { go(i + 1); tick(); }, 5000); };
   dots.forEach((d, k) => d.onclick = () => { go(k); tick(); });
+  const ppSet = () => { pp.textContent = paused ? '재생' : '멈춤'; pp.setAttribute('aria-pressed', paused); pp.setAttribute('aria-label', paused ? '자동 넘김 재생' : '자동 넘김 멈춤'); };
+  pp.onclick = () => { paused = !paused; ppSet(); tick(); }; ppSet();
   hero.onmouseenter = () => { hover = true; tick(); };
   hero.onmouseleave = () => { hover = false; tick(); };
   hero.addEventListener('focusin', () => { hover = true; tick(); });
