@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="robots" content="noindex">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>유니프로모션 메인 시안 4안 (탭 구성)</title>
+<title>[SUIT] APPAREL & TRADING | 유니프로모션 하위 페이지 시안</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500&display=swap">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css">
@@ -250,6 +250,139 @@ footer a.u{display:inline-block;margin-top:18px;font-size:15px;font-weight:600}
 
 .hero{height:clamp(460px,70vh,760px);min-height:0;max-height:none}
 @media (max-width:900px){.hero{height:58vh;min-height:360px}}
+
+/* ── 하위 페이지 공통 ── */
+.ph-head{padding:clamp(64px,8vw,120px) var(--gut) clamp(36px,4vw,56px)}
+.ph-head .tab{margin:0 0 22px;font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--burgundy)}
+.ph-head h1{margin:0;max-width:1180px;font-size:clamp(40px,5.2vw,84px);font-weight:500;line-height:1.08;letter-spacing:-.045em}
+.ph-head .lead{margin:28px 0 0;max-width:680px;font-size:clamp(17px,1.4vw,20px);line-height:1.7;color:var(--stone)}
+.subnav{position:sticky;top:60px;z-index:15;background:var(--cream);margin:0 var(--gut);display:flex;flex-wrap:wrap;gap:6px 28px;
+  border-top:1px solid var(--charcoal);border-bottom:1px solid var(--rule);padding:13px 0;font-size:14px;font-weight:600}
+.subnav a{transition:color .2s}
+.subnav a:hover{color:var(--burgundy)}
+.wide{margin:clamp(40px,5vw,72px) 0 0}
+.wide img{width:100%;aspect-ratio:21/9;object-fit:cover}
+.wide figcaption,.cap-s{padding:10px var(--gut) 0;font-size:13px;color:var(--stone)}
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding:0 var(--gut);margin-top:clamp(40px,5vw,72px)}
+.trio img{width:100%;aspect-ratio:4/5;object-fit:cover;background:#fff}
+
+.sec{display:grid;grid-template-columns:repeat(12,1fr);gap:0 18px;padding:clamp(80px,9vw,140px) var(--gut) 0;scroll-margin-top:110px}
+.sec>.lab{grid-column:1/4;margin:0;border-top:2px solid var(--charcoal);padding-top:14px;font-size:15px;font-weight:600}
+.sec>.lab small{display:block;margin-top:4px;font-size:13px;font-weight:500;color:var(--stone)}
+.sec>.body{grid-column:4/13;border-top:1px solid var(--rule);padding-top:14px}
+.sec h2{margin:0;max-width:860px;font-size:clamp(28px,2.8vw,44px);font-weight:500;line-height:1.18;letter-spacing:-.035em}
+.sec .txt{margin:22px 0 0;max-width:680px;font-size:17px;line-height:1.75}
+.sec .txt+.txt{margin-top:14px}
+.sec .note{margin:16px 0 0;font-size:14px;color:var(--stone)}
+
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px 18px;margin-top:44px}
+.pgrid.c3{grid-template-columns:repeat(3,1fr)}
+.pgrid figure{margin:0}
+.pgrid img{width:100%;aspect-ratio:1/1;object-fit:cover;background:#fff}
+.pgrid.wideimg img{aspect-ratio:4/3}
+.pgrid figcaption{margin-top:10px;font-size:14px;line-height:1.45;color:var(--stone)}
+.pgrid figcaption b{display:block;font-size:15px;font-weight:600;color:var(--charcoal)}
+.posters{display:grid;grid-template-columns:repeat(6,1fr);gap:28px 14px;margin-top:44px}
+.posters figure{margin:0}
+.posters img{width:100%;aspect-ratio:3/4;object-fit:cover;background:var(--cream-deep);transition:opacity .2s}
+@media (hover:hover){.posters figure:hover img{opacity:.85}}
+.posters figcaption{margin-top:8px;font-size:13px;line-height:1.4;font-weight:600}
+
+.rows{margin:36px 0 0;padding:0;list-style:none;border-top:1px solid var(--charcoal)}
+.rows li{display:grid;grid-template-columns:200px 1fr;gap:18px;padding:18px 0;border-bottom:1px solid var(--rule);font-size:16px}
+.rows li>b{font-weight:600}
+.rows li>span{color:var(--charcoal)}
+.rows li small{display:block;color:var(--stone);font-size:14px;margin-top:2px}
+
+.steps{list-style:none;margin:44px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:36px 18px;counter-reset:s}
+.steps li{border-top:1px solid var(--charcoal);padding-top:14px}
+.steps li::before{counter-increment:s;content:counter(s);display:block;font-size:14px;color:var(--stone);margin-bottom:6px}
+.steps h3{margin:0;font-size:20px;font-weight:600;letter-spacing:-.02em}
+.steps h3 small{display:block;font-size:13px;font-weight:400;color:var(--stone)}
+.steps p{margin:10px 0 0;font-size:15px;color:var(--stone)}
+
+.empty-ph{display:flex;align-items:center;justify-content:center;background:var(--cream-deep);color:var(--stone);font-size:13px;text-align:center;padding:12px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:44px}
+.split img{width:100%;aspect-ratio:4/3;object-fit:cover;background:#fff}
+
+.dl-list{margin-top:36px;border-top:1px solid var(--charcoal);max-width:640px}
+.dl-list a{display:flex;justify-content:space-between;border-bottom:1px solid var(--rule);padding:16px 0;font-weight:600;transition:color .2s}
+.dl-list a:hover{color:var(--burgundy)}
+.dl-list a span{font-weight:500;color:var(--stone)}
+
+/* 뉴스룸 */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 var(--gut)}
+.chips button{background:none;border:1px solid var(--rule);padding:8px 16px;font-size:14px;font-weight:600;cursor:pointer;transition:border-color .2s,color .2s,background .2s}
+.chips button:hover{border-color:var(--charcoal)}
+.chips button[aria-pressed="true"]{background:var(--charcoal);border-color:var(--charcoal);color:var(--cream)}
+.chips button:active{transform:scale(.98)}
+.feature{display:grid;grid-template-columns:7fr 5fr;gap:18px;margin:44px var(--gut) 0;align-items:end}
+.feature .fimg{aspect-ratio:16/10;background:#fff;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.feature .fimg img{width:70%;height:auto;object-fit:contain}
+.feature h2{margin:10px 0 0;font-size:clamp(26px,2.4vw,38px);font-weight:500;line-height:1.2;letter-spacing:-.03em}
+.feature p{margin:16px 0 0;font-size:16px;line-height:1.7;color:var(--stone)}
+.meta{font-size:13px;color:var(--stone)}
+.meta .tg{display:inline-block;background:var(--cream-deep);color:var(--charcoal);padding:1px 8px;margin-right:8px;font-weight:600}
+.ncards{display:grid;grid-template-columns:repeat(3,1fr);gap:40px 18px;margin:56px var(--gut) 0}
+.ncards a{display:block}
+.ncards .th{aspect-ratio:4/3;overflow:hidden}
+.ncards .th img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
+@media (hover:hover){.ncards a:hover .th img{transform:scale(1.02)}.ncards a:hover b{color:var(--burgundy)}}
+.ncards b{display:block;margin-top:8px;font-size:19px;font-weight:600;line-height:1.35;letter-spacing:-.02em;transition:color .2s}
+.ncards .meta{margin-top:12px}
+.ncards a.hide{display:none}
+.squares{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:36px}
+.squares .empty-ph{aspect-ratio:1/1}
+.video{aspect-ratio:16/9;margin-top:36px;max-width:960px}
+
+/* 문의 */
+.cgrid{display:grid;grid-template-columns:7fr 5fr;gap:clamp(32px,5vw,80px);padding:0 var(--gut);margin-top:clamp(40px,5vw,64px)}
+.form{border-top:2px solid var(--charcoal);padding-top:8px}
+.form .f{display:grid;grid-template-columns:160px 1fr;gap:18px;align-items:center;border-bottom:1px solid var(--rule);padding:12px 0}
+.form .f.tall{align-items:start}
+.form label{font-size:15px;font-weight:600}
+.form label i{font-style:normal;color:var(--burgundy)}
+.form input,.form select,.form textarea{width:100%;border:0;background:transparent;font:inherit;font-size:16px;padding:10px 0;color:var(--charcoal);border-radius:0}
+.form input::placeholder,.form textarea::placeholder{color:#9b948c}
+.form input:focus,.form select:focus,.form textarea:focus{outline:none;box-shadow:inset 0 -2px 0 var(--burgundy)}
+.form textarea{min-height:160px;resize:vertical}
+.form .agree{display:flex;gap:10px;align-items:flex-start;margin:22px 0 0;font-size:14px;color:var(--stone)}
+.form .agree input{width:auto;margin-top:4px;accent-color:var(--burgundy)}
+.form .send{margin-top:28px;height:56px;padding:0 40px;border:0;background:var(--burgundy);color:var(--cream);font-size:16px;font-weight:600;cursor:pointer;transition:background .2s,transform .14s var(--ease)}
+.form .send:hover{background:var(--burgundy-deep)}
+.form .send:active{transform:scale(.98)}
+.form .demo{margin:12px 0 0;font-size:13px;color:var(--stone)}
+.cinfo{border-top:2px solid var(--charcoal);padding-top:18px}
+.cinfo div{padding:0 0 22px;margin-bottom:22px;border-bottom:1px solid var(--rule);font-size:16px;line-height:1.7}
+.cinfo b{display:block;font-size:13px;font-weight:600;color:var(--stone);margin-bottom:4px}
+.cinfo a{border-bottom:1px solid var(--charcoal);transition:color .2s,border-color .2s}
+.cinfo a:hover{color:var(--burgundy);border-color:var(--burgundy)}
+.map{aspect-ratio:16/9;margin-top:4px}
+.film{margin:0}
+.pav{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:44px;align-items:start}
+.pav figure{margin:0}
+.pav-v{grid-row:1/3}
+.pav-v video{display:block;width:100%;aspect-ratio:9/16;background:#000}
+.pav img{display:block;width:100%;object-fit:cover;background:#fff}
+@media (max-width:900px){.pav{grid-template-columns:1fr}.pav-v{grid-row:auto;max-width:360px}}
+.film video{display:block;width:100%;aspect-ratio:16/9;background:#000}
+.film figcaption{margin-top:10px;font-size:13px;color:var(--stone)}
+
+@media (max-width:900px){
+  .sec{grid-template-columns:1fr}
+  .sec>.lab,.sec>.body{grid-column:1/-1}
+  .sec>.body{border-top:0;padding-top:20px}
+  .pgrid,.pgrid.c3{grid-template-columns:repeat(2,1fr)}
+  .posters{grid-template-columns:repeat(3,1fr)}
+  .rows li{grid-template-columns:1fr;gap:4px}
+  .steps{grid-template-columns:1fr 1fr}
+  .trio{grid-template-columns:1fr 1fr 1fr;gap:8px}
+  .feature,.cgrid,.split{grid-template-columns:1fr}
+  .ncards{grid-template-columns:1fr 1fr}
+  .squares{grid-template-columns:1fr 1fr}
+  .form .f{grid-template-columns:1fr;gap:0}
+  .subnav{gap:4px 18px;font-size:13px}
+}
 
 /* ═══ 타이포 체계 (10/6 검수) — 7단계만 쓴다 ═══ */
 :root{
@@ -643,6 +776,9 @@ body .track ul{padding:0 var(--gut)}
 body .lead-card .th,body .feature .fimg{background:none}
 body .lead-card .th img,body .feature .fimg img{width:100%;height:100%;object-fit:cover}
 
+/* 하위 페이지: 마지막 섹션과 하단 사이 블록 간격(96px), 메인과 같게 */
+body>footer{margin-top:96px}
+
 /* 10/7 남은 항목 */
 .quote{margin-top:96px;padding:0 var(--gut)}
 .quote blockquote{margin:0;max-width:1100px}
@@ -767,159 +903,103 @@ html body .quote p.by{font-size:16px;line-height:1.5;letter-spacing:0!important}
   html body :is(.sec .ttl,.feature .ttl){font-size:24px}
   html body .quote p{font-size:24px}
 }
+
+/* 서체 비교용: SUIT 한 가족 (제목 300 · 본문 400, 크기·자간은 그대로) */
+:root{--font-text:'SUIT Variable',-apple-system,sans-serif;--font-display:'SUIT Variable',-apple-system,sans-serif}
+html body,html body *{font-family:'SUIT Variable',-apple-system,sans-serif!important}
 </style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/variable/woff2/SUIT-Variable.css">
 </head>
 <body>
 
 <header class="top">
-  <a class="logo" href="#"><img src="assets/logo_h_burgundy.png" alt="UNIPROMOTION 유니프로모션"></a>
+  <a class="logo" href="index.html"><img src="assets/logo_h_burgundy.png" alt="UNIPROMOTION 유니프로모션"></a>
   <button class="menu" type="button" aria-expanded="false" aria-controls="gnb">Menu</button>
   <nav id="gnb" aria-label="주 메뉴">
     <a href="company.html">Company</a>
-    <a href="apparel.html">Apparel &amp; Trading</a>
+    <a href="apparel.html" aria-current="page">Apparel &amp; Trading</a>
     <a href="exhibition.html">Exhibition &amp; Entertainment</a>
     <a href="media.html">Media &amp; Press</a>
     <a href="contact.html">Contact</a>
   </nav>
 </header>
-<h1 class="sr">유니프로모션 — 의류·굿즈 기획과 해외 생산, 해외 전시 코리안 파빌리온</h1>
 
-<section class="hero is-light" aria-roledescription="carousel" aria-label="유니프로모션이 하는 일">
-  <figure class="sl el on" data-tone="light"><div class="el-type"><p>E&amp;L MENA 2027</p><p>코리안 파빌리온</p></div><img class="el-mark" src="assets/el_logo.png" alt="Entertainment &amp; Leisure MENA (구 DEAL Dubai) 로고"></figure>
-  <figure class="sl"><img src="img/e3e8ffabf6.webp" alt="인도 협력 공장 봉제 라인" style="object-position:center 55%"></figure>
-  <figure class="sl plate" data-tone="light"><img src="img/f74ba6d625.webp" alt="Accidentally Wes Anderson 양말 5색"></figure>
-  <figure class="sl"><img src="img/a067f55148.webp" alt="인도 협력 공장 출고 전 검품" style="object-position:center 45%"></figure>
-  <figure class="sl plate" data-tone="light"><img src="img/b9b87dff5a.webp" alt="레고랜드 코리아 텀블러와 보틀"></figure>
-  <div class="cap" aria-live="polite">
-    <p class="on"><a href="exhibition.html#pavilion"><b>참가 기업 모집</b>2027년 1월 18~20일, 두바이 월드 트레이드 센터</a></p>
-    <p><b>의류 프로모션 기획·생산</b>인도 협력 공장 봉제 라인</p>
-    <p><b>전시 굿즈 기획·생산·납품</b>Accidentally Wes Anderson 양말 5색</p>
-    <p><b>품질 관리</b>생산 초기·중간·최종, 현장 3단계 검수</p>
-    <p><b>테마파크 굿즈</b>레고랜드 코리아 텀블러·보틀</p>
-  </div>
-  <div class="dots" role="group" aria-label="슬라이드 선택">
-    <button aria-label="1번" aria-current="true"></button><button aria-label="2번"></button><button aria-label="3번"></button><button aria-label="4번"></button><button aria-label="5번"></button>
-  </div>
-</section>
+<main>
+<div class="ph-head">
+  <h1>Apparel &amp; Trading</h1>
+  <div class="ph-row"><p class="ph-say">의류를 기획하고 6개국 협력 공장에서 생산해 납품합니다.</p><nav class="subnav" aria-label="페이지 안 이동"><a href="#promo">의류 프로모션</a><a href="#scm">무역·SCM</a><a href="#hubs">생산 거점</a><a href="#qc">품질 관리</a><a href="#dist">해외 브랜드 유통</a></nav></div>
+</div>
+<figure class="wide"><img src="img/e3e8ffabf6.webp" alt="인도 협력 공장 봉제 라인" loading="lazy"><figcaption>인도 협력 공장 봉제 라인</figcaption></figure>
 
-<section class="feat light" id="apparel">
-  <h2>의류의 기획과 해외 생산</h2>
-  <p class="intro">브랜드·기업·전시의 프로모션 의류를 기획하고 인도, 베트남, 방글라데시 등 6개국 협력 공장에서 생산합니다. 원단 소싱, 검수, 통관, 납품을 직접 관리하고, 국내 브랜드 168cm의 일본·호주·네덜란드 유통도 맡습니다.</p>
-  <ul class="subs"><li><a href="apparel.html#promo">의류 프로모션 기획·생산</a></li><li><a href="apparel.html#scm">의류 B2B 무역 &amp; SCM</a></li><li><a href="apparel.html#dist">해외 브랜드 유통·컨설팅</a></li></ul>
-  <div class="cards">
-    <a href="apparel.html#promo"><img class="pl" src="img/0c2ef5c0ac.webp" alt=""><b>Accidentally Wes Anderson</b><span>맨투맨</span></a>
-    <a href="apparel.html#promo"><img class="pl" src="img/786d20ef30.webp" alt=""><b>Accidentally Wes Anderson</b><span>전시 굿즈 바람막이 3색</span></a>
-    <a href="apparel.html#promo"><img class="pl" src="img/a756d38db8.webp" alt=""><b>레고랜드 코리아</b><span>어린이 가운 4색</span></a>
-    <a href="apparel.html#promo"><img class="pl" src="img/ba2a1a9d34.webp" alt=""><b>프로모션 모자</b><span class="todo">○○</span></a>
-  </div>
-  <a class="go" href="apparel.html">Apparel &amp; Trading 전체 보기</a>
-</section>
-
-<section class="latest" id="work" style="scroll-margin-top:60px">
-  <h2 class="more">최근 프로젝트</h2>
-  
-  <div class="grid">
-    <a class="lg" href="exhibition.html#goods"><div class="ph"><img class="pl" src="img/daf920d1aa.webp" alt="유미의 세포들 특별전 캐릭터 굿즈"></div><b>유미의 세포들 특별전</b><span>캐릭터 굿즈</span></a>
-    <a href="exhibition.html#goods"><div class="ph"><img class="pl" src="img/e4b2950913.webp" alt="Accidentally Wes Anderson 스노볼"></div><b>Accidentally Wes Anderson</b><span>스노볼</span></a>
-    <a href="exhibition.html#goods"><div class="ph"><img class="pl" src="img/05a5886309.webp" alt="요시고 사진전 마스킹 테이프"></div><b>요시고 사진전</b><span>마스킹 테이프</span></a>
-    <a class="lg" href="exhibition.html#goods"><div class="ph"><img class="pl" src="img/afaaa31afc.webp" alt="레드룸 와인잔과 패키지"></div><b>레드룸</b><span>와인잔과 패키지</span></a>
-    <a href="exhibition.html#goods"><div class="ph"><img class="pl" src="img/89fcf777cc.webp" alt="어노니머스 프로젝트 에코백"></div><b>어노니머스 프로젝트</b><span>에코백</span></a>
-    <a href="exhibition.html#goods"><div class="ph"><img class="pl" src="img/24225e7d87.webp" alt="레드룸 와인 백"></div><b>레드룸</b><span>와인 백</span></a>
-    <a href="exhibition.html#goods"><div class="ph"><img class="pl" src="img/aab559baf8.webp" alt="어노니머스 프로젝트 스티키 롤"></div><b>어노니머스 프로젝트</b><span>스티키 롤</span></a>
-    <a href="exhibition.html#goods"><div class="ph"><img class="pl" src="img/dede44c681.webp" alt="유미의 세포들 특별전 굿즈 구성"></div><b>유미의 세포들 특별전</b><span>굿즈 구성</span></a>
-    <a href="apparel.html#promo"><div class="ph"><img class="pl" src="img/0d36d629a1.webp" alt="Accidentally Wes Anderson 비니"></div><b>Accidentally Wes Anderson</b><span>비니</span></a>
-    <a href="company.html#history"><div class="ph"><img src="img/b98ec4d339.webp" alt="STETS 자체 브랜드 식기" style="object-fit:cover;padding:0"></div><b>STETS</b><span>자체 브랜드 식기</span></a>
+<section class="sec" id="promo">
+  <h2 class="lab">의류 프로모션<small>기획·생산</small></h2>
+  <div class="body">
+    <h3 class="ttl">전시·테마파크·브랜드의 프로모션 의류</h3>
+    <p class="txt">전시, 테마파크, 브랜드의 의류와 잡화를 기획·생산합니다. 자수와 프린트 같은 디테일은 시안과 샘플로 확인한 뒤 생산에 들어갑니다.</p>
+    <div class="pgrid">
+      <figure><img src="img/eda7e7a3d8.webp" alt="" loading="lazy"><figcaption><b>자수 디테일</b><span class='todo'>○○</span></figcaption></figure>
+      <figure><img class="pl" src="img/c4985a0c7f.webp" alt="" loading="lazy"><figcaption><b>자수 가운</b><span class='todo'>○○</span></figcaption></figure>
+      <figure><img class="pl" src="img/a756d38db8.webp" alt="" loading="lazy"><figcaption><b>레고랜드 코리아</b>어린이 가운</figcaption></figure>
+      <figure><img class="pl" src="img/0c2ef5c0ac.webp" alt="" loading="lazy"><figcaption><b>Accidentally Wes Anderson</b>맨투맨</figcaption></figure>
+      <figure><img class="pl" src="img/786d20ef30.webp" alt="" loading="lazy"><figcaption><b>Accidentally Wes Anderson</b>바람막이 3색</figcaption></figure>
+      <figure><img class="pl" src="img/0d36d629a1.webp" alt="" loading="lazy"><figcaption><b>Accidentally Wes Anderson</b>비니</figcaption></figure>
+      <figure><img class="pl" src="img/ba2a1a9d34.webp" alt="" loading="lazy"><figcaption><b>프로모션 모자</b><span class='todo'>○○</span></figcaption></figure>
+      <figure><img class="pl" src="img/51b01f1f53.webp" alt="" loading="lazy"><figcaption><b>티셔츠</b><span class='todo'>○○</span></figcaption></figure>
+    </div>
   </div>
 </section>
 
-<section class="quote" aria-label="대표 인사">
-  <blockquote><p>커스터마이징은 ‘Make’가 아니라 ‘Create’입니다. 그저 주문대로 제작하는 것이 아니라, 전략적인 브랜딩을 통해 제품의 가치를 높여야 하는 일입니다.</p>
-  <p class="by">안예원, (주)유니프로모션 대표</p></blockquote>
+<section class="sec" id="scm">
+  <h2 class="lab">의류 B2B 무역 &amp; SCM</h2>
+  <div class="body">
+    <h3 class="ttl">의류 B2B 무역과 SCM, 6단계</h3>
+    <p class="txt">바이어의 요청과 작업지시서(테크팩) 검토에서 시작해 소재 소싱, 공장 배정, 생산 관리, 최종 검사, 통관과 납품까지 이어서 맡습니다.</p>
+    <ol class="steps">
+      <li><h3>브리핑·기획<small>Briefing &amp; Planning</small></h3><p>요구사항 분석, 테크팩 검토, 일정 수립</p></li>
+      <li><h3>소싱·샘플<small>Sourcing &amp; Sampling</small></h3><p>원단·부자재 소싱, 샘플 개발과 승인</p></li>
+      <li><h3>공장 배정<small>Factory Allocation</small></h3><p>가격, 생산량, 기준 준수에 맞춘 공장 선정</p></li>
+      <li><h3>생산·중간 검수<small>Production &amp; Inline QC</small></h3><p>생산 관리와 중간 검수</p></li>
+      <li><h3>최종 검사<small>Final Inspection</small></h3><p>독립 검수팀의 최종 검사와 기준 준수 확인</p></li>
+      <li><h3>물류·납품<small>Logistics &amp; Delivery</small></h3><p>선적 조율, 통관, 일정에 맞춘 납품</p></li>
+    </ol>
+  </div>
 </section>
 
-<section class="reel" id="archive" aria-label="함께한 전시">
-  <div class="reel-head">
-    <h2>함께한 전시</h2><span class="cnt">(16)</span>
-    <p class="say">무민, 요시고 사진전, 베르너 브롱크호스트, Accidentally Wes Anderson 등 국내 전시 16건의 굿즈를 기획하고 생산했습니다.</p>
-  </div>
-  <div class="track" tabindex="0" aria-label="전시 포스터 목록. 좌우로 넘겨 볼 수 있습니다">
-    <ul>
-      <li><span>Accidentally Wes Anderson</span><img src="img/9879107af6.webp" alt="Accidentally Wes Anderson 전시 포스터"></li>
-      <li><span>베르너 브롱크호스트</span><img src="img/8597fff1d4.webp" alt="베르너 브롱크호스트 전시 포스터"></li>
-      <li><span>요시고 사진전</span><img src="img/65ad3e3d6b.webp" alt="요시고 사진전 전시 포스터"></li>
-      <li><span>레드룸</span><img src="img/b3f2951bb6.webp" alt="레드룸 전시 포스터"></li>
-      <li><span>무민</span><img src="img/3d1f3992b0.webp" alt="무민 전시 포스터"></li>
-      <li><span>힙노시스</span><img src="img/58eb2210e7.webp" alt="힙노시스 전시 포스터"></li>
-      <li><span>유미의 세포들</span><img src="img/2cfa4f9452.webp" alt="유미의 세포들 전시 포스터"></li>
-      <li><span>Accidentally Wes Anderson II</span><img src="img/760f997c6e.webp" alt="Accidentally Wes Anderson II 전시 포스터"></li>
-      <li><span>문도멘도</span><img src="img/22341ebd50.webp" alt="문도멘도 전시 포스터"></li>
-      <li><span>어노니머스 프로젝트</span><img src="img/1150109da5.webp" alt="어노니머스 프로젝트 전시 포스터"></li>
-      <li><span>나탈리 카르푸센코</span><img src="img/17269d30cf.webp" alt="나탈리 카르푸센코 전시 포스터"></li>
-      <li><span>슈타이들 북 컬처</span><img src="img/14681abbb5.webp" alt="슈타이들 북 컬처 전시 포스터"></li>
-      <li><span>이경준 사진전</span><img src="img/560a151c81.webp" alt="이경준 사진전 전시 포스터"></li>
-      <li><span>UTOPIA</span><img src="img/214f3e35fc.webp" alt="UTOPIA 전시 포스터"></li>
-      <li><span>Art in Life, Life in Art</span><img src="img/262ae34af9.webp" alt="Art in Life, Life in Art 전시 포스터"></li>
-      <li><span>Poster Dump</span><img src="img/10b2349851.webp" alt="Poster Dump 전시 포스터"></li>
+<section class="sec" id="hubs">
+  <h2 class="lab">생산 거점</h2>
+  <div class="body">
+    <h3 class="ttl">6개국 생산 거점</h3>
+    <ul class="rows">
+      <li><b>방글라데시·이집트</b><span>대량 생산<small>EU 수출 시 EBA 무관세 혜택</small></span></li>
+      <li><b>중국·베트남</b><span>고급 의류, 짧은 생산 주기</span></li>
+      <li><b>인도</b><span>원면에서 완제품까지 한 나라에서 생산</span></li>
+      <li><b>인도네시아</b><span>가죽 제품, 핸드백, 패션 잡화</span></li>
     </ul>
   </div>
-  <div class="reel-foot"><a href="exhibition.html#archive">더보기</a></div>
 </section>
 
-<section class="process">
-  <h2 class="ptl">일하는 방식</h2>
-  <ol>
-    <li><h3>요구 분석</h3><p>품목·수량·예산·납기 확인<br>작업지시서(테크팩) 검토<br>비밀유지계약(NDA)</p></li>
-    <li><h3>소싱·제안</h3><p>6개국 협력 공장 중 배정<br>소재 샘플과 견적</p></li>
-    <li><h3>생산·검수</h3><p>상주 검수팀의 현장 검수<br>초기·중간·최종 3단계<br>REACH 등 바이어 기준 확인</p></li>
-    <li><h3>해외 납품</h3><p>통관과 물류<br>개막·입고 일정에 맞춘 납품</p></li>
-  </ol>
-</section>
-
-<section class="feat dark" id="exhibition">
-  <h2>전시 굿즈와 해외 전시 코리안 파빌리온</h2>
-  <p class="intro">전시와 테마파크의 굿즈를 기획·생산해 현장에 납품합니다. 중동 E&amp;L MENA의 공식 한국 에이전시로 코리안 파빌리온을 운영하며, 2027년 1월 18~20일 두바이 행사의 참가 기업을 모집하고 있습니다.</p>
-  <ul class="subs"><li><a href="exhibition.html#goods">전시 굿즈 기획·생산·납품</a></li><li><a href="exhibition.html#pavilion">해외 전시 코리안 파빌리온</a></li></ul>
-  <div class="cards">
-    <a href="exhibition.html#pavilion"><span class="el-card"><img src="assets/el_logo.png" alt=""></span><b>E&amp;L MENA 2027</b><span>코리안 파빌리온 참가 기업 모집</span></a>
-    <a href="exhibition.html#goods"><img class="pl" src="img/0a460bbd98.webp" alt=""><b>레드룸</b><span>블랭킷</span></a>
-    <a href="exhibition.html#goods"><img class="pl" src="img/ad8f7f3526.webp" alt=""><b>어노니머스 프로젝트</b><span>조각 케이크 롤</span></a>
-    <a href="exhibition.html#goods"><img class="pl" src="img/97a41beeab.webp" alt=""><b>Accidentally Wes Anderson</b><span>모자</span></a>
+<section class="sec" id="qc">
+  <h2 class="lab">품질 관리</h2>
+  <div class="body">
+    <h3 class="ttl">초기·중간·최종 현장 검수</h3>
+    <p class="txt">현장에 상주하는 독립 검수팀이 생산 초기·중간·최종 단계에서 검수합니다. 국제 화학물질 규정(REACH), 친환경 소재 기준, 바이어별 감사 요건을 따릅니다.</p>
+    <div class="split one">
+      <figure style="margin:0"><img src="img/a067f55148.webp" alt="인도 협력 공장 검품 작업" loading="lazy" style="object-position:center 45%"><figcaption class="meta" style="margin-top:8px">출고 전 검품 작업, 인도</figcaption></figure>
+    </div>
   </div>
-  <a class="go" href="exhibition.html">Exhibition &amp; Entertainment 전체 보기</a>
 </section>
 
-<section class="media" id="media">
-  <div class="mhead">
-    <h2>뉴스룸</h2>
-  </div>
-  <div class="mgrid">
-    <a class="lead-card" href="exhibition.html#pavilion">
-      <div class="th el-th"><img src="assets/el_logo.png" alt=""></div>
-      <p class="meta"><span class="tg">전시</span><span class="todo">2026.○○</span></p>
-      <b>E&amp;L MENA 공식 한국 에이전시 계약, 코리안 파빌리온 론칭</b>
-      <span class="d">중동 레저·엔터테인먼트 박람회의 한국관을 운영합니다. 2027년 1월 행사 참가 기업 모집 중.</span>
-    </a>
-    <ul class="mlist">
-      <li><a href="media.html"><p class="meta"><span class="tg">미디어</span><span class="todo">2026.○○</span></p><b>대표 방송 출연</b><span class="d">유니프로모션이 소개된 방송 영상.</span></a></li>
-      <li><a href="media.html"><p class="meta"><span class="tg">전시</span><span class="todo">2026.○○</span></p><b>베트남 미디어앤아트 전시 전속 계약</b><span class="d">베트남 미디어앤아트 전시의 굿즈와 운영을 맡습니다.</span></a></li>
-      <li><a href="media.html"><p class="meta"><span class="tg">유통</span><span class="todo">2026.○○</span></p><b>168cm 일본·호주·네덜란드 독점 유통 계약</b><span class="d">국내 모바일 액세서리 브랜드의 해외 독점 유통. 온·오프라인 스토어 오픈 예정.</span></a></li>
-      <li><a href="media.html"><p class="meta"><span class="tg">수출</span><span class="todo">2026.○○</span></p><b>Stockalot 대량 물류 수출 완료</b><span class="d">대규모 물량의 소싱과 수출.</span></a></li>
+<section class="sec" id="dist">
+  <h2 class="lab">해외 브랜드 유통<small>관리·컨설팅</small></h2>
+  <div class="body">
+    <h3 class="ttl">168cm 해외 독점 유통, Stockalot 대량 수출</h3>
+    <ul class="rows">
+      <li><b>168cm</b><span>일본·호주·네덜란드 독점 유통 계약, 해외 온·오프라인 스토어 오픈 예정</span></li>
+      <li><b>Stockalot</b><span>대량 물류 소싱과 수출</span></li>
     </ul>
   </div>
-  <a class="go nall" href="media.html">뉴스룸 전체 보기</a>
 </section>
-
-<section class="docs" id="company">
-  <div class="about">
-    <h2>주식회사 유니프로모션</h2>
-    <p>의류와 굿즈를 기획부터 해외 공장 생산, 검수, 통관, 납품까지 직접 챙기는 회사입니다. 서울 본사와 네덜란드·시드니 거점에서 일합니다.</p>
-  </div>
-  <div class="row dlrow"><h3 class="sub">자료</h3><div class="dl">
-      <p>디자인등록 4건, 상표등록 2건(STETS) 보유</p>
-      <a href="#">회사소개서 (국문) <span>PDF</span></a>
-      <a href="#">Company Profile (English) <span>PDF</span></a>
-    </div></div>
-</section>
+</main>
 
 <footer id="contact">
   <div class="frow"><h2>프로젝트 문의</h2>
@@ -930,6 +1010,8 @@ html body .quote p.by{font-size:16px;line-height:1.5;letter-spacing:0!important}
     <ul class="flinks"><li><a class="u" href="contact.html?type=pavilion">참가 문의</a></li><li><a class="u" href="exhibition.html#pavilion">파빌리온 안내</a></li></ul></div></div>
   <div class="frow"><h2>거점</h2>
     <div><dl class="fl"><dt>서울 본사</dt><dd>서울특별시 마포구 독막로19길 42-12 (101)</dd><dt>네덜란드</dt><dd>유럽 거점 <span class="todo">○○</span></dd><dt>시드니</dt><dd>오세아니아 거점</dd></dl></div></div>
+  <div class="frow"><h2>회사소개서</h2>
+    <div><ul class="flinks"><li><a class="u" href="#">회사소개서 (국문) PDF</a></li><li><a class="u" href="#">Company Profile (English) PDF</a></li></ul></div></div>
   <div class="frow"><h2>회사 소개</h2>
     <div><p class="fabout">주식회사 유니프로모션은 서울에 본사를 둔 글로벌 무역·SCM 회사입니다. 아시아와 중동 6개국의 협력 공장에서 의류와 굿즈를 만들고, 소재 소싱부터 검수, 통관, 납품까지 한 담당자가 맡습니다.</p></div></div>
   <img class="wordmark" src="assets/logo_w_cream.png" alt="UNIPROMOTION">
@@ -941,105 +1023,9 @@ html body .quote p.by{font-size:16px;line-height:1.5;letter-spacing:0!important}
 
 <script>
 (() => {
-  // 첫 화면: 이미지와 캡션을 함께 넘김. 5초, 마우스 올리면 멈춤, 움직임 줄이기면 자동 전환 없음
-  const hero = document.querySelector('.hero');
-  const sl = [...hero.querySelectorAll('.sl')], cap = [...hero.querySelectorAll('.cap p')];
-  const dots = [...hero.querySelectorAll('.dots button')];
-  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let i = 0, t = null, paused = reduce, hover = false;
-  const go = n => {
-    i = (n + sl.length) % sl.length;
-    hero.classList.toggle('is-light', sl[i].dataset.tone === 'light');
-    sl.forEach((e, k) => e.classList.toggle('on', k === i));
-    cap.forEach((e, k) => e.classList.toggle('on', k === i));
-    dots.forEach((e, k) => e.setAttribute('aria-current', k === i));
-  };
-  const tick = () => { clearTimeout(t); if (!paused && !hover && !document.hidden) t = setTimeout(() => { go(i + 1); tick(); }, 5000); };
-  dots.forEach((d, k) => d.onclick = () => { go(k); tick(); });
-  hero.onmouseenter = () => { hover = true; tick(); };
-  hero.onmouseleave = () => { hover = false; tick(); };
-  hero.addEventListener('focusin', () => { hover = true; tick(); });
-  hero.addEventListener('focusout', () => { hover = false; tick(); });
-  document.addEventListener('keydown', e => { if (e.target.closest('select')) return; if (e.key === 'ArrowRight') { go(i + 1); tick(); } if (e.key === 'ArrowLeft') { go(i - 1); tick(); } });
-  document.addEventListener('visibilitychange', tick);
-  tick();
-
-
-  // 함께한 전시: 아주 느리게 흐름(초당 24px). 마우스 올림·키보드 초점·직접 넘김 중에는 멈춤, 움직임 줄이기면 흐르지 않음
-  const track = document.querySelector('.track'), list = track.querySelector('ul');
-  if (!reduce) {
-    [...list.children].forEach(li => { const c = li.cloneNode(true); c.setAttribute('aria-hidden', 'true'); c.querySelector('img').alt = ''; list.appendChild(c); });
-    let over = false, touch = 0, last = 0, pos = 0;
-    const half = () => list.children[list.children.length / 2].offsetLeft - list.children[0].offsetLeft;
-    const step = t => {
-      const dt = last ? Math.min(t - last, 64) : 0; last = t;
-      if (!over && !document.hidden && Date.now() > touch) {
-        pos += dt * 0.024;
-        if (pos >= half()) pos -= half();
-        track.scrollLeft = pos;
-      } else pos = track.scrollLeft;
-      requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-    track.addEventListener('mouseenter', () => over = true);
-    track.addEventListener('mouseleave', () => over = false);
-    track.addEventListener('focusin', () => over = true);
-    track.addEventListener('focusout', () => over = false);
-    ['wheel', 'touchstart', 'pointerdown'].forEach(ev => track.addEventListener(ev, () => touch = Date.now() + 3000, { passive: true }));
-  }
-
-  // 마우스로 잡고 끌어서 좌우로 넘기기 (터치는 브라우저 기본 스크롤 그대로). 끄는 동안과 놓은 뒤 3초는 흐름 멈춤
-  const loopW = () => list.querySelector('[aria-hidden="true"]') ? list.children[list.children.length / 2].offsetLeft - list.children[0].offsetLeft : 0;
-  let drag = null;
-  track.querySelectorAll('img').forEach(i => i.draggable = false);
-  track.addEventListener('pointerdown', e => {
-    if (e.pointerType !== 'mouse' || e.button !== 0) return;
-    drag = { x: e.clientX, left: track.scrollLeft, moved: false };
-    track.setPointerCapture(e.pointerId);
-    track.classList.add('dragging');
-  });
-  track.addEventListener('pointermove', e => {
-    if (!drag) return;
-    const dx = e.clientX - drag.x;
-    if (Math.abs(dx) > 3) drag.moved = true;
-    let x = drag.left - dx;
-    const w = loopW();
-    if (w) { if (x < 0) { x += w; drag.left += w; } else if (x >= w) { x -= w; drag.left -= w; } }
-    track.scrollLeft = x;
-  });
-  const endDrag = e => {
-    if (!drag) return;
-    track.releasePointerCapture?.(e.pointerId);
-    track.classList.remove('dragging');
-    track.dispatchEvent(new Event('wheel'));  // 자동 흐름 3초 쉬기 (위 touch 타이머 재사용)
-    drag = null;
-  };
-  track.addEventListener('pointerup', endDrag);
-  track.addEventListener('pointercancel', endDrag);
-
-
-  // 상단 탭: 모바일 MENU 펼침, 지금 보고 있는 섹션의 탭을 버건디로
   const menu = document.querySelector('.top .menu'), nav = document.getElementById('gnb');
   menu.onclick = () => { const o = nav.classList.toggle('open'); menu.setAttribute('aria-expanded', o); menu.textContent = o ? 'Close' : 'Menu'; };
-  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { nav.classList.remove('open'); menu.setAttribute('aria-expanded', false); menu.textContent = 'Menu'; }));
 
-})();
-</script>
-
-<dialog class="viewer" aria-label="인증서 크게 보기"><img alt=""><div class="vbar"><span class="vcap"></span><button type="button">닫기</button></div></dialog>
-<script>
-(() => {
-  // 인증서 이미지 누르면 크게 보기 (브리프 5항 '다운로드 또는 뷰어'). Esc·닫기·바깥 누르면 닫힘
-  const dlg = document.querySelector('.viewer'), big = dlg.querySelector('img'), cap = dlg.querySelector('.vcap');
-  document.querySelectorAll('.docs .row figure img').forEach(img => {
-    const name = img.closest('figure').querySelector('figcaption').textContent.trim();
-    img.classList.add('zoomable'); img.tabIndex = 0; img.setAttribute('role', 'button'); img.setAttribute('aria-label', name + ' 크게 보기');
-    const open = () => { big.src = img.src; big.alt = name; cap.textContent = name; dlg.showModal(); };
-    img.addEventListener('click', open);
-    img.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
-  });
-  dlg.querySelector('button').onclick = () => dlg.close();
-  dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
 })();
 </script>
 </body>

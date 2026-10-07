@@ -876,6 +876,13 @@ html body .chips{gap:0 24px}
 html body .chips button{background:none!important;border:0!important;border-bottom:1px solid transparent!important;padding:0 0 2px!important;color:var(--stone)!important;font-size:16px;font-weight:400}
 html body .chips button:hover{color:var(--charcoal)!important}
 html body .chips button[aria-pressed="true"]{color:var(--charcoal)!important;border-bottom-color:var(--charcoal)!important}
+/* Exhibition 파빌리온: 오른쪽 두 칸(로고·DEAL 사진) 총높이 = 왼쪽 영상 높이 (사용자 요청 10/7)
+   영상이 두 줄에 걸쳐 있고, 오른쪽 사진은 비율을 풀고 줄 높이를 반씩 채움 → 영상 아래 끝과 DEAL 사진 아래 끝이 맞음 */
+@media (min-width:901px){
+  html body .pav{align-items:stretch}
+  html body .pav>figure:not(.pav-v){display:flex;flex-direction:column;min-height:0}
+  html body .pav>figure:not(.pav-v)>img,html body .pav>figure:not(.pav-v)>.el-tile{flex:1 1 0;height:0;min-height:0;aspect-ratio:auto!important}
+}
 /* 함께한 전시: 버건디 면 → 크림 바탕 (포스터 자체가 색), 버건디는 '일하는 방식' 한 곳에만 */
 html body .reel{background:none;color:var(--charcoal)}
 html body .reel h2,html body .reel .cnt{color:var(--charcoal)}
@@ -935,7 +942,7 @@ html body .quote p.by{font-size:16px;line-height:1.5;letter-spacing:0!important}
       <li><b>2022</b><span>미국 올랜도 IAAPA Expo 참가</span></li>
     </ul>
     <div class="pav">
-      <figure class="pav-v"><video controls playsinline preload="metadata" poster="assets/elmena_poster.jpg" aria-label="E&amp;L MENA 2027 소개 영상"><source src="assets/elmena_2027.mp4" type="video/mp4"></video><figcaption class="meta" style="margin-top:8px">E&amp;L MENA 2027 소개 영상, 1분. 실제 사이트에서는 유튜브 쇼츠로 연결합니다.</figcaption></figure>
+      <figure class="pav-v"><video controls playsinline preload="metadata" poster="assets/elmena_poster.jpg" aria-label="E&amp;L MENA 2027 소개 영상"><source src="assets/elmena_2027.mp4" type="video/mp4"></video><figcaption class="meta" style="margin-top:8px">E&amp;L MENA 2027 소개 영상, 1분</figcaption></figure>
       <figure><div class="el-tile"><img src="assets/el_logo.png" alt="Entertainment &amp; Leisure MENA 로고" loading="lazy"></div><figcaption class="meta" style="margin-top:8px">E&amp;L MENA (구 DEAL Dubai) 공식 한국 에이전시</figcaption></figure>
       <figure><img src="assets/deal_2023.jpg" alt="두바이 DEAL 쇼 전시장 입구" loading="lazy" style="aspect-ratio:4/3"><figcaption class="meta" style="margin-top:8px">DEAL 쇼 참가, 두바이 (2023)</figcaption></figure>
     </div>
