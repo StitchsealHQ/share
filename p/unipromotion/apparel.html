@@ -747,6 +747,16 @@ body .process .ptl{margin:0;font-family:var(--font-display);font-size:52px;font-
 /* 제목 문장을 뺀 섹션: 첫 내용을 왼쪽 이름표와 같은 높이에서 시작 */
 body .sec .body>.rows:first-child,body .sec .body>.squares:first-child{margin-top:0}
 @media (max-width:600px){body .process ol{grid-template-columns:1fr}}
+/* 굵기·자간 정리 (10/7, 실측 근거: Pentagram 52px -0.02em·32px -0.01em·본문 0 / 아모레퍼시픽미술관 28px -0.036em·본문 0
+   / 매거진 B·워크룸·젠틀몬스터 본문 0, 줄간 1.5~1.6, 젠틀몬스터 굵기 350)
+   굵기: 제목 300(나눔스퀘어 Light) · 본문 300(Plex Light) · 이름·라벨 400 (500은 쓰지 않음)
+   자간: 큰 제목 -0.03em · 중간 제목 -0.02em · 32px 문장 -0.015em · 그 아래 전부 0 */
+html body{font-weight:300;letter-spacing:0}
+html body :is(p,li,span,dd,dt,small,figcaption,label,input,textarea,select,a,button,div){letter-spacing:0}
+html body :is(b,strong,h3:not(.ttl),h4,footer h2,.sub,.tab,.lab,.tg,nav a,.go,.u,.more,dt,label,button){font-weight:400}
+html body :is(.feat h2,.reel h2,.mhead h2,.docs h2,.ph-head h1,.process .ptl){font-weight:300;letter-spacing:-.03em;line-height:1.12}
+html body :is(.sec .ttl,.feature .ttl){font-weight:300;letter-spacing:-.02em;line-height:1.25}
+html body :is(.intro,.txt,.say,.ph-say,.fabout,.docs .about p,.sec .note){line-height:1.6}
 </style>
 </head>
 <body>
