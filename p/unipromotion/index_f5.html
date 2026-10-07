@@ -6,7 +6,7 @@
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-4Regular.woff" as="font" type="font/woff" crossorigin>
 <meta name="robots" content="noindex">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>[서체 5] 유니프로모션 메인 시안 4안 (탭 구성)</title>
+<title>[서체 5] 유니프로모션 — 의류⁠·⁠굿즈 기획과 해외 생산, 해외 전시 코리안 파빌리온</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 
@@ -899,6 +899,24 @@ html body{--mute-d:rgba(247,245,240,.72)}
 /* 12 휴대폰 함께한 전시 포스터: 3칸(16장 → 마지막 줄 1장) → 2칸 */
 @media (max-width:600px){html body .posters{grid-template-columns:repeat(2,1fr)}}
 
+/* 종합 리뷰 반영 (10/7) */
+/* 4-6 첫 화면 E&L 글자 장: 로고를 오른쪽 위 → 캡션 바로 위(왼쪽) → 제목·로고·캡션·버튼이 왼쪽 축 하나 */
+@media (min-width:901px){html body .hero .sl.el img.el-mark{top:auto;right:auto;left:var(--gut);bottom:164px;width:120px}}
+/* 4-7 검품 사진 확대 */
+html body .zoom{overflow:hidden;aspect-ratio:21/9}
+html body .zoom img{width:100%;height:100%;object-fit:cover;transform:scale(1.3);transform-origin:50% 72%}
+/* 5-3 최근 프로젝트 7칸 중 3칸(마스킹 테이프·에코백·스티키 롤)은 타이트 크롭 — '가운데 물건+여백' 한 패턴을 깸 */
+html body .grid > a:is(:nth-child(3),:nth-child(5),:nth-child(6)) img.pl.fit{padding:0;object-fit:cover;object-position:center}
+/* 5-4 Company: 연혁만 선, 개요·원칙·거점은 선 없는 글 목록 */
+html body :is(#overview,#strength,#offices) .rows{border-top:0}
+html body :is(#overview,#strength,#offices) .rows li{border-bottom:0;padding:10px 0}
+/* 5-5 마우스 반응 통일: 모든 사진 칸 0.9, 0.2초 (포스터만 있던 것) */
+@media (hover:hover){
+  html body :is(.grid a,.pgrid figure,.cards a,.lead-card,.feature,.posters figure,.trio) img{transition:opacity .2s}
+  html body :is(.grid a:hover,.pgrid figure:hover,.cards a:hover,.lead-card:hover,.feature:hover,.posters figure:hover) img{opacity:.9}
+}
+@media (prefers-reduced-motion:reduce){html body :is(.grid a,.pgrid figure,.cards a,.lead-card,.feature,.posters figure,.trio) img{transition:none}}
+
 /* 서체 비교용 5: 나눔스퀘어 네오 (한 가족) */
 
 :root{--font-text:'NanumSquareNeo',sans-serif;--font-display:'NanumSquareNeo',sans-serif}
@@ -906,6 +924,14 @@ html body,html body *{font-family:'NanumSquareNeo',sans-serif!important}
 html body :is(.feat h2,.reel h2,.mhead h2,.docs h2,.ph-head h1,.process .ptl,.latest .more,.sec .ttl,.feature .ttl,.quote p:not(.by),.el-type p){font-family:'NanumSquareNeo',sans-serif!important}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "주식회사 유니프로모션", "alternateName": "UNIPROMOTION CO., LTD.", "url": "https://www.unipromotion.co.kr/", "email": "admin@unipromotion.co.kr", "telephone": "+82-10-9664-0718", "taxID": "196-88-02743", "address": {"@type": "PostalAddress", "streetAddress": "독막로19길 42-12 (101)", "addressLocality": "마포구", "addressRegion": "서울특별시", "addressCountry": "KR"}, "memberOf": {"@type": "Organization", "name": "IAAPA", "url": "https://www.iaapa.org/"}}</script>
+<meta name="description" content="의류와 굿즈를 기획부터 해외 공장 생산, 검수, 통관, 납품까지 직접 맡는 무역⁠·⁠SCM 회사. E&L MENA 2027 코리안 파빌리온 참가 기업 모집.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="유니프로모션 — 의류⁠·⁠굿즈 기획과 해외 생산, 해외 전시 코리안 파빌리온">
+<meta property="og:description" content="의류와 굿즈를 기획부터 해외 공장 생산, 검수, 통관, 납품까지 직접 맡는 무역⁠·⁠SCM 회사. E&L MENA 2027 코리안 파빌리온 참가 기업 모집.">
+<meta property="og:image" content="https://stitchsealhq.github.io/share/p/unipromotion/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquareNeo@1.0/nanumsquareneo.css">
 </head>
 <body>
@@ -948,14 +974,14 @@ html body :is(.feat h2,.reel h2,.mhead h2,.docs h2,.ph-head h1,.process .ptl,.la
   <ul class="subs"><li><a href="apparel.html#promo">의류 프로모션 기획⁠·⁠생산</a></li><li><a href="apparel.html#scm">의류 B2B 무역 &amp; SCM</a></li><li><a href="apparel.html#dist">해외 브랜드 유통⁠·⁠컨설팅</a></li></ul>
   <div class="cards">
     <a href="apparel.html#promo"><img class="pl" src="img/0c2ef5c0ac.webp" alt=""><b>Accidentally Wes Anderson</b><span>맨투맨</span></a>
-    <a href="apparel.html#promo"><img class="pl" src="img/786d20ef30.webp" alt=""><b>Accidentally Wes Anderson</b><span>전시 굿즈 바람막이 3색</span></a>
+    <a href="apparel.html#promo"><img class="pl" src="img/c4985a0c7f.webp" alt=""><b>자수 가운</b></a>
     <a href="apparel.html#promo"><img class="pl" src="img/a756d38db8.webp" alt=""><b>레고랜드 코리아</b><span>어린이 가운 4색</span></a>
     <a href="apparel.html#promo"><img class="pl" src="img/ba2a1a9d34.webp" alt=""><b>프로모션 모자</b></a>
   </div>
   <a class="go" href="apparel.html">Apparel &amp; Trading 전체 보기</a>
 </section>
 
-<section class="feat dark" id="exhibition">
+<section class="feat light" id="exhibition">
   <h2>전시 굿즈와 해외 전시 코리안 파빌리온</h2>
   <p class="intro">전시와 테마파크의 굿즈를 기획⁠·⁠생산해 현장에 납품합니다. 중동 E&amp;L MENA의 공식 한국 에이전시로 코리안 파빌리온을 운영하며, 2027년 1월 18~20일 두바이 행사의 참가 기업을 모집하고 있습니다.</p>
   <ul class="subs"><li><a href="exhibition.html#goods">전시 굿즈 기획⁠·⁠생산⁠·⁠납품</a></li><li><a href="exhibition.html#pavilion">해외 전시 코리안 파빌리온</a></li></ul>
