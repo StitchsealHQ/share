@@ -2,6 +2,8 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
+<link rel="preload" href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-4Regular.woff" as="font" type="font/woff" crossorigin>
 <meta name="robots" content="noindex">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CONTACT | 유니프로모션 하위 페이지 시안</title>
@@ -1018,6 +1020,20 @@ html body .more-m{display:none}
   html body .pgrid.clip > :nth-child(n+7){display:none}
   html body .more-m{display:inline-flex;align-items:center;min-height:44px;margin-top:8px;padding:0;background:none;border:0;color:var(--charcoal);font-size:16px;text-decoration:underline;text-underline-offset:6px;cursor:pointer}
 }
+
+/* 최종 점검 1~12 (10/7) */
+/* 4 인증서: 판색 위에 통째로 */
+html body #docs .pgrid img{object-fit:contain;object-position:center!important;background:var(--plate);padding:6%}
+/* 5 본문 한 줄 44~46자 → 약 38자 (667px → 570px) */
+html body :is(.feat .intro,.docs .about p,.sec .txt){max-width:570px}
+/* 6 어두운 바탕 위 글자는 400 (밝은 글씨는 실제보다 가늘어 보임). 52px 제목은 그대로 300 */
+html body :is(.feat.dark,.process,footer) :is(p,li,dd,dt,span,small,a,b,h3,figcaption){font-weight:400}
+/* 6 Exhibition 파빌리온 '참가 문의' 버튼도 400 (버건디 위 300이었음) */
+html body #pavilion a[href="contact.html?type=pavilion"]{font-weight:400}
+/* 7 어두운 바탕 보조 글자: 크림 56% (대비 4.66) → 72% (약 7:1) */
+html body{--mute-d:rgba(247,245,240,.72)}
+/* 12 휴대폰 함께한 전시 포스터: 3칸(16장 → 마지막 줄 1장) → 2칸 */
+@media (max-width:600px){html body .posters{grid-template-columns:repeat(2,1fr)}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "주식회사 유니프로모션", "alternateName": "UNIPROMOTION CO., LTD.", "url": "https://www.unipromotion.co.kr/", "email": "admin@unipromotion.co.kr", "telephone": "+82-10-9664-0718", "taxID": "196-88-02743", "address": {"@type": "PostalAddress", "streetAddress": "독막로19길 42-12 (101)", "addressLocality": "마포구", "addressRegion": "서울특별시", "addressCountry": "KR"}, "memberOf": {"@type": "Organization", "name": "IAAPA", "url": "https://www.iaapa.org/"}}</script>
 </head>
@@ -1060,9 +1076,8 @@ html body .more-m{display:none}
   <div class="cinfo">
     <div><b>전화</b><a href="tel:01096640718"><span class="nw">010-9664-0718</span></a></div>
     <div><b>이메일</b><a href="mailto:admin@unipromotion.co.kr">admin@unipromotion.co.kr</a></div>
-    <div><b>메신저</b>WhatsApp <span class="todo">○○</span><br>카카오톡 채널 <span class="todo">○○</span></div>
-    <div><b>본사</b>서울특별시 마포구 독막로19길 <span class="nw">42-12</span> (101)<div class="empty-ph map">지도 (아임웹 지도 위젯)</div></div>
-    <div><b>해외 거점</b>네덜란드 (유럽) <span class="todo">○○</span><br>시드니 (오세아니아)</div>
+    <div><b>본사</b>서울특별시 마포구 독막로19길 <span class="nw">42-12</span> (101)</div>
+    <div><b>해외 거점</b>네덜란드 (유럽) <br>시드니 (오세아니아)</div>
     <div style="border:0"><b>회사소개서</b><a href="#">국문 PDF</a> &nbsp; <a href="#">English PDF</a></div>
   </div>
 </div>

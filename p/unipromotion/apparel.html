@@ -2,6 +2,8 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
+<link rel="preload" href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-4Regular.woff" as="font" type="font/woff" crossorigin>
 <meta name="robots" content="noindex">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>APPAREL & TRADING | 유니프로모션 하위 페이지 시안</title>
@@ -1018,6 +1020,20 @@ html body .more-m{display:none}
   html body .pgrid.clip > :nth-child(n+7){display:none}
   html body .more-m{display:inline-flex;align-items:center;min-height:44px;margin-top:8px;padding:0;background:none;border:0;color:var(--charcoal);font-size:16px;text-decoration:underline;text-underline-offset:6px;cursor:pointer}
 }
+
+/* 최종 점검 1~12 (10/7) */
+/* 4 인증서: 판색 위에 통째로 */
+html body #docs .pgrid img{object-fit:contain;object-position:center!important;background:var(--plate);padding:6%}
+/* 5 본문 한 줄 44~46자 → 약 38자 (667px → 570px) */
+html body :is(.feat .intro,.docs .about p,.sec .txt){max-width:570px}
+/* 6 어두운 바탕 위 글자는 400 (밝은 글씨는 실제보다 가늘어 보임). 52px 제목은 그대로 300 */
+html body :is(.feat.dark,.process,footer) :is(p,li,dd,dt,span,small,a,b,h3,figcaption){font-weight:400}
+/* 6 Exhibition 파빌리온 '참가 문의' 버튼도 400 (버건디 위 300이었음) */
+html body #pavilion a[href="contact.html?type=pavilion"]{font-weight:400}
+/* 7 어두운 바탕 보조 글자: 크림 56% (대비 4.66) → 72% (약 7:1) */
+html body{--mute-d:rgba(247,245,240,.72)}
+/* 12 휴대폰 함께한 전시 포스터: 3칸(16장 → 마지막 줄 1장) → 2칸 */
+@media (max-width:600px){html body .posters{grid-template-columns:repeat(2,1fr)}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "주식회사 유니프로모션", "alternateName": "UNIPROMOTION CO., LTD.", "url": "https://www.unipromotion.co.kr/", "email": "admin@unipromotion.co.kr", "telephone": "+82-10-9664-0718", "taxID": "196-88-02743", "address": {"@type": "PostalAddress", "streetAddress": "독막로19길 42-12 (101)", "addressLocality": "마포구", "addressRegion": "서울특별시", "addressCountry": "KR"}, "memberOf": {"@type": "Organization", "name": "IAAPA", "url": "https://www.iaapa.org/"}}</script>
 </head>
@@ -1049,14 +1065,14 @@ html body .more-m{display:none}
     <h3 class="ttl">전시⁠·⁠테마파크⁠·⁠브랜드의 프로모션 의류</h3>
     <p class="txt">의류와 잡화를 함께 만듭니다. 자수와 프린트 같은 디테일은 시안과 샘플로 확인한 뒤 생산에 들어갑니다.</p>
     <div class="pgrid">
-      <figure><img src="img/eda7e7a3d8.webp" alt="" loading="lazy"><figcaption><b>자수 디테일</b><span class='todo'>○○</span></figcaption></figure>
-      <figure><img class="pl" src="img/c4985a0c7f.webp" alt="" loading="lazy"><figcaption><b>자수 가운</b><span class='todo'>○○</span></figcaption></figure>
+      <figure><img class="pl" src="img/c4985a0c7f.webp" alt="" loading="lazy"><figcaption><b>자수 가운</b></figcaption></figure>
       <figure><img class="pl" src="img/a756d38db8.webp" alt="" loading="lazy"><figcaption><b>레고랜드 코리아</b>어린이 가운</figcaption></figure>
       <figure><img class="pl" src="img/0c2ef5c0ac.webp" alt="" loading="lazy"><figcaption><b>Accidentally Wes Anderson</b>맨투맨</figcaption></figure>
       <figure><img class="pl" src="img/786d20ef30.webp" alt="" loading="lazy"><figcaption><b>Accidentally Wes Anderson</b>바람막이 3색</figcaption></figure>
       <figure><img class="pl" src="img/0d36d629a1.webp" alt="" loading="lazy"><figcaption><b>Accidentally Wes Anderson</b>비니</figcaption></figure>
-      <figure><img class="pl" src="img/ba2a1a9d34.webp" alt="" loading="lazy"><figcaption><b>프로모션 모자</b><span class='todo'>○○</span></figcaption></figure>
-      <figure><img class="pl" src="img/51b01f1f53.webp" alt="" loading="lazy"><figcaption><b>티셔츠</b><span class='todo'>○○</span></figcaption></figure>
+      <figure><img class="pl" src="img/ba2a1a9d34.webp" alt="" loading="lazy"><figcaption><b>프로모션 모자</b></figcaption></figure>
+      <figure><img class="pl" src="img/51b01f1f53.webp" alt="" loading="lazy"><figcaption><b>티셔츠</b></figcaption></figure>
+      <figure><img src="img/eda7e7a3d8.webp" alt="" loading="lazy"><figcaption><b>자수 디테일</b></figcaption></figure>
     </div>
   </div>
 </section>
@@ -1115,15 +1131,13 @@ html body .more-m{display:none}
 
 <footer id="contact">
   <div class="frow"><h2>프로젝트 문의</h2>
-    <div><dl class="fl"><dt>전화</dt><dd><a href="tel:01096640718"><span class="nw">010-9664-0718</span></a></dd><dt>이메일</dt><dd><a href="mailto:admin@unipromotion.co.kr">admin@unipromotion.co.kr</a></dd><dt>WhatsApp</dt><dd><span class="todo">○○</span></dd></dl>
+    <div><dl class="fl"><dt>전화</dt><dd><a href="tel:01096640718"><span class="nw">010-9664-0718</span></a></dd><dt>이메일</dt><dd><a href="mailto:admin@unipromotion.co.kr">admin@unipromotion.co.kr</a></dd></dl>
     <a class="btn" href="contact.html">문의 양식 작성</a></div></div>
   <div class="frow"><h2>코리안 파빌리온 참가</h2>
     <div><p class="fabout">E&amp;L MENA 2027 한국관 참가 기업을 모집합니다. 2027년 1월 18~20일, 두바이 월드 트레이드 센터.</p>
     <ul class="flinks"><li><a class="btn" href="contact.html?type=pavilion">참가 문의</a></li><li><a class="u" href="exhibition.html#pavilion">파빌리온 안내</a></li></ul></div></div>
   <div class="frow f-pc"><h2>거점</h2>
-    <div><dl class="fl"><dt>서울 본사</dt><dd>서울특별시 마포구 독막로19길 <span class="nw">42-12</span> (101)</dd><dt>네덜란드</dt><dd>유럽 거점 <span class="todo">○○</span></dd><dt>시드니</dt><dd>오세아니아 거점</dd></dl></div></div>
-  <div class="frow f-pc"><h2>회사소개서</h2>
-    <div><ul class="flinks"><li><a class="u" href="#">회사소개서 (국문) PDF</a></li><li><a class="u" href="#">Company Profile (English) PDF</a></li></ul></div></div>
+    <div><dl class="fl"><dt>서울 본사</dt><dd>서울특별시 마포구 독막로19길 <span class="nw">42-12</span> (101)</dd><dt>네덜란드</dt><dd>유럽 거점 </dd><dt>시드니</dt><dd>오세아니아 거점</dd></dl></div></div>
   <div class="frow f-pc"><h2>회사 소개</h2>
     <div><p class="fabout">주식회사 유니프로모션은 서울에 본사를 둔 글로벌 무역⁠·⁠SCM 회사입니다. 아시아와 중동 6개국의 협력 공장에서 의류와 굿즈를 만들고, 소재 소싱부터 검수, 통관, 납품까지 한 담당자가 맡습니다.</p></div></div>
   <img class="wordmark" src="assets/logo_w_cream.png" alt="UNIPROMOTION">

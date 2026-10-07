@@ -2,6 +2,8 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
+<link rel="preload" href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-4Regular.woff" as="font" type="font/woff" crossorigin>
 <meta name="robots" content="noindex">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>[서체 6] 유니프로모션 메인 시안 4안 (탭 구성)</title>
@@ -883,6 +885,20 @@ html body .more-m{display:none}
   html body .more-m{display:inline-flex;align-items:center;min-height:44px;margin-top:8px;padding:0;background:none;border:0;color:var(--charcoal);font-size:16px;text-decoration:underline;text-underline-offset:6px;cursor:pointer}
 }
 
+/* 최종 점검 1~12 (10/7) */
+/* 4 인증서: 판색 위에 통째로 */
+html body #docs .pgrid img{object-fit:contain;object-position:center!important;background:var(--plate);padding:6%}
+/* 5 본문 한 줄 44~46자 → 약 38자 (667px → 570px) */
+html body :is(.feat .intro,.docs .about p,.sec .txt){max-width:570px}
+/* 6 어두운 바탕 위 글자는 400 (밝은 글씨는 실제보다 가늘어 보임). 52px 제목은 그대로 300 */
+html body :is(.feat.dark,.process,footer) :is(p,li,dd,dt,span,small,a,b,h3,figcaption){font-weight:400}
+/* 6 Exhibition 파빌리온 '참가 문의' 버튼도 400 (버건디 위 300이었음) */
+html body #pavilion a[href="contact.html?type=pavilion"]{font-weight:400}
+/* 7 어두운 바탕 보조 글자: 크림 56% (대비 4.66) → 72% (약 7:1) */
+html body{--mute-d:rgba(247,245,240,.72)}
+/* 12 휴대폰 함께한 전시 포스터: 3칸(16장 → 마지막 줄 1장) → 2칸 */
+@media (max-width:600px){html body .posters{grid-template-columns:repeat(2,1fr)}}
+
 /* 서체 비교용 6: 함렛 (제목) + Noto Sans KR (본문) */
 
 :root{--font-text:'Noto Sans KR',sans-serif;--font-display:'Hahmlet',sans-serif}
@@ -934,7 +950,7 @@ html body :is(.feat h2,.reel h2,.mhead h2,.docs h2,.ph-head h1,.process .ptl,.la
     <a href="apparel.html#promo"><img class="pl" src="img/0c2ef5c0ac.webp" alt=""><b>Accidentally Wes Anderson</b><span>맨투맨</span></a>
     <a href="apparel.html#promo"><img class="pl" src="img/786d20ef30.webp" alt=""><b>Accidentally Wes Anderson</b><span>전시 굿즈 바람막이 3색</span></a>
     <a href="apparel.html#promo"><img class="pl" src="img/a756d38db8.webp" alt=""><b>레고랜드 코리아</b><span>어린이 가운 4색</span></a>
-    <a href="apparel.html#promo"><img class="pl" src="img/ba2a1a9d34.webp" alt=""><b>프로모션 모자</b><span class="todo">○○</span></a>
+    <a href="apparel.html#promo"><img class="pl" src="img/ba2a1a9d34.webp" alt=""><b>프로모션 모자</b></a>
   </div>
   <a class="go" href="apparel.html">Apparel &amp; Trading 전체 보기</a>
 </section>
@@ -1027,16 +1043,16 @@ html body :is(.feat h2,.reel h2,.mhead h2,.docs h2,.ph-head h1,.process .ptl,.la
   </div>
   <div class="mgrid">
     <a class="lead-card" href="exhibition.html#pavilion">
-      <div class="th el-th"><img src="assets/el_logo.png" alt=""></div>
-      <p class="meta"><span class="tg">전시</span><span class="todo">2026.○○</span></p>
+      <div class="th"><img src="assets/elmena_dubai_43.jpg" alt="두바이 시내, E&amp;L MENA 2027 소개 영상 장면"></div>
+      <p class="meta"><span class="tg">전시</span></p>
       <b>E&amp;L MENA 공식 한국 에이전시 계약, 코리안 파빌리온 론칭</b>
       <span class="d">중동 레저⁠·⁠엔터테인먼트 박람회의 한국관을 운영합니다. 2027년 1월 행사 참가 기업 모집 중.</span>
     </a>
     <ul class="mlist">
-      <li><a href="media.html"><p class="meta"><span class="tg">미디어</span><span class="todo">2026.○○</span></p><b>대표 방송 출연</b><span class="d">유니프로모션이 소개된 방송 영상.</span></a></li>
-      <li><a href="media.html"><p class="meta"><span class="tg">전시</span><span class="todo">2026.○○</span></p><b>베트남 미디어앤아트 전시 전속 계약</b><span class="d">베트남 미디어앤아트 전시의 굿즈와 운영을 맡습니다.</span></a></li>
-      <li><a href="media.html"><p class="meta"><span class="tg">유통</span><span class="todo">2026.○○</span></p><b>168cm 일본⁠·⁠호주⁠·⁠네덜란드 독점 유통 계약</b><span class="d">국내 모바일 액세서리 브랜드의 해외 독점 유통. 온⁠·⁠오프라인 스토어 오픈 예정.</span></a></li>
-      <li><a href="media.html"><p class="meta"><span class="tg">수출</span><span class="todo">2026.○○</span></p><b>Stockalot 대량 물류 수출 완료</b><span class="d">대규모 물량의 소싱과 수출.</span></a></li>
+      <li><a href="media.html"><p class="meta"><span class="tg">미디어</span></p><b>대표 방송 출연</b><span class="d">유니프로모션이 소개된 방송 영상.</span></a></li>
+      <li><a href="media.html"><p class="meta"><span class="tg">전시</span></p><b>베트남 미디어앤아트 전시 전속 계약</b><span class="d">베트남 미디어앤아트 전시의 굿즈와 운영을 맡습니다.</span></a></li>
+      <li><a href="media.html"><p class="meta"><span class="tg">유통</span></p><b>168cm 일본⁠·⁠호주⁠·⁠네덜란드 독점 유통 계약</b><span class="d">국내 모바일 액세서리 브랜드의 해외 독점 유통. 온⁠·⁠오프라인 스토어 오픈 예정.</span></a></li>
+      <li><a href="media.html"><p class="meta"><span class="tg">수출</span></p><b>Stockalot 대량 물류 수출 완료</b><span class="d">대규모 물량의 소싱과 수출.</span></a></li>
     </ul>
   </div>
   <a class="go nall" href="media.html">뉴스룸 전체 보기</a>
@@ -1044,13 +1060,13 @@ html body :is(.feat h2,.reel h2,.mhead h2,.docs h2,.ph-head h1,.process .ptl,.la
 
 <footer id="contact">
   <div class="frow"><h2>프로젝트 문의</h2>
-    <div><dl class="fl"><dt>전화</dt><dd><a href="tel:01096640718"><span class="nw">010-9664-0718</span></a></dd><dt>이메일</dt><dd><a href="mailto:admin@unipromotion.co.kr">admin@unipromotion.co.kr</a></dd><dt>WhatsApp</dt><dd><span class="todo">○○</span></dd></dl>
+    <div><dl class="fl"><dt>전화</dt><dd><a href="tel:01096640718"><span class="nw">010-9664-0718</span></a></dd><dt>이메일</dt><dd><a href="mailto:admin@unipromotion.co.kr">admin@unipromotion.co.kr</a></dd></dl>
     <a class="btn" href="contact.html">문의 양식 작성</a></div></div>
   <div class="frow"><h2>코리안 파빌리온 참가</h2>
     <div><p class="fabout">E&amp;L MENA 2027 한국관 참가 기업을 모집합니다. 2027년 1월 18~20일, 두바이 월드 트레이드 센터.</p>
     <ul class="flinks"><li><a class="btn" href="contact.html?type=pavilion">참가 문의</a></li><li><a class="u" href="exhibition.html#pavilion">파빌리온 안내</a></li></ul></div></div>
   <div class="frow f-pc"><h2>거점</h2>
-    <div><dl class="fl"><dt>서울 본사</dt><dd>서울특별시 마포구 독막로19길 <span class="nw">42-12</span> (101)</dd><dt>네덜란드</dt><dd>유럽 거점 <span class="todo">○○</span></dd><dt>시드니</dt><dd>오세아니아 거점</dd></dl></div></div>
+    <div><dl class="fl"><dt>서울 본사</dt><dd>서울특별시 마포구 독막로19길 <span class="nw">42-12</span> (101)</dd><dt>네덜란드</dt><dd>유럽 거점 </dd><dt>시드니</dt><dd>오세아니아 거점</dd></dl></div></div>
   <div class="frow f-pc"><h2>회사 소개</h2>
     <div><p class="fabout">주식회사 유니프로모션은 서울에 본사를 둔 글로벌 무역⁠·⁠SCM 회사입니다. 아시아와 중동 6개국의 협력 공장에서 의류와 굿즈를 만들고, 소재 소싱부터 검수, 통관, 납품까지 한 담당자가 맡습니다.</p></div></div>
   <img class="wordmark" src="assets/logo_w_cream.png" alt="UNIPROMOTION">
