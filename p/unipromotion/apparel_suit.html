@@ -961,6 +961,50 @@ html body .hero.is-light .dots .pp{color:var(--charcoal);background:none}
 html body .assoc{display:flex;align-items:center;gap:16px;margin:32px 0 0;font-size:13px;line-height:1.45;color:var(--stone)}
 html body .assoc img{height:40px;width:auto;flex:none}
 
+/* Exhibition 머리 3칸: 정사각 칸, 포스터는 세로가 길어 위아래 8% · 좌우 여백 자동 */
+html body .trio img.pl.fit{padding:8%;object-fit:contain}
+/* 추가 수정 A1~A11 (10/7) */
+/* A1 버건디 '일하는 방식' 바로 아래 차콜 전시 블록: 사이 크림 띠(96px) 없앰 */
+html body .process + .feat{margin-top:0}
+/* A2 카드 묶음 판 모서리 8px → 0 (나머지는 전부 직각) */
+html body .feat:is(.dark,.light) .cards{border-radius:0}
+/* A3 13px 글자는 굵기 400 (300은 흐림) */
+html body :is(.meta,.meta *,.posters figcaption,.track li span,.fbot,.fbot *,figcaption.meta,.empty-ph,.form .demo,.wide figcaption,.cap-s,.rows li small,.steps h3 small,.process h3 small,.film figcaption,.pav-v figcaption,.assoc,.assoc span,.lab small,.zoom-hint,small){font-weight:400}
+/* A4 최근 프로젝트: 잘라 낸 상품을 칸마다 같은 상자(가로 80% · 세로 72%)에 맞춤. 3:2 칸이라 위아래 9.33%(=세로 14%) · 좌우 10% */
+html body .grid img.pl.fit{padding:9.33% 10%;object-fit:contain}
+/* A6 휴대폰 메뉴 전체 화면 */
+html body .top nav .mfoot{display:none}
+@media (max-width:900px){
+  html.menu-open body{padding-top:60px;overflow:hidden}
+  html.menu-open body .top{position:fixed;top:0;left:0;right:0;z-index:50}
+  html body .top nav{position:fixed;top:60px;left:0;right:0;bottom:0;z-index:49;display:none;flex-direction:column;gap:0;padding:16px var(--gut) 32px;background:var(--cream);border:0;overflow-y:auto}
+  html body .top nav.open{display:flex}
+  html body .top nav > a{padding:10px 0;border:0;font-size:32px;font-weight:300;line-height:1.3;letter-spacing:-.01em;color:var(--charcoal)}
+  html body .top nav > a[aria-current]{color:var(--burgundy)}
+  html body .top nav .mfoot{display:flex;flex-direction:column;gap:0;margin:auto 0 0;padding-top:32px;border-top:1px solid var(--rule)}
+  html body .top nav .mfoot a{display:flex;align-items:center;min-height:44px;padding:0;border:0;font-size:16px;color:var(--stone)}
+  html body .top nav .mfoot a:first-child{color:var(--charcoal);text-decoration:underline;text-underline-offset:6px}
+}
+/* A7 휴대폰 Exhibition 머리 사진 3장: 한 줄에 110px씩 → 한 장씩 크게, 가로로 넘김 */
+@media (max-width:900px){
+  html body .trio{display:grid;grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:82%;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:0 var(--gut);scroll-padding:0 var(--gut)}
+  html body .trio::-webkit-scrollbar{display:none}
+  html body .trio img{scroll-snap-align:start}
+}
+/* A8 페이지 안 메뉴: 휴대폰에서 두 줄로 꺾임 → 한 줄 가로 넘김, 누르는 높이 44px */
+@media (max-width:900px){
+  html body .ph-row .subnav{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;gap:0 20px;align-self:stretch;width:auto;margin:0 calc(-1 * var(--gut));padding:0 var(--gut)}
+  html body .ph-row .subnav::-webkit-scrollbar{display:none}
+  html body .ph-row .subnav a{display:inline-flex;align-items:center;min-height:44px;white-space:nowrap;flex:none}
+}
+/* A9 첫 화면 캡션: 나가는 캡션은 빨리(0.25초), 들어오는 캡션은 사진이 바뀐 뒤(0.45초 뒤) → 두 캡션이 겹쳐 보이지 않게 */
+html body .hero .cap p{transition:opacity .25s var(--ease),transform .25s var(--ease),visibility 0s .25s}
+html body .hero .cap p.on{transition:opacity .5s var(--ease) .45s,transform .5s var(--ease) .45s,visibility 0s .45s}
+html body .hero .cap p:not(.on){visibility:hidden;transition:opacity .25s var(--ease),transform .25s var(--ease),visibility 0s .25s}
+@media (prefers-reduced-motion:reduce){html body .hero .cap p,html body .hero .cap p.on{transition:none}}
+/* A10 '○○' 자리: 점선 밑줄이 링크처럼 보여서 뺌 (흐린 글자만) */
+html body .todo{border-bottom:0;text-decoration:none;opacity:.55}
+
 /* 서체 비교용: SUIT 한 가족 (제목 300 · 본문 400, 크기·자간은 그대로) */
 :root{--font-text:'SUIT Variable',-apple-system,sans-serif;--font-display:'SUIT Variable',-apple-system,sans-serif}
 html body,html body *{font-family:'SUIT Variable',-apple-system,sans-serif!important}
@@ -979,6 +1023,7 @@ html body,html body *{font-family:'SUIT Variable',-apple-system,sans-serif!impor
     <a href="exhibition.html">Exhibition &amp; Entertainment</a>
     <a href="media.html">Media &amp; Press</a>
     <a href="contact.html">Contact</a>
+    <p class="mfoot"><a href="contact.html?type=pavilion">코리안 파빌리온 참가 문의</a><a href="tel:01096640718">010-9664-0718</a><a href="mailto:admin@unipromotion.co.kr">admin@unipromotion.co.kr</a></p>
   </nav>
 </header>
 
@@ -1084,6 +1129,15 @@ html body,html body *{font-family:'SUIT Variable',-apple-system,sans-serif!impor
   const menu = document.querySelector('.top .menu'), nav = document.getElementById('gnb');
   menu.onclick = () => { const o = nav.classList.toggle('open'); menu.setAttribute('aria-expanded', o); menu.textContent = o ? 'Close' : 'Menu'; };
 
+})();
+</script>
+<script>
+(() => {
+  // 휴대폰 메뉴 전체 화면: 열려 있는 동안 상단 고정·뒤 화면 스크롤 막기, Esc로 닫기
+  const nav = document.getElementById('gnb'), menu = document.querySelector('.top .menu');
+  if (!nav || !menu) return;
+  new MutationObserver(() => document.documentElement.classList.toggle('menu-open', nav.classList.contains('open'))).observe(nav, { attributes: true, attributeFilter: ['class'] });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && nav.classList.contains('open')) { menu.click(); menu.focus(); } });
 })();
 </script>
 </body>
