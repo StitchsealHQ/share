@@ -795,6 +795,17 @@ body .process{text-align:left}
 body .process ol{margin:64px 0 0;max-width:none}
 body .process li{text-align:left}
 body .reel-foot{text-align:left;padding:0 var(--gut)}
+/* 브리프 1항 색 3가지로 확정 (10/7): 바탕 크림 #F7F5F0 · 강조 딥 버건디 #5C1D24(무게감·인터랙션·주요 버튼) · 글자 차콜 #2C2C2C
+   이전에 쓴 #111(글자), #2B2624·#1C1917(먹색 면), #43141A(짙은 버건디 면)는 모두 브리프 색으로 되돌림.
+   어두운 면 = 차콜 #2C2C2C, 그 안의 판만 차콜을 한 단계 누른 #232323 / 무게를 주는 넓은 면 = 버건디 #5C1D24 */
+:root{--charcoal:#2C2C2C;--deep:#5C1D24;--ink-warm:#2C2C2C}
+body .reel,body .process{background:var(--burgundy)}
+body .feat.dark{background:var(--charcoal)}
+body .feat.dark .cards{background:#232323}
+body .feat.dark .go{background:var(--burgundy);color:var(--cream)}
+body .feat.dark .go:hover{background:var(--burgundy-deep);color:var(--cream)}
+body>footer{background:var(--charcoal)}
+body .reel-foot{display:block}
 @media (max-width:900px){
   .quote p{font-size:28px}
   html body .latest .more{font-size:36px;margin-bottom:32px}
