@@ -642,6 +642,27 @@ body .track ul{padding:0 var(--gut)}
 /* 로고용 흰 액자 → 사진은 칸을 꽉 채움 */
 body .lead-card .th,body .feature .fimg{background:none}
 body .lead-card .th img,body .feature .fimg img{width:100%;height:100%;object-fit:cover}
+
+/* 10/7 남은 항목 */
+.quote{margin-top:96px;padding:0 var(--gut)}
+.quote blockquote{margin:0;max-width:1100px}
+.quote p{margin:0;font-family:var(--font-display);font-weight:300;font-size:41px;line-height:1.3;letter-spacing:-.02em!important;color:var(--charcoal)}
+.quote p.by{margin-top:24px;font-family:var(--font-text);font-size:16px;line-height:1.45;letter-spacing:0!important;color:var(--stone)}
+body .sec#overview{padding-top:96px}
+body .ncards.ntext{gap:0 var(--gap)}
+body .ncards.ntext a{border-top:1px solid var(--rule);padding:16px 0 40px}
+body .ncards.ntext a .meta:first-of-type{margin-top:0}
+body #tv video{display:block;width:100%;aspect-ratio:16/9;background:#000}
+.vd{display:block;color:var(--stone)}
+html body .latest .more{font-family:var(--font-display);font-size:52px;font-weight:300!important;letter-spacing:-.03em!important;line-height:1.12;margin:0 0 48px}
+body .process{text-align:left}
+body .process ol{margin:64px 0 0;max-width:none}
+body .process li{text-align:left}
+@media (max-width:900px){
+  .quote p{font-size:28px}
+  html body .latest .more{font-size:36px;margin-bottom:32px}
+  body .ncards.ntext{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
@@ -708,6 +729,11 @@ body .lead-card .th img,body .feature .fimg img{width:100%;height:100%;object-fi
     <a data-b="k" data-c="f" href="exhibition.html#pavilion"><div class="ph"><img src="img/066f514dfe.webp" alt="" style="object-position:center 25%"></div><b>IAAPA Expo</b><span>해외 박람회 유니프로모션 부스</span></a>
     <p class="empty">이 조건에 맞는 프로젝트는 준비 중입니다.</p>
   </div>
+</section>
+
+<section class="quote" aria-label="대표 인사">
+  <blockquote><p>커스터마이징은 ‘Make’가 아니라 ‘Create’입니다. 그저 주문대로 제작하는 것이 아니라, 전략적인 브랜딩을 통해 제품의 가치를 높여야 하는 일입니다.</p>
+  <p class="by">안예원, (주)유니프로모션 대표</p></blockquote>
 </section>
 
 <section class="reel" id="archive" aria-label="함께한 전시">
@@ -789,9 +815,9 @@ body .lead-card .th img,body .feature .fimg img{width:100%;height:100%;object-fi
   </div>
   <h3 class="sub">인증·서류</h3>
   <div class="row">
-    <figure><img src="img/7003117320.webp" alt=""><figcaption>여성기업 확인서</figcaption></figure>
-    <figure><img src="img/2b3b39ad50.webp" alt=""><figcaption>우수기술기업 인증</figcaption></figure>
-    <figure><img src="img/a906ff3aae.webp" alt=""><figcaption>기업부설연구소 인정</figcaption></figure>
+    <figure><img src="img/7003117320.webp" alt=""><figcaption>여성기업 확인서<span class="vd">유효기간 2023.04.10–2026.04.09</span></figcaption></figure>
+    <figure><img src="img/2b3b39ad50.webp" alt=""><figcaption>우수기술기업 인증<span class="vd">유효기간 2023.03.06–2024.03.05</span></figcaption></figure>
+    <figure><img src="img/a906ff3aae.webp" alt=""><figcaption>기업부설연구소 인정<span class="vd">유효기간 2025.12.01까지</span></figcaption></figure>
     <figure><img src="img/08969ba1a9.webp" alt=""><figcaption>IAAPA 2024 회원</figcaption></figure>
     <div class="dl">
       <p>디자인등록 4건, 상표등록 2건(STETS) 보유</p>

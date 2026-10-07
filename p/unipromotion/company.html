@@ -778,6 +778,27 @@ body .lead-card .th img,body .feature .fimg img{width:100%;height:100%;object-fi
 
 /* 하위 페이지: 마지막 섹션과 하단 사이 블록 간격(96px), 메인과 같게 */
 body>footer{margin-top:96px}
+
+/* 10/7 남은 항목 */
+.quote{margin-top:96px;padding:0 var(--gut)}
+.quote blockquote{margin:0;max-width:1100px}
+.quote p{margin:0;font-family:var(--font-display);font-weight:300;font-size:41px;line-height:1.3;letter-spacing:-.02em!important;color:var(--charcoal)}
+.quote p.by{margin-top:24px;font-family:var(--font-text);font-size:16px;line-height:1.45;letter-spacing:0!important;color:var(--stone)}
+body .sec#overview{padding-top:96px}
+body .ncards.ntext{gap:0 var(--gap)}
+body .ncards.ntext a{border-top:1px solid var(--rule);padding:16px 0 40px}
+body .ncards.ntext a .meta:first-of-type{margin-top:0}
+body #tv video{display:block;width:100%;aspect-ratio:16/9;background:#000}
+.vd{display:block;color:var(--stone)}
+html body .latest .more{font-family:var(--font-display);font-size:52px;font-weight:300!important;letter-spacing:-.03em!important;line-height:1.12;margin:0 0 48px}
+body .process{text-align:left}
+body .process ol{margin:64px 0 0;max-width:none}
+body .process li{text-align:left}
+@media (max-width:900px){
+  .quote p{font-size:28px}
+  html body .latest .more{font-size:36px;margin-bottom:32px}
+  body .ncards.ntext{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
@@ -799,6 +820,11 @@ body>footer{margin-top:96px}
   <h1>Company</h1>
   <div class="ph-row"><p class="ph-say">의류와 굿즈의 기획, 해외 생산, 검수, 통관, 납품을 맡는 무역·SCM 회사입니다.</p><nav class="subnav" aria-label="페이지 안 이동"><a href="#overview">회사 개요</a><a href="#film">회사 소개 영상</a><a href="#strength">일하는 원칙</a><a href="#history">연혁</a><a href="#offices">거점</a><a href="#docs">인증·서류</a></nav></div>
 </div>
+
+<section class="quote" aria-label="대표 인사">
+  <blockquote><p>커스터마이징은 ‘Make’가 아니라 ‘Create’입니다. 그저 주문대로 제작하는 것이 아니라, 전략적인 브랜딩을 통해 제품의 가치를 높여야 하는 일입니다.</p>
+  <p class="by">안예원, (주)유니프로모션 대표</p></blockquote>
+</section>
 
 <section class="sec" id="overview">
   <h2 class="lab">회사 개요</h2>
@@ -869,9 +895,9 @@ body>footer{margin-top:96px}
   <h2 class="lab">인증·서류</h2>
   <div class="body">
     <div class="pgrid">
-      <figure><img src="img/7003117320.webp" alt="" loading="lazy" style="object-position:top;aspect-ratio:1/1.3"><figcaption><b>여성기업 확인서</b></figcaption></figure>
-      <figure><img src="img/2b3b39ad50.webp" alt="" loading="lazy" style="object-position:top;aspect-ratio:1/1.3"><figcaption><b>우수기술기업 인증</b></figcaption></figure>
-      <figure><img src="img/a906ff3aae.webp" alt="" loading="lazy" style="object-position:top;aspect-ratio:1/1.3"><figcaption><b>기업부설연구소 인정</b></figcaption></figure>
+      <figure><img src="img/7003117320.webp" alt="" loading="lazy" style="object-position:top;aspect-ratio:1/1.3"><figcaption><b>여성기업 확인서</b><span class="vd">유효기간 2023.04.10–2026.04.09</span></figcaption></figure>
+      <figure><img src="img/2b3b39ad50.webp" alt="" loading="lazy" style="object-position:top;aspect-ratio:1/1.3"><figcaption><b>우수기술기업 인증</b><span class="vd">유효기간 2023.03.06–2024.03.05</span></figcaption></figure>
+      <figure><img src="img/a906ff3aae.webp" alt="" loading="lazy" style="object-position:top;aspect-ratio:1/1.3"><figcaption><b>기업부설연구소 인정</b><span class="vd">유효기간 2025.12.01까지</span></figcaption></figure>
       <figure><img src="img/08969ba1a9.webp" alt="" loading="lazy" style="object-position:top;aspect-ratio:1/1.3"><figcaption><b>IAAPA 2024 회원</b></figcaption></figure>
     </div>
     <ul class="rows">

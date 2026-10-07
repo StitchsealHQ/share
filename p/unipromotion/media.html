@@ -778,6 +778,27 @@ body .lead-card .th img,body .feature .fimg img{width:100%;height:100%;object-fi
 
 /* 하위 페이지: 마지막 섹션과 하단 사이 블록 간격(96px), 메인과 같게 */
 body>footer{margin-top:96px}
+
+/* 10/7 남은 항목 */
+.quote{margin-top:96px;padding:0 var(--gut)}
+.quote blockquote{margin:0;max-width:1100px}
+.quote p{margin:0;font-family:var(--font-display);font-weight:300;font-size:41px;line-height:1.3;letter-spacing:-.02em!important;color:var(--charcoal)}
+.quote p.by{margin-top:24px;font-family:var(--font-text);font-size:16px;line-height:1.45;letter-spacing:0!important;color:var(--stone)}
+body .sec#overview{padding-top:96px}
+body .ncards.ntext{gap:0 var(--gap)}
+body .ncards.ntext a{border-top:1px solid var(--rule);padding:16px 0 40px}
+body .ncards.ntext a .meta:first-of-type{margin-top:0}
+body #tv video{display:block;width:100%;aspect-ratio:16/9;background:#000}
+.vd{display:block;color:var(--stone)}
+html body .latest .more{font-family:var(--font-display);font-size:52px;font-weight:300!important;letter-spacing:-.03em!important;line-height:1.12;margin:0 0 48px}
+body .process{text-align:left}
+body .process ol{margin:64px 0 0;max-width:none}
+body .process li{text-align:left}
+@media (max-width:900px){
+  .quote p{font-size:28px}
+  html body .latest .more{font-size:36px;margin-bottom:32px}
+  body .ncards.ntext{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
@@ -809,12 +830,12 @@ body>footer{margin-top:96px}
     <p>중동 레저·엔터테인먼트 박람회 E&amp;L MENA의 공식 한국 에이전시로 한국관을 운영합니다. <span class="todo">○○</span></p></div>
 </a>
 
-<div class="ncards" id="ncards">
-  <a data-k="미디어"><div class="th"><div class="empty-ph" style="height:100%">사진 ○○</div></div><p class="meta"><span class="tg">미디어</span><span class="todo">2026.○○</span></p><b>대표 방송 출연</b><span class="meta">유니프로모션이 소개된 방송 영상.</span></a>
-  <a data-k="전시"><div class="th"><div class="empty-ph" style="height:100%">사진 ○○</div></div><p class="meta"><span class="tg">전시</span><span class="todo">2026.○○</span></p><b>베트남 미디어앤아트 전시 전속 계약</b><span class="meta">베트남 미디어앤아트 전시의 굿즈와 운영을 맡습니다.</span></a>
-  <a data-k="유통"><div class="th"><div class="empty-ph" style="height:100%">사진 ○○</div></div><p class="meta"><span class="tg">유통</span><span class="todo">2026.○○</span></p><b>168cm 일본·호주·네덜란드 독점 유통 계약</b><span class="meta">국내 모바일 액세서리 브랜드의 해외 독점 유통. 온·오프라인 스토어 오픈 예정.</span></a>
-  <a data-k="수출"><div class="th"><div class="empty-ph" style="height:100%">사진 ○○</div></div><p class="meta"><span class="tg">수출</span><span class="todo">2026.○○</span></p><b>Stockalot 대량 물류 수출 완료</b><span class="meta">대규모 물량의 소싱과 수출.</span></a>
-  <a href="exhibition.html#pavilion" data-k="전시"><div class="th"><img src="assets/elmena_2027.jpg" alt="" loading="lazy" style="object-position:center 40%"></div><p class="meta"><span class="tg">전시</span><span class="todo">2026.○○</span></p><b>E&amp;L MENA 2027 코리안 파빌리온 참가 기업 모집</b><span class="meta">2027년 1월 18~20일, 두바이 월드 트레이드 센터. 한국관 참가 기업 모집.</span></a>
+<div class="ncards ntext" id="ncards">
+  <a data-k="미디어"><p class="meta"><span class="tg">미디어</span><span class="todo">2026.○○</span></p><b>대표 방송 출연</b><span class="meta">유니프로모션이 소개된 방송 영상.</span></a>
+  <a data-k="전시"><p class="meta"><span class="tg">전시</span><span class="todo">2026.○○</span></p><b>베트남 미디어앤아트 전시 전속 계약</b><span class="meta">베트남 미디어앤아트 전시의 굿즈와 운영을 맡습니다.</span></a>
+  <a data-k="유통"><p class="meta"><span class="tg">유통</span><span class="todo">2026.○○</span></p><b>168cm 일본·호주·네덜란드 독점 유통 계약</b><span class="meta">국내 모바일 액세서리 브랜드의 해외 독점 유통. 온·오프라인 스토어 오픈 예정.</span></a>
+  <a data-k="수출"><p class="meta"><span class="tg">수출</span><span class="todo">2026.○○</span></p><b>Stockalot 대량 물류 수출 완료</b><span class="meta">대규모 물량의 소싱과 수출.</span></a>
+  <a href="exhibition.html#pavilion" data-k="전시"><p class="meta"><span class="tg">전시</span><span class="todo">2026.○○</span></p><b>E&amp;L MENA 2027 코리안 파빌리온 참가 기업 모집</b><span class="meta">2027년 1월 18~20일, 두바이 월드 트레이드 센터. 한국관 참가 기업 모집.</span></a>
 </div>
 <p class="cap-s" id="nempty" style="display:none">이 분류의 소식은 준비 중입니다.</p>
 
@@ -831,7 +852,7 @@ body>footer{margin-top:96px}
   <h2 class="lab">영상</h2>
   <div class="body">
     <h3 class="ttl">방송과 현장 영상</h3>
-    <div class="empty-ph video">대표 방송 출연 영상 (링크 받은 뒤 연결)</div>
+    <figure style="margin:0"><video controls preload="none" playsinline poster="assets/company_intro.jpg" aria-label="유니프로모션 소개 영상"><source src="assets/company_intro.mp4" type="video/mp4"></video><figcaption class="meta" style="margin-top:8px">유니프로모션 소개 영상 (리포터 인터뷰, 약 5분). 실제 사이트에서는 유튜브 영상으로 연결합니다.</figcaption></figure>
   </div>
 </section>
 
