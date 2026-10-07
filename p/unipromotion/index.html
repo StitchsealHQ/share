@@ -625,6 +625,20 @@ html body :is(b,strong,h3:not(.ttl),h4,footer h2,.dl a span,.dl-list a span,.sub
 html body :is(.feat h2,.reel h2,.mhead h2,.docs h2,.ph-head h1,.process .ptl){font-weight:300!important;letter-spacing:-.03em!important;line-height:1.12}
 html body :is(.sec .ttl,.feature .ttl){font-weight:300!important;letter-spacing:-.02em!important;line-height:1.25}
 html body :is(.intro,.txt,.say,.ph-say,.fabout,.docs .about p,.sec .note){line-height:1.6}
+
+/* 10/7 전체 점검 반영 */
+.hero .sl.el{display:block;padding:0}
+.hero .sl.el .el-type{position:absolute;left:var(--gut);top:clamp(32px,6vh,64px)}
+.hero .sl.el .el-type p{margin:0;font-family:var(--font-display);font-weight:300;font-size:clamp(40px,7vw,112px);line-height:1.04;letter-spacing:-.035em;color:var(--charcoal)}
+.hero .sl.el img.el-mark{position:absolute;right:var(--gut);top:clamp(32px,6vh,64px);width:clamp(96px,11vw,180px);height:auto;object-fit:contain}
+.el-tile{aspect-ratio:1/1;background:var(--cream-deep);display:flex;align-items:center;justify-content:center}
+.el-tile img{width:62%;height:auto;object-fit:contain}
+.pav-cta{margin:32px 0 0}
+.pav-cta a,body .media>.nall{display:inline-block;padding:8px 14px;background:var(--burgundy);color:var(--cream);text-decoration:none;transition:background .2s}
+.pav-cta a:hover,body .media>.nall:hover{background:var(--burgundy-deep);color:var(--cream)}
+body .media>.nall{margin-top:48px}
+.split.one{grid-template-columns:1fr}
+body .track ul{padding:0 var(--gut)}
 </style>
 </head>
 <body>
@@ -643,7 +657,7 @@ html body :is(.intro,.txt,.say,.ph-say,.fabout,.docs .about p,.sec .note){line-h
 <h1 class="sr">유니프로모션 — 의류·굿즈 기획과 해외 생산, 해외 전시 코리안 파빌리온</h1>
 
 <section class="hero is-light" aria-roledescription="carousel" aria-label="유니프로모션이 하는 일">
-  <figure class="sl el on" data-tone="light"><img src="assets/el_logo.png" alt="Entertainment &amp; Leisure MENA (구 DEAL Dubai) 로고"></figure>
+  <figure class="sl el on" data-tone="light"><div class="el-type"><p>E&amp;L MENA 2027</p><p>코리안 파빌리온</p></div><img class="el-mark" src="assets/el_logo.png" alt="Entertainment &amp; Leisure MENA (구 DEAL Dubai) 로고"></figure>
   <figure class="sl"><img src="img/621cef6b53.webp" alt="갈색 벽에 그림이 걸린 미술관 전시실"></figure>
   <figure class="sl"><img src="img/d296dc48a1.webp" alt="크림, 갈색, 버건디 옷이 걸린 옷걸이"></figure>
   <figure class="sl"><img src="img/833e41cbc0.webp" alt="갈색과 노란색 자수실 타래"></figure>
@@ -747,11 +761,10 @@ html body :is(.intro,.txt,.say,.ph-say,.fabout,.docs .about p,.sec .note){line-h
 <section class="media" id="media">
   <div class="mhead">
     <h2>뉴스룸</h2>
-    <a class="go" href="media.html">전체 보기</a>
   </div>
   <div class="mgrid">
     <a class="lead-card" href="exhibition.html#pavilion">
-      <div class="th"><img src="img/6e86ff2bcf.webp" alt=""></div>
+      <div class="th"><img src="assets/deal_2023.jpg" alt="" style="object-fit:cover;padding:0;background:none"></div>
       <p class="meta"><span class="tg">전시</span><span class="todo">2026.○○</span></p>
       <b>E&amp;L MENA 공식 한국 에이전시 계약, 코리안 파빌리온 론칭</b>
       <span class="d">중동 레저·엔터테인먼트 박람회의 한국관을 운영합니다. 2027년 1월 행사 참가 기업 모집 중.</span>
@@ -763,6 +776,7 @@ html body :is(.intro,.txt,.say,.ph-say,.fabout,.docs .about p,.sec .note){line-h
       <li><a href="media.html"><p class="meta"><span class="tg">수출</span><span class="todo">2026.○○</span></p><b>Stockalot 대량 물류 수출 완료</b><span class="d">대규모 물량의 소싱과 수출.</span></a></li>
     </ul>
   </div>
+  <a class="go nall" href="media.html">뉴스룸 전체 보기</a>
 </section>
 
 <section class="docs" id="company">

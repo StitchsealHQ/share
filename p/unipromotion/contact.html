@@ -758,6 +758,23 @@ html body :is(b,strong,h3:not(.ttl),h4,footer h2,.dl a span,.dl-list a span,.sub
 html body :is(.feat h2,.reel h2,.mhead h2,.docs h2,.ph-head h1,.process .ptl){font-weight:300!important;letter-spacing:-.03em!important;line-height:1.12}
 html body :is(.sec .ttl,.feature .ttl){font-weight:300!important;letter-spacing:-.02em!important;line-height:1.25}
 html body :is(.intro,.txt,.say,.ph-say,.fabout,.docs .about p,.sec .note){line-height:1.6}
+
+/* 10/7 전체 점검 반영 */
+.hero .sl.el{display:block;padding:0}
+.hero .sl.el .el-type{position:absolute;left:var(--gut);top:clamp(32px,6vh,64px)}
+.hero .sl.el .el-type p{margin:0;font-family:var(--font-display);font-weight:300;font-size:clamp(40px,7vw,112px);line-height:1.04;letter-spacing:-.035em;color:var(--charcoal)}
+.hero .sl.el img.el-mark{position:absolute;right:var(--gut);top:clamp(32px,6vh,64px);width:clamp(96px,11vw,180px);height:auto;object-fit:contain}
+.el-tile{aspect-ratio:1/1;background:var(--cream-deep);display:flex;align-items:center;justify-content:center}
+.el-tile img{width:62%;height:auto;object-fit:contain}
+.pav-cta{margin:32px 0 0}
+.pav-cta a,body .media>.nall{display:inline-block;padding:8px 14px;background:var(--burgundy);color:var(--cream);text-decoration:none;transition:background .2s}
+.pav-cta a:hover,body .media>.nall:hover{background:var(--burgundy-deep);color:var(--cream)}
+body .media>.nall{margin-top:48px}
+.split.one{grid-template-columns:1fr}
+body .track ul{padding:0 var(--gut)}
+
+/* 하위 페이지: 마지막 섹션과 하단 사이 블록 간격(96px), 메인과 같게 */
+body>footer{margin-top:96px}
 </style>
 </head>
 <body>
@@ -807,9 +824,6 @@ html body :is(.intro,.txt,.say,.ph-say,.fabout,.docs .about p,.sec .note){line-h
 </main>
 
 <footer id="contact">
-  <div class="frow"><h2>프로젝트 문의</h2>
-    <div><dl class="fl"><dt>전화</dt><dd><a href="tel:01096640718">010-9664-0718</a></dd><dt>이메일</dt><dd><a href="mailto:admin@unipromotion.co.kr">admin@unipromotion.co.kr</a></dd><dt>WhatsApp</dt><dd><span class="todo">○○</span></dd></dl>
-    <a class="u" href="contact.html">문의 양식 열기</a></div></div>
   <div class="frow"><h2>코리안 파빌리온 참가</h2>
     <div><p class="fabout">E&amp;L MENA 2027 한국관 참가 기업을 모집합니다. 2027년 1월 18~20일, 두바이 월드 트레이드 센터.</p>
     <ul class="flinks"><li><a class="u" href="contact.html?type=pavilion">참가 문의</a></li><li><a class="u" href="exhibition.html#pavilion">파빌리온 안내</a></li></ul></div></div>

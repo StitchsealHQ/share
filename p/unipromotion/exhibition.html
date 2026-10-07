@@ -758,6 +758,23 @@ html body :is(b,strong,h3:not(.ttl),h4,footer h2,.dl a span,.dl-list a span,.sub
 html body :is(.feat h2,.reel h2,.mhead h2,.docs h2,.ph-head h1,.process .ptl){font-weight:300!important;letter-spacing:-.03em!important;line-height:1.12}
 html body :is(.sec .ttl,.feature .ttl){font-weight:300!important;letter-spacing:-.02em!important;line-height:1.25}
 html body :is(.intro,.txt,.say,.ph-say,.fabout,.docs .about p,.sec .note){line-height:1.6}
+
+/* 10/7 전체 점검 반영 */
+.hero .sl.el{display:block;padding:0}
+.hero .sl.el .el-type{position:absolute;left:var(--gut);top:clamp(32px,6vh,64px)}
+.hero .sl.el .el-type p{margin:0;font-family:var(--font-display);font-weight:300;font-size:clamp(40px,7vw,112px);line-height:1.04;letter-spacing:-.035em;color:var(--charcoal)}
+.hero .sl.el img.el-mark{position:absolute;right:var(--gut);top:clamp(32px,6vh,64px);width:clamp(96px,11vw,180px);height:auto;object-fit:contain}
+.el-tile{aspect-ratio:1/1;background:var(--cream-deep);display:flex;align-items:center;justify-content:center}
+.el-tile img{width:62%;height:auto;object-fit:contain}
+.pav-cta{margin:32px 0 0}
+.pav-cta a,body .media>.nall{display:inline-block;padding:8px 14px;background:var(--burgundy);color:var(--cream);text-decoration:none;transition:background .2s}
+.pav-cta a:hover,body .media>.nall:hover{background:var(--burgundy-deep);color:var(--cream)}
+body .media>.nall{margin-top:48px}
+.split.one{grid-template-columns:1fr}
+body .track ul{padding:0 var(--gut)}
+
+/* 하위 페이지: 마지막 섹션과 하단 사이 블록 간격(96px), 메인과 같게 */
+body>footer{margin-top:96px}
 </style>
 </head>
 <body>
@@ -790,6 +807,7 @@ html body :is(.intro,.txt,.say,.ph-say,.fabout,.docs .about p,.sec .note){line-h
   <div class="body">
     <h3 class="ttl">E&amp;L MENA 공식 한국 에이전시</h3>
     <p class="txt">중동 최대 규모의 레저·엔터테인먼트 박람회 E&amp;L MENA(구 DEAL)의 공식 한국 에이전시로, 한국 기업이 함께 참가하는 코리안 파빌리온을 운영합니다. 참가 신청, 부스 구성, 현장 운영을 지원합니다.</p>
+    <p class="pav-cta"><a href="contact.html?type=pavilion">코리안 파빌리온 참가 문의</a></p>
     <ul class="rows">
       <li><b>E&amp;L MENA 2027</b><span>2027년 1월 18~20일, 두바이<small>코리안 파빌리온 참가 기업 모집</small></span></li>
       <li><b>2023.03</b><span>두바이 DEAL 쇼 참가</span></li>
@@ -797,10 +815,9 @@ html body :is(.intro,.txt,.say,.ph-say,.fabout,.docs .about p,.sec .note){line-h
     </ul>
     <div class="pav">
       <figure class="pav-v"><video controls playsinline preload="metadata" poster="assets/elmena_2027.jpg" aria-label="E&amp;L MENA 2027 소개 영상"><source src="assets/elmena_2027.mp4" type="video/mp4"></video><figcaption class="meta" style="margin-top:8px">E&amp;L MENA 2027 소개 영상, 1분. 실제 사이트에서는 유튜브 쇼츠로 연결합니다.</figcaption></figure>
-      <figure><img src="img/dd4e60b2a1.webp" alt="E&L MENA 2027 배너" loading="lazy" style="object-position:center top;aspect-ratio:1/1"><figcaption class="meta" style="margin-top:8px">E&amp;L MENA 2027, 두바이 월드 트레이드 센터</figcaption></figure>
-      <figure><img src="img/5e4484e89a.webp" alt="두바이 DEAL 쇼 참가" loading="lazy" style="object-position:center 85%;aspect-ratio:4/3"><figcaption class="meta" style="margin-top:8px">DEAL 쇼 참가, 두바이 (2023)</figcaption></figure>
+      <figure><div class="el-tile"><img src="assets/el_logo.png" alt="Entertainment &amp; Leisure MENA 로고" loading="lazy"></div><figcaption class="meta" style="margin-top:8px">E&amp;L MENA (구 DEAL Dubai) 공식 한국 에이전시</figcaption></figure>
+      <figure><img src="assets/deal_2023.jpg" alt="두바이 DEAL 쇼 전시장 입구" loading="lazy" style="aspect-ratio:4/3"><figcaption class="meta" style="margin-top:8px">DEAL 쇼 참가, 두바이 (2023)</figcaption></figure>
     </div>
-    <div class="dl-list"><a href="contact.html?type=pavilion">코리안 파빌리온 참가 신청 <span>문의 양식</span></a></div>
   </div>
 </section>
 
