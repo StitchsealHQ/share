@@ -9332,6 +9332,20 @@ html body #w20260616173bce39146d8#w20260616173bce39146d8 i.btl { font-family: "B
 /* 비전(/33) 인증서 사진: 원래 코드가 흑백 필터·투명도 0.86으로 두었던 것(배지 장식용) → 실제 인증서라 원색으로 (10/8) */
 html body #uni-vision-certificate-section#uni-vision-certificate-section .uni-certificate-card .uni-certificate-img-box img { filter: none !important; opacity: 1 !important; }
 
+/* ── 휴대폰(≤767px) (10/8 A1·A2) ── */
+@media (max-width: 767px) {
+  /* A1 상단 메뉴: 'EXHIBITION & ENTERTAINMENT'가 네 줄로 깨지던 것 → 한 줄 + 가로 밀기. 글자 크기는 그대로 */
+  html body ._mobile_nav { overflow-x: auto !important; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  html body ._mobile_nav::-webkit-scrollbar { display: none; }
+  html body ._mobile_table_nav_wrap { width: max-content !important; min-width: 100% !important; }
+  html body ._mobile_table_nav_wrap .nav-item a,
+  html body ._mobile_table_nav_wrap .nav-item .plain_name { white-space: nowrap !important; }
+  html body ._mobile_table_nav_wrap .nav-item a { padding-left: 14px !important; padding-right: 14px !important; }
+  /* A2 첫 화면 제목: 단어 중간 줄바꿈 방지 */
+  html body #ziods-visual-copy .ziods-visual-copy-title,
+  html body #ziods-visual-copy .ziods-visual-copy-desc { word-break: keep-all !important; overflow-wrap: break-word !important; }
+}
+
 </style>
 </body>
 </html>
