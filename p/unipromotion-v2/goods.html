@@ -7866,6 +7866,7 @@
     </article>
   </div>
 </div>
+<style>.uni-slider-track{cursor:grab;user-select:none;-webkit-user-select:none}.uni-slider-track.is-dragging{cursor:grabbing;scroll-behavior:auto}.uni-slider-track img{-webkit-user-drag:none}</style>
 <script>
 (function () {
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -7888,6 +7889,31 @@
     g.querySelectorAll('.uni-slider-btn').forEach(function (b) { b.addEventListener('click', function () { stop(); move(+b.getAttribute('data-dir')); start(); }); });
     g.addEventListener('mouseenter', stop); g.addEventListener('mouseleave', start);
     track.addEventListener('touchstart', stop, { passive: true }); track.addEventListener('touchend', start, { passive: true });
+    /* 마우스 좌클릭 + 드래그로 좌우 이동 (10/8). 5px 이상 끌면 놓을 때 클릭은 무시 */
+    var drag = null;
+    track.addEventListener('mousedown', function (e) {
+      if (e.button !== 0) return;
+      drag = { x: e.pageX, left: track.scrollLeft, moved: false };
+      track.classList.add('is-dragging'); track.style.scrollSnapType = 'none'; stop(); e.preventDefault();
+    });
+    window.addEventListener('mousemove', function (e) {
+      if (!drag) return;
+      var dx = e.pageX - drag.x; if (Math.abs(dx) > 5) drag.moved = true;
+      track.scrollLeft = drag.left - dx;
+    });
+    function endDrag() {
+      if (!drag) return;
+      var moved = drag.moved; drag = null;
+      track.classList.remove('is-dragging');
+      /* 놓으면 가장 가까운 카드로 정렬 */
+      var i = index(); track.scrollTo({ left: cards[i].offsetLeft - cards[0].offsetLeft, behavior: reduce ? 'auto' : 'smooth' });
+      clearTimeout(track._snapT); track._snapT = setTimeout(function () { track.style.scrollSnapType = ''; }, reduce ? 50 : 700);
+      if (moved) { track._swallow = true; setTimeout(function () { track._swallow = false; }, 0); }
+      start();
+    }
+    window.addEventListener('mouseup', endDrag); track.addEventListener('mouseleave', function () { if (drag) endDrag(); });
+    track.addEventListener('click', function (e) { if (track._swallow) { e.preventDefault(); e.stopPropagation(); } }, true);
+    track.addEventListener('dragstart', function (e) { e.preventDefault(); });
     start();
   });
 })();
