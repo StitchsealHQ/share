@@ -9069,19 +9069,19 @@ $(window).load(function(){var section_fixed_s202606168613733931531 = new SECTION
 
 
 <style id="uni-tone-override">
-/* 유니프로모션 3색 덮어쓰기 (수정목록 01 색만)
-   기준: 아이리스님 브리프 3색 — 바탕 크림 #F7F5F0, 글자 차콜 #2C2C2C, 강조 딥 버건디 #5C1D24
+/* 유니프로모션 색 덮어쓰기 (10/10 통화: 블랙·화이트로 복귀)
+   기준: 바탕 화이트 #FFFFFF, 글자 블랙 #111111, 강조도 블랙 (포인트 색 없음)
    적용 위치: 아임웹 하단(uni-footer) 코드 위젯 1곳. 전 페이지 공통. 이 블록만 지우면 원래대로.
    범위: 기존 코드 위젯(uni-*, ziods-*, mdc-final-*)과 그 섹션 바탕, 상단 전화 버튼, 첫 화면 덮개. 틀·서체·글자 크기·모서리·그림자·장식은 손대지 않음. 색만. */
 
 :root {
-  --u-cream: #F7F5F0;
-  --u-paper: #FFFFFF;
-  --u-ink: #2C2C2C;
-  --u-ink-2: rgba(44, 44, 44, 0.72);
-  --u-wine: #5C1D24;
-  --u-wine-2: #4A161C;
-  --u-line: #E4DED3;
+  --u-cream: #FFFFFF;
+  --u-paper: #F5F5F5;
+  --u-ink: #111111;
+  --u-ink-2: rgba(17, 17, 17, 0.72);
+  --u-wine: #111111;
+  --u-wine-2: #333333;
+  --u-line: #E3E3E3;
   --u-on-wine: rgba(255, 255, 255, 0.78);
 }
 
@@ -9122,7 +9122,7 @@ html body #uni-main-core-section .uni-main-core-card h3 { color: var(--u-ink) !i
 html body #uni-main-core-section .uni-main-core-card > p { color: var(--u-ink-2) !important; }
 html body #uni-main-core-section .uni-main-core-card-top p { color: var(--u-wine) !important; }
 html body #uni-main-core-section .uni-main-core-card-top span { background: var(--u-wine) !important; color: #fff !important; }
-html body #uni-main-core-section .uni-main-core-card.is-active { background: var(--u-wine) !important; border-color: var(--u-wine) !important; box-shadow: 0 28px 78px rgba(92, 29, 36, 0.24) !important; }
+html body #uni-main-core-section .uni-main-core-card.is-active { background: var(--u-wine) !important; border-color: var(--u-wine) !important; box-shadow: 0 28px 78px rgba(0, 0, 0, 0.24) !important; }
 html body #uni-main-core-section .uni-main-core-card.is-active h3,
 html body #uni-main-core-section .uni-main-core-card.is-active > p { color: #fff !important; }
 html body #uni-main-core-section .uni-main-core-card.is-active .uni-main-core-card-top p { color: var(--u-on-wine) !important; }
@@ -9137,9 +9137,9 @@ html body #uni-core-competency-section .uni-core-competency-metric { background:
 html body #uni-core-competency-section .uni-core-competency-metric strong { color: var(--u-wine) !important; }
 html body #uni-core-competency-section .uni-core-competency-metric span { color: var(--u-ink-2) !important; }
 html body #uni-core-competency-section .uni-core-competency-card { background: var(--u-cream) !important; border: 1px solid var(--u-line) !important; }
-html body #uni-core-competency-section .uni-core-competency-card:hover { border-color: var(--u-wine) !important; box-shadow: 0 28px 70px rgba(92, 29, 36, 0.16) !important; }
+html body #uni-core-competency-section .uni-core-competency-card:hover { border-color: var(--u-wine) !important; box-shadow: 0 28px 70px rgba(0, 0, 0, 0.16) !important; }
 html body #uni-core-competency-section .uni-core-competency-card-num { background: var(--u-wine) !important; color: #fff !important; }
-html body #uni-core-competency-section .uni-core-competency-card-image { background: #EAE5DB !important; }
+html body #uni-core-competency-section .uni-core-competency-card-image { background: #EDEDED !important; }
 html body #uni-core-competency-section .uni-core-competency-card-label { color: var(--u-wine) !important; }
 html body #uni-core-competency-section .uni-core-competency-card h3 { color: var(--u-ink) !important; }
 html body #uni-core-competency-section .uni-core-competency-card-text { color: var(--u-ink-2) !important; }
@@ -9166,7 +9166,7 @@ html body #uni-review-section .uni-review-kicker { color: var(--u-wine) !importa
 html body #uni-review-section .uni-review-title { color: var(--u-ink) !important; }
 html body #uni-review-section .uni-review-desc { color: var(--u-ink-2) !important; }
 html body #uni-review-section .uni-review-card { background: var(--u-wine) !important; }
-html body #uni-review-section .uni-review-card:hover { background: var(--u-wine-2) !important; box-shadow: 0 28px 60px rgba(92,29,36,0.28) !important; }
+html body #uni-review-section .uni-review-card:hover { background: var(--u-wine-2) !important; box-shadow: 0 28px 60px rgba(0, 0, 0,0.28) !important; }
 html body #uni-review-section .uni-review-arrow { border-color: var(--u-wine) !important; color: var(--u-wine) !important; background: transparent !important; }
 html body #uni-review-section .uni-review-arrow:hover { background: var(--u-wine) !important; color: #fff !important; }
 html body #uni-review-section .uni-review-dot { background: var(--u-line) !important; }
@@ -9195,7 +9195,7 @@ html body #uni-scm-board-section .uni-scm-board-flow-chip,
 html body #uni-scm-board-section .uni-scm-board-label { background: var(--u-wine) !important; }
 html body #uni-scm-board-section .uni-scm-board-card { border-color: var(--u-line) !important; }
 html body #uni-scm-board-section .uni-scm-board-card:hover { border-color: var(--u-wine) !important; }
-html body #uni-scm-board-section .uni-scm-board-img { background: #EAE5DB !important; }
+html body #uni-scm-board-section .uni-scm-board-img { background: #EDEDED !important; }
 
 /* ── 하위 페이지: 의류 전략 생산(/30) · 전시 총괄(/24) · 굿즈·MD(/26) — 메인과 같은 규칙, 색만 ── */
 html body #uni-apparel-production-section .uni-apparel-production-kicker,
@@ -9214,17 +9214,17 @@ html body #uni-exhibition-strength-section .uni-exhibition-strength-label,
 html body #uni-theme-md-section .uni-theme-md-label { background: var(--u-wine) !important; }
 html body #uni-apparel-production-section .uni-apparel-production-num,
 html body #uni-exhibition-strength-section .uni-exhibition-strength-num,
-html body #uni-theme-md-section .uni-theme-md-step { color: rgba(92, 29, 36, 0.10) !important; }
+html body #uni-theme-md-section .uni-theme-md-step { color: rgba(0, 0, 0, 0.10) !important; }
 html body #uni-apparel-production-section .uni-apparel-production-card,
 html body #uni-exhibition-strength-section .uni-exhibition-strength-card,
-html body #uni-theme-md-section .uni-theme-md-process-card { border-color: var(--u-line) !important; box-shadow: 0 18px 48px rgba(92, 29, 36, 0.08) !important; }
+html body #uni-theme-md-section .uni-theme-md-process-card { border-color: var(--u-line) !important; box-shadow: 0 18px 48px rgba(0, 0, 0, 0.08) !important; }
 html body #uni-apparel-production-section .uni-apparel-production-card:hover,
 html body #uni-exhibition-strength-section .uni-exhibition-strength-card:hover,
-html body #uni-theme-md-section .uni-theme-md-process-card:hover { border-color: var(--u-wine) !important; box-shadow: 0 28px 70px rgba(92, 29, 36, 0.18) !important; }
+html body #uni-theme-md-section .uni-theme-md-process-card:hover { border-color: var(--u-wine) !important; box-shadow: 0 28px 70px rgba(0, 0, 0, 0.18) !important; }
 html body #uni-apparel-production-section .uni-apparel-production-img-box,
 html body #uni-exhibition-strength-section .uni-exhibition-strength-img-box,
-html body #uni-theme-md-section .uni-theme-md-img-box { background: #EAE5DB !important; }
-html body #uni-theme-md-section .uni-theme-md-main-card { background: var(--u-wine) !important; box-shadow: 0 24px 64px rgba(92, 29, 36, 0.18) !important; }
+html body #uni-theme-md-section .uni-theme-md-img-box { background: #EDEDED !important; }
+html body #uni-theme-md-section .uni-theme-md-main-card { background: var(--u-wine) !important; box-shadow: 0 24px 64px rgba(0, 0, 0, 0.18) !important; }
 
 /* ───────── 일괄 교체: 남아 있던 파란색 전부 (전 페이지) ─────────
    원칙 그대로: 색만 바꾼다. 남색/하늘색 → 버건디, 남색 글자 → 차콜, 연한 남색 테두리·바탕 → 크림 계열. */
@@ -9259,21 +9259,21 @@ html body #mdc-final-cta-section .mdc-final-btn-white, html body #mdc-final-cta-
 }
 
 /* 메인: 남아 있던 소제목·장식 원 */
-html body #uni-main-core-section .uni-main-core-card::before { background: rgba(92, 29, 36, 0.07) !important; }
+html body #uni-main-core-section .uni-main-core-card::before { background: rgba(0, 0, 0, 0.07) !important; }
 
 /* CEO 인사말 (/31) */
 html body #uni-ceo-greeting-section .uni-ceo-greeting-kicker,
 html body #uni-ceo-greeting-section .uni-ceo-greeting-text strong,
 html body #uni-ceo-greeting-section .uni-ceo-greeting-sign strong { color: var(--u-wine) !important; }
 html body #uni-ceo-greeting-section .uni-ceo-greeting-line { background: var(--u-wine) !important; }
-html body #uni-ceo-greeting-section .uni-ceo-greeting-business-image { background: #EAE5DB !important; }
+html body #uni-ceo-greeting-section .uni-ceo-greeting-business-image { background: #EDEDED !important; }
 
 /* 핵심 역량 (/32) */
 html body #uni-core-competency-section .uni-core-competency-hero,
 html body #uni-core-competency-section .uni-core-competency-label,
 html body #uni-core-competency-section .uni-core-competency-process span { background: var(--u-wine) !important; }
-html body #uni-core-competency-section .uni-core-competency-img { background: #EAE5DB !important; }
-html body #uni-core-competency-section .uni-core-competency-num { color: rgba(92, 29, 36, 0.10) !important; }
+html body #uni-core-competency-section .uni-core-competency-img { background: #EDEDED !important; }
+html body #uni-core-competency-section .uni-core-competency-num { color: rgba(0, 0, 0, 0.10) !important; }
 html body #uni-core-competency-section .uni-core-competency-content h3 { color: var(--u-ink) !important; }
 html body #uni-core-competency-section .uni-core-competency-bottom-list strong { color: var(--u-wine) !important; }
 
@@ -9285,12 +9285,12 @@ html body #uni-vision-certificate-section .uni-vision-card h3,
 html body #uni-vision-certificate-section .uni-certificate-head h3,
 html body #uni-vision-certificate-section .uni-certificate-text h4 { color: var(--u-ink) !important; }
 html body #uni-vision-certificate-section .uni-vision-label { background: var(--u-wine) !important; }
-html body #uni-vision-certificate-section .uni-vision-num { color: rgba(92, 29, 36, 0.10) !important; }
+html body #uni-vision-certificate-section .uni-vision-num { color: rgba(0, 0, 0, 0.10) !important; }
 html body #uni-vision-certificate-section .uni-vision-card,
-html body #uni-vision-certificate-section .uni-certificate-card { border-color: var(--u-line) !important; box-shadow: 0 18px 48px rgba(92, 29, 36, 0.08) !important; }
-html body #uni-vision-certificate-section .uni-vision-card:hover { border-color: var(--u-wine) !important; background: var(--u-wine) !important; box-shadow: 0 28px 70px rgba(92, 29, 36, 0.18) !important; }
+html body #uni-vision-certificate-section .uni-certificate-card { border-color: var(--u-line) !important; box-shadow: 0 18px 48px rgba(0, 0, 0, 0.08) !important; }
+html body #uni-vision-certificate-section .uni-vision-card:hover { border-color: var(--u-wine) !important; background: var(--u-wine) !important; box-shadow: 0 28px 70px rgba(0, 0, 0, 0.18) !important; }
 html body #uni-vision-certificate-section .uni-vision-card:hover .uni-vision-label { color: var(--u-wine) !important; }
-html body #uni-vision-certificate-section .uni-certificate-card:hover { border-color: var(--u-wine) !important; box-shadow: 0 24px 62px rgba(92, 29, 36, 0.16) !important; }
+html body #uni-vision-certificate-section .uni-certificate-card:hover { border-color: var(--u-wine) !important; box-shadow: 0 24px 62px rgba(0, 0, 0, 0.16) !important; }
 html body #uni-vision-certificate-section .uni-certificate-text { border-top-color: var(--u-line) !important; }
 
 /* 글로벌 네트워크 (/34) */
@@ -9299,15 +9299,15 @@ html body #uni-global-belt-bottom-section .uni-global-belt-bottom-card-hq .uni-g
 html body #uni-global-belt-bottom-section .uni-global-belt-bottom-title,
 html body #uni-global-belt-bottom-section .uni-global-belt-bottom-card h3 { color: var(--u-ink) !important; }
 html body #uni-global-belt-bottom-section .uni-global-belt-bottom-label { background: var(--u-wine) !important; }
-html body #uni-global-belt-bottom-section .uni-global-belt-bottom-num { color: rgba(92, 29, 36, 0.10) !important; }
-html body #uni-global-belt-bottom-section .uni-global-belt-bottom-map-frame { background: var(--u-wine) !important; border-color: var(--u-line) !important; box-shadow: 0 24px 64px rgba(92, 29, 36, 0.16) !important; }
-html body #uni-global-belt-bottom-section .uni-global-belt-bottom-pin { background: rgba(92, 29, 36, 0.92) !important; box-shadow: 0 10px 24px rgba(92, 29, 36, 0.28) !important; }
-html body #uni-global-belt-bottom-section .uni-global-belt-bottom-card { border-color: var(--u-line) !important; box-shadow: 0 16px 42px rgba(92, 29, 36, 0.08) !important; }
-html body #uni-global-belt-bottom-section .uni-global-belt-bottom-card:hover { border-color: var(--u-wine) !important; box-shadow: 0 24px 60px rgba(92, 29, 36, 0.16) !important; }
-html body #uni-global-belt-bottom-section .uni-global-belt-bottom-card-hq { background: var(--u-wine) !important; border-color: var(--u-wine) !important; box-shadow: 0 22px 58px rgba(92, 29, 36, 0.24) !important; }
+html body #uni-global-belt-bottom-section .uni-global-belt-bottom-num { color: rgba(0, 0, 0, 0.10) !important; }
+html body #uni-global-belt-bottom-section .uni-global-belt-bottom-map-frame { background: var(--u-wine) !important; border-color: var(--u-line) !important; box-shadow: 0 24px 64px rgba(0, 0, 0, 0.16) !important; }
+html body #uni-global-belt-bottom-section .uni-global-belt-bottom-pin { background: rgba(0, 0, 0, 0.92) !important; box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28) !important; }
+html body #uni-global-belt-bottom-section .uni-global-belt-bottom-card { border-color: var(--u-line) !important; box-shadow: 0 16px 42px rgba(0, 0, 0, 0.08) !important; }
+html body #uni-global-belt-bottom-section .uni-global-belt-bottom-card:hover { border-color: var(--u-wine) !important; box-shadow: 0 24px 60px rgba(0, 0, 0, 0.16) !important; }
+html body #uni-global-belt-bottom-section .uni-global-belt-bottom-card-hq { background: var(--u-wine) !important; border-color: var(--u-wine) !important; box-shadow: 0 22px 58px rgba(0, 0, 0, 0.24) !important; }
 
 /* 핵심 SCM (/28) 남은 번호 · 의류 생산 (/30) 소제목 */
-html body #uni-scm-board-section .uni-scm-board-num { color: rgba(92, 29, 36, 0.10) !important; }
+html body #uni-scm-board-section .uni-scm-board-num { color: rgba(0, 0, 0, 0.10) !important; }
 
 /* 남은 옅은 남색 톤: 선·패널·글자 */
 html body #uni-core-competency-section .uni-core-competency-process i,
@@ -9315,7 +9315,7 @@ html body #uni-scm-board-section .uni-scm-board-flow-line::before { background: 
 html body #uni-core-competency-section .uni-core-competency-bottom-list div { background: var(--u-paper) !important; border-color: var(--u-line) !important; }
 html body #uni-vision-certificate-section .uni-certificate-wrap { background: var(--u-paper) !important; border-color: var(--u-line) !important; }
 html body #uni-theme-md-section .uni-theme-md-process-card::after { border-top-color: var(--u-line) !important; border-right-color: var(--u-line) !important; }
-html body #uni-global-belt-bottom-section .uni-global-belt-bottom-pin::after { background: rgba(232, 180, 186, 0.45) !important; box-shadow: 0 0 18px rgba(232, 180, 186, 0.95), 0 0 44px rgba(232, 180, 186, 0.5) !important; }
+html body #uni-global-belt-bottom-section .uni-global-belt-bottom-pin::after { background: rgba(255, 255, 255, 0.45) !important; box-shadow: 0 0 18px rgba(255, 255, 255, 0.95), 0 0 44px rgba(255, 255, 255, 0.5) !important; }
 /* 본문 글자: 청회색(#4d5a66) → 차콜 72% */
 html body #uni-core-competency-section .uni-core-competency-content p:not(.uni-core-competency-label),
 html body #uni-core-competency-section .uni-core-competency-bottom-list span,
@@ -9347,11 +9347,11 @@ html body #uni-core-competency-section .uni-core-competency-hero .uni-core-compe
 html body #uni-contact-title-wrap .uni-contact-kicker, html body #uni-media-title-wrap .uni-media-kicker { color: var(--u-wine) !important; }
 html body #uni-contact-title-wrap .uni-contact-title, html body #uni-media-title-wrap .uni-media-title { color: var(--u-ink) !important; }
 html body #uni-contact-title-wrap .uni-contact-desc, html body #uni-media-title-wrap .uni-media-desc { color: var(--u-ink-2) !important; }
-html body #w20260616173bce39146d8#w20260616173bce39146d8 .form-widget { border-color: var(--u-line) !important; box-shadow: 0 24px 70px rgba(92, 29, 36, 0.10) !important; }
+html body #w20260616173bce39146d8#w20260616173bce39146d8 .form-widget { border-color: var(--u-line) !important; box-shadow: 0 24px 70px rgba(0, 0, 0, 0.10) !important; }
 html body #w20260616173bce39146d8#w20260616173bce39146d8 .form-control,
 html body #w20260616173bce39146d8#w20260616173bce39146d8 ._form_file_list,
 html body #w20260616173bce39146d8#w20260616173bce39146d8 .privacy .form-control { background: var(--u-cream) !important; border-color: var(--u-line) !important; color: var(--u-ink) !important; }
-html body #w20260616173bce39146d8#w20260616173bce39146d8 .form-control:focus { background: #fff !important; border-color: var(--u-wine) !important; box-shadow: 0 0 0 3px rgba(92, 29, 36, 0.10) !important; }
+html body #w20260616173bce39146d8#w20260616173bce39146d8 .form-control:focus { background: #fff !important; border-color: var(--u-wine) !important; box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.10) !important; }
 html body #w20260616173bce39146d8#w20260616173bce39146d8 .muv-form-check-grid .checkbox-styled label { border-color: var(--u-line) !important; color: var(--u-ink) !important; }
 html body #w20260616173bce39146d8#w20260616173bce39146d8 .muv-form-check-grid .checkbox-styled span { color: var(--u-ink) !important; }
 html body #w20260616173bce39146d8#w20260616173bce39146d8 .muv-form-check-grid .checkbox-styled label:hover { background: var(--u-cream) !important; border-color: var(--u-wine) !important; }
@@ -9360,8 +9360,8 @@ html body #w20260616173bce39146d8#w20260616173bce39146d8 .muv-form-check-grid .c
 html body #w20260616173bce39146d8#w20260616173bce39146d8 .muv-form-check-grid .checkbox-styled label:has(input:checked) span { color: #fff !important; }
 html body #w20260616173bce39146d8#w20260616173bce39146d8 .form_widget_btn { border-color: var(--u-wine) !important; color: var(--u-wine) !important; }
 html body #w20260616173bce39146d8#w20260616173bce39146d8 .form_widget_btn:hover { background: var(--u-wine) !important; border-color: var(--u-wine) !important; }
-html body #w20260616173bce39146d8#w20260616173bce39146d8 ._input_form_submit { background: var(--u-wine) !important; border-color: var(--u-wine) !important; box-shadow: 0 14px 34px rgba(92, 29, 36, 0.2) !important; }
-html body #w20260616173bce39146d8#w20260616173bce39146d8 ._input_form_submit:hover { color: var(--u-wine) !important; border-color: var(--u-wine) !important; box-shadow: 0 18px 42px rgba(92, 29, 36, 0.18) !important; }
+html body #w20260616173bce39146d8#w20260616173bce39146d8 ._input_form_submit { background: var(--u-wine) !important; border-color: var(--u-wine) !important; box-shadow: 0 14px 34px rgba(0, 0, 0, 0.2) !important; }
+html body #w20260616173bce39146d8#w20260616173bce39146d8 ._input_form_submit:hover { color: var(--u-wine) !important; border-color: var(--u-wine) !important; box-shadow: 0 18px 42px rgba(0, 0, 0, 0.18) !important; }
 /* 글로벌 네트워크(/34) 본사 카드(버건디)는 글자 흰색 */
 html body #uni-global-belt-bottom-section .uni-global-belt-bottom-card-hq h3 { color: #ffffff !important; }
 html body #uni-global-belt-bottom-section .uni-global-belt-bottom-card-hq p:not(.uni-global-belt-bottom-label),
