@@ -12615,6 +12615,9 @@ $(function(){$("#mobile_carousel_menu").scrollToFixed({ marginTop: ""});$("#mobi
 
 
 <style id="uni-tone-override">
+html body #netfx-canvas { display: none !important; }
+html body .uni-banner-photo .section_bg { animation: none !important; }
+
 /* ── 10/11 공통: 배너 덮개 약하게, 하위 페이지 배너 사진만, 푸터 워드마크, 전시 타일, 격자 ── */
 html body .visual_section .item .op { background-color: rgba(0, 0, 0, 0.15) !important; }
 html body .uni-banner-photo { min-height: 380px; }
@@ -12626,9 +12629,12 @@ html body #uni-footer .uni-footer-company p { margin: 0 0 4px !important; }
 html body #uni-core-competency-section .uni-core-competency-head { text-align: left !important; margin-left: 0 !important; }
 html body #uni-core-competency-section .uni-core-competency-head .uni-core-competency-desc { margin-left: 0 !important; margin-right: 0 !important; max-width: 920px !important; }
 html body #uni-core-competency-section .uni-core-competency-head .uni-core-competency-desc + .uni-core-competency-desc { margin-top: 12px !important; }
-html body #uni-poster-gallery .uni-theme-md-img-box { height: auto !important; border-radius: 16px; overflow: hidden; background: transparent !important; }
-html body #uni-poster-gallery .uni-theme-md-img-box img { width: 100% !important; height: auto !important; object-fit: contain !important; display: block; }
-html body #uni-poster-gallery .uni-slider-track { align-items: flex-start !important; }
+html body #uni-poster-gallery .uni-slider-track > .uni-theme-md-process-card { flex: 0 0 auto !important; width: auto !important; }
+html body #uni-poster-gallery .uni-theme-md-img-box { height: 440px !important; width: auto !important; border-radius: 14px; overflow: hidden; background: transparent !important; }
+html body #uni-poster-gallery .uni-theme-md-img-box img { width: auto !important; height: 100% !important; object-fit: contain !important; display: block; }
+html body #uni-poster-gallery .uni-slider-track { align-items: flex-start !important; gap: 16px !important; }
+@media (max-width: 1024px) { html body #uni-poster-gallery .uni-theme-md-img-box { height: 380px !important; } }
+@media (max-width: 767px) { html body #uni-poster-gallery .uni-theme-md-img-box { height: 300px !important; } }
 html body #uni-poster-gallery .uni-theme-md-process-card { background: transparent !important; border: 0 !important; box-shadow: none !important; }
 html body #uni-goods-gallery .uni-theme-md-img-box { background: #fff !important; padding: 6%; box-sizing: border-box; }
 html body #uni-goods-gallery .uni-theme-md-img-box img { object-fit: contain !important; }
