@@ -6203,11 +6203,11 @@
 </style><div class="uni-post">
   <span class="cat">해외 전시</span>
   <h1>2021 중국 박람회 참가</h1>
-  <div class="date">2021.05 / 06</div>
-  <img src="assets/press_14.jpg" alt="2021 중국 박람회 참가">
+  <div class="date">2021.05–06 · 중국</div>
+  <img src="assets/tile_china2.jpg" alt="2021 중국 박람회 참가">
   <p>2021년 5월 중국 중부지역 무역투자박람회에 참가했습니다.</p>
   <p>같은 해 한국디자인진흥원과 한국무역협회가 주최·주관하고 문화체육관광부가 후원한 한류연계 우수상품 쇼케이스 & 상담회(중국)에도 참가했습니다.</p>
-  <a class="back" href="network.html">글로벌 네트워크</a> &nbsp; <a class="back" href="media.html">목록으로</a>
+  <a class="back" href="media.html">목록으로</a>
 </div></div>
     <!-- //카드형  -->
     
@@ -7801,6 +7801,23 @@ html body #quickMenu .whatsapp-btn:hover .q-icon-circle { background: #fff !impo
 
 /* 미리보기 전용: 아임웹 메뉴 초기화 스크립트가 안 돌아도 상단 메뉴 표시 (10/13) */
 #doz_header ._inline_menu_container { visibility: visible !important; }
+
+/* 한글 단어 단위 줄바꿈 (10/13) */
+html body :is(h1, h2, h3, h4, h5, h6, p, li, dt, dd, figcaption, label, td, th, .date) { word-break: keep-all; overflow-wrap: break-word; }
+/* 휴대폰 상단 메뉴 5개를 한 줄에 (10/13) */
+@media (max-width: 767px) {
+  html body ._mobile_table_nav_wrap { width: 100% !important; min-width: 0 !important; table-layout: auto !important; }
+  html body ._mobile_table_nav_wrap .nav-item { width: auto !important; }
+  html body ._mobile_table_nav_wrap .nav-item a { padding-left: 4px !important; padding-right: 4px !important; }
+  html body ._mobile_table_nav_wrap .nav-item .plain_name { font-size: 11.5px !important; letter-spacing: -0.01em !important; }
+}
+
+/* NEWS 글 제목 굵게 (10/13) */
+html body .uni-post h1 { font-weight: 700 !important; }
+
+/* 푸터 워드마크 상자 폭 맞춤 (10/13) */
+html body #uni-footer .uni-footer-inner { container-type: inline-size; }
+html body #uni-footer .uni-footer-wordmark { font-size: clamp(36px, 9.6vw, 180px); font-size: min(13.2cqi, 196px); overflow: visible; }
 </style>
 </body>
 </html>

@@ -6200,7 +6200,7 @@
   .uni-post img { width: 100%; border-radius: 16px; display: block; margin: 0 0 20px; }
   .uni-post .video { aspect-ratio: 16 / 9; background: #111111; border-radius: 16px; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 15px; margin: 0 0 20px; }
   .uni-post .back { display: inline-block; margin-top: 10px; padding: 12px 22px; border: 1px solid #111111; border-radius: 999px; color: #111111; font-weight: 700; text-decoration: none; }
-</style><div class="uni-post"> <span class="cat">해외 전시 · 영상</span> <h1>Kenya Buildcon 2025 현장 영상</h1> <div class="date">2025.06.12–14 · 케냐 나이로비 · 약 11분</div> <div class="video" style="aspect-ratio:auto;background:transparent;display:block"><video controls preload="none" playsinline poster="assets/press_18.jpg" aria-label="Kenya Buildcon 2025 현장 영상" style="width:100%;display:block;border-radius:20px;background:#000"><source src="assets/news_kenya_buildcon_2025.mp4" type="video/mp4"></video></div> <p>2025년 6월 12일부터 14일까지 케냐 나이로비에서 열린 건설·목재·전기 박람회 Kenya Buildcon International Expo(2회)의 현장 영상입니다. 아프리카 시장의 건설 자재, 목재, 태양광·전기 설비 기업과 바이어가 모였습니다.</p> <p>Kenya Wood, Kenya SEPL(Solar, Electric, Power &amp; Lights) 전시가 함께 열렸습니다.</p> <a class="back" href="exhibition_support.html">EXHIBITIONS</a> &nbsp; <a class="back" href="contact.html">참가 문의</a> &nbsp; <a class="back" href="media.html">목록으로</a>
+</style><div class="uni-post"> <span class="cat">해외 전시 · 영상</span> <h1>Kenya Buildcon 2025 현장 영상</h1> <div class="date">2025.06.12–14 · 케냐 나이로비 · 약 11분</div> <div class="video" style="aspect-ratio:auto;background:transparent;display:block"><video controls preload="none" playsinline poster="assets/press_18.jpg" aria-label="Kenya Buildcon 2025 현장 영상" style="width:100%;display:block;border-radius:20px;background:#000"><source src="assets/news_kenya_buildcon_2025.mp4" type="video/mp4"></video></div> <p>2025년 6월 12일부터 14일까지 케냐 나이로비에서 열린 건설·목재·전기 박람회 Kenya Buildcon International Expo(2회)의 현장 영상입니다. 아프리카 시장의 건설 자재, 목재, 태양광·전기 설비 기업과 바이어가 모였습니다.</p> <p>Kenya Wood, Kenya SEPL(Solar, Electric, Power &amp; Lights) 전시가 함께 열렸습니다.</p> <a class="back" href="media.html">목록으로</a>
 </div></div>
     <!-- //카드형  -->
     
@@ -7794,6 +7794,23 @@ html body #quickMenu .whatsapp-btn:hover .q-icon-circle { background: #fff !impo
 
 /* 미리보기 전용: 아임웹 메뉴 초기화 스크립트가 안 돌아도 상단 메뉴 표시 (10/13) */
 #doz_header ._inline_menu_container { visibility: visible !important; }
+
+/* 한글 단어 단위 줄바꿈 (10/13) */
+html body :is(h1, h2, h3, h4, h5, h6, p, li, dt, dd, figcaption, label, td, th, .date) { word-break: keep-all; overflow-wrap: break-word; }
+/* 휴대폰 상단 메뉴 5개를 한 줄에 (10/13) */
+@media (max-width: 767px) {
+  html body ._mobile_table_nav_wrap { width: 100% !important; min-width: 0 !important; table-layout: auto !important; }
+  html body ._mobile_table_nav_wrap .nav-item { width: auto !important; }
+  html body ._mobile_table_nav_wrap .nav-item a { padding-left: 4px !important; padding-right: 4px !important; }
+  html body ._mobile_table_nav_wrap .nav-item .plain_name { font-size: 11.5px !important; letter-spacing: -0.01em !important; }
+}
+
+/* NEWS 글 제목 굵게 (10/13) */
+html body .uni-post h1 { font-weight: 700 !important; }
+
+/* 푸터 워드마크 상자 폭 맞춤 (10/13) */
+html body #uni-footer .uni-footer-inner { container-type: inline-size; }
+html body #uni-footer .uni-footer-wordmark { font-size: clamp(36px, 9.6vw, 180px); font-size: min(13.2cqi, 196px); overflow: visible; }
 </style>
 </body>
 </html>

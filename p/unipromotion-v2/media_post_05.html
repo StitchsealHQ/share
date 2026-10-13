@@ -6203,11 +6203,11 @@
 </style><div class="uni-post">
   <span class="cat">해외 전시</span>
   <h1>2022 미국 올랜도 IAAPA Expo 참가</h1>
-  <div class="date">2022 미국 올랜도</div>
+  <div class="date">2022 · 미국 올랜도</div>
   <img src="assets/exhibition_iaapa_booth.jpg" alt="2022 IAAPA Expo 유니프로모션 부스">
   <p>세계 어트랙션 산업 박람회 IAAPA Expo(미국 올랜도)에 참가해 테마파크·전시 굿즈 기획과 생산 역량을 소개했습니다.</p>
   <p>부스에서는 레고랜드 코리아 리조트 등 라이선스 상품 사례와 함께 콘셉트 기획부터 생산, 납품까지 이어지는 원스톱 개발 과정을 선보였습니다.</p>
-  <a class="back" href="goods.html">글로벌 굿즈 & MD 기획</a> &nbsp; <a class="back" href="media.html">목록으로</a>
+  <a class="back" href="media.html">목록으로</a>
 </div></div>
     <!-- //카드형  -->
     
@@ -7801,6 +7801,23 @@ html body #quickMenu .whatsapp-btn:hover .q-icon-circle { background: #fff !impo
 
 /* 미리보기 전용: 아임웹 메뉴 초기화 스크립트가 안 돌아도 상단 메뉴 표시 (10/13) */
 #doz_header ._inline_menu_container { visibility: visible !important; }
+
+/* 한글 단어 단위 줄바꿈 (10/13) */
+html body :is(h1, h2, h3, h4, h5, h6, p, li, dt, dd, figcaption, label, td, th, .date) { word-break: keep-all; overflow-wrap: break-word; }
+/* 휴대폰 상단 메뉴 5개를 한 줄에 (10/13) */
+@media (max-width: 767px) {
+  html body ._mobile_table_nav_wrap { width: 100% !important; min-width: 0 !important; table-layout: auto !important; }
+  html body ._mobile_table_nav_wrap .nav-item { width: auto !important; }
+  html body ._mobile_table_nav_wrap .nav-item a { padding-left: 4px !important; padding-right: 4px !important; }
+  html body ._mobile_table_nav_wrap .nav-item .plain_name { font-size: 11.5px !important; letter-spacing: -0.01em !important; }
+}
+
+/* NEWS 글 제목 굵게 (10/13) */
+html body .uni-post h1 { font-weight: 700 !important; }
+
+/* 푸터 워드마크 상자 폭 맞춤 (10/13) */
+html body #uni-footer .uni-footer-inner { container-type: inline-size; }
+html body #uni-footer .uni-footer-wordmark { font-size: clamp(36px, 9.6vw, 180px); font-size: min(13.2cqi, 196px); overflow: visible; }
 </style>
 </body>
 </html>

@@ -6208,7 +6208,7 @@
   <p>인도 협력 공장의 봉제 라인과 검품 공정입니다.</p>
   <p>유니프로모션은 중국, 인도, 베트남, 인도네시아, 방글라데시, 이집트의 협력 공장과 연결되어 의류 대량 생산과 전략 생산을 수행합니다.</p>
   <img src="assets/main_apparel.jpg" alt="인도 협력 공장 검품 공정">
-  <a class="back" href="production.html">의류 전략 생산</a> &nbsp; <a class="back" href="media.html">목록으로</a>
+  <a class="back" href="media.html">목록으로</a>
 </div></div>
     <!-- //카드형  -->
     
@@ -7802,6 +7802,23 @@ html body #quickMenu .whatsapp-btn:hover .q-icon-circle { background: #fff !impo
 
 /* 미리보기 전용: 아임웹 메뉴 초기화 스크립트가 안 돌아도 상단 메뉴 표시 (10/13) */
 #doz_header ._inline_menu_container { visibility: visible !important; }
+
+/* 한글 단어 단위 줄바꿈 (10/13) */
+html body :is(h1, h2, h3, h4, h5, h6, p, li, dt, dd, figcaption, label, td, th, .date) { word-break: keep-all; overflow-wrap: break-word; }
+/* 휴대폰 상단 메뉴 5개를 한 줄에 (10/13) */
+@media (max-width: 767px) {
+  html body ._mobile_table_nav_wrap { width: 100% !important; min-width: 0 !important; table-layout: auto !important; }
+  html body ._mobile_table_nav_wrap .nav-item { width: auto !important; }
+  html body ._mobile_table_nav_wrap .nav-item a { padding-left: 4px !important; padding-right: 4px !important; }
+  html body ._mobile_table_nav_wrap .nav-item .plain_name { font-size: 11.5px !important; letter-spacing: -0.01em !important; }
+}
+
+/* NEWS 글 제목 굵게 (10/13) */
+html body .uni-post h1 { font-weight: 700 !important; }
+
+/* 푸터 워드마크 상자 폭 맞춤 (10/13) */
+html body #uni-footer .uni-footer-inner { container-type: inline-size; }
+html body #uni-footer .uni-footer-wordmark { font-size: clamp(36px, 9.6vw, 180px); font-size: min(13.2cqi, 196px); overflow: visible; }
 </style>
 </body>
 </html>
