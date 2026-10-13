@@ -7827,6 +7827,38 @@ html body #w20260616d04193d1ce9bc#w20260616d04193d1ce9bc .viewport-nav > li.drop
 html body #w20260616173bce39146d8#w20260616173bce39146d8 .privacy .checkbox-styled label, html body #w20260616173bce39146d8#w20260616173bce39146d8 .privacy .checkbox-styled label:has(input:checked) { background: transparent !important; border-color: transparent !important; color: var(--u-ink) !important; }
 html body #w20260616173bce39146d8#w20260616173bce39146d8 .privacy .checkbox-styled label:has(input:checked) span { color: var(--u-ink) !important; }
 html body #w20260616173bce39146d8#w20260616173bce39146d8 .privacy .checkbox-styled input[type=checkbox] { accent-color: var(--u-wine); }
+
+/* 문의 양식 배치 (10/13 확정) */
+html body #uni-contact-title-wrap { max-width: 960px !important; margin: 0 auto !important; }
+html body #uni-contact-title-wrap .uni-contact-title { font-size: 40px !important; margin-bottom: 14px !important; }
+html body #uni-contact-title-wrap .uni-contact-desc { font-size: 16px !important; }
+html body #w20260616173bce39146d8#w20260616173bce39146d8 .form-widget { max-width: 960px !important; margin: 0 auto !important; }
+html body #w20260616173bce39146d8#w20260616173bce39146d8 form { display: grid !important; grid-template-columns: repeat(6, minmax(0, 1fr)); column-gap: 16px; row-gap: 26px; }
+html body #w20260616173bce39146d8#w20260616173bce39146d8 form > input, html body #w20260616173bce39146d8#w20260616173bce39146d8 form > #input_form_token_obj { display: none !important; }
+html body #w20260616173bce39146d8#w20260616173bce39146d8 form > .form-group { grid-column: span 6; margin: 0 !important; }
+html body #w20260616173bce39146d8#w20260616173bce39146d8 form > .form-group:has(input[type=email]), html body #w20260616173bce39146d8#w20260616173bce39146d8 form > .form-group:has(.phonenumber_wrap) { grid-column: span 3; }
+html body #w20260616173bce39146d8#w20260616173bce39146d8 form > .form-group:has(input[type=file]) { grid-column: span 2; }
+html body #w20260616173bce39146d8#w20260616173bce39146d8 .control-label { font-size: 14px !important; font-weight: 600 !important; margin-bottom: 8px !important; }
+html body #w20260616173bce39146d8#w20260616173bce39146d8 .control-label small { font-size: 12px; font-weight: 400; color: #777; }
+html body #w20260616173bce39146d8#w20260616173bce39146d8 .form-control { min-height: 48px; }
+html body #w20260616173bce39146d8#w20260616173bce39146d8 .phonenumber_wrap { display: flex !important; align-items: center; gap: 6px; }
+html body #w20260616173bce39146d8#w20260616173bce39146d8 .phonenumber_wrap .form-control { flex: 1 1 0; min-width: 0; width: auto !important; }
+html body #w20260616173bce39146d8#w20260616173bce39146d8 .form-group:has(._checkbox) { display: grid !important; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+html body #w20260616173bce39146d8#w20260616173bce39146d8 .form-group:has(._checkbox) > .control-label { grid-column: 1 / -1; margin-bottom: 0 !important; }
+html body #w20260616173bce39146d8#w20260616173bce39146d8 .form-group:has(._checkbox) .checkbox { margin: 0 !important; }
+html body #w20260616173bce39146d8#w20260616173bce39146d8 .form-group:has(._checkbox) .checkbox label { width: 100%; min-height: 48px; margin: 0 !important; display: flex !important; align-items: center; justify-content: center; text-align: center; }
+html body #w20260616173bce39146d8#w20260616173bce39146d8 form textarea.form-control { min-height: 200px !important; }
+html body #w20260616173bce39146d8#w20260616173bce39146d8 .form-group:has(input[type=file]) .form_widget_btn { width: 100%; min-height: 48px; display: flex !important; align-items: center; justify-content: center; }
+html body #w20260616173bce39146d8#w20260616173bce39146d8 .privacy > .form-control { height: 110px !important; font-size: 12px !important; line-height: 1.6 !important; color: #666 !important; background: #F5F5F5 !important; border-color: #F5F5F5 !important; }
+html body #w20260616173bce39146d8#w20260616173bce39146d8 .form.text-center { margin-top: 32px !important; }
+html body #w20260616173bce39146d8#w20260616173bce39146d8 ._input_form_submit { min-width: 240px; }
+@media (max-width: 767px) {
+  html body #uni-contact-title-wrap .uni-contact-title { font-size: 28px !important; }
+  html body #w20260616173bce39146d8#w20260616173bce39146d8 form { row-gap: 22px; }
+  html body #w20260616173bce39146d8#w20260616173bce39146d8 form > .form-group:has(input[type=email]), html body #w20260616173bce39146d8#w20260616173bce39146d8 form > .form-group:has(.phonenumber_wrap), html body #w20260616173bce39146d8#w20260616173bce39146d8 form > .form-group:has(input[type=file]) { grid-column: span 6; }
+  html body #w20260616173bce39146d8#w20260616173bce39146d8 .form-group:has(._checkbox) { grid-template-columns: 1fr 1fr; }
+  html body #w20260616173bce39146d8#w20260616173bce39146d8 ._input_form_submit { width: 100%; }
+}
 </style>
 </body>
 </html>
