@@ -7477,7 +7477,7 @@
           </div>
           <div class="uni-certificate-text">
             <p>TRADEMARK REGISTRATION · 제40-1922397호</p>
-            <h4>상표등록 · STETS (제9류 이어폰 등)</h4>
+            <h4>상표등록 · STETS <span style="white-space:nowrap">(제9류 이어폰 등)</span></h4>
           </div>
         </article>
 
@@ -7487,7 +7487,7 @@
           </div>
           <div class="uni-certificate-text">
             <p>TRADEMARK REGISTRATION · 제40-1943603호</p>
-            <h4>상표등록 · STETS (제25류 스포츠 의류 등)</h4>
+            <h4>상표등록 · STETS <span style="white-space:nowrap">(제25류 스포츠 의류 등)</span></h4>
           </div>
         </article>
 
@@ -9080,6 +9080,12 @@ html body #quickMenu .quick-item.blog-btn { display: none !important; }
 /* ── 퀵메뉴 WhatsApp (10/8): 브랜드색 유지, 공통 hover 규칙에서 제외 ── */
 html body #quickMenu .whatsapp-btn:hover .q-icon-circle { background: #fff !important; color: #25D366 !important; border-color: #25D366 !important; }
 
+</style>
+<style id="uni-fix-1013">
+#uni-vision-certificate-section .uni-certificate-grid:not(.uni-ip-grid) { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
+#uni-vision-certificate-section .uni-certificate-text h4, #uni-vision-certificate-section .uni-certificate-text p { word-break: keep-all !important; }
+@media (max-width: 1024px) { #uni-vision-certificate-section .uni-certificate-grid:not(.uni-ip-grid) { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; } }
+@media (max-width: 767px) { #uni-vision-certificate-section .uni-certificate-grid:not(.uni-ip-grid) { grid-template-columns: 1fr !important; } }
 </style>
 </body>
 </html>
