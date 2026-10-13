@@ -6202,10 +6202,10 @@
   .uni-post .back { display: inline-block; margin-top: 10px; padding: 12px 22px; border: 1px solid #111111; border-radius: 999px; color: #111111; font-weight: 700; text-decoration: none; }
 </style><div class="uni-post">
   <span class="cat">언론 보도</span>
-  <h1>DEAL Show Daily 2023, 유니프로모션 소개 기사</h1>
+  <h1>DEAL Show Daily 2023, 유니프로모션 소개 기사</h1>
   <div class="date">2023.03.15 · 두바이</div>
   <img src="assets/press_deal_daily.jpg" alt="DEAL Show Daily 2023년 3월 15일자 유니프로모션 기사">
-  <p>두바이 DEAL 2023 전시회의 공식 일간지 DEAL Show Daily(2023년 3월 15일, Day 2)에 유니프로모션이 소개됐습니다.</p>
+  <p>두바이 DEAL 2023 전시회의 공식 일간지 DEAL Show Daily(2023년 3월 15일, Day 2)에 유니프로모션이 소개됐습니다.</p>
   <p>기사는 유니프로모션을 서울에 본사를 둔 맞춤형 디자인 머천다이징 솔루션 회사로, 디자인 개발부터 생산·유통, 공급망 관리까지 한 팀이 맡는다고 소개했습니다. 테마파크를 상징하는 대표 굿즈의 디자인과 기획을 담당한다는 내용도 실렸습니다.</p>
   <a class="back" href="media.html">목록으로</a>
 </div></div>
@@ -6227,7 +6227,7 @@
 <p class="uf-contact"><a href="mailto:admin@unipromotion.co.kr">admin@unipromotion.co.kr</a><a href="assets/UNIPROMOTION_company_profile_EN.pdf" download>회사소개서 다운로드</a></p>
 </div>
 <div class="uf-row uf-legal">
-<p>(주)유니프로모션<br>서울특별시 마포구 독막로 19길 42-12 (101)<br>사업자등록번호. 196-88-02743<br>대표자. 안예원<br>통신판매업신고. 2023-서울마포-2236</p>
+<p><span class="nw">(주)유니프로모션</span><br>서울특별시 마포구 독막로 19길 42-12 (101)<br>사업자등록번호. 196-88-02743<br>대표자. 안예원<br>통신판매업신고. 2023-서울마포-2236</p>
 <p class="uf-links"><a href="https://www.unipromotion.co.kr/?mode=privacy">개인정보처리방침</a><a href="https://www.unipromotion.co.kr/?mode=policy">이용약관</a><span>© 2026 UNIPROMOTION</span></p>
 </div>
 </div></footer>
@@ -7805,6 +7805,18 @@ html body #uni-footer .uf-links a { color: rgba(255,255,255,.72); text-decoratio
   html body #uni-footer .uf-nav a { font-size: 15px; }
   html body #uni-footer .uf-legal p { font-size: 12px; }
 }
+
+/* 줄바꿈 정리 2 (10/13) */
+html body :is(p, li, dd, figcaption) { text-wrap: pretty; }
+html body :is(h1, h2, h3, h4, h5) { text-wrap: balance; }
+html body .nw { white-space: nowrap; }
+@media (max-width: 767px) { html body br.br-pc { display: none; } }
+
+/* 글 보기 가로 넘침: 여백 위젯 줄 음수 여백 제거 (10/13) */
+html body #s2026061683bb9a3252817 .doz_row { margin-left: 0 !important; margin-right: 0 !important; }
+
+/* 전시 이름 줄바꿈 (10/13) */
+html body .uni-exh-tile h3 { text-wrap: wrap; }
 </style>
 </body>
 </html>

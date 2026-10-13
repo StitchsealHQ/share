@@ -7157,7 +7157,7 @@
 
     <div class="uni-ceo-greeting-text">
       <p>
-        반갑습니다. <strong>(주)유니프로모션 대표 안예원</strong>입니다.
+        반갑습니다. <strong><span class="nw">(주)유니프로모션</span> 대표 안예원</strong>입니다.
       </p>
 
       <p>
@@ -7177,12 +7177,12 @@
       </p>
 
       <p>
-        브랜드 오리지널리티와 공급망의 안전성이 곧 경쟁력이 되는 시대입니다. 유니프로모션이 귀사의 가장 확실하고 신뢰할 수 있는 글로벌 핵심 비즈니스 파트너가 되겠습니다. 
+        브랜드 오리지널리티와 공급망의 안전성이 곧 경쟁력이 되는 시대입니다. 유니프로모션이 귀사의 가장 확실하고 신뢰할 수 있는 글로벌 핵심 비즈니스 파트너가 되겠습니다. 
       </p>
     </div>
 
     <div class="uni-ceo-greeting-sign">
-      <span>(주)유니프로모션 대표</span>
+      <span><span class="nw">(주)유니프로모션</span> 대표</span>
       <strong>안예원</strong>
     </div>
 
@@ -7205,7 +7205,7 @@
 <p class="uf-contact"><a href="mailto:admin@unipromotion.co.kr">admin@unipromotion.co.kr</a><a href="assets/UNIPROMOTION_company_profile_EN.pdf" download>회사소개서 다운로드</a></p>
 </div>
 <div class="uf-row uf-legal">
-<p>(주)유니프로모션<br>서울특별시 마포구 독막로 19길 42-12 (101)<br>사업자등록번호. 196-88-02743<br>대표자. 안예원<br>통신판매업신고. 2023-서울마포-2236</p>
+<p><span class="nw">(주)유니프로모션</span><br>서울특별시 마포구 독막로 19길 42-12 (101)<br>사업자등록번호. 196-88-02743<br>대표자. 안예원<br>통신판매업신고. 2023-서울마포-2236</p>
 <p class="uf-links"><a href="https://www.unipromotion.co.kr/?mode=privacy">개인정보처리방침</a><a href="https://www.unipromotion.co.kr/?mode=policy">이용약관</a><span>© 2026 UNIPROMOTION</span></p>
 </div>
 </div></footer>
@@ -8774,6 +8774,15 @@ html body #uni-footer .uf-links a { color: rgba(255,255,255,.72); text-decoratio
   html body #uni-footer .uf-nav a { font-size: 15px; }
   html body #uni-footer .uf-legal p { font-size: 12px; }
 }
+
+/* 줄바꿈 정리 2 (10/13) */
+html body :is(p, li, dd, figcaption) { text-wrap: pretty; }
+html body :is(h1, h2, h3, h4, h5) { text-wrap: balance; }
+html body .nw { white-space: nowrap; }
+@media (max-width: 767px) { html body br.br-pc { display: none; } }
+
+/* 전시 이름 줄바꿈 (10/13) */
+html body .uni-exh-tile h3 { text-wrap: wrap; }
 </style>
 </body>
 </html>
