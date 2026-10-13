@@ -13011,6 +13011,11 @@ html body #uni-poster-gallery .uni-theme-md-img-box { height: auto !important; w
 html body #uni-poster-gallery .uni-theme-md-img-box img { width: auto !important; height: auto !important; max-width: 100% !important; max-height: 100% !important; object-fit: contain !important; border-radius: 6px; box-shadow: 0 6px 18px rgba(0,0,0,.10); }
 @media (max-width: 1024px) { html body #uni-poster-gallery .uni-slider-track > .uni-theme-md-process-card { flex-basis: calc((100% - 32px) / 3) !important; } }
 @media (max-width: 767px) { html body #uni-poster-gallery .uni-slider-track { gap: 12px !important; } html body #uni-poster-gallery .uni-slider-track > .uni-theme-md-process-card { flex-basis: calc((100% - 12px) / 2) !important; } }
+
+/* 포스터 배경판 제거 (10/13) */
+html body #uni-poster-gallery .uni-theme-md-process-card { box-shadow: none !important; background: transparent !important; border: 0 !important; border-radius: 0 !important; }
+html body #uni-poster-gallery .uni-theme-md-process-card::before, html body #uni-poster-gallery .uni-theme-md-process-card::after { display: none !important; content: none !important; }
+html body #uni-poster-gallery .uni-theme-md-img-box img { box-shadow: none !important; border-radius: 6px; }
 </style>
 <style id="uni-fix-1013">
 /* 하단 CTA와 푸터 사이 빈 섹션(흰 줄) 숨김 (아임웹: 섹션 삭제) */
