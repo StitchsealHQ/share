@@ -13003,6 +13003,14 @@ html body .uni-press h3 { margin: 0 !important; font-size: 17px; }
 
 /* 전시 이름 줄바꿈 (10/13) */
 html body .uni-exh-tile h3 { text-wrap: wrap; }
+
+/* 포스터 슬라이더 온전한 장수 (10/13) */
+html body #uni-poster-gallery .uni-slider-track { gap: 16px !important; padding: 4px 0 24px !important; margin: -4px 0 0 !important; align-items: stretch !important; }
+html body #uni-poster-gallery .uni-slider-track > .uni-theme-md-process-card { flex: 0 0 calc((100% - 64px) / 5) !important; width: auto !important; scroll-snap-align: start; }
+html body #uni-poster-gallery .uni-theme-md-img-box { height: auto !important; width: 100% !important; aspect-ratio: 3 / 4; display: flex !important; align-items: center; justify-content: center; border-radius: 0 !important; overflow: visible !important; background: transparent !important; }
+html body #uni-poster-gallery .uni-theme-md-img-box img { width: auto !important; height: auto !important; max-width: 100% !important; max-height: 100% !important; object-fit: contain !important; border-radius: 6px; box-shadow: 0 6px 18px rgba(0,0,0,.10); }
+@media (max-width: 1024px) { html body #uni-poster-gallery .uni-slider-track > .uni-theme-md-process-card { flex-basis: calc((100% - 32px) / 3) !important; } }
+@media (max-width: 767px) { html body #uni-poster-gallery .uni-slider-track { gap: 12px !important; } html body #uni-poster-gallery .uni-slider-track > .uni-theme-md-process-card { flex-basis: calc((100% - 12px) / 2) !important; } }
 </style>
 <style id="uni-fix-1013">
 /* 하단 CTA와 푸터 사이 빈 섹션(흰 줄) 숨김 (아임웹: 섹션 삭제) */
