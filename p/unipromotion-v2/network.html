@@ -7852,7 +7852,7 @@
       </div>
 
       <div class="uni-footer-contact">
-        <a href="contact.html">문의하기</a>
+        <span class="uni-footer-contact-label">CONTACT</span>
         <a href="mailto:admin@unipromotion.co.kr">admin@unipromotion.co.kr</a>
         <a href="assets/UNIPROMOTION_company_profile_EN.pdf" class="uni-footer-download" download>
           회사소개서 다운로드
@@ -9430,7 +9430,45 @@ html body :is(h1, h2, h3, h4, h5, h6, p, li, dt, dd, figcaption, label, td, th, 
 
 /* 푸터 워드마크 상자 폭 맞춤 (10/13) */
 html body #uni-footer .uni-footer-inner { container-type: inline-size; }
-html body #uni-footer .uni-footer-wordmark { font-size: clamp(36px, 9.6vw, 180px); font-size: min(13.2cqi, 196px); overflow: visible; }
+html body #uni-footer .uni-footer-wordmark { font-size: clamp(36px, 9.6vw, 180px); font-size: min(13.2cqi, 196px); overflow: visible; contain: inline-size; }
+
+/* 푸터 CONTACT 라벨 (10/13) */
+html body #uni-footer .uni-footer-contact-label { display: block; margin: 0 0 4px; font-size: 13px; line-height: 1.3; letter-spacing: 0.03em; font-weight: 900; color: #ffffff; }
+@media (max-width: 767px) { html body #uni-footer .uni-footer-contact-label { font-size: 12px; } }
 </style>
+<script id="uni-wordmark-fit">
+(function () {
+  function fit() {
+    var wm = document.querySelector('#uni-footer .uni-footer-wordmark');
+    if (!wm) return;
+    var ref = wm.parentElement.querySelector('.uni-footer-top') || wm.parentElement; // 아래 줄(UNIPROMOTION ~ 문의하기)
+    var box = ref.getBoundingClientRect().width;
+    if (!box) return;
+    wm.style.fontSize = '100px'; wm.style.marginLeft = '0px';
+    var r = document.createRange(); r.selectNodeContents(wm);
+    var adv = r.getBoundingClientRect().width;               // 100px 기준 글자 폭
+    var cs = getComputedStyle(wm), st = wm.querySelector('strong');
+    var ls = parseFloat(cs.letterSpacing) || 0;              // 마지막 글자 뒤 자간
+    var c = document.createElement('canvas').getContext('2d');
+    c.font = (st ? getComputedStyle(st).fontWeight : 800) + ' 100px ' + cs.fontFamily;
+    var mU = c.measureText('U');
+    c.font = cs.fontWeight + ' 100px ' + cs.fontFamily;
+    var mN = c.measureText('N');
+    var left = Math.max(0, -mU.actualBoundingBoxLeft);     // U 앞 여백
+    var right = Math.max(0, mN.width - mN.actualBoundingBoxRight) + ls; // N 뒤 여백
+    var ink = adv - left - right;
+    if (ink <= 0) return;
+    var k = box / ink;
+    wm.style.fontSize = (100 * k).toFixed(2) + 'px';
+    wm.style.marginLeft = (-left * k).toFixed(2) + 'px';
+  }
+  var t;
+  function run() { clearTimeout(t); t = setTimeout(fit, 60); }
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+  window.addEventListener('load', fit);
+  window.addEventListener('resize', run);
+  fit();
+})();
+</script>
 </body>
 </html>
