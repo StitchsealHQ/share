@@ -8892,6 +8892,15 @@ html body #w20260616173bce39146d8#w20260616173bce39146d8 ._input_form_submit { m
   html body #w20260616173bce39146d8#w20260616173bce39146d8 .form-group:has(._checkbox) { grid-template-columns: 1fr 1fr; }
   html body #w20260616173bce39146d8#w20260616173bce39146d8 ._input_form_submit { width: 100%; }
 }
+
+/* 문의 첨부 한 칸 + 파일 추가 (10/13) */
+html body #w20260616173bce39146d8#w20260616173bce39146d8 form > .form-group:has(input[type=file]) { grid-column: span 6 !important; }
+html body #w20260616173bce39146d8#w20260616173bce39146d8 form > .form-group:has(input[type=file]) + .form-group:has(input[type=file]) { margin-top: -16px !important; }
+html body #w20260616173bce39146d8#w20260616173bce39146d8 form > .form-group:has(input[type=file]) + .form-group:has(input[type=file]) > .control-label { display: none !important; }
+html body #w20260616173bce39146d8#w20260616173bce39146d8 form > .form-group.uni-file-hidden { display: none !important; }
+html body #w20260616173bce39146d8#w20260616173bce39146d8 form > .uni-file-add { grid-column: span 6; justify-self: start; margin-top: -14px; padding: 6px 2px; border: 0; background: none;
+  font-size: 14px; font-weight: 600; color: var(--u-ink); cursor: pointer; text-decoration: underline; text-underline-offset: 4px; }
+html body #w20260616173bce39146d8#w20260616173bce39146d8 form > .uni-file-add:hover { opacity: .6; }
 </style>
 </body>
 </html>
