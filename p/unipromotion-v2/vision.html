@@ -7415,7 +7415,7 @@
             <p>WOMEN-OWNED BUSINESS</p>
             <h4>여성기업 확인</h4>
           </div>
-        </article><article class="uni-certificate-card"><div class="uni-certificate-img-box"><img src="assets/cert_04.jpg" alt="산업디자인전문회사 신고확인증"></div><div class="uni-certificate-text"><p>INDUSTRIAL DESIGN FIRM · 2024.05</p><h4>산업디자인전문회사 신고확인증</h4></div></article>
+        </article><article class="uni-certificate-card"><div class="uni-certificate-img-box"><img src="assets/cert_04.jpg" alt="산업디자인전문회사 신고확인증"></div><div class="uni-certificate-text"><p>INDUSTRIAL DESIGN FIRM · 2024.05</p><h4>산업디자인전문회사 신고확인증</h4></div></article> <article class="uni-certificate-card"> <div class="uni-certificate-img-box"> <img src="assets/press_04.jpg" alt="IAAPA 회원 증서"> </div> <div class="uni-certificate-text"> <p>IAAPA MEMBER · 2022.09</p> <h4>IAAPA 회원사</h4> </div> </article>
 
       </div>
 
@@ -7515,7 +7515,7 @@
 <p class="uf-contact"><a href="mailto:admin@unipromotion.co.kr">admin@unipromotion.co.kr</a><a href="assets/UNIPROMOTION_company_profile_EN.pdf" download>회사소개서 다운로드</a></p>
 </div>
 <div class="uf-row uf-legal">
-<p><span class="nw">(주)유니프로모션</span><br>서울특별시 마포구 독막로 19길 42-12 (101)<br>사업자등록번호. 196-88-02743<br>대표자. 안예원<br>통신판매업신고. 2023-서울마포-2236</p>
+<p><span class="nw">(주)유니프로모션</span><br>서울특별시 마포구 독막로 19길 42-12 (101)<br>사업자등록번호 196-88-02743<br>대표자 안예원<br>통신판매업신고 2023-서울마포-2236</p>
 <p class="uf-links"><a href="https://www.unipromotion.co.kr/?mode=privacy">개인정보처리방침</a><a href="https://www.unipromotion.co.kr/?mode=policy">이용약관</a><span>© 2026 UNIPROMOTION</span></p>
 </div>
 </div></footer>
@@ -9093,9 +9093,17 @@ html body .nw { white-space: nowrap; }
 
 /* 전시 이름 줄바꿈 (10/13) */
 html body .uni-exh-tile h3 { text-wrap: wrap; }
+
+/* 피드백 13건 (10/13 저녁) */
+@media (max-width: 1024px) { html body #uni-vision-certificate-section .uni-certificate-grid:not(.uni-ip-grid) { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; } }
+@media (max-width: 767px) { html body #uni-vision-certificate-section .uni-certificate-grid:not(.uni-ip-grid) { grid-template-columns: 1fr !important; } }
+
+/* 피드백 13건 보완 (10/13 저녁) */
+@media (min-width: 1025px) { html body #uni-vision-certificate-section .uni-certificate-grid:not(.uni-ip-grid) .uni-certificate-text h4 { font-size: 18px !important; } }
+@media (min-width: 1025px) and (max-width: 1279px) { html body #uni-vision-certificate-section .uni-certificate-grid:not(.uni-ip-grid) .uni-certificate-text h4 { font-size: 15px !important; } }
 </style>
 <style id="uni-fix-1013">
-#uni-vision-certificate-section .uni-certificate-grid:not(.uni-ip-grid) { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
+#uni-vision-certificate-section .uni-certificate-grid:not(.uni-ip-grid) { grid-template-columns: repeat(5, minmax(0, 1fr)) !important; }
 #uni-vision-certificate-section .uni-certificate-text h4, #uni-vision-certificate-section .uni-certificate-text p { word-break: keep-all !important; }
 @media (max-width: 1024px) { #uni-vision-certificate-section .uni-certificate-grid:not(.uni-ip-grid) { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; } }
 @media (max-width: 767px) { #uni-vision-certificate-section .uni-certificate-grid:not(.uni-ip-grid) { grid-template-columns: 1fr !important; } }
