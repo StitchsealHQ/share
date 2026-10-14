@@ -6171,6 +6171,76 @@
   <h2 class="uni-media-title">유니프로모션의 글로벌 도약과 최신 소식을 전합니다</h2>
   <p class="uni-media-desc">세계 각국에서 펼쳐지는 비즈니스 현장과 새로운 프로젝트 이야기를 가장 빠르게 만나보세요.</p>
 </div>
+<style>
+  .uni-press { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+  .uni-press a { display: flex; flex-direction: column; background: #fff; border: 1px solid #E3E3E3; border-radius: 22px; overflow: hidden; text-decoration: none; color: #111111; transition: transform 200ms cubic-bezier(0.23, 1, 0.32, 1), box-shadow 200ms ease; }
+  .uni-press a:hover { transform: translateY(-4px); box-shadow: 0 18px 48px rgba(0, 0, 0, 0.10); }
+  .uni-press .img { aspect-ratio: 3 / 2; background: #EDEDED; }
+  .uni-press .img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .uni-press .txt { padding: 20px 22px 24px; }
+  .uni-press .cat { display: inline-block; font-size: 12px; font-weight: 700; color: #111111; letter-spacing: 0.04em; margin-bottom: 10px; }
+  .uni-press .date { font-size: 12px; color: rgba(17, 17, 17,0.55); margin-left: 8px; }
+  .uni-press h3 { margin: 0 0 8px; font-size: 18px; line-height: 1.4; font-weight: 700; letter-spacing: -0.02em; word-break: keep-all; }
+  .uni-press p { margin: 0; font-size: 14px; line-height: 1.65; color: rgba(17, 17, 17,0.72); word-break: keep-all; }
+  @media (max-width: 1024px) { .uni-press { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; } }
+  @media (max-width: 767px) { .uni-press { grid-template-columns: 1fr !important; gap: 16px; } }
+  .uni-post { max-width: 860px; margin: 0 auto; color: #111111; }
+  .uni-post .cat { font-size: 13px; font-weight: 700; color: #111111; }
+  .uni-post h1 { font-size: 34px; line-height: 1.3; letter-spacing: -0.03em; margin: 10px 0 8px; word-break: keep-all; }
+  .uni-post .date { font-size: 14px; color: rgba(17, 17, 17,0.55); padding-bottom: 22px; border-bottom: 1px solid #E3E3E3; margin-bottom: 30px; }
+  .uni-post p { font-size: 17px; line-height: 1.8; margin: 0 0 20px; word-break: keep-all; }
+  .uni-post img { width: 100%; border-radius: 16px; display: block; margin: 0 0 20px; }
+  .uni-post .video { aspect-ratio: 16 / 9; background: #111111; border-radius: 16px; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 15px; margin: 0 0 20px; }
+  .uni-post .back { display: inline-block; margin-top: 10px; padding: 12px 22px; border: 1px solid #111111; border-radius: 999px; color: #111111; font-weight: 700; text-decoration: none; }
+</style>
+<style>
+/* NEWS 게시판 (10/14): 아임웹 목록·글 보기를 미리보기 카드(.uni-press)·본문(.uni-post)과 같게 */
+#w20260616fecf23912dc7e .list-style[data-uni] { margin-top: 0 !important; }
+#w20260616fecf23912dc7e .list-style[data-uni] > :not(style):not(.uni-press) { display: none !important; }
+#w20260616fecf23912dc7e .li_footer { display: none !important; }
+#w20260616fecf23912dc7e .board_view > :not(.board_txt_area) { display: none !important; }
+#w20260616fecf23912dc7e .board_view .file_area { display: none !important; }
+#w20260616fecf23912dc7e .board_view .board_txt_area { padding: 0 !important; }
+#w20260616fecf23912dc7e .board_view .board_txt_area > div { margin: 0 !important; }
+#w20260616fecf23912dc7e .board_view .uni-post img { display: block !important; margin: 0 0 20px !important; max-width: 100% !important; }
+#w20260616fecf23912dc7e .board_view .uni-post .back { display: inline-block !important; margin-top: 10px !important; padding: 12px 22px !important; }
+</style>
+<script>
+(function () {
+  var W = '#w20260616fecf23912dc7e';
+  var FIX = {
+    '[모집] 2026 SGI MENA': { alt: 'SGI MENA 2026' },
+    '[모집] 2027 케냐 빌드콘': { alt: 'Kenya Buildcon 2025', h3: '[모집] 2027 케냐 빌드콘(Kenya Buildcon)&nbsp;—<br>동아프리카 건설·건축 시장 진출을 위한 한국 기업 참가 지원 파트너, 유니프로모션' },
+    '[공지] (주)유니프로모션, 팍스경제TV': { alt: '유니프로모션 소개 영상' },
+    '[회사소개] (주)유니프로모션, 두바이 딜 쇼': { alt: 'DEAL Show Daily 2023 유니프로모션 소개 기사' }
+  };
+  function esc(t) { var d = document.createElement('div'); d.textContent = t; return d.innerHTML; }
+  function fix(title) { for (var k in FIX) if (title.indexOf(k) === 0) return FIX[k]; return {}; }
+  function build() {
+    var lst = document.querySelector(W + ' .list-style');
+    if (!lst || lst.getAttribute('data-uni')) return;
+    var items = [].slice.call(lst.querySelectorAll('._post_item_wrap'));
+    if (!items.length) return;
+    var html = items.map(function (it) {
+      var a = it.querySelector('a.post_link_wrap');
+      var th = it.querySelector('.card-thumbnail-wrap');
+      var src = th ? (th.style.backgroundImage.match(/url\(["']?(.*?)["']?\)/) || [])[1] || '' : '';
+      var t = it.querySelector('.title-block').cloneNode(true);
+      [].slice.call(t.querySelectorAll('em, span')).forEach(function (x) { x.remove(); });
+      var title = t.textContent.replace(/\s+/g, ' ').trim();
+      var f = fix(title);
+      return '<a href="' + a.getAttribute('href') + '"><div class="img"><img src="' + src + '" alt="' + esc(f.alt || title) + '"></div><div class="txt"><h3>' + (f.h3 || esc(title)) + '</h3></div></a>';
+    }).join('');
+    var box = document.createElement('div');
+    box.className = 'uni-press';
+    box.innerHTML = html;
+    lst.insertBefore(box, lst.firstChild);
+    lst.setAttribute('data-uni', '1');
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', build); else build();
+})();
+</script>
+
 
 </div></div></div></div></div></main></div><div  doz_type="section" class="section_wrap  pc_section       side_basic     "  id="s2026061683bb9a3252817" style="padding-top:5px; padding-bottom:5px; ; ; ;" doz_change_mobile="N" doz_aside="N" doz_side_width="230" doz_side_margin="0" doz_extend="N" doz_mobile_section="N" doz_mobile_hide="N" doz_header_repeat="N" doz_footer_repeat="N" doz_category="default"><div class="section_bg _section_bg _interactive_bg  " style="   background-size:cover; background-repeat: no-repeat; position: absolute;left: 0;top: 0;right: 0; bottom: 0;"></div><div class="section_bg_color _section_bg_color" style="  position: absolute;left: 0;top: 0;right: 0; bottom: 0;"></div>
 		
