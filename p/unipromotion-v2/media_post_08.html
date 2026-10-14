@@ -6195,7 +6195,7 @@
 </style>
 <style>
 /* NEWS 게시판 (10/14): 아임웹 목록·글 보기를 미리보기 카드(.uni-press)·본문(.uni-post)과 같게 */
-#w20260616fecf23912dc7e .list-style[data-uni] { margin-top: 0 !important; }
+#w20260616fecf23912dc7e .list-style[data-uni] { margin-top: 0 !important; margin-left: 0 !important; margin-right: 0 !important; }
 #w20260616fecf23912dc7e .list-style[data-uni] > :not(style):not(.uni-press) { display: none !important; }
 #w20260616fecf23912dc7e .li_footer { display: none !important; }
 #w20260616fecf23912dc7e .board_view > :not(.board_txt_area) { display: none !important; }
@@ -7886,7 +7886,7 @@ html body .nw { white-space: nowrap; }
 @media (max-width: 767px) { html body br.br-pc { display: none; } }
 
 /* 글 보기 가로 넘침: 여백 위젯 줄 음수 여백 제거 (10/13) */
-html body #s2026061683bb9a3252817 .doz_row { margin-left: 0 !important; margin-right: 0 !important; }
+html body #s2026061683bb9a3252817:has(.uni-post) .inside > .doz_row { margin-left: 0 !important; margin-right: 0 !important; }
 
 /* 전시 이름 줄바꿈 (10/13) */
 html body .uni-exh-tile h3 { text-wrap: wrap; }
