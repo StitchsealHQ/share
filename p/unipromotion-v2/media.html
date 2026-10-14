@@ -6219,7 +6219,7 @@
 <p class="uf-contact"><a href="mailto:admin@unipromotion.co.kr">admin@unipromotion.co.kr</a><a href="assets/UNIPROMOTION_company_profile_EN.pdf" download>회사소개서 다운로드</a></p>
 </div>
 <div class="uf-row uf-legal">
-<p><span class="nw">(주)유니프로모션</span><br>서울특별시 마포구 독막로 19길 42-12 (101)<br>사업자등록번호 196-88-02743<br>대표자 안예원<br>통신판매업신고 2023-서울마포-2236</p><p>AUSTRALIA OFFICE<br>Sydney, New South Wales, Australia 2153<br>NETHERLANDS OFFICE<br>Amsterdam, Netherlands 6252 GA</p>
+<p><span class="nw">(주)유니프로모션</span><br>서울특별시 마포구 독막로 19길 42-12 (101)<br>사업자등록번호 196-88-02743<br>대표자 안예원<br>통신판매업신고 2023-서울마포-2236</p><p><span class="uf-office">AUSTRALIA OFFICE<br>Sydney, New South Wales, Australia 2153</span><span class="uf-office">NETHERLANDS OFFICE<br>Amsterdam, Netherlands 6252 GA</span></p>
 <p class="uf-links"><a href="https://www.unipromotion.co.kr/?mode=privacy">개인정보처리방침</a><a href="https://www.unipromotion.co.kr/?mode=policy">이용약관</a><span>© 2026 UNIPROMOTION</span></p>
 </div>
 </div></footer>
@@ -7879,6 +7879,11 @@ html body .uni-post ul ul { margin: 8px 0 4px !important; }
 html body .uni-post ul ul li { font-size: 16px; margin-bottom: 4px; }
 html body .uni-post ul ul li::before { width: 4px; height: 1px; top: .9em; }
 @media (max-width: 767px) { html body .uni-post ul ul li { font-size: 14px; } }
+
+/* 푸터 해외 사무소 간격 (10/14) */
+#uni-footer .uf-legal .uf-office { display: block; }
+#uni-footer .uf-legal .uf-office + .uf-office { margin-top: 14px; }
+@media (max-width: 767px) { #uni-footer .uf-legal .uf-office + .uf-office { margin-top: 12px; } }
 </style>
 </body>
 </html>
