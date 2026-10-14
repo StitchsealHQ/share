@@ -6604,7 +6604,19 @@
       if (h.length <= 1) b.style.display = 'none';
     });
   }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
+  function uniFormText() {
+    var f = document.querySelector('[data-widget-type="form"] form');
+    if (!f) return;
+    var t = f.querySelector('.form-group input[type=text]');
+    if (t && !t.placeholder) t.placeholder = '예) 유니프로모션 / 홍길동';
+    var e = f.querySelector('[id^="email_"] input');
+    if (e) { e.type = 'email'; e.placeholder = 'name@company.com'; e.autocomplete = 'email'; }
+    [].slice.call(f.querySelectorAll('.control-label')).forEach(function (l) {
+      if (l.textContent.trim() === '문의 분야' && !l.querySelector('small')) l.insertAdjacentHTML('beforeend', ' <small>(여러 개 선택 가능)</small>');
+    });
+  }
+  function run() { init(); uniFormText(); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run); else run();
 })();
 </script>
 
