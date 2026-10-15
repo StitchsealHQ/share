@@ -6596,7 +6596,7 @@
     f.setAttribute('data-uni-file', '1');
     g.slice(1).forEach(function (x) { x.classList.add('uni-file-hidden'); });
     var b = document.createElement('button');
-    b.type = 'button'; b.className = 'uni-file-add'; b.textContent = '+ 파일 추가';
+    b.type = 'button'; b.className = 'uni-file-add'; b.textContent = '+ Add File';
     g[g.length - 1].parentNode.insertBefore(b, g[g.length - 1].nextSibling);
     b.addEventListener('click', function () {
       var h = g.filter(function (x) { return x.classList.contains('uni-file-hidden'); });
