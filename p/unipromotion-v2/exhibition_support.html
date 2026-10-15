@@ -6285,8 +6285,8 @@
 </div></div></div><div data-type="grid" class="inline-col"><div data-type="widget" id="w20260616f54bbf2254779" class="inline-widget"><div class="_widget_data" data-widget-type="inline_logo">
 <div class="widget inline_widget logo  text_inline" id="logo_w20260616f54bbf2254779">
 			<div class="img_box _img_box" style="position: relative;">
-			<a class="" href="index.html" ><span class="sr-only">주식회사 유니프로모션</span>			<img class="normal_logo _front_img" src="https://cdn.imweb.me/thumbnail/20260622/f5cbd1721d3bb.png" alt="주식회사 유니프로모션" width="255.754385965" style="max-width: 100%;height: auto; image-rendering: -webkit-optimize-contrast;">
-			<img class="scroll_logo fixed_transform" src="https://cdn.imweb.me/thumbnail/20260622/f5cbd1721d3bb.png" alt="주식회사 유니프로모션" width="255.754385965" style="max-width: 100%;height: auto; image-rendering: -webkit-optimize-contrast;">
+			<a class="" href="index.html" ><span class="sr-only">주식회사 유니프로모션</span>			<img class="normal_logo _front_img" src="https://cdn.imweb.me/thumbnail/20261014/f6b3bd41e4a3a.png" alt="주식회사 유니프로모션" width="255.754385965" style="max-width: 100%;height: auto; image-rendering: -webkit-optimize-contrast;">
+			<img class="scroll_logo fixed_transform" src="https://cdn.imweb.me/thumbnail/20261014/f6b3bd41e4a3a.png" alt="주식회사 유니프로모션" width="255.754385965" style="max-width: 100%;height: auto; image-rendering: -webkit-optimize-contrast;">
 			</a>
 		</div>
 		</div>
@@ -6429,8 +6429,8 @@
 </div></div></div></div><div data-type="col-group" data-col-group="center" class="inline-col-group inline-col-group-center"><div data-type="grid" class="inline-col"><div data-type="widget" id="w20260616f8a382da637fe" class="inline-widget"><div class="_widget_data" data-widget-type="inline_logo">
 <div class="widget inline_widget logo  text_inline" id="logo_w20260616f8a382da637fe">
 			<div class="img_box _img_box" style="position: relative;">
-			<a class="" href="index.html" ><span class="sr-only">주식회사 유니프로모션</span>			<img class="normal_logo _front_img" src="https://cdn.imweb.me/thumbnail/20260622/9e6bfa6a6d01a.png" alt="주식회사 유니프로모션" width="172.807017544" style="max-width: 100%;height: auto; ">
-			<img class="scroll_logo fixed_transform" src="https://cdn.imweb.me/thumbnail/20260622/9e6bfa6a6d01a.png" alt="주식회사 유니프로모션" width="172.807017544" style="max-width: 100%;height: auto; ">
+			<a class="" href="index.html" ><span class="sr-only">주식회사 유니프로모션</span>			<img class="normal_logo _front_img" src="https://cdn.imweb.me/thumbnail/20261014/801a7587f971b.png" alt="주식회사 유니프로모션" width="172.807017544" style="max-width: 100%;height: auto; ">
+			<img class="scroll_logo fixed_transform" src="https://cdn.imweb.me/thumbnail/20261014/801a7587f971b.png" alt="주식회사 유니프로모션" width="172.807017544" style="max-width: 100%;height: auto; ">
 			</a>
 		</div>
 		</div>
@@ -8195,6 +8195,8 @@ html body #s20260616ee4493c1fc600 ._section_bg_color, html body #s20260616549a38
 .uni-lang a.on { color: #111111 !important; font-weight: 700; }
 .uni-lang a:hover { color: #111111 !important; }
 .uni-lang i { color: #CFCFCF; font-style: normal; }
+.uni-lang-m { margin-right: 12px; font-size: 12px; gap: 5px; }
+.inline-col-group-right .inline-col:has(.uni-lang-m) { display: flex; align-items: center; }
 </style>
 <script>
 (function () {
@@ -8212,20 +8214,32 @@ html body #s20260616ee4493c1fc600 ._section_bg_color, html body #s20260616549a38
     for (var k in PATHS) if (PATHS[k] === path) { isEn = true; kr = k; enUrl = path; }
     return { en: isEn, kr: kr + location.search, enUrl: enUrl + (isEn ? location.search : '') };
   }
+  function make(pr, cls) {
+    var box = document.createElement('span');
+    box.className = 'uni-lang' + (cls ? ' ' + cls : '');
+    box.innerHTML = '<a href="' + pr.kr + '"' + (pr.en ? '' : ' class="on"') + '>KR</a><i>|</i><a href="' + pr.enUrl + '"' + (pr.en ? ' class="on"' : '') + '>EN</a>';
+    return box;
+  }
   function add() {
     var pr = pair();
+    // PC 헤더: '문의하기/Contact Us' 버튼 왼쪽
     [].slice.call(document.querySelectorAll('.inline-btn-item')).forEach(function (item) {
       var t = (item.textContent || '').trim();
-      if (!/^(문의하기|Contact Us)$/.test(t) || item.previousElementSibling && item.previousElementSibling.className === 'uni-lang') return;
-      var box = document.createElement('span');
-      box.className = 'uni-lang';
-      box.innerHTML = '<a href="' + pr.kr + '"' + (pr.en ? '' : ' class="on"') + '>KR</a><i>|</i><a href="' + pr.enUrl + '"' + (pr.en ? ' class="on"' : '') + '>EN</a>';
-      item.parentNode.insertBefore(box, item);
+      if (!/^(문의하기|Contact Us)$/.test(t) || item.parentNode.querySelector('.uni-lang')) return;
+      item.parentNode.insertBefore(make(pr), item);
+    });
+    // 휴대폰 헤더: 검색 아이콘 왼쪽
+    [].slice.call(document.querySelectorAll('[data-widget-type="inline_search_btn"]')).forEach(function (sw) {
+      var g = sw.closest('.inline-col-group-right'), col = g && g.querySelector('.inline-col');
+      if (!col || col.querySelector('.uni-lang')) return;
+      g.style.width = 'auto';
+      col.insertBefore(make(pr, 'uni-lang-m'), col.firstChild);
     });
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', add); else add();
 })();
 </script>
+
 
 </body>
 </html>
