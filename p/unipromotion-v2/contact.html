@@ -8523,5 +8523,44 @@ html body #s20260616ee4493c1fc600 .section_bg, html body #s20260616549a38004f747
 html body #s20260616ee4493c1fc600, html body #s20260616549a38004f747, html body #s20260616f8c1330d6ae64, html body #s20260616d93290be46031, html body #s20260616af71ac94229d1, html body #s20260616cbf1dcffece75, html body #s2026061668919b919588d, html body #s202606167bb7fe88e700f { background-color: rgba(0, 0, 0, 0.22) !important; }
 html body #s20260616ee4493c1fc600 ._section_bg_color, html body #s20260616549a38004f747 ._section_bg_color, html body #s20260616f8c1330d6ae64 ._section_bg_color, html body #s20260616d93290be46031 ._section_bg_color, html body #s20260616af71ac94229d1 ._section_bg_color, html body #s20260616cbf1dcffece75 ._section_bg_color, html body #s2026061668919b919588d ._section_bg_color, html body #s202606167bb7fe88e700f ._section_bg_color { background-color: rgba(0, 0, 0, 0.22) !important; }
 </style>
+<!-- KR/EN 전환 (10/15): 헤더 '문의하기/Contact Us' 버튼 왼쪽에 KR | EN 추가. 국문·영문 공통 -->
+<style>
+.uni-lang { display: inline-flex; align-items: center; gap: 6px; margin-right: 16px; font-family: 'Pretendard', 'Noto Sans KR', Arial, sans-serif; font-size: 13px; letter-spacing: 0.04em; vertical-align: middle; }
+.uni-lang a { color: #8A8A8A !important; text-decoration: none !important; font-weight: 500; }
+.uni-lang a.on { color: #111111 !important; font-weight: 700; }
+.uni-lang a:hover { color: #111111 !important; }
+.uni-lang i { color: #CFCFCF; font-style: normal; }
+</style>
+<script>
+(function () {
+  // 미리보기: ceo.html ↔ en_ceo.html / 아임웹: 주소표 PATHS (영문 페이지 만든 뒤 채움)
+  var PATHS = { '/': '/en', '/31': '/en-ceo', '/33': '/en-vision', '/34': '/en-network', '/30': '/en-production',
+                '/26': '/en-goods', '/24': '/en-exhibition', '/15': '/en-contact', '/603586623': '/en-news' };
+  function pair() {
+    var p = location.pathname, file = p.split('/').pop();
+    if (/\.html$/.test(file)) {
+      var en = /^en_/.test(file), base = en ? file.slice(3) : file;
+      var dir = p.slice(0, p.length - file.length);
+      return { en: en, kr: dir + base, enUrl: dir + 'en_' + base };
+    }
+    var path = p.replace(/\/$/, '') || '/', isEn = false, kr = path, enUrl = PATHS[path] || '/en';
+    for (var k in PATHS) if (PATHS[k] === path) { isEn = true; kr = k; enUrl = path; }
+    return { en: isEn, kr: kr + location.search, enUrl: enUrl + (isEn ? location.search : '') };
+  }
+  function add() {
+    var pr = pair();
+    [].slice.call(document.querySelectorAll('.inline-btn-item')).forEach(function (item) {
+      var t = (item.textContent || '').trim();
+      if (!/^(문의하기|Contact Us)$/.test(t) || item.previousElementSibling && item.previousElementSibling.className === 'uni-lang') return;
+      var box = document.createElement('span');
+      box.className = 'uni-lang';
+      box.innerHTML = '<a href="' + pr.kr + '"' + (pr.en ? '' : ' class="on"') + '>KR</a><i>|</i><a href="' + pr.enUrl + '"' + (pr.en ? ' class="on"' : '') + '>EN</a>';
+      item.parentNode.insertBefore(box, item);
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', add); else add();
+})();
+</script>
+
 </body>
 </html>
