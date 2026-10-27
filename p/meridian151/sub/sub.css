@@ -23,7 +23,7 @@ button{font:inherit;color:inherit}
 .hd-top{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:64px;padding:0 var(--side)}
 .hd-l,.hd-r{display:flex;align-items:center;gap:20px;text-transform:uppercase;letter-spacing:.06em}
 .hd-r{justify-content:flex-end}
-.logo{font-family:var(--display);font-weight:500;font-size:28px;line-height:1;letter-spacing:-.03em;text-transform:lowercase;white-space:nowrap}
+.logo{font-family:var(--display);font-weight:500;font-size:32px;line-height:1;letter-spacing:-.03em;text-transform:lowercase;white-space:nowrap}
 .nav{display:flex;justify-content:center;gap:30px;padding:0 var(--side) 16px;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
 .nav a[aria-current="page"]{text-decoration:underline;text-underline-offset:3px}
 select{font:inherit;text-transform:uppercase;letter-spacing:.06em;border:0;background:transparent;color:inherit;padding:0;cursor:pointer}
@@ -206,7 +206,7 @@ main.flat{padding-bottom:0}
   .hd-top{height:54px;grid-template-columns:auto 1fr auto}
   .menu-btn{display:flex}
   .hide-sm{display:none}
-  .logo{text-align:center;font-size:22px}
+  .logo{text-align:center;font-size:25px}
   .nav{display:none}
   .hd.open .nav{display:flex;flex-direction:column;gap:0;padding:0 var(--side) 8px}
   .hd.open .nav a{padding:12px 0;border-top:1px solid var(--line)}
