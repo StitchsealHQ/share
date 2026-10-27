@@ -47,16 +47,6 @@ main{display:flex;flex-direction:column;gap:var(--section)}
 .lead-cap p{margin:0;font-size:13px;line-height:20px;color:var(--text2)}
 .line-link{align-self:flex-start;border-bottom:1px solid var(--black);padding-bottom:2px}
 
-/* 분류 목록: SSENSE의 왼쪽 메뉴를 본문으로 옮겨 큰 글자 줄 목록으로 */
-.index{padding:0 var(--side)}
-.index-head{display:flex;justify-content:space-between;padding-bottom:12px;border-bottom:1px solid var(--black);text-transform:uppercase;letter-spacing:.04em}
-.index-head h2{margin:0;font-size:11px;font-weight:500}
-.index ul{list-style:none;margin:0;padding:0}
-.index li a{display:grid;grid-template-columns:1fr auto;align-items:baseline;gap:20px;padding:18px 0;border-bottom:1px solid var(--line)}
-.index li a:hover .nm{padding-left:12px}
-.index .nm{font-family:var(--display);font-weight:400;font-size:40px;line-height:44px;letter-spacing:-.02em;transition:padding .2s}
-.index .ds{color:var(--muted);text-align:right;max-width:280px}
-
 /* 신상품: SSENSE식 촘촘한 격자 */
 .arrivals{padding:0 var(--side)}
 .sec-head{display:flex;justify-content:space-between;gap:16px;padding-bottom:12px;margin-bottom:14px;border-bottom:1px solid var(--black);text-transform:uppercase;letter-spacing:.04em}
@@ -99,9 +89,6 @@ main{display:flex;flex-direction:column;gap:var(--section)}
   .lead .img{height:auto;aspect-ratio:4/5}
   .lead-cap{display:flex;flex-direction:column}
   .lead-cap h1{font-size:34px;line-height:38px}
-  .index li a{grid-template-columns:1fr;gap:10px;padding:14px 0}
-  .index .nm{font-size:26px;line-height:30px}
-  .index .ds{display:none}
   .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px var(--gutter)}
   .story{display:flex;flex-direction:column-reverse;align-items:stretch;gap:18px}
   .story-copy h3{font-size:30px;line-height:34px}
@@ -152,17 +139,6 @@ main{display:flex;flex-direction:column;gap:var(--section)}
     </div>
   </section>
 
-  <section class="index" aria-labelledby="h-index">
-    <div class="index-head"><h2 id="h-index">Shop by category</h2><span class="muted">6</span></div>
-    <ul>
-      <li><a href="#"><span class="nm">High-End &amp; Luxury</span><span class="ds">[European seasonal collections]</span></a></li>
-      <li><a href="#"><span class="nm">Apparel</span><span class="ds">[Independent Korean labels]</span></a></li>
-      <li><a href="#"><span class="nm">K-Beauty</span><span class="ds">[11 independent beauty brands]</span></a></li>
-      <li><a href="#"><span class="nm">Objects</span><span class="ds">[European interior objects]</span></a></li>
-      <li><a href="#"><span class="nm">168CM</span><span class="ds">[Mobile accessories and goods]</span></a></li>
-      <li><a href="#"><span class="nm">New Arrivals</span><span class="ds">[Everything new this week]</span></a></li>
-    </ul>
-  </section>
 
   <section class="arrivals">
     <div class="sec-head"><h2>New Arrivals</h2><a href="#" class="u">View all</a></div>
