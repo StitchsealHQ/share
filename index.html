@@ -6,237 +6,251 @@
 <title>STITCHSEAL — 작업 문서</title>
 <style>
   :root{
-    --bg:#FFFFFF;--surface:#F6F7F9;--ink:#0E1526;--ink-2:#3B4456;--muted:#6B7688;--line:#E6E9EF;--line-strong:#C9D0DC;
-    --accent:#2657E8;
-    --dot-design:#6D4FE0;--dot-proto:#0E9BB5;--dot-project:#2657E8;--dot-report:#B45309;--dot-form:#15803D;
-    --ease:cubic-bezier(.2,.7,.2,1);
+    --bg:#ffffff;--side:#fafafa;--hover:#f4f4f5;--ink:#171717;--ink-2:#404040;--muted:#6b6b6b;
+    --line:rgba(23,23,23,.08);--line-2:rgba(23,23,23,.16);--accent:#2657e8;
+    --project:#2657e8;--report:#b45309;--form:#15803d;--design:#6d4fe0;--proto:#0e8197;
   }
   *{box-sizing:border-box;}
   body{margin:0;background:var(--bg);color:var(--ink);
-    font-family:"Pretendard Variable","Pretendard","SUIT","Malgun Gothic","맑은 고딕",-apple-system,"Segoe UI",sans-serif;
-    line-height:1.65;font-size:15px;-webkit-font-smoothing:antialiased;}
-  .wrap{max-width:880px;margin:0 auto;padding:64px 24px 96px;}
+    font-family:"Pretendard Variable","Pretendard","Malgun Gothic","맑은 고딕",-apple-system,"Segoe UI",sans-serif;
+    font-size:14px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  .app{display:grid;grid-template-columns:260px 1fr;min-height:100vh;}
 
-  .eyebrow{font-size:13px;font-weight:500;color:var(--muted);margin:0 0 16px;}
-  h1{font-size:clamp(30px,5vw,40px);font-weight:600;line-height:1.25;letter-spacing:-.02em;margin:0 0 16px;}
-  .lead{color:var(--muted);font-size:16px;margin:0 0 36px;max-width:560px;}
+  aside{background:var(--side);border-right:1px solid var(--line);padding:24px 16px;position:sticky;top:0;height:100vh;overflow:auto;display:flex;flex-direction:column;gap:24px;}
+  .brand{font-size:15px;font-weight:600;padding:0 8px;}
+  .brand span{display:block;font-size:12px;font-weight:400;color:var(--muted);}
+  .search{display:flex;align-items:center;gap:8px;height:36px;padding:0 10px;border-radius:8px;background:var(--bg);border:1px solid var(--line-2);color:var(--muted);transition:border-color .15s;}
+  .search:focus-within{border-color:var(--accent);}
+  .search input{flex:1;min-width:0;border:0;background:none;font:inherit;color:var(--ink);outline:none;}
+  .sec{font-size:12px;color:var(--muted);padding:0 8px;margin:0 0 8px;}
+  .nav{display:flex;flex-direction:column;gap:2px;}
+  .nv{display:flex;align-items:center;justify-content:space-between;height:34px;padding:0 8px;border:0;border-radius:6px;background:none;font:inherit;color:var(--ink-2);cursor:pointer;text-align:left;transition:background-color .15s,color .15s;}
+  .nv .lb{display:flex;align-items:center;gap:10px;}
+  .nv .n{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;}
+  .nv:hover{background:var(--hover);color:var(--ink);}
+  .nv[aria-pressed="true"]{background:var(--bg);color:var(--ink);font-weight:600;box-shadow:inset 0 0 0 1px var(--line-2);}
+  .side-foot{margin-top:auto;font-size:12px;color:var(--muted);padding:0 8px;}
 
-  .toolbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:0 0 24px;border-bottom:1px solid var(--line);margin-bottom:24px;}
-  .search{flex:1;min-width:220px;display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:0 16px;height:44px;transition:border-color .15s var(--ease),background-color .15s var(--ease);}
-  .search:focus-within{border-color:var(--accent);background:#fff;}
-  .search svg{flex:none;color:var(--muted);}
-  .search input{flex:1;border:0;background:transparent;font:inherit;font-size:14px;color:var(--ink);outline:none;min-width:0;}
-  .chip{border:1px solid var(--line);background:#fff;color:var(--ink-2);font:inherit;font-size:13px;font-weight:500;height:36px;padding:0 12px;border-radius:10px;cursor:pointer;transition:border-color .15s var(--ease),color .15s var(--ease),background-color .15s var(--ease);}
-  .chip:hover{border-color:var(--line-strong);color:var(--ink);}
-  .chip.on{background:var(--ink);border-color:var(--ink);color:#fff;}
-  .sort{border:0;background:transparent;color:var(--muted);font:inherit;font-size:13px;font-weight:500;cursor:pointer;height:36px;padding:0 4px;transition:color .15s var(--ease);}
-  .sort:hover{color:var(--ink);}
-  .chip:focus-visible,.sort:focus-visible,.doc:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
-
-  .meta-row{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:16px;}
-  .meta-row .label{font-size:13px;font-weight:500;color:var(--muted);}
+  main{padding:32px 40px 64px;min-width:0;}
+  .top{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding-bottom:16px;border-bottom:1px solid var(--line);margin-bottom:24px;}
+  h1{font-size:22px;font-weight:600;letter-spacing:-.01em;margin:0;}
   .count{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums;}
   .count b{color:var(--ink);font-weight:600;}
+  .sort{font:inherit;font-size:13px;color:var(--muted);background:none;border:0;cursor:pointer;margin-left:12px;}
+  .sort:hover{color:var(--ink);}
+  button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
 
-  .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-  @media (max-width:640px){.grid{grid-template-columns:1fr;}}
+  .dot{width:8px;height:8px;border-radius:50%;display:inline-block;flex:none;}
+  .dot.project{background:var(--project);} .dot.report{background:var(--report);} .dot.form{background:var(--form);}
+  .dot.design{background:var(--design);} .dot.proto{background:var(--proto);}
 
-  .doc{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;text-decoration:none;color:var(--ink);transition:border-color .15s var(--ease),background-color .15s var(--ease);}
-  .doc:hover{border-color:var(--line-strong);background:#FCFCFD;}
-  .tagline{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;}
-  .tag{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:500;color:var(--ink-2);background:var(--surface);padding:4px 10px;border-radius:6px;}
-  .tag .dot{width:6px;height:6px;border-radius:50%;}
-  .tag.design .dot{background:var(--dot-design);}
-  .tag.proto .dot{background:var(--dot-proto);}
-  .tag.project .dot{background:var(--dot-project);}
-  .tag.report .dot{background:var(--dot-report);}
-  .tag.form .dot{background:var(--dot-form);}
-  .date{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;}
-  .doc b{font-size:18px;font-weight:600;letter-spacing:-.01em;line-height:1.4;margin-bottom:8px;}
-  .doc .desc{font-size:14px;color:var(--muted);flex:1;margin-bottom:16px;}
-  .more{font-size:14px;font-weight:500;color:var(--ink-2);}
-  .doc:hover .more{color:var(--ink);}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px 16px;}
+  .card{display:flex;flex-direction:column;text-decoration:none;color:var(--ink);}
+  .shot{position:relative;aspect-ratio:16/10;border-radius:10px;overflow:hidden;background:var(--hover);border:1px solid var(--line);transition:border-color .15s;}
+  .card:hover .shot{border-color:var(--line-2);}
+  .shot iframe{position:absolute;top:0;left:0;width:1280px;height:800px;border:0;transform-origin:0 0;pointer-events:none;background:#fff;}
+  .file{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:16px;}
+  .file .ext{font-size:28px;font-weight:600;letter-spacing:-.02em;}
+  .file .fn{font-size:12px;color:var(--muted);word-break:break-all;}
+  .t{font-size:15px;font-weight:600;line-height:1.45;margin:12px 0 4px;}
+  .d{font-size:13px;line-height:1.6;color:var(--ink-2);margin:0 0 8px;}
+  .t,.d{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+  .meta{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:12px;color:var(--muted);}
+  .meta .c{display:flex;align-items:center;gap:8px;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .meta .dt{font-variant-numeric:tabular-nums;flex:none;}
+  .empty{display:none;padding:56px 0;text-align:center;color:var(--muted);}
 
-  .empty{display:none;text-align:center;color:var(--muted);font-size:14px;padding:56px 0;}
-  footer{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:13px;color:var(--muted);}
-  footer .brand{font-weight:600;color:var(--ink);font-size:13px;}
+  @media (max-width:760px){
+    .app{grid-template-columns:1fr;}
+    aside{position:static;height:auto;border-right:0;border-bottom:1px solid var(--line);}
+    .nav{flex-direction:row;flex-wrap:wrap;}
+    .nv .n{margin-left:8px;}
+    .side-foot{display:none;}
+    main{padding:24px 16px 48px;}
+  }
   @media (prefers-reduced-motion:reduce){*{transition:none!important;}}
 </style>
 </head><body>
-<div class="wrap">
-  <p class="eyebrow">Stitchseal · Personal docs</p>
-  <h1>개인 작업,<br>문서 저장소</h1>
-  <p class="lead">진행 중인 프로젝트와 디자인 시안·프로토타입을 한곳에 모아둡니다.<br>필요한 항목을 검색하고 바로 확인하세요.</p>
-
-  <div class="toolbar">
-    <div class="search">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
-      <input id="q" type="search" placeholder="제목·내용 검색" autocomplete="off">
+<div class="app">
+  <aside>
+    <div class="brand">Stitchseal<span>개인 작업 문서</span></div>
+    <label class="search"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" type="search" placeholder="검색" autocomplete="off" aria-label="문서 검색"></label>
+    <div>
+      <p class="sec">분류</p>
+      <div class="nav">
+        <button class="nv" data-filter="" aria-pressed="true"><span class="lb">전체</span><span class="n"></span></button>
+        <button class="nv" data-filter="프로젝트" aria-pressed="false"><span class="lb"><i class="dot project"></i>프로젝트</span><span class="n"></span></button>
+        <button class="nv" data-filter="보고서" aria-pressed="false"><span class="lb"><i class="dot report"></i>보고서</span><span class="n"></span></button>
+        <button class="nv" data-filter="양식" aria-pressed="false"><span class="lb"><i class="dot form"></i>양식</span><span class="n"></span></button>
+        <button class="nv" data-filter="디자인 시안" aria-pressed="false"><span class="lb"><i class="dot design"></i>디자인 시안</span><span class="n"></span></button>
+        <button class="nv" data-filter="프로토타입" aria-pressed="false"><span class="lb"><i class="dot proto"></i>프로토타입</span><span class="n"></span></button>
+      </div>
     </div>
-    <button class="chip on" data-tag="">전체</button>
-    <button class="chip" data-tag="프로젝트">프로젝트</button>
-    <button class="chip" data-tag="보고서">보고서</button>
-    <button class="chip" data-tag="양식">양식</button>
-    <button class="chip" data-tag="디자인 시안">디자인 시안</button>
-    <button class="chip" data-tag="프로토타입">프로토타입</button>
-    <button class="sort" id="sort">최신순 ↓</button>
-  </div>
+    <div class="side-foot">작성 양종진 · 개인 작업물 · 비공개 색인(noindex)</div>
+  </aside>
 
-  <div class="meta-row">
-    <span class="label">Documents</span>
-    <span class="count"><b id="shown">0</b> / <span id="total">0</span>건</span>
-  </div>
+  <main>
+    <div class="top">
+      <h1>개인 작업, 문서 저장소</h1>
+      <span><span class="count"><b id="shown">0</b> / <span id="total">0</span>건</span><button class="sort" id="sort">최신순</button></span>
+    </div>
 
-  <div class="grid" id="list">
-    <a class="doc" href="p/meridian151/" data-tag="디자인 시안" data-date="2026-10-27">
-      <span class="tagline"><span class="tag design"><span class="dot"></span>디자인 시안</span><span class="date">2026-10-27</span></span>
-      <b>Meridian151 — 메인 페이지 시안 3종</b>
-      <span class="desc">시안 1 Ounass 기반(/meridian151/) · 시안 2 SSENSE 기반(/meridian151/b/) · 시안 3 조합(/meridian151/c/) · 색 #111111 · #FFFFFF · #F9F9F9 · 테스트 사진(Unsplash)</span>
-      <span class="more">미리보기 <span class="arr">→</span></span>
+    <!-- 문서 추가: 아래 <a class="card"> 한 덩어리를 복사해 href·data-tag·data-date·제목·설명·메타를 바꾼다.
+         data-tag는 프로젝트/보고서/양식/디자인 시안/프로토타입 중 하나, 점 색은 dot 뒤 클래스(project/report/form/design/proto).
+         다운로드 파일은 data-thumb 대신 .file 블록을 쓴다. 순서는 상관없다(날짜로 자동 정렬). -->
+    <div class="grid" id="list">
+    <a class="card" href="p/meridian151/" data-tag="디자인 시안" data-date="2026-10-27">
+      <div class="shot" data-thumb="p/meridian151/"></div>
+      <p class="t">Meridian151 — 메인 페이지 시안 3종</p>
+      <p class="d">시안 1 Ounass 기반(/meridian151/) · 시안 2 SSENSE 기반(/meridian151/b/) · 시안 3 조합(/meridian151/c/) · 색 #111111 · #FFFFFF · #F9F9F9 · 테스트 사진(Unsplash)</p>
+      <span class="meta"><span class="c"><i class="dot design"></i>디자인 시안 · 페이지</span><span class="dt">2026-10-27</span></span>
     </a>
-    <a class="doc" href="p/unipromotion-v2/" data-tag="디자인 시안" data-date="2026-10-13">
-      <span class="tagline"><span class="tag design"><span class="dot"></span>디자인 시안</span><span class="date">2026-10-13</span></span>
-      <b>유니프로모션 홈페이지 — 미리보기 (기존 틀 유지)</b>
-      <span class="desc">아임웹 기존 디자인 유지 + 색·사진·메뉴·전시 정리 · 메뉴 5개(COMPANY · MERCHANDISING · EXHIBITIONS · NEWS · CONTACT) · 전시 타일 · NEWS 글 9건</span>
-      <span class="more">미리보기 <span class="arr">→</span></span>
+    <a class="card" href="p/unipromotion-v2/" data-tag="디자인 시안" data-date="2026-10-13">
+      <div class="shot" data-thumb="p/unipromotion-v2/"></div>
+      <p class="t">유니프로모션 홈페이지 — 미리보기 (기존 틀 유지)</p>
+      <p class="d">아임웹 기존 디자인 유지 + 색·사진·메뉴·전시 정리 · 메뉴 5개(COMPANY · MERCHANDISING · EXHIBITIONS · NEWS · CONTACT) · 전시 타일 · NEWS 글 9건</p>
+      <span class="meta"><span class="c"><i class="dot design"></i>디자인 시안 · 페이지</span><span class="dt">2026-10-13</span></span>
     </a>
-    <a class="doc" href="p/unipromotion/" data-tag="디자인 시안" data-date="2026-10-06">
-      <span class="tagline"><span class="tag design"><span class="dot"></span>디자인 시안</span><span class="date">2026-10-06</span></span>
-      <b>유니프로모션 홈페이지 — 시안 4안 (메인 + 하위 5쪽)</b>
-      <span class="desc">펜타그램형 리디자인 · 이미지 순환 첫 화면 + 상단 탭 5개(COMPANY · APPAREL &amp; TRADING · EXHIBITION &amp; ENTERTAINMENT · MEDIA &amp; PRESS · CONTACT) · 흐르는 전시 포스터 갤러리 · 하위 페이지 5종</span>
-      <span class="more">시안 보기 <span class="arr">→</span></span>
+    <a class="card" href="p/unipromotion/" data-tag="디자인 시안" data-date="2026-10-06">
+      <div class="shot" data-thumb="p/unipromotion/"></div>
+      <p class="t">유니프로모션 홈페이지 — 시안 4안 (메인 + 하위 5쪽)</p>
+      <p class="d">펜타그램형 리디자인 · 이미지 순환 첫 화면 + 상단 탭 5개(COMPANY · APPAREL &amp; TRADING · EXHIBITION &amp; ENTERTAINMENT · MEDIA &amp; PRESS · CONTACT) · 흐르는 전시 포스터 갤러리 · 하위 페이지 5종</p>
+      <span class="meta"><span class="c"><i class="dot design"></i>디자인 시안 · 페이지</span><span class="dt">2026-10-06</span></span>
     </a>
-
-    <a class="doc" href="p/todo/" data-tag="프로젝트" data-date="2026-08-14">
-      <span class="tagline"><span class="tag project"><span class="dot"></span>프로젝트</span><span class="date">2026-08-14</span></span>
-      <b>Todo List — 개인용 할 일 관리 앱</b>
-      <span class="desc">설치 없이 링크로 쓰는 투두리스트 — 전체·오늘·캘린더(월/주 시간표)·별 중요도·프로젝트 · 데이터는 각자 브라우저에 저장</span>
-      <span class="more">앱 열기 <span class="arr">→</span></span>
+    <a class="card" href="p/todo/" data-tag="프로젝트" data-date="2026-08-14">
+      <div class="shot" data-thumb="p/todo/"></div>
+      <p class="t">Todo List — 개인용 할 일 관리 앱</p>
+      <p class="d">설치 없이 링크로 쓰는 투두리스트 — 전체·오늘·캘린더(월/주 시간표)·별 중요도·프로젝트 · 데이터는 각자 브라우저에 저장</p>
+      <span class="meta"><span class="c"><i class="dot project"></i>프로젝트 · 페이지</span><span class="dt">2026-08-14</span></span>
     </a>
-
-    <a class="doc" href="p/todo/TodoMini-Setup.exe" download data-tag="양식" data-date="2026-08-14">
-      <span class="tagline"><span class="tag form"><span class="dot"></span>양식</span><span class="date">2026-08-14</span></span>
-      <b>Todo Mini — PC 설치판 (Windows)</b>
-      <span class="desc">우측 하단 상주 아이콘으로 열고 닫는 미니 패널 앱 (78MB) · 첫 실행 시 SmartScreen 경고 → "추가 정보 → 실행"</span>
-      <span class="more">다운로드 ↓</span>
+    <a class="card" href="p/todo/TodoMini-Setup.exe" download data-tag="양식" data-date="2026-08-14">
+      <div class="shot"><span class="file"><span class="ext">.EXE</span><span class="fn">TodoMini-Setup.exe</span></span></div>
+      <p class="t">Todo Mini — PC 설치판 (Windows)</p>
+      <p class="d">우측 하단 상주 아이콘으로 열고 닫는 미니 패널 앱 (78MB) · 첫 실행 시 SmartScreen 경고 → "추가 정보 → 실행"</p>
+      <span class="meta"><span class="c"><i class="dot form"></i>양식 · 파일</span><span class="dt">2026-08-14</span></span>
     </a>
-
-    <a class="doc" href="p/sinsang-clone/" data-tag="프로토타입" data-date="2026-08-22">
-      <span class="tagline"><span class="tag proto"><span class="dot"></span>프로토타입</span><span class="date">2026-08-22</span></span>
-      <b>신상클론 — 패션 도소매 플랫폼 클론</b>
-      <span class="desc">신상마켓 UI 재현 학습용 — 소매(구매·신상톡·리뷰·기획전) + 도매 파트너센터(상품·미송·정산) + 사업자 인증 가입 (7단계)</span>
-      <span class="more">사이트 보기 <span class="arr">→</span></span>
+    <a class="card" href="p/sinsang-clone/" data-tag="프로토타입" data-date="2026-08-22">
+      <div class="shot" data-thumb="p/sinsang-clone/"></div>
+      <p class="t">신상클론 — 패션 도소매 플랫폼 클론</p>
+      <p class="d">신상마켓 UI 재현 학습용 — 소매(구매·신상톡·리뷰·기획전) + 도매 파트너센터(상품·미송·정산) + 사업자 인증 가입 (7단계)</p>
+      <span class="meta"><span class="c"><i class="dot proto"></i>프로토타입 · 페이지</span><span class="dt">2026-08-22</span></span>
     </a>
-
-    <a class="doc" href="https://stitchsealhq.github.io/" target="_blank" rel="noopener" data-tag="프로젝트" data-date="2026-07-20">
-      <span class="tagline"><span class="tag project"><span class="dot"></span>프로젝트</span><span class="date">2026-07-20</span></span>
-      <b>StitchSeal</b>
-      <span class="desc">패션 디자인 IP 증명 플랫폼 — 등록→봉인→증명서→검증 프로토타입 라이브</span>
-      <span class="more">사이트 열기 <span class="arr">→</span></span>
+    <a class="card" href="https://stitchsealhq.github.io/" target="_blank" rel="noopener" data-tag="프로젝트" data-date="2026-07-20">
+      <div class="shot" data-thumb="https://stitchsealhq.github.io/"></div>
+      <p class="t">StitchSeal</p>
+      <p class="d">패션 디자인 IP 증명 플랫폼 — 등록→봉인→증명서→검증 프로토타입 라이브</p>
+      <span class="meta"><span class="c"><i class="dot project"></i>프로젝트 · 외부 사이트</span><span class="dt">2026-07-20</span></span>
     </a>
-
-    <a class="doc" href="https://stitchsealhq.github.io/ddm-archive/" target="_blank" rel="noopener" data-tag="프로젝트" data-date="2026-07-21">
-      <span class="tagline"><span class="tag project"><span class="dot"></span>프로젝트</span><span class="date">2026-07-21</span></span>
-      <b>동대문 아카이브</b>
-      <span class="desc">동대문 관련 뉴스·자료 자동 수집 아카이브 — 매일 자동 갱신 · 연도별 분류 · 유튜브 포함</span>
-      <span class="more">사이트 열기 <span class="arr">→</span></span>
+    <a class="card" href="https://stitchsealhq.github.io/ddm-archive/" target="_blank" rel="noopener" data-tag="프로젝트" data-date="2026-07-21">
+      <div class="shot" data-thumb="https://stitchsealhq.github.io/ddm-archive/"></div>
+      <p class="t">동대문 아카이브</p>
+      <p class="d">동대문 관련 뉴스·자료 자동 수집 아카이브 — 매일 자동 갱신 · 연도별 분류 · 유튜브 포함</p>
+      <span class="meta"><span class="c"><i class="dot project"></i>프로젝트 · 외부 사이트</span><span class="dt">2026-07-21</span></span>
     </a>
-
-    <a class="doc" href="p/stitchseal-interview/interview-tracker.xlsx" download data-tag="양식" data-date="2026-07-22">
-      <span class="tagline"><span class="tag form"><span class="dot"></span>양식</span><span class="date">2026-07-22</span></span>
-      <b>인터뷰 관리 스프레드시트</b>
-      <span class="desc">수요 인터뷰 3시트 Excel — 질문 34개(현직·학생·런칭준비) · 기록(대상 구분 드롭다운) · 집계(GO 판정+세그먼트별)</span>
-      <span class="more">다운로드 ↓</span>
+    <a class="card" href="p/stitchseal-interview/interview-tracker.xlsx" download data-tag="양식" data-date="2026-07-22">
+      <div class="shot"><span class="file"><span class="ext">.XLSX</span><span class="fn">interview-tracker.xlsx</span></span></div>
+      <p class="t">인터뷰 관리 스프레드시트</p>
+      <p class="d">수요 인터뷰 3시트 Excel — 질문 34개(현직·학생·런칭준비) · 기록(대상 구분 드롭다운) · 집계(GO 판정+세그먼트별)</p>
+      <span class="meta"><span class="c"><i class="dot form"></i>양식 · 파일</span><span class="dt">2026-07-22</span></span>
     </a>
-
-    <a class="doc" href="p/stitchseal-business-plan/" data-tag="보고서" data-date="2026-07-16">
-      <span class="tagline"><span class="tag report"><span class="dot"></span>보고서</span><span class="date">2026-07-16</span></span>
-      <b>StitchSeal 사업기획서 v1.0</b>
-      <span class="desc">공모전 제출용 마스터 — 개요 · 문제 인식 · 실현 가능성 · 성장 전략 · 팀 · 일정 · 리스크</span>
-      <span class="more">문서 보기 <span class="arr">→</span></span>
+    <a class="card" href="p/stitchseal-business-plan/" data-tag="보고서" data-date="2026-07-16">
+      <div class="shot" data-thumb="p/stitchseal-business-plan/"></div>
+      <p class="t">StitchSeal 사업기획서 v1.0</p>
+      <p class="d">공모전 제출용 마스터 — 개요 · 문제 인식 · 실현 가능성 · 성장 전략 · 팀 · 일정 · 리스크</p>
+      <span class="meta"><span class="c"><i class="dot report"></i>보고서 · 페이지</span><span class="dt">2026-07-16</span></span>
     </a>
-
-    <a class="doc" href="p/stitchseal-proposal/" data-tag="보고서" data-date="2026-07-22">
-      <span class="tagline"><span class="tag report"><span class="dot"></span>보고서</span><span class="date">2026-07-22</span></span>
-      <b>패션 디자인 IP 증명·거래 플랫폼 사업제안서</b>
-      <span class="desc">StitchSeal 사업제안서 v1.2 — 문제 인식 · 솔루션 · 성장 전략 · 수익 모델 · 신상마켓 분석 반영</span>
-      <span class="more">문서 보기 <span class="arr">→</span></span>
+    <a class="card" href="p/stitchseal-proposal/" data-tag="보고서" data-date="2026-07-22">
+      <div class="shot" data-thumb="p/stitchseal-proposal/"></div>
+      <p class="t">패션 디자인 IP 증명·거래 플랫폼 사업제안서</p>
+      <p class="d">StitchSeal 사업제안서 v1.2 — 문제 인식 · 솔루션 · 성장 전략 · 수익 모델 · 신상마켓 분석 반영</p>
+      <span class="meta"><span class="c"><i class="dot report"></i>보고서 · 페이지</span><span class="dt">2026-07-22</span></span>
     </a>
-
-    <a class="doc" href="p/seoullabs-xp-report/" data-tag="보고서" data-date="2026-07-10">
-      <span class="tagline"><span class="tag report"><span class="dot"></span>보고서</span><span class="date">2026-07-10</span></span>
-      <b>서울랩스 · XPHERE(XP) 분석 보고서</b>
-      <span class="desc">블록체인 기업 서울랩스와 XP 코인 — 사업 실적 · 시세 · 규제 환경 · 경쟁 구도</span>
-      <span class="more">문서 보기 <span class="arr">→</span></span>
+    <a class="card" href="p/seoullabs-xp-report/" data-tag="보고서" data-date="2026-07-10">
+      <div class="shot" data-thumb="p/seoullabs-xp-report/"></div>
+      <p class="t">서울랩스 · XPHERE(XP) 분석 보고서</p>
+      <p class="d">블록체인 기업 서울랩스와 XP 코인 — 사업 실적 · 시세 · 규제 환경 · 경쟁 구도</p>
+      <span class="meta"><span class="c"><i class="dot report"></i>보고서 · 페이지</span><span class="dt">2026-07-10</span></span>
     </a>
-
-    <a class="doc" href="p/fitgrant/" data-tag="디자인 시안" data-date="2026-07-10">
-      <span class="tagline"><span class="tag design"><span class="dot"></span>디자인 시안</span><span class="date">2026-07-10</span></span>
-      <b>FITGRANT 홈페이지 디자인 시안</b>
-      <span class="desc">인트로 커서 그래픽 · ENTER 진입 구조 · 메인 페이지 — 디자인 프리뷰(내용은 자리표시)</span>
-      <span class="more">사이트 보기 <span class="arr">→</span></span>
+    <a class="card" href="p/fitgrant/" data-tag="디자인 시안" data-date="2026-07-10">
+      <div class="shot" data-thumb="p/fitgrant/home.html"></div>
+      <p class="t">FITGRANT 홈페이지 디자인 시안</p>
+      <p class="d">인트로 커서 그래픽 · ENTER 진입 구조 · 메인 페이지 — 디자인 프리뷰(내용은 자리표시)</p>
+      <span class="meta"><span class="c"><i class="dot design"></i>디자인 시안 · 페이지</span><span class="dt">2026-07-10</span></span>
     </a>
-
-    <a class="doc" href="p/fitgrant/effects.html" data-tag="프로토타입" data-date="2026-07-10">
-      <span class="tagline"><span class="tag proto"><span class="dot"></span>프로토타입</span><span class="date">2026-07-10</span></span>
-      <b>커서 이펙트 샘플러 (6종 비교)</b>
-      <span class="desc">Tubes · Neon · Particles (오픈소스) + Plexus · Glow Trail · Fireflies (직접 구현) — 1~6키 전환</span>
-      <span class="more">사이트 보기 <span class="arr">→</span></span>
+    <a class="card" href="p/fitgrant/effects.html" data-tag="프로토타입" data-date="2026-07-10">
+      <div class="shot" data-thumb="p/fitgrant/effects.html"></div>
+      <p class="t">커서 이펙트 샘플러 (6종 비교)</p>
+      <p class="d">Tubes · Neon · Particles (오픈소스) + Plexus · Glow Trail · Fireflies (직접 구현) — 1~6키 전환</p>
+      <span class="meta"><span class="c"><i class="dot proto"></i>프로토타입 · 페이지</span><span class="dt">2026-07-10</span></span>
     </a>
-  </div>
-
-  <p class="empty" id="empty">조건에 맞는 문서가 없습니다.</p>
-
-  <footer>
-    <span class="brand">Stitchseal</span>
-    <span>작성 <b style="color:var(--ink)">양종진</b> · 개인 작업물 · 비공개 색인(noindex)</span>
-  </footer>
+    </div>
+    <p class="empty" id="empty">조건에 맞는 문서가 없습니다</p>
+  </main>
 </div>
 
 <script>
 (function(){
-  var docs = Array.prototype.slice.call(document.querySelectorAll('.doc'));
-  var q = document.getElementById('q');
-  var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
-  var sortBtn = document.getElementById('sort');
   var list = document.getElementById('list');
-  var empty = document.getElementById('empty');
-  var shown = document.getElementById('shown');
-  var total = document.getElementById('total');
+  var cards = Array.prototype.slice.call(list.querySelectorAll('.card'));
+  var q = document.getElementById('q');
+  var navs = Array.prototype.slice.call(document.querySelectorAll('[data-filter]'));
+  var sortBtn = document.getElementById('sort');
   var activeTag = '', desc = true;
-  total.textContent = docs.length;
+  document.getElementById('total').textContent = cards.length;
+
+  navs.forEach(function(b){
+    var t = b.getAttribute('data-filter');
+    b.querySelector('.n').textContent = t ? cards.filter(function(c){ return c.getAttribute('data-tag') === t; }).length : cards.length;
+  });
+
+  // 썸네일: 실제 페이지를 1280x800으로 띄워 카드 폭에 맞게 축소
+  cards.forEach(function(c){
+    var s = c.querySelector('.shot[data-thumb]');
+    if(!s) return;
+    var f = document.createElement('iframe');
+    f.src = s.getAttribute('data-thumb');
+    f.loading = 'lazy'; f.tabIndex = -1; f.setAttribute('aria-hidden', 'true'); f.setAttribute('scrolling', 'no');
+    s.appendChild(f);
+  });
+  function fit(){
+    cards.forEach(function(c){
+      var s = c.querySelector('.shot'), f = s && s.querySelector('iframe');
+      if(f) f.style.transform = 'scale(' + (s.clientWidth / 1280) + ')';
+    });
+  }
 
   function apply(){
-    var kw = q.value.trim().toLowerCase();
-    var n = 0;
-    docs.forEach(function(d){
-      var okTag = !activeTag || d.getAttribute('data-tag') === activeTag;
-      var okKw = !kw || d.textContent.toLowerCase().indexOf(kw) !== -1;
-      var show = okTag && okKw;
-      d.style.display = show ? '' : 'none';
+    var kw = q.value.trim().toLowerCase(), n = 0;
+    cards.forEach(function(c){
+      var show = (!activeTag || c.getAttribute('data-tag') === activeTag) &&
+                 (!kw || c.textContent.toLowerCase().indexOf(kw) !== -1);
+      c.style.display = show ? '' : 'none';
       if(show) n++;
     });
-    shown.textContent = n;
-    empty.style.display = n ? 'none' : 'block';
+    document.getElementById('shown').textContent = n;
+    document.getElementById('empty').style.display = n ? 'none' : 'block';
+    fit();
   }
   function sort(){
-    docs.sort(function(a,b){
+    cards.sort(function(a, b){
       var da = a.getAttribute('data-date'), db = b.getAttribute('data-date');
       return desc ? db.localeCompare(da) : da.localeCompare(db);
     });
-    docs.forEach(function(d){ list.appendChild(d); });
-    sortBtn.textContent = desc ? '최신순 ↓' : '오래된순 ↑';
+    cards.forEach(function(c){ list.appendChild(c); });
+    sortBtn.textContent = desc ? '최신순' : '오래된순';
   }
+
   q.addEventListener('input', apply);
-  chips.forEach(function(c){
-    c.addEventListener('click', function(){
-      chips.forEach(function(x){ x.classList.remove('on'); });
-      c.classList.add('on');
-      activeTag = c.getAttribute('data-tag');
+  navs.forEach(function(b){
+    b.addEventListener('click', function(){
+      navs.forEach(function(x){ x.setAttribute('aria-pressed', 'false'); });
+      b.setAttribute('aria-pressed', 'true');
+      activeTag = b.getAttribute('data-filter');
       apply();
     });
   });
   sortBtn.addEventListener('click', function(){ desc = !desc; sort(); });
+  window.addEventListener('resize', fit);
   sort(); apply();
 })();
 </script>
